@@ -3,7 +3,13 @@ name: Crypto Scanner (UT Bot + LinReg)
 on:
   schedule:
         - cron: '7,22,37,52 * * * *'  # offset from :00/:15/:30/:45 to avoid GitHub Actions high-load queueing delays
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      test_notify:
+        description: 'Force a generic test notification instead of a real signal scan'
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: read
@@ -27,7 +33,7 @@ jobs:
       - name: Run scanner
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
-          FORCE_TEST_NOTIFY: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
+          FORCE_TEST_NOTIFY: ${{ github.event.inputs.test_notify == 'true' && '1' || '' }}
         run: python3 scanner.py
 
       - name: Upload latest signals as artifact

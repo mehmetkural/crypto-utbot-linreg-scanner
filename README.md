@@ -1,0 +1,1 @@
+# crypto-utbot-linreg-scanner

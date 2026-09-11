@@ -2,7 +2,7 @@ name: Crypto Scanner (UT Bot + LinReg)
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+        - cron: '7,22,37,52 * * * *'  # offset from :00/:15/:30/:45 to avoid GitHub Actions high-load queueing delays
   workflow_dispatch: {}
 
 permissions:

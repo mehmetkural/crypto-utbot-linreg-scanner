@@ -1,0 +1,38 @@
+name: Crypto Scanner (UT Bot + LinReg)
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install --quiet pandas numpy requests
+
+      - name: Run scanner
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          FORCE_TEST_NOTIFY: ${{ github.event_name == 'workflow_dispatch' && '1' || '' }}
+        run: python3 scanner.py
+
+      - name: Upload latest signals as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: latest-signals
+          path: latest_signals.json
+          retention-days: 7

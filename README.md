@@ -20,7 +20,7 @@ Bir parite icin "GUCLU AL" sinyali su ucu ayni anda saglandiginda uretilir:
 
 - `MIN_24H_QUOTE_VOLUME_USDT` = 500,000 — bu hacmin altindaki pariteler elenir
 - `UT_KEY_VALUE` = 1.0, `UT_ATR_PERIOD` = 10 — UT Bot ayarlari
-- `LINREG_LENGTH` = 11 — LinReg Candle uzunlugu
+- `LINREG_LENGTH` = 7 — LinReg Candle uzunlugu
 
 ## Kurulum
 

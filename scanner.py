@@ -57,7 +57,12 @@ def log(msg):
 # ---------------------------------------------------------------------------
 # Bildirim (ntfy.sh)
 # ---------------------------------------------------------------------------
-def send_ntfy(message, title=None, priority="default"):
+def tradingview_url(symbol):
+    """Binance sembolu icin TradingView grafik linki (or. BTCUSDT -> BINANCE:BTCUSDT)."""
+    return f"https://www.tradingview.com/chart/?symbol=BINANCE:{symbol}"
+
+
+def send_ntfy(message, title=None, priority="default", click_url=None):
     """NTFY_TOPIC ortam degiskeni tanimliysa ntfy.sh uzerinden push bildirimi gonderir."""
     topic = os.environ.get("NTFY_TOPIC")
     if not topic:
@@ -66,6 +71,9 @@ def send_ntfy(message, title=None, priority="default"):
     headers = {"Priority": priority}
     if title:
         headers["Title"] = title.encode("utf-8")
+    if click_url:
+        # Bildirime tiklaninca dogrudan bu linki acar (tek sinyal varsa TradingView grafigi)
+        headers["Click"] = click_url
     try:
         requests.post(f"https://ntfy.sh/{topic}", data=message.encode("utf-8"), headers=headers, timeout=10)
         log("ntfy bildirimi gonderildi.")
@@ -322,12 +330,16 @@ if __name__ == "__main__":
             title="Crypto Scanner - Test Bildirimi",
         )
     elif summary["strong_signals"]:
+        signals = summary["strong_signals"]
         lines = [
-            f"{s['strong_signal'].replace('_', ' ')}: {s['symbol']} @ {s['last_close']}"
-            for s in summary["strong_signals"]
+            f"{s['strong_signal'].replace('_', ' ')}: {s['symbol']} @ {s['last_close']}\n{tradingview_url(s['symbol'])}"
+            for s in signals
         ]
+        # Tek sinyal varsa bildirime tiklaninca dogrudan o coinin TradingView grafigi acilsin
+        click_url = tradingview_url(signals[0]["symbol"]) if len(signals) == 1 else None
         send_ntfy(
-            "\n".join(lines),
-            title=f"{len(summary['strong_signals'])} Guclu Sinyal (15m/1h UT Bot + LinReg)",
+            "\n\n".join(lines),
+            title=f"{len(signals)} Guclu Sinyal (15m/1h UT Bot + LinReg)",
             priority="high",
+            click_url=click_url,
         )

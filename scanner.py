@@ -41,6 +41,7 @@ TIMEFRAME_ENTRY = "15m"
 TIMEFRAME_CONFIRM = "1h"
 MAX_WORKERS = 8                          # es zamanli istek sayisi
 REQUEST_TIMEOUT = 10
+NOTIFY_COOLDOWN_SECONDS = 2 * 60 * 60    # guclu sinyal bildirimleri arasinda en az bu kadar bekle (spam onleme)
 
 # Leveraged token / stablecoin-stablecoin gibi anlamsiz pariteleri disla
 EXCLUDE_SUFFIXES = ("UPUSDT", "DOWNUSDT", "BULLUSDT", "BEARUSDT")
@@ -60,6 +61,26 @@ def log(msg):
 def tradingview_url(symbol):
     """Binance sembolu icin TradingView grafik linki (or. BTCUSDT -> BINANCE:BTCUSDT)."""
     return f"https://www.tradingview.com/chart/?symbol=BINANCE:{symbol}"
+
+
+def notify_state_path():
+    return __file__.rsplit("/", 1)[0] + "/notify_state.json"
+
+
+def load_last_notified_at():
+    """En son GUCLU sinyal bildiriminin ne zaman gonderildigini okur (throttle icin). Yoksa None doner."""
+    try:
+        with open(notify_state_path()) as f:
+            data = json.load(f)
+        return datetime.datetime.fromisoformat(data["last_notified_at"])
+    except Exception:
+        return None
+
+
+def save_last_notified_at(dt):
+    """En son bildirim zamanini notify_state.json'a yazar (repo'ya commitlenip calisma boyunca kalici olur)."""
+    with open(notify_state_path(), "w") as f:
+        json.dump({"last_notified_at": dt.isoformat()}, f)
 
 
 def send_ntfy(message, title=None, priority="default", click_url=None):
@@ -331,15 +352,23 @@ if __name__ == "__main__":
         )
     elif summary["strong_signals"]:
         signals = summary["strong_signals"]
-        lines = [
-            f"{s['strong_signal'].replace('_', ' ')}: {s['symbol']} @ {s['last_close']}\n{tradingview_url(s['symbol'])}"
-            for s in signals
-        ]
-        # Tek sinyal varsa bildirime tiklaninca dogrudan o coinin TradingView grafigi acilsin
-        click_url = tradingview_url(signals[0]["symbol"]) if len(signals) == 1 else None
-        send_ntfy(
-            "\n\n".join(lines),
-            title=f"{len(signals)} Guclu Sinyal (15m/1h UT Bot + LinReg)",
-            priority="high",
-            click_url=click_url,
-        )
+        now_utc = datetime.datetime.now(datetime.timezone.utc)
+        last_notified = load_last_notified_at()
+        seconds_since_last = (now_utc - last_notified).total_seconds() if last_notified else None
+        if seconds_since_last is not None and seconds_since_last < NOTIFY_COOLDOWN_SECONDS:
+            remaining_min = int((NOTIFY_COOLDOWN_SECONDS - seconds_since_last) / 60)
+            log(f"Guclu sinyal var ama bildirim 2 saatlik bekleme suresinde ({remaining_min} dk kaldi), bildirim atlaniyor.")
+        else:
+            lines = [
+                f"{s['strong_signal'].replace('_', ' ')}: {s['symbol']} @ {s['last_close']}\n{tradingview_url(s['symbol'])}"
+                for s in signals
+            ]
+            # Tek sinyal varsa bildirime tiklaninca dogrudan o coinin TradingView grafigi acilsin
+            click_url = tradingview_url(signals[0]["symbol"]) if len(signals) == 1 else None
+            send_ntfy(
+                "\n\n".join(lines),
+                title=f"{len(signals)} Guclu Sinyal (15m/1h UT Bot + LinReg)",
+                priority="high",
+                click_url=click_url,
+            )
+            save_last_notified_at(now_utc)

@@ -28,12 +28,14 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install --quiet pandas numpy requests
+        run: pip install --quiet pandas numpy requests matplotlib
 
       - name: Run scanner
         env:
           NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
           FORCE_TEST_NOTIFY: ${{ github.event.inputs.test_notify == 'true' && '1' || '' }}
+        # Guclu sinyal bildirimi gonderilirken notify_state.json ve grafik gorseli
+        # (latest_chart.png) scanner.py icinden otomatik commit+push edilir.
         run: python3 scanner.py
 
       - name: Upload latest signals as artifact
@@ -42,15 +44,3 @@ jobs:
           name: latest-signals
           path: latest_signals.json
           retention-days: 7
-
-      - name: Bildirim throttle durumunu kaydet
-        run: |
-          if [ -n "$(git status --porcelain notify_state.json)" ]; then
-            git config user.name "github-actions[bot]"
-            git config user.email "github-actions[bot]@users.noreply.github.com"
-            git add notify_state.json
-            git commit -m "Bildirim zaman damgasi guncellendi"
-            git push || (git pull --rebase && git push)
-          else
-            echo "notify_state.json degismedi, commit gerekmiyor."
-          fi

@@ -462,9 +462,27 @@ if __name__ == "__main__":
         log(f"Sonuclar kaydedildi: {out_path}")
 
     if os.environ.get("FORCE_TEST_NOTIFY"):
+        # Test bildirimine ornek bir grafik de ekleyerek gorsel ozelligin
+        # gercek bir sinyal beklemeden calistigini gostermis oluyoruz.
+        test_attach_url = None
+        try:
+            demo_symbols = ["BTCUSDT", "ETHUSDT"]
+            symbol_dfs = [
+                (sym, get_klines(sym, CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT))
+                for sym in demo_symbols
+            ]
+            chart_path = __file__.rsplit("/", 1)[0] + "/" + CHART_FILENAME
+            generate_signals_chart(symbol_dfs, chart_path, CHART_TIMEFRAME)
+            if commit_and_push_files([CHART_FILENAME], "Test bildirimi icin ornek grafik guncellendi"):
+                test_attach_url = f"{GITHUB_REPO_RAW_BASE}/{CHART_FILENAME}"
+            else:
+                log("Test grafigi push edilemedi, test bildirimi gorselsiz gonderilecek.")
+        except Exception as e:
+            log(f"Test grafigi olusturulamadi: {e}")
         send_ntfy(
             "Kurulum basarili calisiyor. Gercek GUCLU AL/SAT sinyalleri geldikce burada bildirim alacaksin.",
             title="Crypto Scanner - Test Bildirimi",
+            attach_url=test_attach_url,
         )
     elif summary["strong_signals"]:
         signals = summary["strong_signals"]

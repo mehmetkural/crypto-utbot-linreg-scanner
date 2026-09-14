@@ -18,11 +18,17 @@ import sys
 import json
 import time
 import datetime
+import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np
 import pandas as pd
 import requests
+
+import matplotlib
+matplotlib.use("Agg")  # GitHub Actions gibi ekransiz ortamlarda calismak icin
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
 
 # data-api.binance.vision Binance'in genel (herkese acik) piyasa verisi aynasidir;
 # api.binance.com bazi bulut saglayici IP araliklarini (or. GitHub Actions) engelleyebiliyor,
@@ -42,6 +48,12 @@ TIMEFRAME_CONFIRM = "1h"
 MAX_WORKERS = 8                          # es zamanli istek sayisi
 REQUEST_TIMEOUT = 10
 NOTIFY_COOLDOWN_SECONDS = 2 * 60 * 60    # guclu sinyal bildirimleri arasinda en az bu kadar bekle (spam onleme)
+
+# Bildirime eklenen grafik gorseli icin ayarlar
+CHART_TIMEFRAME = "4h"                   # bildirime eklenen grafigin zaman dilimi
+CHART_KLINES_LIMIT = 60                  # grafikte gosterilen mum sayisi (60 x 4h ~ 10 gun)
+CHART_FILENAME = "latest_chart.png"
+GITHUB_REPO_RAW_BASE = "https://raw.githubusercontent.com/mehmetkural/crypto-utbot-linreg-scanner/main"
 
 # Leveraged token / stablecoin-stablecoin gibi anlamsiz pariteleri disla
 EXCLUDE_SUFFIXES = ("UPUSDT", "DOWNUSDT", "BULLUSDT", "BEARUSDT")
@@ -83,7 +95,88 @@ def save_last_notified_at(dt):
         json.dump({"last_notified_at": dt.isoformat()}, f)
 
 
-def send_ntfy(message, title=None, priority="default", click_url=None):
+# ---------------------------------------------------------------------------
+# Bildirime eklenen grafik gorseli
+# ---------------------------------------------------------------------------
+def generate_candlestick_chart(symbol, df, out_path, timeframe_label):
+    """Verilen kline DataFrame'inden (get_klines formatinda) basit bir mum grafigi PNG'si uretir."""
+    opens = df["open"].values
+    highs = df["high"].values
+    lows = df["low"].values
+    closes = df["close"].values
+    n = len(df)
+
+    fig, ax = plt.subplots(figsize=(8, 4.5), dpi=120)
+    fig.patch.set_facecolor("#0d1117")
+    ax.set_facecolor("#0d1117")
+
+    for i in range(n):
+        up = closes[i] >= opens[i]
+        color = "#26a69a" if up else "#ef5350"
+        ax.plot([i, i], [lows[i], highs[i]], color=color, linewidth=1)
+        body_bottom = min(opens[i], closes[i])
+        body_height = abs(closes[i] - opens[i])
+        if body_height <= 0:
+            body_height = (highs[i] - lows[i]) * 0.01 or 0.0001
+        ax.add_patch(Rectangle((i - 0.3, body_bottom), 0.6, body_height, color=color))
+
+    ax.set_xlim(-1, n)
+    ax.set_title(f"{symbol}  ({timeframe_label})", color="white", fontsize=13)
+    ax.tick_params(colors="white")
+    for spine in ax.spines.values():
+        spine.set_color("#333333")
+    ax.grid(color="#222222", linewidth=0.5)
+
+    step = max(n // 6, 1)
+    tick_positions = list(range(0, n, step))
+    tick_labels = [
+        datetime.datetime.fromtimestamp(int(df["open_time"].iloc[p]) / 1000, tz=datetime.timezone.utc).strftime("%d/%m %H:%M")
+        for p in tick_positions
+    ]
+    ax.set_xticks(tick_positions)
+    ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=8)
+
+    fig.tight_layout()
+    fig.savefig(out_path, facecolor=fig.get_facecolor())
+    plt.close(fig)
+
+
+# ---------------------------------------------------------------------------
+# Repo'ya commit/push (notify_state.json ve grafik gorseli icin)
+# ---------------------------------------------------------------------------
+def run_git(*args):
+    repo_dir = __file__.rsplit("/", 1)[0]
+    return subprocess.run(["git", *args], cwd=repo_dir, capture_output=True, text=True)
+
+
+def commit_and_push_files(paths, message):
+    """Verilen dosyalari (degisiklik varsa) commit'leyip push eder. Basarili/gereksizse True doner."""
+    run_git("add", *paths)
+    status_res = run_git("status", "--porcelain", *paths)
+    if not status_res.stdout.strip():
+        log("Commit edilecek degisiklik yok.")
+        return True
+
+    run_git("config", "user.name", "github-actions[bot]")
+    run_git("config", "user.email", "github-actions[bot]@users.noreply.github.com")
+
+    commit_res = run_git("commit", "-m", message)
+    if commit_res.returncode != 0:
+        log(f"git commit hatasi: {commit_res.stderr.strip()}")
+        return False
+
+    push_res = run_git("push")
+    if push_res.returncode != 0:
+        log(f"git push basarisiz, pull --rebase deneniyor: {push_res.stderr.strip()}")
+        run_git("pull", "--rebase")
+        push_res = run_git("push")
+        if push_res.returncode != 0:
+            log(f"git push tekrar basarisiz: {push_res.stderr.strip()}")
+            return False
+    return True
+
+
+def send_ntfy(message, title=None, priority="default", click_url=None, attach_url=None):
     """NTFY_TOPIC ortam degiskeni tanimliysa ntfy.sh uzerinden push bildirimi gonderir."""
     topic = os.environ.get("NTFY_TOPIC")
     if not topic:
@@ -92,6 +185,9 @@ def send_ntfy(message, title=None, priority="default", click_url=None):
     headers = {"Priority": priority}
     if title:
         headers["Title"] = title.encode("utf-8")
+    if attach_url:
+        # Bildirime bir gorsel ekler (ornegin sinyal coininin grafigi)
+        headers["Attach"] = attach_url
     if click_url:
         # Bildirime tiklaninca dogrudan bu linki acar (tek sinyal varsa TradingView grafigi)
         headers["Click"] = click_url
@@ -365,10 +461,33 @@ if __name__ == "__main__":
             ]
             # Tek sinyal varsa bildirime tiklaninca dogrudan o coinin TradingView grafigi acilsin
             click_url = tradingview_url(signals[0]["symbol"]) if len(signals) == 1 else None
+            save_last_notified_at(now_utc)
+
+            # Tek sinyal varsa 4 saatlik mum grafigi olusturup bildirime gorsel olarak ekle
+            attach_url = None
+            if len(signals) == 1:
+                try:
+                    chart_symbol = signals[0]["symbol"]
+                    df_chart = get_klines(chart_symbol, CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT)
+                    chart_path = __file__.rsplit("/", 1)[0] + "/" + CHART_FILENAME
+                    generate_candlestick_chart(chart_symbol, df_chart, chart_path, CHART_TIMEFRAME)
+                    pushed = commit_and_push_files(
+                        [CHART_FILENAME, "notify_state.json"],
+                        "Guclu sinyal grafigi ve bildirim durumu guncellendi",
+                    )
+                    if pushed:
+                        attach_url = f"{GITHUB_REPO_RAW_BASE}/{CHART_FILENAME}"
+                    else:
+                        log("Grafik push edilemedi, bildirim gorselsiz gonderilecek.")
+                except Exception as e:
+                    log(f"Grafik olusturma hatasi, bildirim gorselsiz gonderilecek: {e}")
+            else:
+                commit_and_push_files(["notify_state.json"], "Bildirim zaman damgasi guncellendi")
+
             send_ntfy(
                 "\n\n".join(lines),
                 title=f"{len(signals)} Guclu Sinyal (15m/1h UT Bot + LinReg)",
                 priority="high",
                 click_url=click_url,
+                attach_url=attach_url,
             )
-            save_last_notified_at(now_utc)

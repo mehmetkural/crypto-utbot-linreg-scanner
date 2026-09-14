@@ -55,6 +55,11 @@ CHART_KLINES_LIMIT = 60                  # grafikte gosterilen mum sayisi (60 x 
 CHART_FILENAME = "latest_chart.png"
 GITHUB_REPO_RAW_BASE = "https://raw.githubusercontent.com/mehmetkural/crypto-utbot-linreg-scanner/main"
 
+# GitHub Pages paneli icin sinyal gecmisi ayarlari
+HISTORY_FILENAME = "signals_history.json"
+HISTORY_MAX_ENTRIES = 300                # gecmiste tutulan en fazla sinyal sayisi
+HISTORY_EVAL_HORIZON_SECONDS = 4 * 60 * 60   # sinyalden bu kadar sure sonra isabet/kacirma degerlendirmesi yapilir
+
 # Leveraged token / stablecoin-stablecoin gibi anlamsiz pariteleri disla
 EXCLUDE_SUFFIXES = ("UPUSDT", "DOWNUSDT", "BULLUSDT", "BEARUSDT")
 EXCLUDE_SYMBOLS = {
@@ -93,6 +98,81 @@ def save_last_notified_at(dt):
     """En son bildirim zamanini notify_state.json'a yazar (repo'ya commitlenip calisma boyunca kalici olur)."""
     with open(notify_state_path(), "w") as f:
         json.dump({"last_notified_at": dt.isoformat()}, f)
+
+
+# ---------------------------------------------------------------------------
+# GitHub Pages paneli icin sinyal gecmisi (signals_history.json)
+# ---------------------------------------------------------------------------
+def history_path():
+    return __file__.rsplit("/", 1)[0] + "/" + HISTORY_FILENAME
+
+
+def load_history():
+    """signals_history.json'daki gecmis GUCLU sinyal kayitlarini okur. Yoksa bos liste doner."""
+    try:
+        with open(history_path()) as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+
+def save_history(history):
+    """Sinyal gecmisini signals_history.json'a yazar (repo'ya commitlenip GitHub Pages panelinden okunur)."""
+    with open(history_path(), "w") as f:
+        json.dump(history, f, indent=2)
+
+
+def update_history_with_new_signals(history, strong_signals, now_utc):
+    """Yeni GUCLU sinyalleri gecmise ekler (ayni sembol + ayni 15dk mumu tekrar eklenmez)."""
+    existing_keys = {(h["symbol"], h["bar_time_15m"]) for h in history}
+    for s in strong_signals:
+        key = (s["symbol"], s["bar_time_15m"])
+        if key in existing_keys:
+            continue
+        history.append({
+            "symbol": s["symbol"],
+            "direction": s["strong_signal"],          # "GUCLU_AL" | "GUCLU_SAT"
+            "bar_time_15m": s["bar_time_15m"],
+            "detected_at_utc": now_utc.isoformat(timespec="seconds"),
+            "price_at_signal": s["last_close"],
+            "evaluated": False,
+            "outcome": None,                            # "hit" | "miss" (evaluated=True olunca dolar)
+            "price_after": None,
+            "evaluated_at": None,
+        })
+        existing_keys.add(key)
+    # En yeni kayit en basta olacak sekilde sirala, listeyi HISTORY_MAX_ENTRIES ile sinirla
+    history.sort(key=lambda h: h["detected_at_utc"], reverse=True)
+    return history[:HISTORY_MAX_ENTRIES]
+
+
+def evaluate_pending_history(history, results_lookup, now_utc):
+    """
+    Henuz degerlendirilmemis kayitlar icin, sinyal uzerinden HISTORY_EVAL_HORIZON_SECONDS
+    kadar sure gectiyse ve sembol bu taramada tekrar cekildiyse (run_scan sonuclarindan,
+    EKSTRA API cagrisi yapmadan) isabet/kacirma (hit/miss) degerlendirmesi yapar.
+    """
+    for h in history:
+        if h["evaluated"]:
+            continue
+        try:
+            detected_at = datetime.datetime.fromisoformat(h["detected_at_utc"])
+        except Exception:
+            continue
+        if (now_utc - detected_at).total_seconds() < HISTORY_EVAL_HORIZON_SECONDS:
+            continue
+        current_price = results_lookup.get(h["symbol"])
+        if current_price is None:
+            continue  # bu sembol bu taramada yok (hacim filtresi vb.), sonraki taramada tekrar denenir
+        if h["direction"] == "GUCLU_AL":
+            outcome = "hit" if current_price > h["price_at_signal"] else "miss"
+        else:
+            outcome = "hit" if current_price < h["price_at_signal"] else "miss"
+        h["evaluated"] = True
+        h["outcome"] = outcome
+        h["price_after"] = current_price
+        h["evaluated_at"] = now_utc.isoformat(timespec="seconds")
+    return history
 
 
 # ---------------------------------------------------------------------------
@@ -569,6 +649,24 @@ if __name__ == "__main__":
         print(json.dumps(summary))
     else:
         log(f"Sonuclar kaydedildi: {out_path}")
+
+    # --- GitHub Pages paneli icin: sinyal gecmisini guncelle/degerlendir ve
+    # son tarama sonuclarini + gecmisi her calismada repo'ya commitle
+    # (bildirim gonderilsin ya da gonderilmesin, panel her zaman guncel kalsin) ---
+    try:
+        history = load_history()
+        now_hist = datetime.datetime.now(datetime.timezone.utc)
+        results_lookup = {r["symbol"]: r["last_close"] for r in summary["all_results"]}
+        history = evaluate_pending_history(history, results_lookup, now_hist)
+        history = update_history_with_new_signals(history, summary["strong_signals"], now_hist)
+        save_history(history)
+    except Exception as e:
+        log(f"Sinyal gecmisi guncellenirken hata: {e}")
+    if not commit_and_push_files(
+        ["latest_signals.json", HISTORY_FILENAME],
+        "Panel verileri guncellendi (son tarama + sinyal gecmisi)",
+    ):
+        log("Panel verileri (latest_signals.json / signals_history.json) push edilemedi.")
 
     if os.environ.get("FORCE_TEST_NOTIFY"):
         # Test bildirimine ornek bir grafik de ekleyerek gorsel ozelligin

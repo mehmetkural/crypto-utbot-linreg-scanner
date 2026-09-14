@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crypto UT Bot + LinReg Scanner - Panel</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --panel-border: #30363d;
+    --text: #e6edf3;
+    --text-dim: #8b949e;
+    --green: #26a69a;
+    --red: #ef5350;
+    --blue: #4fc3f7;
+    --orange: #ffb74d;
+    --yellow: #d2c25a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 16px;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; }
+  header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: 20px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sub {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-top: 4px;
+  }
+  #refreshBtn {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    color: var(--text);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  #refreshBtn:hover { border-color: var(--blue); color: var(--blue); }
+  #refreshBtn.spinning svg { animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .card .label {
+    color: var(--text-dim);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .card .value {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .card .value.green { color: var(--green); }
+  .card .value.red { color: var(--red); }
+  .card .value.blue { color: var(--blue); }
+  .card .value.yellow { color: var(--yellow); }
+
+  section {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  section h2 {
+    font-size: 15px;
+    margin: 0 0 12px 0;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  section h2 .count {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-weight: normal;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td {
+    text-align: left;
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--panel-border);
+    white-space: nowrap;
+  }
+  th {
+    color: var(--text-dim);
+    font-weight: 500;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  tr:last-child td { border-bottom: none; }
+  a { color: var(--blue); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge.al { background: rgba(38,166,154,0.18); color: var(--green); }
+  .badge.sat { background: rgba(239,83,80,0.18); color: var(--red); }
+  .badge.hit { background: rgba(38,166,154,0.18); color: var(--green); }
+  .badge.miss { background: rgba(239,83,80,0.18); color: var(--red); }
+  .badge.pending { background: rgba(210,194,90,0.18); color: var(--yellow); }
+
+  .history-scroll { max-height: 420px; overflow-y: auto; }
+
+  .empty {
+    color: var(--text-dim);
+    font-size: 13px;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  #chartImg {
+    max-width: 100%;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+  }
+  .chart-empty {
+    color: var(--text-dim);
+    font-size: 13px;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  footer {
+    color: var(--text-dim);
+    font-size: 12px;
+    text-align: center;
+    padding: 20px 0 6px;
+  }
+  footer a { color: var(--text-dim); }
+
+  @media (max-width: 480px) {
+    th, td { padding: 6px 6px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>📈 Crypto UT Bot + LinReg Scanner</h1>
+      <div class="sub" id="lastScanLine">Yukleniyor...</div>
+    </div>
+    <button id="refreshBtn" onclick="load()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M23 4v6h-6"/><path d="M1 20v-6h6"/>
+        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+      </svg>
+      Yenile
+    </button>
+  </header>
+
+  <div class="cards">
+    <div class="card">
+      <div class="label">Taranan Parite</div>
+      <div class="value blue" id="statScanned">-</div>
+    </div>
+    <div class="card">
+      <div class="label">Aktif Guclu Sinyal</div>
+      <div class="value yellow" id="statStrong">-</div>
+    </div>
+    <div class="card">
+      <div class="label">Toplam Kayit (Gecmis)</div>
+      <div class="value" id="statHistTotal">-</div>
+    </div>
+    <div class="card">
+      <div class="label">Isabet Orani</div>
+      <div class="value green" id="statHitRate">-</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Son 4 Saatlik Grafik</h2>
+    <img id="chartImg" src="latest_chart.png" alt="Son sinyal grafigi" onerror="chartMissing()">
+    <div class="chart-empty" id="chartEmpty" style="display:none;">Henuz gonderilmis bir sinyal grafigi yok.</div>
+  </section>
+
+  <section>
+    <h2>Guncel Sinyaller <span class="count" id="currentCount"></span></h2>
+    <div id="currentTableWrap">
+      <table>
+        <thead>
+          <tr><th>Sembol</th><th>Yon</th><th>UT Trend (15m)</th><th>LinReg (15m)</th><th>LinReg (1h)</th><th>Son Fiyat</th></tr>
+        </thead>
+        <tbody id="currentTbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="currentEmpty" style="display:none;">Su an aktif GUCLU AL/SAT sinyali yok.</div>
+  </section>
+
+  <section>
+    <h2>Sinyal Gecmisi <span class="count" id="historyCount"></span></h2>
+    <div class="history-scroll">
+      <table>
+        <thead>
+          <tr><th>Tespit</th><th>Sembol</th><th>Yon</th><th>Fiyat</th><th>Sonuc</th><th>Sonraki Fiyat</th></tr>
+        </thead>
+        <tbody id="historyTbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="historyEmpty" style="display:none;">Henuz kaydedilmis sinyal gecmisi yok.</div>
+  </section>
+
+  <footer>
+    30 saniyede bir otomatik yenilenir &middot; <a href="https://github.com/mehmetkural/crypto-utbot-linreg-scanner" target="_blank">GitHub reposu</a>
+  </footer>
+</div>
+
+<script>
+const REFRESH_MS = 30000;
+
+function fmtTime(iso) {
+  if (!iso) return "-";
+  try {
+    const d = new Date(iso);
+    return d.toLocaleString('tr-TR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+  } catch (e) { return iso; }
+}
+
+function fmtPrice(p) {
+  if (p === null || p === undefined) return "-";
+  const n = Number(p);
+  if (n >= 100) return n.toFixed(2);
+  if (n >= 1) return n.toFixed(4);
+  return n.toPrecision(4);
+}
+
+function tradingViewUrl(symbol) {
+  return `https://www.tradingview.com/chart/?symbol=BINANCE:${symbol}`;
+}
+
+function directionBadge(direction) {
+  if (direction === "GUCLU_AL" || direction === "buy") return `<span class="badge al">AL</span>`;
+  if (direction === "GUCLU_SAT" || direction === "sell") return `<span class="badge sat">SAT</span>`;
+  return `<span class="badge pending">-</span>`;
+}
+
+function outcomeBadge(h) {
+  if (!h.evaluated) return `<span class="badge pending">Beklemede</span>`;
+  if (h.outcome === "hit") return `<span class="badge hit">Isabet</span>`;
+  if (h.outcome === "miss") return `<span class="badge miss">Kacti</span>`;
+  return `<span class="badge pending">-</span>`;
+}
+
+async function fetchJson(path) {
+  const res = await fetch(`${path}?t=${Date.now()}`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
+  return await res.json();
+}
+
+function chartMissing() {
+  document.getElementById('chartImg').style.display = 'none';
+  document.getElementById('chartEmpty').style.display = 'block';
+}
+
+function renderLatest(summary) {
+  document.getElementById('lastScanLine').textContent =
+    `Son tarama: ${fmtTime(summary.scanned_at_utc)} UTC  ·  ${summary.symbols_scanned} parite tarandi  ·  ${summary.symbols_errored} hata`;
+  document.getElementById('statScanned').textContent = summary.symbols_scanned ?? '-';
+  document.getElementById('statStrong').textContent = summary.strong_signal_count ?? 0;
+
+  const signals = summary.strong_signals || [];
+  document.getElementById('currentCount').textContent = signals.length ? `(${signals.length})` : "";
+  const tbody = document.getElementById('currentTbody');
+  tbody.innerHTML = "";
+  if (!signals.length) {
+    document.getElementById('currentEmpty').style.display = 'block';
+    document.getElementById('currentTableWrap').style.display = 'none';
+  } else {
+    document.getElementById('currentEmpty').style.display = 'none';
+    document.getElementById('currentTableWrap').style.display = 'block';
+    for (const s of signals) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><a href="${tradingViewUrl(s.symbol)}" target="_blank">${s.symbol}</a></td>
+        <td>${directionBadge(s.strong_signal)}</td>
+        <td>${s.ut_trend_15m ?? '-'}</td>
+        <td>${s.linreg_15m ?? '-'}</td>
+        <td>${s.linreg_1h ?? '-'}</td>
+        <td>${fmtPrice(s.last_close)}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  }
+}
+
+function renderStats(history) {
+  const evaluated = history.filter(h => h.evaluated);
+  const hits = evaluated.filter(h => h.outcome === "hit").length;
+  document.getElementById('statHistTotal').textContent = history.length;
+  const hitRateEl = document.getElementById('statHitRate');
+  if (evaluated.length === 0) {
+    hitRateEl.textContent = "-";
+    hitRateEl.className = "value";
+  } else {
+    const rate = (hits / evaluated.length) * 100;
+    hitRateEl.textContent = `${rate.toFixed(0)}% (${hits}/${evaluated.length})`;
+    hitRateEl.className = rate >= 50 ? "value green" : "value red";
+  }
+}
+
+function renderHistory(history) {
+  document.getElementById('historyCount').textContent = history.length ? `(${history.length})` : "";
+  const tbody = document.getElementById('historyTbody');
+  tbody.innerHTML = "";
+  if (!history.length) {
+    document.getElementById('historyEmpty').style.display = 'block';
+    return;
+  }
+  document.getElementById('historyEmpty').style.display = 'none';
+  for (const h of history) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${fmtTime(h.detected_at_utc)}</td>
+      <td><a href="${tradingViewUrl(h.symbol)}" target="_blank">${h.symbol}</a></td>
+      <td>${directionBadge(h.direction)}</td>
+      <td>${fmtPrice(h.price_at_signal)}</td>
+      <td>${outcomeBadge(h)}</td>
+      <td>${fmtPrice(h.price_after)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+async function load() {
+  const btn = document.getElementById('refreshBtn');
+  btn.classList.add('spinning');
+  try {
+    const [summary, history] = await Promise.all([
+      fetchJson('latest_signals.json'),
+      fetchJson('signals_history.json').catch(() => []),
+    ]);
+    renderLatest(summary);
+    renderStats(history);
+    renderHistory(history);
+    // grafik da yenilensin (cache-bust)
+    document.getElementById('chartImg').style.display = '';
+    document.getElementById('chartEmpty').style.display = 'none';
+    document.getElementById('chartImg').src = `latest_chart.png?t=${Date.now()}`;
+  } catch (e) {
+    document.getElementById('lastScanLine').textContent = `Veri yuklenemedi: ${e.message}`;
+    console.error(e);
+  } finally {
+    setTimeout(() => btn.classList.remove('spinning'), 400);
+  }
+}
+
+load();
+setInterval(load, REFRESH_MS);
+</script>
+</body>
+</html>

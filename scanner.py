@@ -98,16 +98,14 @@ def save_last_notified_at(dt):
 # ---------------------------------------------------------------------------
 # Bildirime eklenen grafik gorseli
 # ---------------------------------------------------------------------------
-def generate_candlestick_chart(symbol, df, out_path, timeframe_label):
-    """Verilen kline DataFrame'inden (get_klines formatinda) basit bir mum grafigi PNG'si uretir."""
+def _draw_candlestick_panel(ax, symbol, df, timeframe_label):
+    """Verilen eksene (ax) tek bir sembolun mum grafigini cizer."""
     opens = df["open"].values
     highs = df["high"].values
     lows = df["low"].values
     closes = df["close"].values
     n = len(df)
 
-    fig, ax = plt.subplots(figsize=(8, 4.5), dpi=120)
-    fig.patch.set_facecolor("#0d1117")
     ax.set_facecolor("#0d1117")
 
     for i in range(n):
@@ -121,20 +119,42 @@ def generate_candlestick_chart(symbol, df, out_path, timeframe_label):
         ax.add_patch(Rectangle((i - 0.3, body_bottom), 0.6, body_height, color=color))
 
     ax.set_xlim(-1, n)
-    ax.set_title(f"{symbol}  ({timeframe_label})", color="white", fontsize=13)
-    ax.tick_params(colors="white")
+    ax.set_title(f"{symbol}  ({timeframe_label})", color="white", fontsize=12)
+    ax.tick_params(colors="white", labelsize=8)
     for spine in ax.spines.values():
         spine.set_color("#333333")
     ax.grid(color="#222222", linewidth=0.5)
 
-    step = max(n // 6, 1)
+    step = max(n // 5, 1)
     tick_positions = list(range(0, n, step))
     tick_labels = [
         datetime.datetime.fromtimestamp(int(df["open_time"].iloc[p]) / 1000, tz=datetime.timezone.utc).strftime("%d/%m %H:%M")
         for p in tick_positions
     ]
     ax.set_xticks(tick_positions)
-    ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=8)
+    ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
+
+
+def generate_signals_chart(symbol_dfs, out_path, timeframe_label):
+    """
+    Bir veya birden fazla sinyal sembolunun mum grafigini tek bir PNG'de izgara
+    (grid) halinde birlestirir; ntfy bildirimine tek gorsel olarak eklenir.
+    symbol_dfs: [(symbol, df), ...]
+    """
+    n = len(symbol_dfs)
+    cols = 1 if n == 1 else (2 if n <= 4 else 3)
+    rows = (n + cols - 1) // cols
+
+    fig, axes = plt.subplots(rows, cols, figsize=(cols * 6, rows * 4), dpi=110, squeeze=False)
+    fig.patch.set_facecolor("#0d1117")
+
+    for idx, (symbol, df) in enumerate(symbol_dfs):
+        ax = axes[idx // cols][idx % cols]
+        _draw_candlestick_panel(ax, symbol, df, timeframe_label)
+
+    # Kullanilmayan izgara hucrelerini gizle (grid tam dolmadiysa)
+    for idx in range(n, rows * cols):
+        axes[idx // cols][idx % cols].axis("off")
 
     fig.tight_layout()
     fig.savefig(out_path, facecolor=fig.get_facecolor())
@@ -463,25 +483,26 @@ if __name__ == "__main__":
             click_url = tradingview_url(signals[0]["symbol"]) if len(signals) == 1 else None
             save_last_notified_at(now_utc)
 
-            # Tek sinyal varsa 4 saatlik mum grafigi olusturup bildirime gorsel olarak ekle
+            # Sinyal sayisi ne olursa olsun, tum sinyal coinlerinin 4 saatlik mum
+            # grafigini tek bir gorselde (izgara halinde) birlestirip bildirime ekle
             attach_url = None
-            if len(signals) == 1:
-                try:
-                    chart_symbol = signals[0]["symbol"]
-                    df_chart = get_klines(chart_symbol, CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT)
-                    chart_path = __file__.rsplit("/", 1)[0] + "/" + CHART_FILENAME
-                    generate_candlestick_chart(chart_symbol, df_chart, chart_path, CHART_TIMEFRAME)
-                    pushed = commit_and_push_files(
-                        [CHART_FILENAME, "notify_state.json"],
-                        "Guclu sinyal grafigi ve bildirim durumu guncellendi",
-                    )
-                    if pushed:
-                        attach_url = f"{GITHUB_REPO_RAW_BASE}/{CHART_FILENAME}"
-                    else:
-                        log("Grafik push edilemedi, bildirim gorselsiz gonderilecek.")
-                except Exception as e:
-                    log(f"Grafik olusturma hatasi, bildirim gorselsiz gonderilecek: {e}")
-            else:
+            try:
+                symbol_dfs = [
+                    (s["symbol"], get_klines(s["symbol"], CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT))
+                    for s in signals
+                ]
+                chart_path = __file__.rsplit("/", 1)[0] + "/" + CHART_FILENAME
+                generate_signals_chart(symbol_dfs, chart_path, CHART_TIMEFRAME)
+                pushed = commit_and_push_files(
+                    [CHART_FILENAME, "notify_state.json"],
+                    "Guclu sinyal grafigi ve bildirim durumu guncellendi",
+                )
+                if pushed:
+                    attach_url = f"{GITHUB_REPO_RAW_BASE}/{CHART_FILENAME}"
+                else:
+                    log("Grafik push edilemedi, bildirim gorselsiz gonderilecek.")
+            except Exception as e:
+                log(f"Grafik olusturma hatasi, bildirim gorselsiz gonderilecek: {e}")
                 commit_and_push_files(["notify_state.json"], "Bildirim zaman damgasi guncellendi")
 
             send_ntfy(

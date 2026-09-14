@@ -98,28 +98,103 @@ def save_last_notified_at(dt):
 # ---------------------------------------------------------------------------
 # Bildirime eklenen grafik gorseli
 # ---------------------------------------------------------------------------
-def _draw_candlestick_panel(ax, symbol, df, timeframe_label):
-    """Verilen eksene (ax) tek bir sembolun mum grafigini cizer."""
-    opens = df["open"].values
-    highs = df["high"].values
-    lows = df["low"].values
-    closes = df["close"].values
+def heikin_ashi(df):
+    """
+    Verilen OHLC DataFrame'inden Heikin Ashi mumlarini hesaplar.
+    Donus: open_time, open, high, low, close kolonlarini iceren yeni bir DataFrame.
+    """
+    o = df["open"].values
+    h = df["high"].values
+    l = df["low"].values
+    c = df["close"].values
     n = len(df)
+
+    ha_close = (o + h + l + c) / 4
+    ha_open = np.empty(n)
+    ha_open[0] = (o[0] + c[0]) / 2
+    for i in range(1, n):
+        ha_open[i] = (ha_open[i - 1] + ha_close[i - 1]) / 2
+    ha_high = np.maximum.reduce([h, ha_open, ha_close])
+    ha_low = np.minimum.reduce([l, ha_open, ha_close])
+
+    return pd.DataFrame({
+        "open_time": df["open_time"].values,
+        "open": ha_open,
+        "high": ha_high,
+        "low": ha_low,
+        "close": ha_close,
+    })
+
+
+def _draw_candlestick_panel(ax, symbol, df, timeframe_label):
+    """
+    Verilen eksene (ax) Heikin Ashi mumlarini, UT Bot ATR trailing-stop cizgisini
+    (al/sat ok isaretleriyle) ve LinReg Candle trend seridini birlikte cizer.
+    """
+    ha = heikin_ashi(df)
+    opens = ha["open"].values
+    highs = ha["high"].values
+    lows = ha["low"].values
+    closes = ha["close"].values
+    n = len(ha)
+
+    close_raw = df["close"].values
+    stop = _ut_bot_stop_series(df, UT_KEY_VALUE, UT_ATR_PERIOD)
+    linreg_colors = _linreg_color_series(df, LINREG_LENGTH)
 
     ax.set_facecolor("#0d1117")
 
+    # --- Heikin Ashi mumlari ---
     for i in range(n):
         up = closes[i] >= opens[i]
         color = "#26a69a" if up else "#ef5350"
-        ax.plot([i, i], [lows[i], highs[i]], color=color, linewidth=1)
+        ax.plot([i, i], [lows[i], highs[i]], color=color, linewidth=1, zorder=2)
         body_bottom = min(opens[i], closes[i])
         body_height = abs(closes[i] - opens[i])
         if body_height <= 0:
             body_height = (highs[i] - lows[i]) * 0.01 or 0.0001
-        ax.add_patch(Rectangle((i - 0.3, body_bottom), 0.6, body_height, color=color))
+        ax.add_patch(Rectangle((i - 0.3, body_bottom), 0.6, body_height, color=color, zorder=2))
 
+    # --- UT Bot trailing-stop cizgisi (trend yonune gore renkli) ---
+    xs = np.arange(n)
+    valid = ~np.isnan(stop)
+    up_line = np.where(valid & (close_raw > stop), stop, np.nan)
+    down_line = np.where(valid & (close_raw <= stop), stop, np.nan)
+    ax.plot(xs, up_line, color="#4fc3f7", linewidth=1.4, alpha=0.9, zorder=3)
+    ax.plot(xs, down_line, color="#ffb74d", linewidth=1.4, alpha=0.9, zorder=3)
+
+    # --- Al/Sat ok isaretleri (UT Bot stop cizgisinin kesildigi noktalar) ---
+    for i in range(1, n):
+        if not valid[i] or not valid[i - 1]:
+            continue
+        prev_up = close_raw[i - 1] > stop[i - 1]
+        cur_up = close_raw[i] > stop[i]
+        if not prev_up and cur_up:
+            ax.scatter([i], [lows[i]], marker="^", color="#26a69a", s=50, zorder=5, edgecolors="white", linewidths=0.4)
+        elif prev_up and not cur_up:
+            ax.scatter([i], [highs[i]], marker="v", color="#ef5350", s=50, zorder=5, edgecolors="white", linewidths=0.4)
+
+    # --- Eksen limitleri (stop cizgisi dahil) + LinReg seridi icin alt bosluk ---
+    y_candidates = [highs, lows]
+    if valid.any():
+        y_candidates.append(stop[valid])
+    y_max = max(np.nanmax(a) for a in y_candidates)
+    y_min = min(np.nanmin(a) for a in y_candidates)
+    y_range = (y_max - y_min) or (y_max * 0.01) or 1.0
+    band_h = y_range * 0.05
+    band_gap = y_range * 0.03
+    band_y = y_min - band_gap - band_h
+
+    # --- LinReg Candle trend seridi (alt kisimda renkli serit) ---
+    for i in range(n):
+        c = linreg_colors[i]
+        if c is None:
+            continue
+        ax.add_patch(Rectangle((i - 0.5, band_y), 1.0, band_h, color=("#26a69a" if c == "green" else "#ef5350"), linewidth=0, zorder=2))
+
+    ax.set_ylim(band_y - band_gap, y_max + y_range * 0.05)
     ax.set_xlim(-1, n)
-    ax.set_title(f"{symbol}  ({timeframe_label})", color="white", fontsize=12)
+    ax.set_title(f"{symbol}  ({timeframe_label}) - HA + UT Bot + LinReg", color="white", fontsize=11)
     ax.tick_params(colors="white", labelsize=8)
     for spine in ax.spines.values():
         spine.set_color("#333333")
@@ -302,21 +377,21 @@ def wilder_atr(df, period):
     return atr
 
 
-def ut_bot_signal(df, key_value=UT_KEY_VALUE, atr_period=UT_ATR_PERIOD):
+def _ut_bot_stop_series(df, key_value=UT_KEY_VALUE, atr_period=UT_ATR_PERIOD):
     """
-    UT Bot Alerts (QuantNomad) mantigi.
-    Donus: ('buy' | 'sell' | None, trend) -- trend: 'up' | 'down' | None
-    Sinyal, SON KAPANAN mum icin hesaplanir (df'in son satiri).
+    UT Bot Alerts (QuantNomad) ATR trailing-stop cizgisini TUM barlar icin hesaplar
+    (grafik cizimi icin de kullanilir). ut_bot_signal() bu dizinin sadece son iki
+    degerini kullanarak sinyal karari verir; hesaplama mantigi birebir aynidir.
+    Donus: stop degerlerini iceren numpy dizisi (henuz stabil olmayan barlarda NaN).
     """
     close = df["close"].values
     atr = wilder_atr(df, atr_period)
     n_loss = key_value * atr
 
     start = atr_period  # ATR stabilize olana kadar bekle
-    if len(close) <= start + 2:
-        return None, None
-
     stop = np.full(len(close), np.nan)
+    if len(close) <= start:
+        return stop
     stop[start] = close[start]  # baslangic degeri
 
     for i in range(start + 1, len(close)):
@@ -334,6 +409,21 @@ def ut_bot_signal(df, key_value=UT_KEY_VALUE, atr_period=UT_ATR_PERIOD):
             stop[i] = c - nl
         else:
             stop[i] = c + nl
+
+    return stop
+
+
+def ut_bot_signal(df, key_value=UT_KEY_VALUE, atr_period=UT_ATR_PERIOD):
+    """
+    UT Bot Alerts (QuantNomad) mantigi.
+    Donus: ('buy' | 'sell' | None, trend) -- trend: 'up' | 'down' | None
+    Sinyal, SON KAPANAN mum icin hesaplanir (df'in son satiri).
+    """
+    close = df["close"].values
+    if len(close) <= atr_period + 2:
+        return None, None
+
+    stop = _ut_bot_stop_series(df, key_value, atr_period)
 
     last, prev = len(close) - 1, len(close) - 2
     if np.isnan(stop[last]) or np.isnan(stop[prev]):
@@ -375,6 +465,25 @@ def linreg_trend(df, length=LINREG_LENGTH):
     lr_close = _linreg_endpoint(window_close)
     lr_open = _linreg_endpoint(window_open)
     return "green" if lr_close >= lr_open else "red"
+
+
+def _linreg_color_series(df, length=LINREG_LENGTH):
+    """
+    LinReg Candle trend rengini HER bar icin hesaplar (grafikte alt serit olarak
+    gosterilir). linreg_trend() ile ayni mantigi kullanir, tum barlar icin tekrarlar.
+    Donus: uzunlugu len(df) olan liste; 'green' | 'red' | None (pencere dolmadiysa).
+    """
+    closes = df["close"].values
+    opens = df["open"].values
+    n = len(df)
+    colors = [None] * n
+    for i in range(length - 1, n):
+        window_close = closes[i - length + 1: i + 1]
+        window_open = opens[i - length + 1: i + 1]
+        lr_close = _linreg_endpoint(window_close)
+        lr_open = _linreg_endpoint(window_open)
+        colors[i] = "green" if lr_close >= lr_open else "red"
+    return colors
 
 
 # ---------------------------------------------------------------------------

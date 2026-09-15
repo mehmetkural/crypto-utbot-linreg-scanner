@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "CELOUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789502400000,
+    "detected_at_utc": "2026-09-15T20:22:56+00:00",
+    "price_at_signal": 0.08162,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ROBOUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789502400000,
+    "detected_at_utc": "2026-09-15T20:22:56+00:00",
+    "price_at_signal": 0.0084,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "SIGNUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789502400000,
+    "detected_at_utc": "2026-09-15T20:22:56+00:00",
+    "price_at_signal": 0.01047,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BFUSDUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1789502400000,
@@ -2997,10 +3030,10 @@
     "bar_time_entry": 1789488000000,
     "detected_at_utc": "2026-09-15T16:07:57+00:00",
     "price_at_signal": 1.0,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.9999,
+    "evaluated_at": "2026-09-15T20:22:56+00:00"
   },
   {
     "symbol": "PROMUSDT",
@@ -3008,10 +3041,10 @@
     "bar_time_entry": 1789488000000,
     "detected_at_utc": "2026-09-15T16:07:57+00:00",
     "price_at_signal": 5.575,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 5.593,
+    "evaluated_at": "2026-09-15T20:22:56+00:00"
   },
   {
     "symbol": "ALTUSDT",
@@ -3019,10 +3052,10 @@
     "bar_time_entry": 1789488000000,
     "detected_at_utc": "2026-09-15T16:07:57+00:00",
     "price_at_signal": 0.00652,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.00641,
+    "evaluated_at": "2026-09-15T20:22:56+00:00"
   },
   {
     "symbol": "GUSDT",
@@ -3030,10 +3063,10 @@
     "bar_time_entry": 1789488000000,
     "detected_at_utc": "2026-09-15T16:07:57+00:00",
     "price_at_signal": 0.004,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.00423,
+    "evaluated_at": "2026-09-15T20:22:56+00:00"
   },
   {
     "symbol": "NEXOUSDT",
@@ -3041,10 +3074,10 @@
     "bar_time_entry": 1789488000000,
     "detected_at_utc": "2026-09-15T16:07:57+00:00",
     "price_at_signal": 0.799,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.794,
+    "evaluated_at": "2026-09-15T20:22:56+00:00"
   },
   {
     "symbol": "EIGENUSDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.1486,
-    "evaluated_at": "2026-09-15T19:37:48+00:00"
-  },
-  {
-    "symbol": "MUBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789484400000,
-    "detected_at_utc": "2026-09-15T15:22:57+00:00",
-    "price_at_signal": 930.14,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 924.9,
-    "evaluated_at": "2026-09-15T19:37:48+00:00"
-  },
-  {
-    "symbol": "POLUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789484400000,
-    "detected_at_utc": "2026-09-15T15:22:57+00:00",
-    "price_at_signal": 0.0972,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0949,
-    "evaluated_at": "2026-09-15T19:37:48+00:00"
-  },
-  {
-    "symbol": "VANAUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789484400000,
-    "detected_at_utc": "2026-09-15T15:22:57+00:00",
-    "price_at_signal": 0.95,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.926,
     "evaluated_at": "2026-09-15T19:37:48+00:00"
   }
 ]

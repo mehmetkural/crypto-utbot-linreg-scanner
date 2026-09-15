@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ENAUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789498800000,
+    "detected_at_utc": "2026-09-15T19:07:56+00:00",
+    "price_at_signal": 0.1414,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BNBUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1789495200000,
@@ -3129,10 +3140,10 @@
     "bar_time_entry": 1789484400000,
     "detected_at_utc": "2026-09-15T15:07:45+00:00",
     "price_at_signal": 0.000749,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00075,
+    "evaluated_at": "2026-09-15T19:07:56+00:00"
   },
   {
     "symbol": "OPNUSDT",
@@ -3140,10 +3151,10 @@
     "bar_time_entry": 1789484400000,
     "detected_at_utc": "2026-09-15T15:07:45+00:00",
     "price_at_signal": 0.0445,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0435,
+    "evaluated_at": "2026-09-15T19:07:56+00:00"
   },
   {
     "symbol": "BOMEUSDT",
@@ -3151,10 +3162,10 @@
     "bar_time_entry": 1789484400000,
     "detected_at_utc": "2026-09-15T15:07:45+00:00",
     "price_at_signal": 0.0008654,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0008535,
+    "evaluated_at": "2026-09-15T19:07:56+00:00"
   },
   {
     "symbol": "BROCCOLI714USDT",
@@ -3162,10 +3173,10 @@
     "bar_time_entry": 1789484400000,
     "detected_at_utc": "2026-09-15T15:07:45+00:00",
     "price_at_signal": 0.01797,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01785,
+    "evaluated_at": "2026-09-15T19:07:56+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 2.223,
-    "evaluated_at": "2026-09-15T18:52:53+00:00"
-  },
-  {
-    "symbol": "SOXLBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789480800000,
-    "detected_at_utc": "2026-09-15T14:52:51+00:00",
-    "price_at_signal": 102.2,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 101.35,
     "evaluated_at": "2026-09-15T18:52:53+00:00"
   }
 ]

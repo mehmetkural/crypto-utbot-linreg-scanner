@@ -29,6 +29,7 @@ import matplotlib
 matplotlib.use("Agg")  # GitHub Actions gibi ekransiz ortamlarda calismak icin
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
+from matplotlib.gridspec import GridSpec
 
 # data-api.binance.vision Binance'in genel (herkese acik) piyasa verisi aynasidir;
 # api.binance.com bazi bulut saglayici IP araliklarini (or. GitHub Actions) engelleyebiliyor,
@@ -52,6 +53,12 @@ NOTIFY_COOLDOWN_SECONDS = 2 * 60 * 60    # guclu sinyal bildirimleri arasinda en
 # Bildirime eklenen grafik gorseli icin ayarlar
 CHART_TIMEFRAME = "1h"                   # bildirime eklenen grafigin zaman dilimi
 CHART_KLINES_LIMIT = 60                  # grafikte gosterilen mum sayisi (60 x 1h ~ 2.5 gun)
+
+# MACD paneli ve uyumsuzluk (divergence) tespiti icin ayarlar
+MACD_FAST = 12
+MACD_SLOW = 26
+MACD_SIGNAL = 9
+MACD_DIVERGENCE_ORDER = 3                # swing (tepe/dip) noktasi icin +/- mum penceresi
 CHART_FILENAME = "latest_chart.png"
 GITHUB_REPO_RAW_BASE = "https://raw.githubusercontent.com/mehmetkural/crypto-utbot-linreg-scanner/main"
 
@@ -210,10 +217,75 @@ def heikin_ashi(df):
     })
 
 
-def _draw_candlestick_panel(ax, symbol, df, timeframe_label):
+def macd_series(df, fast=MACD_FAST, slow=MACD_SLOW, signal=MACD_SIGNAL):
+    """
+    Standart MACD hesaplamasi (EMA farki + sinyal cizgisi + histogram).
+    Donus: (macd_line, signal_line, histogram) - uc numpy dizisi.
+    """
+    close = df["close"]
+    ema_fast = close.ewm(span=fast, adjust=False).mean()
+    ema_slow = close.ewm(span=slow, adjust=False).mean()
+    macd_line = ema_fast - ema_slow
+    signal_line = macd_line.ewm(span=signal, adjust=False).mean()
+    hist = macd_line - signal_line
+    return macd_line.values, signal_line.values, hist.values
+
+
+def _find_swing_points(values, order=MACD_DIVERGENCE_ORDER):
+    """
+    values dizisindeki yerel tepe (max) ve dip (min) noktalarinin indekslerini bulur.
+    Bir nokta, kendisinden +/- order kadar uzaklikta ki pencere icinde tek (unique)
+    en yuksek/en dusuk deger ise swing noktasi sayilir.
+    Donus: (tepe_indeksleri, dip_indeksleri)
+    """
+    n = len(values)
+    highs, lows = [], []
+    for i in range(order, n - order):
+        window = values[i - order: i + order + 1]
+        if values[i] == np.max(window) and np.argmax(window) == order:
+            highs.append(i)
+        if values[i] == np.min(window) and np.argmin(window) == order:
+            lows.append(i)
+    return highs, lows
+
+
+def detect_macd_divergence(df, macd_line, order=MACD_DIVERGENCE_ORDER):
+    """
+    Fiyatin (close) son iki swing tepe/dip noktasini, ayni indekslerdeki MACD
+    degerleriyle karsilastirarak klasik (regular) pozitif/negatif uyumsuzlugu tespit eder:
+      - Pozitif (bullish) uyumsuzluk: fiyat daha DUSUK dip yaparken MACD daha YUKSEK dip yapar
+        (asagi yonlu momentum zayifliyor -> olasi yukselis donusu).
+      - Negatif (bearish) uyumsuzluk: fiyat daha YUKSEK tepe yaparken MACD daha DUSUK tepe yapar
+        (yukari yonlu momentum zayifliyor -> olasi dusus donusu).
+    Donus: {"bullish": bool, "bullish_points": (i1, i2) | None,
+            "bearish": bool, "bearish_points": (i1, i2) | None}
+    """
+    close = df["close"].values
+    price_highs, price_lows = _find_swing_points(close, order)
+
+    result = {"bullish": False, "bullish_points": None, "bearish": False, "bearish_points": None}
+
+    if len(price_highs) >= 2:
+        i1, i2 = price_highs[-2], price_highs[-1]
+        if close[i2] > close[i1] and macd_line[i2] < macd_line[i1]:
+            result["bearish"] = True
+            result["bearish_points"] = (i1, i2)
+
+    if len(price_lows) >= 2:
+        j1, j2 = price_lows[-2], price_lows[-1]
+        if close[j2] < close[j1] and macd_line[j2] > macd_line[j1]:
+            result["bullish"] = True
+            result["bullish_points"] = (j1, j2)
+
+    return result
+
+
+def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
     """
     Verilen eksene (ax) Heikin Ashi mumlarini, UT Bot ATR trailing-stop cizgisini
     (al/sat ok isaretleriyle) ve LinReg Candle trend seridini birlikte cizer.
+    divergence verilirse (bkz. detect_macd_divergence), pozitif/negatif MACD
+    uyumsuzlugunu fiyat grafigi uzerinde de kesikli cizgi + etiketle isaretler.
     """
     ha = heikin_ashi(df)
     opens = ha["open"].values
@@ -258,6 +330,19 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label):
         elif prev_up and not cur_up:
             ax.scatter([i], [highs[i]], marker="v", color="#ef5350", s=50, zorder=5, edgecolors="white", linewidths=0.4)
 
+    # --- MACD uyumsuzlugu (varsa) fiyat grafiginde de isaretlenir ---
+    if divergence:
+        if divergence.get("bullish"):
+            j1, j2 = divergence["bullish_points"]
+            ax.plot([j1, j2], [lows[j1], lows[j2]], color="#69f0ae", linewidth=1.6, linestyle="--", zorder=4)
+            ax.annotate("POZ UYUMSUZLUK", xy=(j2, lows[j2]), xytext=(0, -14), textcoords="offset points",
+                        color="#69f0ae", fontsize=7, fontweight="bold", ha="center", va="top")
+        if divergence.get("bearish"):
+            i1, i2 = divergence["bearish_points"]
+            ax.plot([i1, i2], [highs[i1], highs[i2]], color="#ff5252", linewidth=1.6, linestyle="--", zorder=4)
+            ax.annotate("NEG UYUMSUZLUK", xy=(i2, highs[i2]), xytext=(0, 14), textcoords="offset points",
+                        color="#ff5252", fontsize=7, fontweight="bold", ha="center", va="bottom")
+
     # --- Eksen limitleri (stop cizgisi dahil) + LinReg seridi icin alt bosluk ---
     y_candidates = [highs, lows]
     if valid.any():
@@ -276,7 +361,7 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label):
             continue
         ax.add_patch(Rectangle((i - 0.5, band_y), 1.0, band_h, color=("#26a69a" if c == "green" else "#ef5350"), linewidth=0, zorder=2))
 
-    ax.set_ylim(band_y - band_gap, y_max + y_range * 0.05)
+    ax.set_ylim(band_y - band_gap, y_max + y_range * (0.16 if divergence and divergence.get("bearish") else 0.05))
     ax.set_xlim(-1, n)
     ax.set_title(f"{symbol}  ({timeframe_label}) - HA + UT Bot + LinReg", color="white", fontsize=11)
     ax.tick_params(colors="white", labelsize=8)
@@ -294,28 +379,89 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label):
     ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
 
 
+def _draw_macd_panel(ax, df, macd_line, signal_line, hist, divergence=None):
+    """
+    Verilen eksene MACD cizgisini, sinyal cizgisini ve histogram cubuklarini cizer.
+    divergence verilirse (bkz. detect_macd_divergence), pozitif/negatif uyumsuzlugu
+    MACD cizgisi uzerinde kesikli baglanti + etiketle isaretler.
+    """
+    n = len(macd_line)
+    xs = np.arange(n)
+
+    ax.set_facecolor("#0d1117")
+
+    hist_colors = ["#26a69a" if v >= 0 else "#ef5350" for v in hist]
+    ax.bar(xs, hist, color=hist_colors, width=0.8, zorder=2, alpha=0.7)
+    ax.plot(xs, macd_line, color="#4fc3f7", linewidth=1.2, zorder=3, label="MACD")
+    ax.plot(xs, signal_line, color="#ffb74d", linewidth=1.2, zorder=3, label="Sinyal")
+    ax.axhline(0, color="#555555", linewidth=0.7, zorder=1)
+
+    if divergence and divergence.get("bullish"):
+        j1, j2 = divergence["bullish_points"]
+        ax.plot([j1, j2], [macd_line[j1], macd_line[j2]], color="#69f0ae", linewidth=1.8, linestyle="--", zorder=4)
+        ax.scatter([j1, j2], [macd_line[j1], macd_line[j2]], color="#69f0ae", s=22, zorder=5)
+        ax.annotate("POZ UYUMSUZLUK", xy=(j2, macd_line[j2]), xytext=(0, -12), textcoords="offset points",
+                    color="#69f0ae", fontsize=7, fontweight="bold", ha="center", va="top")
+
+    if divergence and divergence.get("bearish"):
+        i1, i2 = divergence["bearish_points"]
+        ax.plot([i1, i2], [macd_line[i1], macd_line[i2]], color="#ff5252", linewidth=1.8, linestyle="--", zorder=4)
+        ax.scatter([i1, i2], [macd_line[i1], macd_line[i2]], color="#ff5252", s=22, zorder=5)
+        ax.annotate("NEG UYUMSUZLUK", xy=(i2, macd_line[i2]), xytext=(0, 12), textcoords="offset points",
+                    color="#ff5252", fontsize=7, fontweight="bold", ha="center", va="bottom")
+
+    ax.set_xlim(-1, n)
+    ax.tick_params(colors="white", labelsize=8)
+    for spine in ax.spines.values():
+        spine.set_color("#333333")
+    ax.grid(color="#222222", linewidth=0.5)
+    ax.set_ylabel("MACD", color="#999999", fontsize=8)
+    ax.legend(loc="upper left", fontsize=6, facecolor="#0d1117", edgecolor="#333333",
+              labelcolor="white", framealpha=0.6)
+
+    step = max(n // 5, 1)
+    tick_positions = list(range(0, n, step))
+    tick_labels = [
+        datetime.datetime.fromtimestamp(int(df["open_time"].iloc[p]) / 1000, tz=datetime.timezone.utc).strftime("%d/%m %H:%M")
+        for p in tick_positions
+    ]
+    ax.set_xticks(tick_positions)
+    ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
+
+
 def generate_signals_chart(symbol_dfs, out_path, timeframe_label):
     """
-    Bir veya birden fazla sinyal sembolunun mum grafigini tek bir PNG'de izgara
-    (grid) halinde birlestirir; ntfy bildirimine tek gorsel olarak eklenir.
+    Bir veya birden fazla sinyal sembolunun mum grafigini, altinda MACD panteliyle
+    (pozitif/negatif uyumsuzluk isaretli) birlikte tek bir PNG'de izgara (grid)
+    halinde birlestirir; ntfy bildirimine tek gorsel olarak eklenir.
     symbol_dfs: [(symbol, df), ...]
     """
     n = len(symbol_dfs)
     cols = 1 if n == 1 else (2 if n <= 4 else 3)
     rows = (n + cols - 1) // cols
 
-    fig, axes = plt.subplots(rows, cols, figsize=(cols * 6, rows * 4), dpi=110, squeeze=False)
+    fig = plt.figure(figsize=(cols * 6, rows * 5.4), dpi=110, constrained_layout=True)
     fig.patch.set_facecolor("#0d1117")
+    gs = GridSpec(rows * 2, cols, figure=fig, height_ratios=[3, 1.3] * rows, hspace=0.08, wspace=0.22)
 
     for idx, (symbol, df) in enumerate(symbol_dfs):
-        ax = axes[idx // cols][idx % cols]
-        _draw_candlestick_panel(ax, symbol, df, timeframe_label)
+        r, c = idx // cols, idx % cols
+        ax_price = fig.add_subplot(gs[2 * r, c])
+        ax_macd = fig.add_subplot(gs[2 * r + 1, c])
+
+        macd_line, signal_line, hist = macd_series(df)
+        divergence = detect_macd_divergence(df, macd_line)
+
+        _draw_candlestick_panel(ax_price, symbol, df, timeframe_label, divergence=divergence)
+        ax_price.set_xticklabels([])  # tarih etiketleri sadece alttaki MACD panelinde gosterilsin
+        _draw_macd_panel(ax_macd, df, macd_line, signal_line, hist, divergence=divergence)
 
     # Kullanilmayan izgara hucrelerini gizle (grid tam dolmadiysa)
     for idx in range(n, rows * cols):
-        axes[idx // cols][idx % cols].axis("off")
+        r, c = idx // cols, idx % cols
+        fig.add_subplot(gs[2 * r, c]).axis("off")
+        fig.add_subplot(gs[2 * r + 1, c]).axis("off")
 
-    fig.tight_layout()
     fig.savefig(out_path, facecolor=fig.get_facecolor())
     plt.close(fig)
 

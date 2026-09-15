@@ -2,7 +2,7 @@
 """
 UT Bot + LinReg Candle Crypto Scanner
 --------------------------------------
-Binance USDT spot piyasasini 15dk ve 1 saatlik zaman diliminde tarar.
+Binance USDT spot piyasasini 1 saatlik (1h) zaman diliminde tarar.
 UT Bot (ATR trailing stop) sinyali + LinReg Candle trend yonu + 1 saatlik
 trend onayi uc'u ayni yonde ise "GUCLU AL/SAT" sinyali uretir.
 
@@ -43,15 +43,15 @@ UT_KEY_VALUE = 1.0                       # UT Bot "Key Value" (sensitivity)
 UT_ATR_PERIOD = 10                       # UT Bot ATR periyodu
 LINREG_LENGTH = 7                        # LinReg Candle uzunlugu (sinyal yumusatma)
 KLINES_LIMIT = 150                       # her sembol/timeframe icin cekilen mum sayisi (warmup icin)
-TIMEFRAME_ENTRY = "15m"
-TIMEFRAME_CONFIRM = "1h"
+TIMEFRAME_ENTRY = "1h"                   # giris (sinyal arama) zaman dilimi
+TIMEFRAME_CONFIRM = "1h"                 # onay zaman dilimi (tum parametreler 1 saatlik)
 MAX_WORKERS = 8                          # es zamanli istek sayisi
 REQUEST_TIMEOUT = 10
 NOTIFY_COOLDOWN_SECONDS = 2 * 60 * 60    # guclu sinyal bildirimleri arasinda en az bu kadar bekle (spam onleme)
 
 # Bildirime eklenen grafik gorseli icin ayarlar
-CHART_TIMEFRAME = "4h"                   # bildirime eklenen grafigin zaman dilimi
-CHART_KLINES_LIMIT = 60                  # grafikte gosterilen mum sayisi (60 x 4h ~ 10 gun)
+CHART_TIMEFRAME = "1h"                   # bildirime eklenen grafigin zaman dilimi
+CHART_KLINES_LIMIT = 60                  # grafikte gosterilen mum sayisi (60 x 1h ~ 2.5 gun)
 CHART_FILENAME = "latest_chart.png"
 GITHUB_REPO_RAW_BASE = "https://raw.githubusercontent.com/mehmetkural/crypto-utbot-linreg-scanner/main"
 
@@ -123,16 +123,20 @@ def save_history(history):
 
 
 def update_history_with_new_signals(history, strong_signals, now_utc):
-    """Yeni GUCLU sinyalleri gecmise ekler (ayni sembol + ayni 15dk mumu tekrar eklenmez)."""
-    existing_keys = {(h["symbol"], h["bar_time_15m"]) for h in history}
+    """Yeni GUCLU sinyalleri gecmise ekler (ayni sembol + ayni giris mumu tekrar eklenmez).
+
+    Not: eski kayitlarda (timeframe degisikliginden once) bar zamani "bar_time_15m"
+    anahtariyla tutuluyordu; geriye donuk uyumluluk icin okurken ikisini de destekler.
+    """
+    existing_keys = {(h["symbol"], h.get("bar_time_entry", h.get("bar_time_15m"))) for h in history}
     for s in strong_signals:
-        key = (s["symbol"], s["bar_time_15m"])
+        key = (s["symbol"], s["bar_time_entry"])
         if key in existing_keys:
             continue
         history.append({
             "symbol": s["symbol"],
             "direction": s["strong_signal"],          # "GUCLU_AL" | "GUCLU_SAT"
-            "bar_time_15m": s["bar_time_15m"],
+            "bar_time_entry": s["bar_time_entry"],
             "detected_at_utc": now_utc.isoformat(timespec="seconds"),
             "price_at_signal": s["last_close"],
             "evaluated": False,
@@ -572,7 +576,12 @@ def _linreg_color_series(df, length=LINREG_LENGTH):
 def evaluate_symbol(symbol):
     try:
         df_entry = get_klines(symbol, TIMEFRAME_ENTRY)
-        df_confirm = get_klines(symbol, TIMEFRAME_CONFIRM)
+        # Giris ve onay zaman dilimi ayniysa (varsayilan: ikisi de 1h) ayni veriyi
+        # iki kez cekmeye gerek yok -- gereksiz Binance API cagrisini onler.
+        if TIMEFRAME_CONFIRM == TIMEFRAME_ENTRY:
+            df_confirm = df_entry
+        else:
+            df_confirm = get_klines(symbol, TIMEFRAME_CONFIRM)
     except Exception as e:
         return {"symbol": symbol, "error": str(e)}
 
@@ -583,11 +592,11 @@ def evaluate_symbol(symbol):
     result = {
         "symbol": symbol,
         "signal": signal,
-        "ut_trend_15m": trend_entry,
-        "linreg_15m": lr_entry,
-        "linreg_1h": lr_confirm,
+        "ut_trend_entry": trend_entry,
+        "linreg_entry": lr_entry,
+        "linreg_confirm": lr_confirm,
         "last_close": float(df_entry["close"].iloc[-1]),
-        "bar_time_15m": int(df_entry["open_time"].iloc[-1]),
+        "bar_time_entry": int(df_entry["open_time"].iloc[-1]),
     }
 
     strong = None
@@ -708,7 +717,7 @@ if __name__ == "__main__":
             click_url = tradingview_url(signals[0]["symbol"]) if len(signals) == 1 else None
             save_last_notified_at(now_utc)
 
-            # Sinyal sayisi ne olursa olsun, tum sinyal coinlerinin 4 saatlik mum
+            # Sinyal sayisi ne olursa olsun, tum sinyal coinlerinin 1 saatlik mum
             # grafigini tek bir gorselde (izgara halinde) birlestirip bildirime ekle
             attach_url = None
             try:
@@ -732,7 +741,7 @@ if __name__ == "__main__":
 
             send_ntfy(
                 "\n\n".join(lines),
-                title=f"{len(signals)} Guclu Sinyal (15m/1h UT Bot + LinReg)",
+                title=f"{len(signals)} Guclu Sinyal (1h UT Bot + LinReg)",
                 priority="high",
                 click_url=click_url,
                 attach_url=attach_url,

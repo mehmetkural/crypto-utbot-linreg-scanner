@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "PLUMEUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1789516800000,
+    "detected_at_utc": "2026-09-16T00:27:28+00:00",
+    "price_at_signal": 0.01255,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "BROCCOLI714USDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1789516800000,
+    "detected_at_utc": "2026-09-16T00:27:28+00:00",
+    "price_at_signal": 0.01782,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ILVUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1789516800000,
+    "detected_at_utc": "2026-09-16T00:27:28+00:00",
+    "price_at_signal": 3.31,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SNDKBUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1789516800000,
@@ -1204,10 +1237,10 @@
     "bar_time_entry": 1789502400000,
     "detected_at_utc": "2026-09-15T20:22:56+00:00",
     "price_at_signal": 0.08162,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.07925,
+    "evaluated_at": "2026-09-16T00:27:28+00:00"
   },
   {
     "symbol": "ROBOUSDT",
@@ -1215,10 +1248,10 @@
     "bar_time_entry": 1789502400000,
     "detected_at_utc": "2026-09-15T20:22:56+00:00",
     "price_at_signal": 0.0084,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.00827,
+    "evaluated_at": "2026-09-16T00:27:28+00:00"
   },
   {
     "symbol": "SIGNUSDT",
@@ -1226,10 +1259,10 @@
     "bar_time_entry": 1789502400000,
     "detected_at_utc": "2026-09-15T20:22:56+00:00",
     "price_at_signal": 0.01047,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01056,
+    "evaluated_at": "2026-09-16T00:27:28+00:00"
   },
   {
     "symbol": "BFUSDUSDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.000712,
-    "evaluated_at": "2026-09-15T21:52:55+00:00"
-  },
-  {
-    "symbol": "GALAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789491600000,
-    "detected_at_utc": "2026-09-15T17:37:55+00:00",
-    "price_at_signal": 0.001692,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.00162,
-    "evaluated_at": "2026-09-15T21:52:55+00:00"
-  },
-  {
-    "symbol": "FLOKIUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789491600000,
-    "detected_at_utc": "2026-09-15T17:37:55+00:00",
-    "price_at_signal": 2.435e-05,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 2.319e-05,
-    "evaluated_at": "2026-09-15T21:52:55+00:00"
-  },
-  {
-    "symbol": "BNSOLUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789491600000,
-    "detected_at_utc": "2026-09-15T17:37:55+00:00",
-    "price_at_signal": 113.1,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 109.4,
     "evaluated_at": "2026-09-15T21:52:55+00:00"
   }
 ]

@@ -225,6 +225,7 @@
 
   <section>
     <h2>Guncel Sinyaller <span class="count" id="currentCount"></span></h2>
+    <div class="sub">Sadece GUCLU AL sinyalleri gosteriliyor.</div>
     <div id="currentTableWrap">
       <table>
         <thead>
@@ -233,11 +234,12 @@
         <tbody id="currentTbody"></tbody>
       </table>
     </div>
-    <div class="empty" id="currentEmpty" style="display:none;">Su an aktif GUCLU AL/SAT sinyali yok.</div>
+    <div class="empty" id="currentEmpty" style="display:none;">Su an aktif GUCLU AL sinyali yok.</div>
   </section>
 
   <section>
     <h2>Sinyal Gecmisi <span class="count" id="historyCount"></span></h2>
+    <div class="sub">Sadece GUCLU AL sinyalleri gosteriliyor.</div>
     <div class="history-scroll">
       <table>
         <thead>
@@ -305,9 +307,11 @@ function renderLatest(summary) {
   document.getElementById('lastScanLine').textContent =
     `Son tarama: ${fmtTime(summary.scanned_at_utc)} UTC  ·  ${summary.symbols_scanned} parite tarandi  ·  ${summary.symbols_errored} hata`;
   document.getElementById('statScanned').textContent = summary.symbols_scanned ?? '-';
-  document.getElementById('statStrong').textContent = summary.strong_signal_count ?? 0;
 
-  const signals = summary.strong_signals || [];
+  // Sadece GUCLU AL sinyalleri gosterilir (SAT tarama/gecmiste tutulmaya devam eder,
+  // ama panelde ve bildirimlerde kullaniciya sadece AL sinyalleri sunulur).
+  const signals = (summary.strong_signals || []).filter(s => s.strong_signal === "GUCLU_AL");
+  document.getElementById('statStrong').textContent = signals.length;
   document.getElementById('currentCount').textContent = signals.length ? `(${signals.length})` : "";
   const tbody = document.getElementById('currentTbody');
   tbody.innerHTML = "";
@@ -378,9 +382,11 @@ async function load() {
       fetchJson('latest_signals.json'),
       fetchJson('signals_history.json').catch(() => []),
     ]);
+    // Gecmis dosyasi hem AL hem SAT kayitlarini tutar; panelde sadece AL gosterilir.
+    const historyAl = (history || []).filter(h => h.direction === "GUCLU_AL");
     renderLatest(summary);
-    renderStats(history);
-    renderHistory(history);
+    renderStats(historyAl);
+    renderHistory(historyAl);
     // grafik da yenilensin (cache-bust)
     document.getElementById('chartImg').style.display = '';
     document.getElementById('chartEmpty').style.display = 'none';

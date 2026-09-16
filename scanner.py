@@ -842,12 +842,15 @@ if __name__ == "__main__":
         except Exception as e:
             log(f"Test grafigi olusturulamadi: {e}")
         send_ntfy(
-            "Kurulum basarili calisiyor. Gercek GUCLU AL/SAT sinyalleri geldikce burada bildirim alacaksin.",
+            "Kurulum basarili calisiyor. Gercek GUCLU AL sinyalleri geldikce burada bildirim alacaksin.",
             title="Crypto Scanner - Test Bildirimi",
             attach_url=test_attach_url,
         )
-    elif summary["strong_signals"]:
-        signals = summary["strong_signals"]
+    elif [s for s in summary["strong_signals"] if s["strong_signal"] == "GUCLU_AL"]:
+        # Tarama hem AL hem SAT guclu sinyallerini tespit edip gecmise kaydetmeye
+        # devam eder; ancak kullanici sadece AL sinyalleri icin bildirim almak
+        # istedigi icin burada SAT sinyalleri bildirimden filtrelenir.
+        signals = [s for s in summary["strong_signals"] if s["strong_signal"] == "GUCLU_AL"]
         now_utc = datetime.datetime.now(datetime.timezone.utc)
         last_notified = load_last_notified_at()
         seconds_since_last = (now_utc - last_notified).total_seconds() if last_notified else None
@@ -887,7 +890,7 @@ if __name__ == "__main__":
 
             send_ntfy(
                 "\n\n".join(lines),
-                title=f"{len(signals)} Guclu Sinyal (1h UT Bot + LinReg)",
+                title=f"{len(signals)} Guclu AL Sinyal (1h UT Bot + LinReg)",
                 priority="high",
                 click_url=click_url,
                 attach_url=attach_url,

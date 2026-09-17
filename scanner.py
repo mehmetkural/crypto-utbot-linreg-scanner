@@ -326,21 +326,29 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
         prev_up = close_raw[i - 1] > stop[i - 1]
         cur_up = close_raw[i] > stop[i]
         if not prev_up and cur_up:
-            ax.scatter([i], [lows[i]], marker="^", color="#26a69a", s=50, zorder=5, edgecolors="white", linewidths=0.4)
+            ax.annotate(
+                "Buy", xy=(i, lows[i]), xytext=(0, -9), textcoords="offset points",
+                ha="center", va="top", fontsize=7, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.28", fc="#26a69a", ec="none"), zorder=6,
+            )
         elif prev_up and not cur_up:
-            ax.scatter([i], [highs[i]], marker="v", color="#ef5350", s=50, zorder=5, edgecolors="white", linewidths=0.4)
+            ax.annotate(
+                "Sell", xy=(i, highs[i]), xytext=(0, 9), textcoords="offset points",
+                ha="center", va="bottom", fontsize=7, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.28", fc="#ef5350", ec="none"), zorder=6,
+            )
 
     # --- MACD uyumsuzlugu (varsa) fiyat grafiginde de isaretlenir ---
     if divergence:
         if divergence.get("bullish"):
             j1, j2 = divergence["bullish_points"]
             ax.plot([j1, j2], [lows[j1], lows[j2]], color="#69f0ae", linewidth=1.6, linestyle="--", zorder=4)
-            ax.annotate("POZ UYUMSUZLUK", xy=(j2, lows[j2]), xytext=(0, -14), textcoords="offset points",
+            ax.annotate("POZ UYUMSUZLUK", xy=(j2, lows[j2]), xytext=(0, -24), textcoords="offset points",
                         color="#69f0ae", fontsize=7, fontweight="bold", ha="center", va="top")
         if divergence.get("bearish"):
             i1, i2 = divergence["bearish_points"]
             ax.plot([i1, i2], [highs[i1], highs[i2]], color="#ff5252", linewidth=1.6, linestyle="--", zorder=4)
-            ax.annotate("NEG UYUMSUZLUK", xy=(i2, highs[i2]), xytext=(0, 14), textcoords="offset points",
+            ax.annotate("NEG UYUMSUZLUK", xy=(i2, highs[i2]), xytext=(0, 24), textcoords="offset points",
                         color="#ff5252", fontsize=7, fontweight="bold", ha="center", va="bottom")
 
     # --- Eksen limitleri (stop cizgisi dahil) + LinReg seridi icin alt bosluk ---
@@ -361,7 +369,11 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
             continue
         ax.add_patch(Rectangle((i - 0.5, band_y), 1.0, band_h, color=("#26a69a" if c == "green" else "#ef5350"), linewidth=0, zorder=2))
 
-    ax.set_ylim(band_y - band_gap, y_max + y_range * (0.16 if divergence and divergence.get("bearish") else 0.05))
+    # Alt/ust bosluklar: Buy/Sell etiket kutulari ve (varsa) uyumsuzluk etiketleri
+    # icin yeterli yer birakilir.
+    top_margin = 0.24 if divergence and divergence.get("bearish") else 0.12
+    bottom_extra = y_range * 0.09
+    ax.set_ylim(band_y - band_gap - bottom_extra, y_max + y_range * top_margin)
     ax.set_xlim(-1, n)
     ax.set_title(f"{symbol}  ({timeframe_label}) - HA + UT Bot + LinReg", color="white", fontsize=11)
     ax.tick_params(colors="white", labelsize=8)

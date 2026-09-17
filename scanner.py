@@ -59,6 +59,7 @@ MACD_FAST = 12
 MACD_SLOW = 26
 MACD_SIGNAL = 9
 MACD_DIVERGENCE_ORDER = 3                # swing (tepe/dip) noktasi icin +/- mum penceresi
+VOLUME_MA_LENGTH = 20                    # hacim panelindeki hareketli ortalama periyodu
 CHART_FILENAME = "latest_chart.png"
 GITHUB_REPO_RAW_BASE = "https://raw.githubusercontent.com/mehmetkural/crypto-utbot-linreg-scanner/main"
 
@@ -439,38 +440,81 @@ def _draw_macd_panel(ax, df, macd_line, signal_line, hist, divergence=None):
     ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
 
 
+def _draw_volume_panel(ax, df, length=VOLUME_MA_LENGTH):
+    """
+    Verilen eksene hacim (volume) cubuklarini (mum yonune gore yesil/kirmizi) ve
+    hacmin VOLUME_MA_LENGTH periyotluk hareketli ortalamasini cizgi olarak cizer.
+    """
+    ha = heikin_ashi(df)
+    opens = ha["open"].values
+    closes = ha["close"].values
+    volumes = df["volume"].values
+    n = len(volumes)
+    xs = np.arange(n)
+
+    vol_colors = ["#26a69a" if closes[i] >= opens[i] else "#ef5350" for i in range(n)]
+    vol_ma = pd.Series(volumes).rolling(length).mean().values
+
+    ax.set_facecolor("#0d1117")
+    ax.bar(xs, volumes, color=vol_colors, width=0.8, zorder=2, alpha=0.7)
+    ax.plot(xs, vol_ma, color="#ffca28", linewidth=1.3, zorder=3, label=f"Hacim MA{length}")
+
+    ax.set_xlim(-1, n)
+    ax.tick_params(colors="white", labelsize=8)
+    for spine in ax.spines.values():
+        spine.set_color("#333333")
+    ax.grid(color="#222222", linewidth=0.5)
+    ax.set_ylabel("Hacim", color="#999999", fontsize=8)
+    ax.legend(loc="upper left", fontsize=6, facecolor="#0d1117", edgecolor="#333333",
+              labelcolor="white", framealpha=0.6)
+
+    step = max(n // 5, 1)
+    tick_positions = list(range(0, n, step))
+    tick_labels = [
+        datetime.datetime.fromtimestamp(int(df["open_time"].iloc[p]) / 1000, tz=datetime.timezone.utc).strftime("%d/%m %H:%M")
+        for p in tick_positions
+    ]
+    ax.set_xticks(tick_positions)
+    ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
+
+
 def generate_signals_chart(symbol_dfs, out_path, timeframe_label):
     """
-    Bir veya birden fazla sinyal sembolunun mum grafigini, altinda MACD panteliyle
-    (pozitif/negatif uyumsuzluk isaretli) birlikte tek bir PNG'de izgara (grid)
-    halinde birlestirir; ntfy bildirimine tek gorsel olarak eklenir.
+    Bir veya birden fazla sinyal sembolunun mum grafigini, altinda MACD paneliyle
+    (pozitif/negatif uyumsuzluk isaretli) ve hacim (volume + MA20) paneliyle
+    birlikte tek bir PNG'de izgara (grid) halinde birlestirir; ntfy bildirimine
+    tek gorsel olarak eklenir.
     symbol_dfs: [(symbol, df), ...]
     """
     n = len(symbol_dfs)
     cols = 1 if n == 1 else (2 if n <= 4 else 3)
     rows = (n + cols - 1) // cols
 
-    fig = plt.figure(figsize=(cols * 6, rows * 5.4), dpi=110, constrained_layout=True)
+    fig = plt.figure(figsize=(cols * 6, rows * 7.2), dpi=110, constrained_layout=True)
     fig.patch.set_facecolor("#0d1117")
-    gs = GridSpec(rows * 2, cols, figure=fig, height_ratios=[3, 1.3] * rows, hspace=0.08, wspace=0.22)
+    gs = GridSpec(rows * 3, cols, figure=fig, height_ratios=[3, 1.3, 1.1] * rows, hspace=0.08, wspace=0.22)
 
     for idx, (symbol, df) in enumerate(symbol_dfs):
         r, c = idx // cols, idx % cols
-        ax_price = fig.add_subplot(gs[2 * r, c])
-        ax_macd = fig.add_subplot(gs[2 * r + 1, c])
+        ax_price = fig.add_subplot(gs[3 * r, c])
+        ax_macd = fig.add_subplot(gs[3 * r + 1, c])
+        ax_volume = fig.add_subplot(gs[3 * r + 2, c])
 
         macd_line, signal_line, hist = macd_series(df)
         divergence = detect_macd_divergence(df, macd_line)
 
         _draw_candlestick_panel(ax_price, symbol, df, timeframe_label, divergence=divergence)
-        ax_price.set_xticklabels([])  # tarih etiketleri sadece alttaki MACD panelinde gosterilsin
+        ax_price.set_xticklabels([])  # tarih etiketleri sadece en alttaki hacim panelinde gosterilsin
         _draw_macd_panel(ax_macd, df, macd_line, signal_line, hist, divergence=divergence)
+        ax_macd.set_xticklabels([])  # tarih etiketleri sadece en alttaki hacim panelinde gosterilsin
+        _draw_volume_panel(ax_volume, df)
 
     # Kullanilmayan izgara hucrelerini gizle (grid tam dolmadiysa)
     for idx in range(n, rows * cols):
         r, c = idx // cols, idx % cols
-        fig.add_subplot(gs[2 * r, c]).axis("off")
-        fig.add_subplot(gs[2 * r + 1, c]).axis("off")
+        fig.add_subplot(gs[3 * r, c]).axis("off")
+        fig.add_subplot(gs[3 * r + 1, c]).axis("off")
+        fig.add_subplot(gs[3 * r + 2, c]).axis("off")
 
     fig.savefig(out_path, facecolor=fig.get_facecolor())
     plt.close(fig)

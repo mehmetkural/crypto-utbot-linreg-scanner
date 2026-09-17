@@ -311,13 +311,11 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
             body_height = (highs[i] - lows[i]) * 0.01 or 0.0001
         ax.add_patch(Rectangle((i - 0.3, body_bottom), 0.6, body_height, color=color, zorder=2))
 
-    # --- UT Bot trailing-stop cizgisi (trend yonune gore renkli) ---
+    # --- UT Bot trailing-stop cizgisi (TradingView referansindaki gibi tek renk/beyaz) ---
     xs = np.arange(n)
     valid = ~np.isnan(stop)
-    up_line = np.where(valid & (close_raw > stop), stop, np.nan)
-    down_line = np.where(valid & (close_raw <= stop), stop, np.nan)
-    ax.plot(xs, up_line, color="#4fc3f7", linewidth=1.4, alpha=0.9, zorder=3)
-    ax.plot(xs, down_line, color="#ffb74d", linewidth=1.4, alpha=0.9, zorder=3)
+    stop_line = np.where(valid, stop, np.nan)
+    ax.plot(xs, stop_line, color="#f5f5f5", linewidth=1.6, alpha=0.95, zorder=3)
 
     # --- Al/Sat ok isaretleri (UT Bot stop cizgisinin kesildigi noktalar) ---
     for i in range(1, n):

@@ -147,6 +147,10 @@
   .badge.miss { background: rgba(239,83,80,0.18); color: var(--red); }
   .badge.pending { background: rgba(210,194,90,0.18); color: var(--yellow); }
 
+  .pct-pos { color: var(--green); font-weight: 600; }
+  .pct-neg { color: var(--red); font-weight: 600; }
+  .pct-pending { color: var(--text-dim); }
+
   .history-scroll { max-height: 420px; overflow-y: auto; }
 
   .empty {
@@ -215,6 +219,10 @@
       <div class="label">Isabet Orani</div>
       <div class="value green" id="statHitRate">-</div>
     </div>
+    <div class="card">
+      <div class="label">Ort. Kazanc %</div>
+      <div class="value" id="statAvgPct">-</div>
+    </div>
   </div>
 
   <section>
@@ -243,7 +251,7 @@
     <div class="history-scroll">
       <table>
         <thead>
-          <tr><th>Tespit</th><th>Sembol</th><th>Yon</th><th>Fiyat</th><th>Sonuc</th><th>Sonraki Fiyat</th></tr>
+          <tr><th>Tespit</th><th>Sembol</th><th>Yon</th><th>Fiyat</th><th>Sonuc</th><th>Sonraki Fiyat</th><th>Kazanc %</th></tr>
         </thead>
         <tbody id="historyTbody"></tbody>
       </table>
@@ -290,6 +298,26 @@ function outcomeBadge(h) {
   if (h.outcome === "hit") return `<span class="badge hit">Isabet</span>`;
   if (h.outcome === "miss") return `<span class="badge miss">Kacti</span>`;
   return `<span class="badge pending">-</span>`;
+}
+
+// GUCLU_AL icin (fiyat_sonra - fiyat_sinyal) / fiyat_sinyal, GUCLU_SAT icin ters yonde
+// (kisa pozisyon mantigiyla fiyat dusunce kazanc pozitif olur).
+function pctValue(h) {
+  if (h.direction === "GUCLU_SAT") {
+    return ((h.price_at_signal - h.price_after) / h.price_at_signal) * 100;
+  }
+  return ((h.price_after - h.price_at_signal) / h.price_at_signal) * 100;
+}
+
+function fmtPct(h) {
+  if (!h.evaluated || h.price_after === null || h.price_after === undefined) {
+    return { text: "-", cls: "pct-pending" };
+  }
+  const pct = pctValue(h);
+  return {
+    text: `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`,
+    cls: pct >= 0 ? "pct-pos" : "pct-neg",
+  };
 }
 
 async function fetchJson(path) {
@@ -349,6 +377,16 @@ function renderStats(history) {
     hitRateEl.textContent = `${rate.toFixed(0)}% (${hits}/${evaluated.length})`;
     hitRateEl.className = rate >= 50 ? "value green" : "value red";
   }
+
+  const avgEl = document.getElementById('statAvgPct');
+  if (evaluated.length === 0) {
+    avgEl.textContent = "-";
+    avgEl.className = "value";
+  } else {
+    const avg = evaluated.reduce((sum, h) => sum + pctValue(h), 0) / evaluated.length;
+    avgEl.textContent = `${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%`;
+    avgEl.className = avg >= 0 ? "value green" : "value red";
+  }
 }
 
 function renderHistory(history) {
@@ -361,6 +399,7 @@ function renderHistory(history) {
   }
   document.getElementById('historyEmpty').style.display = 'none';
   for (const h of history) {
+    const pct = fmtPct(h);
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td>${fmtTime(h.detected_at_utc)}</td>
@@ -369,6 +408,7 @@ function renderHistory(history) {
       <td>${fmtPrice(h.price_at_signal)}</td>
       <td>${outcomeBadge(h)}</td>
       <td>${fmtPrice(h.price_after)}</td>
+      <td class="${pct.cls}">${pct.text}</td>
     `;
     tbody.appendChild(tr);
   }

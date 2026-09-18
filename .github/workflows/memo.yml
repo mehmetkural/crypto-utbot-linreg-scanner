@@ -1,0 +1,47 @@
+name: Memo Scanner (MACD sifir ustu kesisim + Hacim MA20, 4h)
+
+on:
+  schedule:
+    - cron: '5 0,4,8,12,16,20 * * *'  # her 4 saatlik mum kapanisindan 5 dk sonra (ana taramadan bagimsiz)
+  workflow_dispatch:
+    inputs:
+      test_notify:
+        description: 'Force a generic test notification instead of a real signal scan'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  memo-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install --quiet pandas numpy requests
+
+      - name: Run memo scanner
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          FORCE_TEST_NOTIFY: ${{ github.event.inputs.test_notify == 'true' && '1' || '' }}
+        # Memo bildirimi gonderilirken memo_notify_state.json scanner.py'nin ana
+        # notify_state.json / signals_history.json / latest_chart.png dosyalarina
+        # HICBIR sekilde dokunmadan, kendi icinden otomatik commit+push edilir.
+        run: python3 memo_scanner.py
+
+      - name: Upload memo signals as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: memo-latest-signals
+          path: memo_latest_signals.json
+          retention-days: 7

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ZAMAUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1789696800000,
+    "detected_at_utc": "2026-09-18T02:52:54+00:00",
+    "price_at_signal": 0.05034,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ETHUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1789696800000,
@@ -995,10 +1006,10 @@
     "bar_time_entry": 1789682400000,
     "detected_at_utc": "2026-09-17T22:52:53+00:00",
     "price_at_signal": 0.0043,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00435,
+    "evaluated_at": "2026-09-18T02:52:54+00:00"
   },
   {
     "symbol": "BROCCOLI714USDT",
@@ -1006,10 +1017,10 @@
     "bar_time_entry": 1789682400000,
     "detected_at_utc": "2026-09-17T22:52:53+00:00",
     "price_at_signal": 0.01803,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.01813,
+    "evaluated_at": "2026-09-18T02:52:54+00:00"
   },
   {
     "symbol": "CAKEUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.0467,
-    "evaluated_at": "2026-09-17T18:29:41+00:00"
-  },
-  {
-    "symbol": "MIRAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789653600000,
-    "detected_at_utc": "2026-09-17T14:29:10+00:00",
-    "price_at_signal": 0.04508,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.04469,
     "evaluated_at": "2026-09-17T18:29:41+00:00"
   }
 ]

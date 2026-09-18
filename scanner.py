@@ -301,11 +301,11 @@ def detect_macd_divergence(df, macd_line, order=MACD_DIVERGENCE_ORDER):
 
 def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, display_bars=None):
     """
-    Verilen eksene (ax) Heikin Ashi mumlarini, UT Bot ATR trailing-stop cizgisini
-    (al/sat ok isaretleriyle) ve LinReg Candle trend seridini birlikte cizer.
+    Verilen eksene (ax) Heikin Ashi mumlarini ve UT Bot ATR trailing-stop cizgisini
+    (al/sat ok isaretleriyle) cizer.
     divergence verilirse (bkz. detect_macd_divergence), pozitif/negatif MACD
     uyumsuzlugunu fiyat grafigi uzerinde de kesikli cizgi + etiketle isaretler.
-    display_bars verilirse, hesaplamalar (Valid H/L, LinReg) df'in TAMAMI uzerinde
+    display_bars verilirse, hesaplamalar (Valid H/L) df'in TAMAMI uzerinde
     yapilir (gizli "isinma" gecmisi dahil) ama sadece SON display_bars mum cizilir/
     gosterilir -- boylece gorunen pencerenin basinda state sifirdan baslamaz.
     """
@@ -317,7 +317,6 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, di
     n_full = len(ha)
     offset = max(n_full - display_bars, 0) if display_bars else 0
 
-    linreg_colors = _linreg_color_series(df, LINREG_LENGTH)
     struct = detect_valid_high_low(df)
 
     ax.set_facecolor("#0d1117")
@@ -355,27 +354,17 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, di
                 ax.annotate("NEG UYUMSUZLUK", xy=(i2, highs[i2]), xytext=(0, 24), textcoords="offset points",
                             color="#ff5252", fontsize=7, fontweight="bold", ha="center", va="bottom")
 
-    # --- Eksen limitleri (stop cizgisi dahil) + LinReg seridi icin alt bosluk ---
+    # --- Eksen limitleri ---
     y_candidates = [highs[offset:], lows[offset:]]
     y_max = max(np.nanmax(a) for a in y_candidates)
     y_min = min(np.nanmin(a) for a in y_candidates)
     y_range = (y_max - y_min) or (y_max * 0.01) or 1.0
-    band_h = y_range * 0.05
-    band_gap = y_range * 0.03
-    band_y = y_min - band_gap - band_h
-
-    # --- LinReg Candle trend seridi (alt kisimda renkli serit) ---
-    for i in range(offset, n_full):
-        c = linreg_colors[i]
-        if c is None:
-            continue
-        ax.add_patch(Rectangle((i - 0.5, band_y), 1.0, band_h, color=("#26a69a" if c == "green" else "#ef5350"), linewidth=0, zorder=2))
 
     # Alt/ust bosluklar: Buy/Sell etiket kutulari, Valid H/L etiketleri ve (varsa)
     # uyumsuzluk etiketleri icin yeterli yer birakilir.
     top_margin = 0.28 if divergence and divergence.get("bearish") else 0.16
-    bottom_extra = y_range * 0.12
-    ax.set_ylim(band_y - band_gap - bottom_extra, y_max + y_range * top_margin)
+    bottom_margin = 0.16
+    ax.set_ylim(y_min - y_range * bottom_margin, y_max + y_range * top_margin)
     ax.set_xlim(offset - 1, n_full)
     ax.set_title(f"{symbol}  ({timeframe_label}) - Valid H/L", color="white", fontsize=11)
     ax.tick_params(colors="white", labelsize=8)
@@ -850,25 +839,6 @@ def linreg_trend(df, length=LINREG_LENGTH):
     lr_close = _linreg_endpoint(window_close)
     lr_open = _linreg_endpoint(window_open)
     return "green" if lr_close >= lr_open else "red"
-
-
-def _linreg_color_series(df, length=LINREG_LENGTH):
-    """
-    LinReg Candle trend rengini HER bar icin hesaplar (grafikte alt serit olarak
-    gosterilir). linreg_trend() ile ayni mantigi kullanir, tum barlar icin tekrarlar.
-    Donus: uzunlugu len(df) olan liste; 'green' | 'red' | None (pencere dolmadiysa).
-    """
-    closes = df["close"].values
-    opens = df["open"].values
-    n = len(df)
-    colors = [None] * n
-    for i in range(length - 1, n):
-        window_close = closes[i - length + 1: i + 1]
-        window_open = opens[i - length + 1: i + 1]
-        lr_close = _linreg_endpoint(window_close)
-        lr_open = _linreg_endpoint(window_open)
-        colors[i] = "green" if lr_close >= lr_open else "red"
-    return colors
 
 
 def _pivot_confirmed_series(values, bars, is_high):

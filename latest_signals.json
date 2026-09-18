@@ -1,18 +1,38 @@
 {
-  "scanned_at_utc": "2026-09-18T15:07:59+00:00",
-  "symbols_scanned": 278,
+  "scanned_at_utc": "2026-09-18T15:12:49+00:00",
+  "symbols_scanned": 281,
   "symbols_errored": 0,
-  "strong_signal_count": 2,
+  "strong_signal_count": 7,
   "strong_signals": [
+    {
+      "symbol": "ONEUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.001594,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": "GUCLU_SAT"
+    },
     {
       "symbol": "GENIUSUSDT",
       "signal": "buy",
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.346,
+      "last_close": 0.3447,
       "bar_time_entry": 1789743600000,
       "strong_signal": "GUCLU_AL"
+    },
+    {
+      "symbol": "APTUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.672,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": "GUCLU_SAT"
     },
     {
       "symbol": "PENDLEUSDT",
@@ -20,69 +40,49 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 2.586,
+      "last_close": 2.579,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": "GUCLU_SAT"
+    },
+    {
+      "symbol": "LPTUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 1.524,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": "GUCLU_SAT"
+    },
+    {
+      "symbol": "THETAUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.2037,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": "GUCLU_SAT"
+    },
+    {
+      "symbol": "XTZUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.2699,
       "bar_time_entry": 1789743600000,
       "strong_signal": "GUCLU_SAT"
     }
   ],
   "all_results": [
     {
-      "symbol": "SOLUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 110.1,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BTCUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 80848.25,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ZECUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 1473.18,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BNBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 758.14,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
       "symbol": "XRPUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 1.3912,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "NEARUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 3.747,
+      "last_close": 1.3866,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -92,7 +92,27 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 2584.39,
+      "last_close": 2573.13,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "SOLUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 109.83,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "NEARUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 3.698,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -102,7 +122,37 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 8.664,
+      "last_close": 8.622,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BNBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 756.28,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ZECUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 1474.92,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BTCUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 80639.61,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -112,27 +162,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 1.00006,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "REZUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.003931,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.08753,
+      "last_close": 1.00008,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -142,17 +172,17 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.207,
+      "last_close": 0.2067,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "GUSDT",
+      "symbol": "REZUSDT",
       "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.00927,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.003903,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -162,7 +192,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.4283,
+      "last_close": 0.4264,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -172,7 +202,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.2026,
+      "last_close": 0.2029,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "GUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.00899,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -182,17 +222,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.8041,
+      "last_close": 0.8018,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "ADAUSDT",
+      "symbol": "DOGEUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.2199,
+      "last_close": 0.08746,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -202,7 +242,17 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.1642,
+      "last_close": 0.1632,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ADAUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.2194,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -218,13 +268,13 @@
     },
     {
       "symbol": "ONEUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
+      "signal": "sell",
+      "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.001753,
+      "last_close": 0.001594,
       "bar_time_entry": 1789743600000,
-      "strong_signal": null
+      "strong_signal": "GUCLU_SAT"
     },
     {
       "symbol": "LINKUSDT",
@@ -232,27 +282,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 12.174,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "AVAXUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 8.114,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "TAOUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 251.6,
+      "last_close": 12.142,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -262,7 +292,27 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.3958,
+      "last_close": 0.394,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "AVAXUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 8.099,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "TAOUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 251.0,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -272,17 +322,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 3.82e-06,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "DASHUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 59.05,
+      "last_close": 3.83e-06,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -292,37 +332,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 1714.51,
+      "last_close": 1714.89,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "UUSDT",
+      "symbol": "DASHUSDT",
       "signal": null,
-      "ut_trend_entry": "down",
+      "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 1.0003,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "AAVEUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 137.6,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "PUMPUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.004334,
+      "last_close": 58.63,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -332,9 +352,49 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.346,
+      "last_close": 0.3447,
       "bar_time_entry": 1789743600000,
       "strong_signal": "GUCLU_AL"
+    },
+    {
+      "symbol": "PUMPUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.004319,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "UUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 1.0004,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "AAVEUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 137.0,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "APTUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.672,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": "GUCLU_SAT"
     },
     {
       "symbol": "CRCLBUSDT",
@@ -342,47 +402,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 91.24,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "MARSCOINUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.1089,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "LSKUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.4639,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "APTUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.676,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "TRXUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.3393,
+      "last_close": 91.4,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -392,17 +412,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 55.83,
+      "last_close": 55.72,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "SPYBUSDT",
+      "symbol": "TRXUSDT",
       "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 760.4,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.3392,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -412,17 +432,37 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.02072,
+      "last_close": 0.02052,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "PAXGUSDT",
+      "symbol": "SPYBUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 4351.93,
+      "last_close": 759.92,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "MARSCOINUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.1083,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "LSKUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.4595,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -432,7 +472,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 6.533,
+      "last_close": 6.435,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -442,37 +482,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 2.11,
+      "last_close": 2.106,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "XAUTUSDT",
+      "symbol": "PAXGUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 4358.23,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "XLMUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.1927,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "FETUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.1853,
+      "last_close": 4345.88,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -482,7 +502,27 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.11901,
+      "last_close": 0.1181,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "FETUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.1849,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "XLMUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.1915,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -492,17 +532,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 6.2,
+      "last_close": 6.19,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "DOTUSDT",
+      "symbol": "XAUTUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 1.141,
+      "last_close": 4352.62,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -512,7 +552,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 251.1,
+      "last_close": 251.5,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "DOTUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 1.135,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -522,17 +572,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.8847,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "RAYUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 1.6727,
+      "last_close": 0.8824,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -542,7 +582,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.10147,
+      "last_close": 0.10109,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "RAYUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 1.6521,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -552,17 +602,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 2.484,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "AVAUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.2709,
+      "last_close": 2.469,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -570,9 +610,19 @@
       "symbol": "STRKUSDT",
       "signal": null,
       "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.03523,
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.03475,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "AVAUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.2585,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -582,7 +632,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.05657,
+      "last_close": 0.05612,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -592,7 +642,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 152.51,
+      "last_close": 151.87,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -602,17 +652,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1115,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ASTERUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.755,
+      "last_close": 0.111,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -622,27 +662,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.07881,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "XPLUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.09129,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ETHFIUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.7238,
+      "last_close": 0.07874,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -652,7 +672,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 2.586,
+      "last_close": 2.579,
       "bar_time_entry": 1789743600000,
       "strong_signal": "GUCLU_SAT"
     },
@@ -662,7 +682,27 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 1.372,
+      "last_close": 1.368,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "XPLUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.09082,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ASTERUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.752,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -672,7 +712,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.007838,
+      "last_close": 0.007795,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ETHFIUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.7165,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -682,57 +732,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.17648,
+      "last_close": 0.17752,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "ZENUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 7.158,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "MSTRBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 147.55,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "MORPHOUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 2.422,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ZROUSDT",
+      "symbol": "SAGAUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 1.114,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "RENDERUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 1.552,
+      "last_close": 0.0204,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -747,12 +757,52 @@
       "strong_signal": null
     },
     {
-      "symbol": "SAGAUSDT",
+      "symbol": "MSTRBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 147.4,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ZENUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 7.14,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ZROUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.02037,
+      "last_close": 1.115,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "MORPHOUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 2.418,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "RENDERUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 1.554,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -762,17 +812,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0588,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "GOOGLBUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 350.99,
+      "last_close": 0.0587,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -782,17 +822,17 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.04335,
+      "last_close": 0.04303,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "ICPUSDT",
+      "symbol": "GOOGLBUSDT",
       "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 2.829,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 350.35,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -802,17 +842,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.3964,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ARUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 3.111,
+      "last_close": 0.3952,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -822,37 +852,27 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.001871,
+      "last_close": 0.00187,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "CRVUSDT",
+      "symbol": "ICPUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.3413,
+      "last_close": 2.82,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "KSMUSDT",
+      "symbol": "ARUSDT",
       "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 4.37,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "SEIUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.04735,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 3.091,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -862,17 +882,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0303,
+      "last_close": 0.0304,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "NVDABUSDT",
+      "symbol": "SEIUSDT",
       "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 219.52,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.04719,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -882,7 +902,37 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.06879,
+      "last_close": 0.0691,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "NVDABUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 219.39,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "KSMUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 4.34,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "CRVUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.3385,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -892,37 +942,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 16.57,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BFUSDUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.9995,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "VIRTUALUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.6578,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "EIGENUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.2264,
+      "last_close": 16.59,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -932,7 +952,27 @@
       "ut_trend_entry": "down",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.948,
+      "last_close": 0.947,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "VIRTUALUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.6566,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BFUSDUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.9996,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -942,7 +982,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 5.014,
+      "last_close": 5.011,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -952,17 +992,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.03228,
+      "last_close": 0.03184,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "STGUSDT",
+      "symbol": "EIGENUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1416,
+      "last_close": 0.2256,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -972,7 +1012,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.6447,
+      "last_close": 0.6403,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "STGUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.1415,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -987,6 +1037,16 @@
       "strong_signal": null
     },
     {
+      "symbol": "TUTUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.02134,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
       "symbol": "BABYUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -997,12 +1057,12 @@
       "strong_signal": null
     },
     {
-      "symbol": "TUTUSDT",
+      "symbol": "HEIUSDT",
       "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.02147,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.1493,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1012,7 +1072,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.3908,
+      "last_close": 0.3905,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1022,17 +1082,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 8.07,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "HEIUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.1484,
+      "last_close": 8.04,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1042,7 +1092,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.2501,
+      "last_close": 0.2494,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1052,7 +1102,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.5121,
+      "last_close": 0.5106,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1062,17 +1112,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.00731,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "MUBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 992.22,
+      "last_close": 0.00727,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1082,17 +1122,17 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.1159,
+      "last_close": 0.11605,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "WBTCUSDT",
+      "symbol": "MUBUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 80788.44,
+      "last_close": 991.82,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1102,17 +1142,17 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.03234,
+      "last_close": 0.03205,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "ZKUSDT",
+      "symbol": "WBTCUSDT",
       "signal": null,
       "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.01032,
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 80577.79,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1122,7 +1162,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 2.9e-06,
+      "last_close": 2.89e-06,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ZKUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.01024,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1132,7 +1182,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.12512,
+      "last_close": 0.1251,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1142,7 +1192,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.2732,
+      "last_close": 0.2725,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1152,17 +1202,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 368.17,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ATOMUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 1.677,
+      "last_close": 366.63,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1172,17 +1212,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.06004,
+      "last_close": 0.05956,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "QQQBUSDT",
+      "symbol": "ATOMUSDT",
       "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 718.06,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 1.675,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1192,27 +1232,17 @@
       "ut_trend_entry": "down",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 1.002,
+      "last_close": 1.001,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "VTHOUSDT",
+      "symbol": "QQQBUSDT",
       "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.000715,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ALGOUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.0964,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 717.55,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1227,12 +1257,32 @@
       "strong_signal": null
     },
     {
+      "symbol": "VTHOUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.000711,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ALGOUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.0963,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
       "symbol": "SOXLBUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 118.26,
+      "last_close": 118.25,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1240,11 +1290,11 @@
       "symbol": "LPTUSDT",
       "signal": "sell",
       "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 1.559,
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 1.524,
       "bar_time_entry": 1789743600000,
-      "strong_signal": null
+      "strong_signal": "GUCLU_SAT"
     },
     {
       "symbol": "ORDIUSDT",
@@ -1252,17 +1302,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 4.501,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "PLUMEUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.01405,
+      "last_close": 4.498,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1272,17 +1312,17 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.12437,
+      "last_close": 0.12397,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "INTCBUSDT",
+      "symbol": "PLUMEUSDT",
       "signal": null,
-      "ut_trend_entry": "down",
+      "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 107.61,
+      "last_close": 0.01396,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1292,7 +1332,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.2052,
+      "last_close": 0.2057,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "INTCBUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 107.38,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1302,7 +1352,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1206,
+      "last_close": 0.1208,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1312,7 +1362,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.2465,
+      "last_close": 0.2456,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1322,7 +1372,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 335.02,
+      "last_close": 335.21,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1332,17 +1382,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 36.0,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "FLOKIUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 2.555e-05,
+      "last_close": 35.95,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1352,7 +1392,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.01835,
+      "last_close": 0.01832,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "FLOKIUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 2.552e-05,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1362,7 +1412,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.00646,
+      "last_close": 0.00647,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1372,27 +1422,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.4356,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "THETAUSDT",
-      "signal": "sell",
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.205,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "MMTUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.1473,
+      "last_close": 0.4345,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1402,7 +1432,27 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 9.167e-05,
+      "last_close": 9.274e-05,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "THETAUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.2037,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": "GUCLU_SAT"
+    },
+    {
+      "symbol": "MMTUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.147,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1417,22 +1467,12 @@
       "strong_signal": null
     },
     {
-      "symbol": "AVGOBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 357.97,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
       "symbol": "0GUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.2111,
+      "last_close": 0.2114,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1442,7 +1482,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 1.841,
+      "last_close": 1.838,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1452,7 +1492,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.05207,
+      "last_close": 0.05209,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1462,7 +1502,17 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 183.52,
+      "last_close": 183.11,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "AVGOBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 357.44,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1472,7 +1522,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 18.33,
+      "last_close": 18.28,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1482,17 +1532,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.00397,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "NIGHTUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.02367,
+      "last_close": 0.00394,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1512,7 +1552,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.3375,
+      "last_close": 0.338,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1527,6 +1567,46 @@
       "strong_signal": null
     },
     {
+      "symbol": "VETUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.007834,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "NIGHTUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.02369,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "FUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.004711,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BIOUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.02707,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
       "symbol": "MINAUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -1537,52 +1617,12 @@
       "strong_signal": null
     },
     {
-      "symbol": "BIOUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.0271,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
       "symbol": "AUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0881,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "VETUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.00785,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "LUNCUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 5.175e-05,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "IOSTUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.000819,
+      "last_close": 0.0886,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1592,7 +1632,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 6.18,
+      "last_close": 6.16,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "LUNCUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 5.182e-05,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1600,9 +1650,29 @@
       "symbol": "FORMUSDT",
       "signal": null,
       "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.2598,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "IOSTUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.2608,
+      "last_close": 0.00082,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BOMEUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.0009707,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1617,12 +1687,12 @@
       "strong_signal": null
     },
     {
-      "symbol": "BOMEUSDT",
+      "symbol": "SENTUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0009791,
+      "last_close": 0.01739,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1632,17 +1702,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.01802,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "SENTUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.01746,
+      "last_close": 0.01805,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1657,22 +1717,32 @@
       "strong_signal": null
     },
     {
-      "symbol": "HOODBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 117.98,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
       "symbol": "ACEUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1563,
+      "last_close": 0.1561,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "HOODBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 118.24,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "MEGAUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.03845,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1687,22 +1757,12 @@
       "strong_signal": null
     },
     {
-      "symbol": "MEGAUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.03842,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
       "symbol": "CHZUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.01473,
+      "last_close": 0.01471,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1722,7 +1782,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.05713,
+      "last_close": 0.05671,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1732,7 +1792,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.01031,
+      "last_close": 0.01034,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1747,6 +1807,26 @@
       "strong_signal": null
     },
     {
+      "symbol": "SPKUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.020486,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "1INCHUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.0957,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
       "symbol": "BBUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -1757,32 +1837,12 @@
       "strong_signal": null
     },
     {
-      "symbol": "SPKUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.02052,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "1INCHUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.0956,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
       "symbol": "PEOPLEUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.00862,
+      "last_close": 0.00866,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1792,7 +1852,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 25.79,
+      "last_close": 25.68,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "THEUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.0704,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1802,17 +1872,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 63.47,
+      "last_close": 63.38,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "THEUSDT",
+      "symbol": "KATUSDT",
       "signal": null,
-      "ut_trend_entry": "down",
+      "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0707,
+      "last_close": 0.00461,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1822,7 +1892,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.812,
+      "last_close": 0.807,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "CVCUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.02662,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1832,37 +1912,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 543.72,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "KATUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.00458,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "CVCUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.02668,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ORCAUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 1.452,
+      "last_close": 542.63,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1872,17 +1922,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1079,
+      "last_close": 0.1081,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "COINBUSDT",
+      "symbol": "ORCAUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 191.63,
+      "last_close": 1.446,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1892,7 +1942,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0516,
+      "last_close": 0.0515,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1902,17 +1952,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.2243,
+      "last_close": 0.2242,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "REUSDT",
+      "symbol": "COINBUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.4551,
+      "last_close": 191.8,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1922,7 +1972,27 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1955,
+      "last_close": 0.1954,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "REUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.4552,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "FLOWUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.02968,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1937,22 +2007,32 @@
       "strong_signal": null
     },
     {
-      "symbol": "FLOWUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.02986,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
       "symbol": "HOLOUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0596,
+      "last_close": 0.0597,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "DYMUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.01586,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "GRTUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.01975,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1962,17 +2042,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.02787,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "GRTUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.01984,
+      "last_close": 0.02774,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1982,7 +2052,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1405,
+      "last_close": 0.1404,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -1992,17 +2062,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.003079,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "DYMUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.01596,
+      "last_close": 0.003067,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2012,17 +2072,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.00404,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BMTUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.01898,
+      "last_close": 0.00401,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2032,27 +2082,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0236,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "LAUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.0703,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "LUNAUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.0474,
+      "last_close": 0.0239,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2062,7 +2092,37 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.002697,
+      "last_close": 0.002717,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BMTUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.01899,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "LAUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.07,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "LUNAUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.0472,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2087,12 +2147,22 @@
       "strong_signal": null
     },
     {
+      "symbol": "SUPERUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.1364,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
       "symbol": "SOMIUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1882,
+      "last_close": 0.1865,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2100,11 +2170,21 @@
       "symbol": "SIGNUSDT",
       "signal": null,
       "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.01178,
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.0117,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
+    },
+    {
+      "symbol": "XTZUSDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.2699,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": "GUCLU_SAT"
     },
     {
       "symbol": "MRVLBUSDT",
@@ -2112,47 +2192,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 239.85,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ROBOUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.00905,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "SUPERUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.1355,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "XTZUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.2716,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BNSOLUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 124.4,
+      "last_close": 238.92,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2162,7 +2202,27 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.00577,
+      "last_close": 0.00573,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ROBOUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.00906,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BNSOLUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 124.2,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2172,7 +2232,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.2109,
+      "last_close": 0.211,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2182,17 +2242,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.005969,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "TWTUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.5434,
+      "last_close": 0.005966,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2202,17 +2252,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.01869,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "JASMYUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.00404,
+      "last_close": 0.01867,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2222,7 +2262,37 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1447,
+      "last_close": 0.1442,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "JASMYUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.00403,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "TWTUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.5438,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BABABUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 113.12,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2237,22 +2307,12 @@
       "strong_signal": null
     },
     {
-      "symbol": "BABABUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 112.92,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
       "symbol": "NBISBUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 215.3,
+      "last_close": 215.66,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2262,7 +2322,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.1292,
+      "last_close": 0.1289,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2272,7 +2332,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 2.017,
+      "last_close": 2.005,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2282,17 +2342,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.00301,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "IOTAUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.0435,
+      "last_close": 0.003007,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2302,27 +2352,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.079,
+      "last_close": 0.07877,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "APEUSDT",
+      "symbol": "IOTAUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1341,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "LITEBUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 908.23,
+      "last_close": 0.0434,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2332,7 +2372,57 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0443,
+      "last_close": 0.04452,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "LITEBUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 911.78,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "APEUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.1339,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "OPGUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.1094,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "DOGSUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 4.724e-05,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "KAVAUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.06776,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2347,52 +2437,12 @@
       "strong_signal": null
     },
     {
-      "symbol": "DOGSUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 4.725e-05,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "OPGUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.1095,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "KAVAUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.0681,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
       "symbol": "METISUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 3.19,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ALTUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.0069,
+      "last_close": 3.18,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2402,7 +2452,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.04824,
+      "last_close": 0.04821,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ALTUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.00689,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2412,7 +2472,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.08,
+      "last_close": 0.0796,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2422,7 +2482,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 2856.11,
+      "last_close": 2843.67,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2430,19 +2490,9 @@
       "symbol": "POLYXUSDT",
       "signal": null,
       "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.0397,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "HOMEUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.00572,
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.0395,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2452,17 +2502,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.00411,
+      "last_close": 0.0041,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "EGLDUSDT",
+      "symbol": "DRAMBUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 4.125,
+      "last_close": 58.34,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2472,17 +2522,27 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.001436,
+      "last_close": 0.001438,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "FUSDT",
+      "symbol": "HOMEUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.003726,
+      "last_close": 0.00573,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "EGLDUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 4.132,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2492,7 +2552,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.00465,
+      "last_close": 0.00467,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2517,6 +2577,16 @@
       "strong_signal": null
     },
     {
+      "symbol": "GMTUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.00764,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
       "symbol": "SOXSBUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -2532,47 +2602,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.00223,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "DRAMBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 58.32,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "GMTUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.00765,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "1000SATSUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 1.094e-05,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "KAIAUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.03,
+      "last_close": 0.00222,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2582,17 +2612,27 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 80.32,
+      "last_close": 80.46,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "API3USDT",
+      "symbol": "1000SATSUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.2428,
+      "last_close": 1.092e-05,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "KAIAUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.0299,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2602,7 +2642,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 1.023,
+      "last_close": 1.022,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "API3USDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.2424,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2612,7 +2662,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1099,
+      "last_close": 0.1098,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2622,7 +2672,7 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 20.55,
+      "last_close": 20.52,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2630,9 +2680,9 @@
       "symbol": "EPICUSDT",
       "signal": null,
       "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.3637,
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.3625,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2642,17 +2692,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 7.2,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "SCRUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "last_close": 0.02193,
+      "last_close": 7.22,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2662,7 +2702,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.1425,
+      "last_close": 0.1428,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "SCRUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 0.02185,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2677,32 +2727,12 @@
       "strong_signal": null
     },
     {
-      "symbol": "OGUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 2.764,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "EULUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 1.338,
-      "bar_time_entry": 1789743600000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BANANAUSDT",
+      "symbol": "BEAMXUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 4.038,
+      "last_close": 0.00177,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2712,17 +2742,37 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.07543,
+      "last_close": 0.07523,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "BEAMXUSDT",
+      "symbol": "BANANAUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.001768,
+      "last_close": 4.041,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "OGUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 2.765,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "EULUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 1.337,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2742,7 +2792,7 @@
       "ut_trend_entry": "down",
       "linreg_entry": "red",
       "linreg_confirm": "red",
-      "last_close": 0.000517,
+      "last_close": 0.000516,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2752,17 +2802,27 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.838,
+      "last_close": 0.839,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "CELRUSDT",
+      "symbol": "MANAUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.002275,
+      "last_close": 0.0779,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "SKLUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.0039,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2777,12 +2837,32 @@
       "strong_signal": null
     },
     {
-      "symbol": "MANAUSDT",
+      "symbol": "CELRUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.0782,
+      "last_close": 0.002279,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "DUSKUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.0741,
+      "bar_time_entry": 1789743600000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "NOMUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "last_close": 0.00166,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
@@ -2792,17 +2872,17 @@
       "ut_trend_entry": "up",
       "linreg_entry": "green",
       "linreg_confirm": "green",
-      "last_close": 0.02774,
+      "last_close": 0.02757,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     },
     {
-      "symbol": "SKLUSDT",
+      "symbol": "RKLBBUSDT",
       "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "last_close": 0.00388,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "last_close": 64.14,
       "bar_time_entry": 1789743600000,
       "strong_signal": null
     }

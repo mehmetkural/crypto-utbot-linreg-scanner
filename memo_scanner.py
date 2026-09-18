@@ -173,6 +173,15 @@ if __name__ == "__main__":
     else:
         log(f"Sonuclar kaydedildi: {out_path}")
 
+    # Panelde (index.html "Memo" sekmesi) her zaman guncel veri gorunsun diye, bildirim
+    # gonderilsin ya da gonderilmesin, her calismada memo_latest_signals.json commit'lenir
+    # -- ana taramanin latest_signals.json / signals_history.json dosyalarina dokunmaz.
+    if not scanner.commit_and_push_files(
+        ["memo_latest_signals.json"],
+        "Memo tarama sonuclari guncellendi",
+    ):
+        log("memo_latest_signals.json push edilemedi.")
+
     if os.environ.get("FORCE_TEST_NOTIFY"):
         scanner.send_ntfy(
             "Memo taramasi kurulumu basarili calisiyor. MACD (sifir ustu, sifira yakin, "

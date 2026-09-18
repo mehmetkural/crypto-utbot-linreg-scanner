@@ -333,24 +333,9 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
     stop_line = np.where(valid, stop, np.nan)
     ax.plot(xs, stop_line, color="#f5f5f5", linewidth=1.6, alpha=0.95, zorder=3)
 
-    # --- Al/Sat ok isaretleri (UT Bot stop cizgisinin kesildigi noktalar) ---
-    for i in range(1, n):
-        if not valid[i] or not valid[i - 1]:
-            continue
-        prev_up = close_raw[i - 1] > stop[i - 1]
-        cur_up = close_raw[i] > stop[i]
-        if not prev_up and cur_up:
-            ax.annotate(
-                "Buy", xy=(i, lows[i]), xytext=(0, -9), textcoords="offset points",
-                ha="center", va="top", fontsize=7, fontweight="bold", color="white",
-                bbox=dict(boxstyle="round,pad=0.28", fc="#26a69a", ec="none"), zorder=6,
-            )
-        elif prev_up and not cur_up:
-            ax.annotate(
-                "Sell", xy=(i, highs[i]), xytext=(0, 9), textcoords="offset points",
-                ha="center", va="bottom", fontsize=7, fontweight="bold", color="white",
-                bbox=dict(boxstyle="round,pad=0.28", fc="#ef5350", ec="none"), zorder=6,
-            )
+    # Not: UT Bot al/sat ok etiketleri kafa karistirmamasi icin grafikten kaldirildi
+    # (UT Bot artik arkaplan gostergesi; stop cizgisi hala ciziliyor, sadece Buy/Sell
+    # kutulari yok -- tek gorunur etiketler asagidaki Valid High/Low pinleri).
 
     # --- Valid Highs & Lows (Structure Break) - ana tarama kriteri, grafik uzerinde de gosterilir ---
     _draw_valid_hl_overlay(ax, df, struct=struct)
@@ -392,7 +377,7 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
     bottom_extra = y_range * 0.12
     ax.set_ylim(band_y - band_gap - bottom_extra, y_max + y_range * top_margin)
     ax.set_xlim(-1, n)
-    ax.set_title(f"{symbol}  ({timeframe_label}) - Valid H/L + HA + UT Bot + LinReg", color="white", fontsize=11)
+    ax.set_title(f"{symbol}  ({timeframe_label}) - Valid H/L", color="white", fontsize=11)
     ax.tick_params(colors="white", labelsize=8)
     for spine in ax.spines.values():
         spine.set_color("#333333")
@@ -520,17 +505,21 @@ def _draw_valid_hl_overlay(ax, df, struct=None):
         if rec["vh_new"] and rec["vh_point_bar"] is not None:
             pb, level = rec["vh_point_bar"], rec["vh"]
             ax.annotate(
-                "H", xy=(pb, level), xytext=(0, 10), textcoords="offset points",
-                ha="center", va="bottom", fontsize=7, fontweight="bold", color="white",
-                bbox=dict(boxstyle="round,pad=0.22", fc="#ef5350", ec="none"), zorder=7,
+                "H", xy=(pb, level), xytext=(0, 16), textcoords="offset points",
+                ha="center", va="bottom", fontsize=8, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.32", fc="#ef5350", ec="none"),
+                arrowprops=dict(arrowstyle="-", color="#ef5350", lw=1.4, shrinkA=0, shrinkB=3),
+                zorder=7,
             )
             last_vh_point = (pb, level)
         if rec["vl_new"] and rec["vl_point_bar"] is not None:
             pb, level = rec["vl_point_bar"], rec["vl"]
             ax.annotate(
-                "L", xy=(pb, level), xytext=(0, -10), textcoords="offset points",
-                ha="center", va="top", fontsize=7, fontweight="bold", color="white",
-                bbox=dict(boxstyle="round,pad=0.22", fc="#26a69a", ec="none"), zorder=7,
+                "L", xy=(pb, level), xytext=(0, -16), textcoords="offset points",
+                ha="center", va="top", fontsize=8, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.32", fc="#26a69a", ec="none"),
+                arrowprops=dict(arrowstyle="-", color="#26a69a", lw=1.4, shrinkA=0, shrinkB=3),
+                zorder=7,
             )
             last_vl_point = (pb, level)
 
@@ -547,17 +536,21 @@ def _draw_valid_hl_overlay(ax, df, struct=None):
         pb, level = last_rec["run_high_bar"], last_rec["run_high"]
         ax.plot([pb, n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
         ax.annotate(
-            "h?", xy=(pb, level), xytext=(0, 10), textcoords="offset points",
-            ha="center", va="bottom", fontsize=7, fontweight="bold", color="white",
-            bbox=dict(boxstyle="round,pad=0.22", fc="#9e9e9e", ec="none"), zorder=7,
+            "h?", xy=(pb, level), xytext=(0, 16), textcoords="offset points",
+            ha="center", va="bottom", fontsize=8, fontweight="bold", color="white",
+            bbox=dict(boxstyle="round,pad=0.32", fc="#9e9e9e", ec="none"),
+            arrowprops=dict(arrowstyle="-", color="#9e9e9e", lw=1.2, shrinkA=0, shrinkB=3),
+            zorder=7,
         )
     elif last_rec["mode"] == 2 and last_rec["run_low_bar"] is not None:
         pb, level = last_rec["run_low_bar"], last_rec["run_low"]
         ax.plot([pb, n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
         ax.annotate(
-            "l?", xy=(pb, level), xytext=(0, -10), textcoords="offset points",
-            ha="center", va="top", fontsize=7, fontweight="bold", color="white",
-            bbox=dict(boxstyle="round,pad=0.22", fc="#9e9e9e", ec="none"), zorder=7,
+            "l?", xy=(pb, level), xytext=(0, -16), textcoords="offset points",
+            ha="center", va="top", fontsize=8, fontweight="bold", color="white",
+            bbox=dict(boxstyle="round,pad=0.32", fc="#9e9e9e", ec="none"),
+            arrowprops=dict(arrowstyle="-", color="#9e9e9e", lw=1.2, shrinkA=0, shrinkB=3),
+            zorder=7,
         )
 
 

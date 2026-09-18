@@ -1,5 +1,60 @@
 [
   {
+    "symbol": "BNCBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789758000000,
+    "detected_at_utc": "2026-09-18T19:08:16+00:00",
+    "price_at_signal": 6.03,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ASTERUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1789758000000,
+    "detected_at_utc": "2026-09-18T19:08:16+00:00",
+    "price_at_signal": 0.753,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "SYNUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789758000000,
+    "detected_at_utc": "2026-09-18T19:08:16+00:00",
+    "price_at_signal": 0.17269,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "JSTUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789758000000,
+    "detected_at_utc": "2026-09-18T19:08:16+00:00",
+    "price_at_signal": 0.11496,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "VTHOUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789758000000,
+    "detected_at_utc": "2026-09-18T19:08:16+00:00",
+    "price_at_signal": 0.000709,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SUSHIUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1789754400000,
@@ -863,10 +918,10 @@
     "bar_time_entry": 1789743600000,
     "detected_at_utc": "2026-09-18T15:07:59+00:00",
     "price_at_signal": 0.346,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.335,
+    "evaluated_at": "2026-09-18T19:08:16+00:00"
   },
   {
     "symbol": "PENDLEUSDT",
@@ -874,10 +929,10 @@
     "bar_time_entry": 1789743600000,
     "detected_at_utc": "2026-09-18T15:07:59+00:00",
     "price_at_signal": 2.586,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 2.592,
+    "evaluated_at": "2026-09-18T19:08:16+00:00"
   },
   {
     "symbol": "DASHUSDT",
@@ -3242,61 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 1.0005,
-    "evaluated_at": "2026-09-18T15:07:59+00:00"
-  },
-  {
-    "symbol": "SEIUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789729200000,
-    "detected_at_utc": "2026-09-18T11:07:54+00:00",
-    "price_at_signal": 0.04661,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.04735,
-    "evaluated_at": "2026-09-18T15:07:59+00:00"
-  },
-  {
-    "symbol": "VIRTUALUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789729200000,
-    "detected_at_utc": "2026-09-18T11:07:54+00:00",
-    "price_at_signal": 0.6384,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.6578,
-    "evaluated_at": "2026-09-18T15:07:59+00:00"
-  },
-  {
-    "symbol": "HEIUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789729200000,
-    "detected_at_utc": "2026-09-18T11:07:54+00:00",
-    "price_at_signal": 0.1294,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.1484,
-    "evaluated_at": "2026-09-18T15:07:59+00:00"
-  },
-  {
-    "symbol": "LDOUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789729200000,
-    "detected_at_utc": "2026-09-18T11:07:54+00:00",
-    "price_at_signal": 0.3818,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.3908,
-    "evaluated_at": "2026-09-18T15:07:59+00:00"
-  },
-  {
-    "symbol": "EDENUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789729200000,
-    "detected_at_utc": "2026-09-18T11:07:54+00:00",
-    "price_at_signal": 0.05056,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.05207,
     "evaluated_at": "2026-09-18T15:07:59+00:00"
   }
 ]

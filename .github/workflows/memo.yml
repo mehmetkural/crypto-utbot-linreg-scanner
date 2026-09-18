@@ -28,7 +28,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install --quiet pandas numpy requests
+        run: pip install --quiet pandas numpy requests matplotlib
 
       - name: Run memo scanner
         env:

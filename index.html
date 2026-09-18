@@ -63,6 +63,27 @@
   #refreshBtn.spinning svg { animation: spin 0.8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
+  .tabbar {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--panel-border);
+  }
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    padding: 10px 6px;
+    margin-bottom: -1px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: inherit;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--text); border-bottom-color: var(--blue); }
+
   .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -202,6 +223,12 @@
     </button>
   </header>
 
+  <div class="tabbar">
+    <button class="tab-btn active" id="tabBtnMain" onclick="switchTab('main')">Ana Tarama (1s Valid H/L)</button>
+    <button class="tab-btn" id="tabBtnMemo" onclick="switchTab('memo')">Memo (4s MACD+Hacim)</button>
+  </div>
+
+  <div id="mainPanel">
   <div class="cards">
     <div class="card">
       <div class="label">Taranan Parite</div>
@@ -258,6 +285,35 @@
     </div>
     <div class="empty" id="historyEmpty" style="display:none;">Henuz kaydedilmis sinyal gecmisi yok.</div>
   </section>
+  </div>
+
+  <div id="memoPanel" style="display:none;">
+  <div class="sub" id="memoLastScanLine" style="margin-bottom:12px;">Yukleniyor...</div>
+  <div class="cards">
+    <div class="card">
+      <div class="label">Taranan Parite (4s)</div>
+      <div class="value blue" id="memoStatScanned">-</div>
+    </div>
+    <div class="card">
+      <div class="label">Aktif Memo Sinyali</div>
+      <div class="value yellow" id="memoStatSignal">-</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Memo Sinyalleri <span class="count" id="memoCurrentCount"></span></h2>
+    <div class="sub">MACD sifirin ustunde, sifira yakin ve sinyal cizgisini yukari kesmis; hacim MA20 ustunde (4 saatlik grafik). Ana taramadan tamamen bagimsiz ayri bir tarama.</div>
+    <div id="memoTableWrap">
+      <table>
+        <thead>
+          <tr><th>Sembol</th><th>MACD</th><th>Sinyal Cizgisi</th><th>Son Fiyat</th><th>Hacim / MA20</th><th>Bar Zamani</th></tr>
+        </thead>
+        <tbody id="memoTbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="memoEmpty" style="display:none;">Su an aktif memo sinyali yok.</div>
+  </section>
+  </div>
 
   <footer>
     30 saniyede bir otomatik yenilenir &middot; <a href="https://github.com/mehmetkural/crypto-utbot-linreg-scanner" target="_blank">GitHub reposu</a>
@@ -439,8 +495,73 @@ async function load() {
   }
 }
 
+// ---------------------------------------------------------------------------
+// "Memo" sekmesi -- ana taramadan (yukaridaki load()) TAMAMEN BAGIMSIZ: kendi
+// veri dosyasini (memo_latest_signals.json) okur, kendi zamanlayicisiyla
+// yenilenir, ana taramanin state'ine/degiskenlerine hic dokunmaz.
+// ---------------------------------------------------------------------------
+function switchTab(tab) {
+  const isMain = tab === 'main';
+  document.getElementById('mainPanel').style.display = isMain ? '' : 'none';
+  document.getElementById('memoPanel').style.display = isMain ? 'none' : '';
+  document.getElementById('tabBtnMain').classList.toggle('active', isMain);
+  document.getElementById('tabBtnMemo').classList.toggle('active', !isMain);
+}
+
+function renderMemo(summary) {
+  document.getElementById('memoLastScanLine').textContent =
+    `Son tarama: ${fmtTime(summary.scanned_at_utc)} UTC  ·  ${summary.symbols_scanned} parite tarandi (4s)  ·  ${summary.symbols_errored} hata`;
+  document.getElementById('memoStatScanned').textContent = summary.symbols_scanned ?? '-';
+
+  const signals = summary.memo_signals || [];
+  document.getElementById('memoStatSignal').textContent = signals.length;
+  document.getElementById('memoCurrentCount').textContent = signals.length ? `(${signals.length})` : "";
+  const tbody = document.getElementById('memoTbody');
+  tbody.innerHTML = "";
+  if (!signals.length) {
+    document.getElementById('memoEmpty').style.display = 'block';
+    document.getElementById('memoTableWrap').style.display = 'none';
+  } else {
+    document.getElementById('memoEmpty').style.display = 'none';
+    document.getElementById('memoTableWrap').style.display = 'block';
+    for (const s of signals) {
+      const ratio = (s.volume_ma && s.volume_ma > 0) ? `${(s.volume / s.volume_ma).toFixed(2)}x` : '-';
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td><a href="${tradingViewUrl(s.symbol)}" target="_blank">${s.symbol}</a></td>
+        <td>${fmtSigned(s.macd)}</td>
+        <td>${fmtSigned(s.macd_signal)}</td>
+        <td>${fmtPrice(s.last_close)}</td>
+        <td>${ratio}</td>
+        <td>${fmtTime(s.bar_time)}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  }
+}
+
+function fmtSigned(n) {
+  if (n === null || n === undefined) return '-';
+  const sign = n < 0 ? '-' : '';
+  return sign + fmtPrice(Math.abs(n));
+}
+
+async function loadMemo() {
+  try {
+    const summary = await fetchJson('memo_latest_signals.json');
+    renderMemo(summary);
+  } catch (e) {
+    document.getElementById('memoLastScanLine').textContent =
+      `Memo verisi yuklenemedi (henuz ilk memo taramasi calismamis olabilir): ${e.message}`;
+    console.error(e);
+  }
+}
+
 load();
 setInterval(load, REFRESH_MS);
+
+loadMemo();
+setInterval(loadMemo, REFRESH_MS);
 </script>
 </body>
 </html>

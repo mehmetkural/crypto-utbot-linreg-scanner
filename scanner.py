@@ -309,8 +309,6 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
     closes = ha["close"].values
     n = len(ha)
 
-    close_raw = df["close"].values
-    stop = _ut_bot_stop_series(df, UT_KEY_VALUE, UT_ATR_PERIOD)
     linreg_colors = _linreg_color_series(df, LINREG_LENGTH)
     struct = detect_valid_high_low(df)
 
@@ -327,15 +325,9 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
             body_height = (highs[i] - lows[i]) * 0.01 or 0.0001
         ax.add_patch(Rectangle((i - 0.3, body_bottom), 0.6, body_height, color=color, zorder=2))
 
-    # --- UT Bot trailing-stop cizgisi (TradingView referansindaki gibi tek renk/beyaz) ---
-    xs = np.arange(n)
-    valid = ~np.isnan(stop)
-    stop_line = np.where(valid, stop, np.nan)
-    ax.plot(xs, stop_line, color="#f5f5f5", linewidth=1.6, alpha=0.95, zorder=3)
-
-    # Not: UT Bot al/sat ok etiketleri kafa karistirmamasi icin grafikten kaldirildi
-    # (UT Bot artik arkaplan gostergesi; stop cizgisi hala ciziliyor, sadece Buy/Sell
-    # kutulari yok -- tek gorunur etiketler asagidaki Valid High/Low pinleri).
+    # Not: UT Bot artik tamamen arkaplan gostergesi -- stop cizgisi (ortadaki beyaz
+    # cizgi) ve Buy/Sell etiketleri kafa karistirmamasi icin grafikten kaldirildi;
+    # tek gorunur etiketler asagidaki Valid High/Low pinleri.
 
     # --- Valid Highs & Lows (Structure Break) - ana tarama kriteri, grafik uzerinde de gosterilir ---
     _draw_valid_hl_overlay(ax, df, struct=struct)
@@ -355,8 +347,6 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
 
     # --- Eksen limitleri (stop cizgisi dahil) + LinReg seridi icin alt bosluk ---
     y_candidates = [highs, lows]
-    if valid.any():
-        y_candidates.append(stop[valid])
     y_max = max(np.nanmax(a) for a in y_candidates)
     y_min = min(np.nanmin(a) for a in y_candidates)
     y_range = (y_max - y_min) or (y_max * 0.01) or 1.0

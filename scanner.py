@@ -59,7 +59,11 @@ NOTIFY_COOLDOWN_SECONDS = 2 * 60 * 60    # guclu sinyal bildirimleri arasinda en
 
 # Bildirime eklenen grafik gorseli icin ayarlar
 CHART_TIMEFRAME = "1h"                   # bildirime eklenen grafigin zaman dilimi
-CHART_KLINES_LIMIT = 100                 # grafikte gosterilen mum sayisi (Valid H/L gecmisi icin yeterli warmup)
+CHART_KLINES_LIMIT = 100                 # grafikte GOSTERILEN (ekranda gorunen) mum sayisi
+CHART_STRUCT_WARMUP_BARS = 150           # gosterilen pencereden ONCE, sadece hesaplama (Valid H/L/MACD/hacim)
+                                          # icin cekilen gizli "isinma" mumu -- gercek TradingView indikatoru
+                                          # gibi, grafigin ilk barinda state'in sifirdan degil onceden
+                                          # kurulmus halde baslamasini saglar (bkz. asagidaki display_bars)
 
 # MACD paneli ve uyumsuzluk (divergence) tespiti icin ayarlar
 MACD_FAST = 12
@@ -295,27 +299,31 @@ def detect_macd_divergence(df, macd_line, order=MACD_DIVERGENCE_ORDER):
     return result
 
 
-def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
+def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, display_bars=None):
     """
     Verilen eksene (ax) Heikin Ashi mumlarini, UT Bot ATR trailing-stop cizgisini
     (al/sat ok isaretleriyle) ve LinReg Candle trend seridini birlikte cizer.
     divergence verilirse (bkz. detect_macd_divergence), pozitif/negatif MACD
     uyumsuzlugunu fiyat grafigi uzerinde de kesikli cizgi + etiketle isaretler.
+    display_bars verilirse, hesaplamalar (Valid H/L, LinReg) df'in TAMAMI uzerinde
+    yapilir (gizli "isinma" gecmisi dahil) ama sadece SON display_bars mum cizilir/
+    gosterilir -- boylece gorunen pencerenin basinda state sifirdan baslamaz.
     """
     ha = heikin_ashi(df)
     opens = ha["open"].values
     highs = ha["high"].values
     lows = ha["low"].values
     closes = ha["close"].values
-    n = len(ha)
+    n_full = len(ha)
+    offset = max(n_full - display_bars, 0) if display_bars else 0
 
     linreg_colors = _linreg_color_series(df, LINREG_LENGTH)
     struct = detect_valid_high_low(df)
 
     ax.set_facecolor("#0d1117")
 
-    # --- Heikin Ashi mumlari ---
-    for i in range(n):
+    # --- Heikin Ashi mumlari (sadece gorunen pencere cizilir) ---
+    for i in range(offset, n_full):
         up = closes[i] >= opens[i]
         color = "#26a69a" if up else "#ef5350"
         ax.plot([i, i], [lows[i], highs[i]], color=color, linewidth=1, zorder=2)
@@ -330,23 +338,25 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
     # tek gorunur etiketler asagidaki Valid High/Low pinleri.
 
     # --- Valid Highs & Lows (Structure Break) - ana tarama kriteri, grafik uzerinde de gosterilir ---
-    _draw_valid_hl_overlay(ax, df, struct=struct)
+    _draw_valid_hl_overlay(ax, df, struct=struct, offset=offset)
 
     # --- MACD uyumsuzlugu (varsa) fiyat grafiginde de isaretlenir ---
     if divergence:
         if divergence.get("bullish"):
             j1, j2 = divergence["bullish_points"]
-            ax.plot([j1, j2], [lows[j1], lows[j2]], color="#69f0ae", linewidth=1.6, linestyle="--", zorder=4)
-            ax.annotate("POZ UYUMSUZLUK", xy=(j2, lows[j2]), xytext=(0, -24), textcoords="offset points",
-                        color="#69f0ae", fontsize=7, fontweight="bold", ha="center", va="top")
+            if j2 >= offset:
+                ax.plot([max(j1, offset), j2], [lows[j1], lows[j2]], color="#69f0ae", linewidth=1.6, linestyle="--", zorder=4)
+                ax.annotate("POZ UYUMSUZLUK", xy=(j2, lows[j2]), xytext=(0, -24), textcoords="offset points",
+                            color="#69f0ae", fontsize=7, fontweight="bold", ha="center", va="top")
         if divergence.get("bearish"):
             i1, i2 = divergence["bearish_points"]
-            ax.plot([i1, i2], [highs[i1], highs[i2]], color="#ff5252", linewidth=1.6, linestyle="--", zorder=4)
-            ax.annotate("NEG UYUMSUZLUK", xy=(i2, highs[i2]), xytext=(0, 24), textcoords="offset points",
-                        color="#ff5252", fontsize=7, fontweight="bold", ha="center", va="bottom")
+            if i2 >= offset:
+                ax.plot([max(i1, offset), i2], [highs[i1], highs[i2]], color="#ff5252", linewidth=1.6, linestyle="--", zorder=4)
+                ax.annotate("NEG UYUMSUZLUK", xy=(i2, highs[i2]), xytext=(0, 24), textcoords="offset points",
+                            color="#ff5252", fontsize=7, fontweight="bold", ha="center", va="bottom")
 
     # --- Eksen limitleri (stop cizgisi dahil) + LinReg seridi icin alt bosluk ---
-    y_candidates = [highs, lows]
+    y_candidates = [highs[offset:], lows[offset:]]
     y_max = max(np.nanmax(a) for a in y_candidates)
     y_min = min(np.nanmin(a) for a in y_candidates)
     y_range = (y_max - y_min) or (y_max * 0.01) or 1.0
@@ -355,7 +365,7 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
     band_y = y_min - band_gap - band_h
 
     # --- LinReg Candle trend seridi (alt kisimda renkli serit) ---
-    for i in range(n):
+    for i in range(offset, n_full):
         c = linreg_colors[i]
         if c is None:
             continue
@@ -366,15 +376,16 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
     top_margin = 0.28 if divergence and divergence.get("bearish") else 0.16
     bottom_extra = y_range * 0.12
     ax.set_ylim(band_y - band_gap - bottom_extra, y_max + y_range * top_margin)
-    ax.set_xlim(-1, n)
+    ax.set_xlim(offset - 1, n_full)
     ax.set_title(f"{symbol}  ({timeframe_label}) - Valid H/L", color="white", fontsize=11)
     ax.tick_params(colors="white", labelsize=8)
     for spine in ax.spines.values():
         spine.set_color("#333333")
     ax.grid(color="#222222", linewidth=0.5)
 
-    step = max(n // 5, 1)
-    tick_positions = list(range(0, n, step))
+    visible_n = n_full - offset
+    step = max(visible_n // 5, 1)
+    tick_positions = list(range(offset, n_full, step))
     tick_labels = [
         datetime.datetime.fromtimestamp(int(df["open_time"].iloc[p]) / 1000, tz=datetime.timezone.utc).strftime("%d/%m %H:%M")
         for p in tick_positions
@@ -383,38 +394,45 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
     ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
 
 
-def _draw_macd_panel(ax, df, macd_line, signal_line, hist, divergence=None):
+def _draw_macd_panel(ax, df, macd_line, signal_line, hist, divergence=None, display_bars=None):
     """
     Verilen eksene MACD cizgisini, sinyal cizgisini ve histogram cubuklarini cizer.
     divergence verilirse (bkz. detect_macd_divergence), pozitif/negatif uyumsuzlugu
     MACD cizgisi uzerinde kesikli baglanti + etiketle isaretler.
+    display_bars verilirse, MACD tam seri (isinma dahil) uzerinden hesaplanmis olarak
+    gelir; burada sadece son display_bars mum cizilir (bkz. _draw_candlestick_panel).
     """
     n = len(macd_line)
-    xs = np.arange(n)
+    offset = max(n - display_bars, 0) if display_bars else 0
+    xs = np.arange(offset, n)
 
     ax.set_facecolor("#0d1117")
 
-    hist_colors = ["#26a69a" if v >= 0 else "#ef5350" for v in hist]
-    ax.bar(xs, hist, color=hist_colors, width=0.8, zorder=2, alpha=0.7)
-    ax.plot(xs, macd_line, color="#4fc3f7", linewidth=1.2, zorder=3, label="MACD")
-    ax.plot(xs, signal_line, color="#ffb74d", linewidth=1.2, zorder=3, label="Sinyal")
+    hist_colors = ["#26a69a" if v >= 0 else "#ef5350" for v in hist[offset:]]
+    ax.bar(xs, hist[offset:], color=hist_colors, width=0.8, zorder=2, alpha=0.7)
+    ax.plot(xs, macd_line[offset:], color="#4fc3f7", linewidth=1.2, zorder=3, label="MACD")
+    ax.plot(xs, signal_line[offset:], color="#ffb74d", linewidth=1.2, zorder=3, label="Sinyal")
     ax.axhline(0, color="#555555", linewidth=0.7, zorder=1)
 
     if divergence and divergence.get("bullish"):
         j1, j2 = divergence["bullish_points"]
-        ax.plot([j1, j2], [macd_line[j1], macd_line[j2]], color="#69f0ae", linewidth=1.8, linestyle="--", zorder=4)
-        ax.scatter([j1, j2], [macd_line[j1], macd_line[j2]], color="#69f0ae", s=22, zorder=5)
-        ax.annotate("POZ UYUMSUZLUK", xy=(j2, macd_line[j2]), xytext=(0, -12), textcoords="offset points",
-                    color="#69f0ae", fontsize=7, fontweight="bold", ha="center", va="top")
+        if j2 >= offset:
+            j1c = max(j1, offset)
+            ax.plot([j1c, j2], [macd_line[j1c], macd_line[j2]], color="#69f0ae", linewidth=1.8, linestyle="--", zorder=4)
+            ax.scatter([j1c, j2], [macd_line[j1c], macd_line[j2]], color="#69f0ae", s=22, zorder=5)
+            ax.annotate("POZ UYUMSUZLUK", xy=(j2, macd_line[j2]), xytext=(0, -12), textcoords="offset points",
+                        color="#69f0ae", fontsize=7, fontweight="bold", ha="center", va="top")
 
     if divergence and divergence.get("bearish"):
         i1, i2 = divergence["bearish_points"]
-        ax.plot([i1, i2], [macd_line[i1], macd_line[i2]], color="#ff5252", linewidth=1.8, linestyle="--", zorder=4)
-        ax.scatter([i1, i2], [macd_line[i1], macd_line[i2]], color="#ff5252", s=22, zorder=5)
-        ax.annotate("NEG UYUMSUZLUK", xy=(i2, macd_line[i2]), xytext=(0, 12), textcoords="offset points",
-                    color="#ff5252", fontsize=7, fontweight="bold", ha="center", va="bottom")
+        if i2 >= offset:
+            i1c = max(i1, offset)
+            ax.plot([i1c, i2], [macd_line[i1c], macd_line[i2]], color="#ff5252", linewidth=1.8, linestyle="--", zorder=4)
+            ax.scatter([i1c, i2], [macd_line[i1c], macd_line[i2]], color="#ff5252", s=22, zorder=5)
+            ax.annotate("NEG UYUMSUZLUK", xy=(i2, macd_line[i2]), xytext=(0, 12), textcoords="offset points",
+                        color="#ff5252", fontsize=7, fontweight="bold", ha="center", va="bottom")
 
-    ax.set_xlim(-1, n)
+    ax.set_xlim(offset - 1, n)
     ax.tick_params(colors="white", labelsize=8)
     for spine in ax.spines.values():
         spine.set_color("#333333")
@@ -423,8 +441,9 @@ def _draw_macd_panel(ax, df, macd_line, signal_line, hist, divergence=None):
     ax.legend(loc="upper left", fontsize=6, facecolor="#0d1117", edgecolor="#333333",
               labelcolor="white", framealpha=0.6)
 
-    step = max(n // 5, 1)
-    tick_positions = list(range(0, n, step))
+    visible_n = n - offset
+    step = max(visible_n // 5, 1)
+    tick_positions = list(range(offset, n, step))
     tick_labels = [
         datetime.datetime.fromtimestamp(int(df["open_time"].iloc[p]) / 1000, tz=datetime.timezone.utc).strftime("%d/%m %H:%M")
         for p in tick_positions
@@ -433,26 +452,29 @@ def _draw_macd_panel(ax, df, macd_line, signal_line, hist, divergence=None):
     ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
 
 
-def _draw_volume_panel(ax, df, length=VOLUME_MA_LENGTH):
+def _draw_volume_panel(ax, df, length=VOLUME_MA_LENGTH, display_bars=None):
     """
     Verilen eksene hacim (volume) cubuklarini (mum yonune gore yesil/kirmizi) ve
     hacmin VOLUME_MA_LENGTH periyotluk hareketli ortalamasini cizgi olarak cizer.
+    display_bars verilirse, hareketli ortalama tam seri (isinma dahil) uzerinden
+    hesaplanir; sadece son display_bars mum cizilir (bkz. _draw_candlestick_panel).
     """
     ha = heikin_ashi(df)
     opens = ha["open"].values
     closes = ha["close"].values
     volumes = df["volume"].values
     n = len(volumes)
-    xs = np.arange(n)
+    offset = max(n - display_bars, 0) if display_bars else 0
+    xs = np.arange(offset, n)
 
-    vol_colors = ["#26a69a" if closes[i] >= opens[i] else "#ef5350" for i in range(n)]
+    vol_colors = ["#26a69a" if closes[i] >= opens[i] else "#ef5350" for i in range(offset, n)]
     vol_ma = pd.Series(volumes).rolling(length).mean().values
 
     ax.set_facecolor("#0d1117")
-    ax.bar(xs, volumes, color=vol_colors, width=0.8, zorder=2, alpha=0.7)
-    ax.plot(xs, vol_ma, color="#ffca28", linewidth=1.3, zorder=3, label=f"Hacim MA{length}")
+    ax.bar(xs, volumes[offset:], color=vol_colors, width=0.8, zorder=2, alpha=0.7)
+    ax.plot(xs, vol_ma[offset:], color="#ffca28", linewidth=1.3, zorder=3, label=f"Hacim MA{length}")
 
-    ax.set_xlim(-1, n)
+    ax.set_xlim(offset - 1, n)
     ax.tick_params(colors="white", labelsize=8)
     for spine in ax.spines.values():
         spine.set_color("#333333")
@@ -461,8 +483,9 @@ def _draw_volume_panel(ax, df, length=VOLUME_MA_LENGTH):
     ax.legend(loc="upper left", fontsize=6, facecolor="#0d1117", edgecolor="#333333",
               labelcolor="white", framealpha=0.6)
 
-    step = max(n // 5, 1)
-    tick_positions = list(range(0, n, step))
+    visible_n = n - offset
+    step = max(visible_n // 5, 1)
+    tick_positions = list(range(offset, n, step))
     tick_labels = [
         datetime.datetime.fromtimestamp(int(df["open_time"].iloc[p]) / 1000, tz=datetime.timezone.utc).strftime("%d/%m %H:%M")
         for p in tick_positions
@@ -471,7 +494,7 @@ def _draw_volume_panel(ax, df, length=VOLUME_MA_LENGTH):
     ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
 
 
-def _draw_valid_hl_overlay(ax, df, struct=None):
+def _draw_valid_hl_overlay(ax, df, struct=None, offset=0):
     """
     "Valid Highs & Lows (Structure Break)" indikatorunu fiyat panelinin uzerine cizer:
       - Onaylanmis her Valid High/Low noktasina kirmizi "H" / yesil "L" etiketi
@@ -481,6 +504,12 @@ def _draw_valid_hl_overlay(ax, df, struct=None):
         karsiligi -- yeni bir onay gelene kadar ayni cizgi kalir).
       - Henuz onaylanmamis "bekleyen aday" (running high/low), gri kesikli cizgi ve
         "h?" / "l?" etiketiyle -- sadece grafigin SON barina gore (Pine'daki barstate.islast).
+    struct, df'in TAMAMI (gizli isinma gecmisi dahil) uzerinden hesaplanmis olabilir;
+    offset, gorunen pencerenin df icindeki baslangic indeksidir. offset'ten ONCE
+    olusan noktalar icin etiket cizilmez (ekran disina tasip komsu panellere
+    bulasmasin diye -- ax.annotate cizgiler gibi otomatik kirpilmiyor), ama en son
+    onaylanmis seviye/cizgi state'i yine de dogru sekilde takip edilir ve gorunen
+    pencereye kadar uzatilir.
     """
     if struct is None:
         struct = detect_valid_high_low(df)
@@ -494,63 +523,69 @@ def _draw_valid_hl_overlay(ax, df, struct=None):
         rec = struct[i]
         if rec["vh_new"] and rec["vh_point_bar"] is not None:
             pb, level = rec["vh_point_bar"], rec["vh"]
-            ax.annotate(
-                "H", xy=(pb, level), xytext=(0, 16), textcoords="offset points",
-                ha="center", va="bottom", fontsize=8, fontweight="bold", color="white",
-                bbox=dict(boxstyle="round,pad=0.32", fc="#ef5350", ec="none"),
-                arrowprops=dict(arrowstyle="-", color="#ef5350", lw=1.4, shrinkA=0, shrinkB=3),
-                zorder=7,
-            )
+            if pb >= offset:
+                ax.annotate(
+                    "H", xy=(pb, level), xytext=(0, 16), textcoords="offset points",
+                    ha="center", va="bottom", fontsize=8, fontweight="bold", color="white",
+                    bbox=dict(boxstyle="round,pad=0.32", fc="#ef5350", ec="none"),
+                    arrowprops=dict(arrowstyle="-", color="#ef5350", lw=1.4, shrinkA=0, shrinkB=3),
+                    zorder=7,
+                )
             last_vh_point = (pb, level)
         if rec["vl_new"] and rec["vl_point_bar"] is not None:
             pb, level = rec["vl_point_bar"], rec["vl"]
-            ax.annotate(
-                "L", xy=(pb, level), xytext=(0, -16), textcoords="offset points",
-                ha="center", va="top", fontsize=8, fontweight="bold", color="white",
-                bbox=dict(boxstyle="round,pad=0.32", fc="#26a69a", ec="none"),
-                arrowprops=dict(arrowstyle="-", color="#26a69a", lw=1.4, shrinkA=0, shrinkB=3),
-                zorder=7,
-            )
+            if pb >= offset:
+                ax.annotate(
+                    "L", xy=(pb, level), xytext=(0, -16), textcoords="offset points",
+                    ha="center", va="top", fontsize=8, fontweight="bold", color="white",
+                    bbox=dict(boxstyle="round,pad=0.32", fc="#26a69a", ec="none"),
+                    arrowprops=dict(arrowstyle="-", color="#26a69a", lw=1.4, shrinkA=0, shrinkB=3),
+                    zorder=7,
+                )
             last_vl_point = (pb, level)
 
     if last_vh_point is not None:
         pb, level = last_vh_point
-        ax.plot([pb, n - 1], [level, level], color="#ef5350", linewidth=1.1, alpha=0.85, zorder=4)
+        ax.plot([max(pb, offset), n - 1], [level, level], color="#ef5350", linewidth=1.1, alpha=0.85, zorder=4)
     if last_vl_point is not None:
         pb, level = last_vl_point
-        ax.plot([pb, n - 1], [level, level], color="#26a69a", linewidth=1.1, alpha=0.85, zorder=4)
+        ax.plot([max(pb, offset), n - 1], [level, level], color="#26a69a", linewidth=1.1, alpha=0.85, zorder=4)
 
     # Bekleyen (henuz onaylanmamis) aday -- sadece grafigin son barina gore
     last_rec = struct[-1]
     if last_rec["mode"] == 1 and last_rec["run_high_bar"] is not None:
         pb, level = last_rec["run_high_bar"], last_rec["run_high"]
-        ax.plot([pb, n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
-        ax.annotate(
-            "h?", xy=(pb, level), xytext=(0, 16), textcoords="offset points",
-            ha="center", va="bottom", fontsize=8, fontweight="bold", color="white",
-            bbox=dict(boxstyle="round,pad=0.32", fc="#9e9e9e", ec="none"),
-            arrowprops=dict(arrowstyle="-", color="#9e9e9e", lw=1.2, shrinkA=0, shrinkB=3),
-            zorder=7,
-        )
+        ax.plot([max(pb, offset), n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
+        if pb >= offset:
+            ax.annotate(
+                "h?", xy=(pb, level), xytext=(0, 16), textcoords="offset points",
+                ha="center", va="bottom", fontsize=8, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.32", fc="#9e9e9e", ec="none"),
+                arrowprops=dict(arrowstyle="-", color="#9e9e9e", lw=1.2, shrinkA=0, shrinkB=3),
+                zorder=7,
+            )
     elif last_rec["mode"] == 2 and last_rec["run_low_bar"] is not None:
         pb, level = last_rec["run_low_bar"], last_rec["run_low"]
-        ax.plot([pb, n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
-        ax.annotate(
-            "l?", xy=(pb, level), xytext=(0, -16), textcoords="offset points",
-            ha="center", va="top", fontsize=8, fontweight="bold", color="white",
-            bbox=dict(boxstyle="round,pad=0.32", fc="#9e9e9e", ec="none"),
-            arrowprops=dict(arrowstyle="-", color="#9e9e9e", lw=1.2, shrinkA=0, shrinkB=3),
-            zorder=7,
-        )
+        ax.plot([max(pb, offset), n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
+        if pb >= offset:
+            ax.annotate(
+                "l?", xy=(pb, level), xytext=(0, -16), textcoords="offset points",
+                ha="center", va="top", fontsize=8, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.32", fc="#9e9e9e", ec="none"),
+                arrowprops=dict(arrowstyle="-", color="#9e9e9e", lw=1.2, shrinkA=0, shrinkB=3),
+                zorder=7,
+            )
 
 
-def generate_signals_chart(symbol_dfs, out_path, timeframe_label):
+def generate_signals_chart(symbol_dfs, out_path, timeframe_label, display_bars=CHART_KLINES_LIMIT):
     """
     Bir veya birden fazla sinyal sembolunun mum grafigini, altinda MACD paneliyle
     (pozitif/negatif uyumsuzluk isaretli) ve hacim (volume + MA20) paneliyle
     birlikte tek bir PNG'de izgara (grid) halinde birlestirir; ntfy bildirimine
     tek gorsel olarak eklenir.
-    symbol_dfs: [(symbol, df), ...]
+    symbol_dfs: [(symbol, df), ...] -- df'ler CHART_KLINES_LIMIT + CHART_STRUCT_WARMUP_BARS
+    kadar mum icerebilir (bkz. cagiran taraf); tum hesaplamalar (Valid H/L, MACD,
+    hacim MA) bu TAM seri uzerinden yapilir, ama sadece son display_bars mum cizilir.
     """
     n = len(symbol_dfs)
     cols = 1 if n == 1 else (2 if n <= 4 else 3)
@@ -569,11 +604,11 @@ def generate_signals_chart(symbol_dfs, out_path, timeframe_label):
         macd_line, signal_line, hist = macd_series(df)
         divergence = detect_macd_divergence(df, macd_line)
 
-        _draw_candlestick_panel(ax_price, symbol, df, timeframe_label, divergence=divergence)
+        _draw_candlestick_panel(ax_price, symbol, df, timeframe_label, divergence=divergence, display_bars=display_bars)
         ax_price.set_xticklabels([])  # tarih etiketleri sadece en alttaki hacim panelinde gosterilsin
-        _draw_macd_panel(ax_macd, df, macd_line, signal_line, hist, divergence=divergence)
+        _draw_macd_panel(ax_macd, df, macd_line, signal_line, hist, divergence=divergence, display_bars=display_bars)
         ax_macd.set_xticklabels([])  # tarih etiketleri sadece en alttaki hacim panelinde gosterilsin
-        _draw_volume_panel(ax_volume, df)
+        _draw_volume_panel(ax_volume, df, display_bars=display_bars)
 
     # Kullanilmayan izgara hucrelerini gizle (grid tam dolmadiysa)
     for idx in range(n, rows * cols):
@@ -1110,7 +1145,7 @@ if __name__ == "__main__":
         try:
             demo_symbols = ["BTCUSDT", "ETHUSDT"]
             symbol_dfs = [
-                (sym, get_klines(sym, CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT))
+                (sym, get_klines(sym, CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT + CHART_STRUCT_WARMUP_BARS))
                 for sym in demo_symbols
             ]
             chart_path = __file__.rsplit("/", 1)[0] + "/" + CHART_FILENAME
@@ -1151,7 +1186,7 @@ if __name__ == "__main__":
             attach_url = None
             try:
                 symbol_dfs = [
-                    (s["symbol"], get_klines(s["symbol"], CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT))
+                    (s["symbol"], get_klines(s["symbol"], CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT + CHART_STRUCT_WARMUP_BARS))
                     for s in signals
                 ]
                 chart_path = __file__.rsplit("/", 1)[0] + "/" + CHART_FILENAME

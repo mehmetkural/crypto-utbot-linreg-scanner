@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
 """
-UT Bot + LinReg Candle Crypto Scanner
---------------------------------------
+Valid Highs & Lows (Structure Break) + UT Bot/LinReg Crypto Scanner
+----------------------------------------------------------------------
 Binance USDT spot piyasasini 1 saatlik (1h) zaman diliminde tarar.
-UT Bot (ATR trailing stop) sinyali + LinReg Candle trend yonu + 1 saatlik
-trend onayi uc'u ayni yonde ise "GUCLU AL/SAT" sinyali uretir.
+Ana tarama kriteri kullanicinin sagladigi "Valid Highs & Lows (Structure
+Break)" Pine Script v6 indikatorudur: bir swing yuksek/dusuk, fiyat son
+onayli pivot dusugu/yuksegi kirinca (VALID_HL_CONFIRM_ON_CLOSE'a gore kapanis
+ya da fitille) "valid" sayilir. Bu kirilim SON barda gerceklesmisse VE
+kirilan ekstrem nokta son VALID_HL_FRESHNESS_BARS bar icinde olusmussa
+"GUCLU AL/SAT" sinyali uretilir.
+UT Bot (ATR trailing stop), LinReg Candle trend yonu ve MACD/hacim panelleri
+artik sinyal kapisi degil; arkaplanda hesaplanmaya ve grafikte referans
+olarak gosterilmeye devam eder.
 
 Kullanim:
     python3 scanner.py                 # taramayi calistir, sonucu yazdir ve JSON'a kaydet
@@ -52,7 +59,7 @@ NOTIFY_COOLDOWN_SECONDS = 2 * 60 * 60    # guclu sinyal bildirimleri arasinda en
 
 # Bildirime eklenen grafik gorseli icin ayarlar
 CHART_TIMEFRAME = "1h"                   # bildirime eklenen grafigin zaman dilimi
-CHART_KLINES_LIMIT = 60                  # grafikte gosterilen mum sayisi (60 x 1h ~ 2.5 gun)
+CHART_KLINES_LIMIT = 100                 # grafikte gosterilen mum sayisi (Valid H/L gecmisi icin yeterli warmup)
 
 # MACD paneli ve uyumsuzluk (divergence) tespiti icin ayarlar
 MACD_FAST = 12
@@ -60,6 +67,13 @@ MACD_SLOW = 26
 MACD_SIGNAL = 9
 MACD_DIVERGENCE_ORDER = 3                # swing (tepe/dip) noktasi icin +/- mum penceresi
 VOLUME_MA_LENGTH = 20                    # hacim panelindeki hareketli ortalama periyodu
+
+# "Valid Highs & Lows (Structure Break)" indikatoru (Pine Script v6, kullanici tarafindan
+# saglandi) - artik ANA tarama kriteri. UT Bot/LinReg/MACD/Hacim arkaplanda hesaplanmaya devam eder.
+VALID_HL_PIV_BARS = 5                    # ta.pivothigh/pivotlow pencere genisligi (her iki yanda)
+VALID_HL_CONFIRM_ON_CLOSE = True         # True: kirilim kapanisla onaylanir, False: fitil (wick) yeterli
+VALID_HL_FRESHNESS_BARS = 5              # onaylanan ekstrem nokta, onay barina gore en fazla bu kadar bar once olustuysa "taze" sayilir
+
 CHART_FILENAME = "latest_chart.png"
 GITHUB_REPO_RAW_BASE = "https://raw.githubusercontent.com/mehmetkural/crypto-utbot-linreg-scanner/main"
 
@@ -298,6 +312,7 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
     close_raw = df["close"].values
     stop = _ut_bot_stop_series(df, UT_KEY_VALUE, UT_ATR_PERIOD)
     linreg_colors = _linreg_color_series(df, LINREG_LENGTH)
+    struct = detect_valid_high_low(df)
 
     ax.set_facecolor("#0d1117")
 
@@ -337,6 +352,9 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
                 bbox=dict(boxstyle="round,pad=0.28", fc="#ef5350", ec="none"), zorder=6,
             )
 
+    # --- Valid Highs & Lows (Structure Break) - ana tarama kriteri, grafik uzerinde de gosterilir ---
+    _draw_valid_hl_overlay(ax, df, struct=struct)
+
     # --- MACD uyumsuzlugu (varsa) fiyat grafiginde de isaretlenir ---
     if divergence:
         if divergence.get("bullish"):
@@ -368,13 +386,13 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None):
             continue
         ax.add_patch(Rectangle((i - 0.5, band_y), 1.0, band_h, color=("#26a69a" if c == "green" else "#ef5350"), linewidth=0, zorder=2))
 
-    # Alt/ust bosluklar: Buy/Sell etiket kutulari ve (varsa) uyumsuzluk etiketleri
-    # icin yeterli yer birakilir.
-    top_margin = 0.24 if divergence and divergence.get("bearish") else 0.12
-    bottom_extra = y_range * 0.09
+    # Alt/ust bosluklar: Buy/Sell etiket kutulari, Valid H/L etiketleri ve (varsa)
+    # uyumsuzluk etiketleri icin yeterli yer birakilir.
+    top_margin = 0.28 if divergence and divergence.get("bearish") else 0.16
+    bottom_extra = y_range * 0.12
     ax.set_ylim(band_y - band_gap - bottom_extra, y_max + y_range * top_margin)
     ax.set_xlim(-1, n)
-    ax.set_title(f"{symbol}  ({timeframe_label}) - HA + UT Bot + LinReg", color="white", fontsize=11)
+    ax.set_title(f"{symbol}  ({timeframe_label}) - Valid H/L + HA + UT Bot + LinReg", color="white", fontsize=11)
     ax.tick_params(colors="white", labelsize=8)
     for spine in ax.spines.values():
         spine.set_color("#333333")
@@ -476,6 +494,71 @@ def _draw_volume_panel(ax, df, length=VOLUME_MA_LENGTH):
     ]
     ax.set_xticks(tick_positions)
     ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
+
+
+def _draw_valid_hl_overlay(ax, df, struct=None):
+    """
+    "Valid Highs & Lows (Structure Break)" indikatorunu fiyat panelinin uzerine cizer:
+      - Onaylanmis her Valid High/Low noktasina kirmizi "H" / yesil "L" etiketi
+        (Pine'daki label.new ile ayni: noktanin OLUSTUGU barda, yani point_bar'da).
+      - En son onaylanmis VH/VL seviyesinden, o noktadan grafigin sonuna kadar uzanan
+        kalici bir yatay cizgi (Pine'daki "var line" + extend.right'in statik grafikteki
+        karsiligi -- yeni bir onay gelene kadar ayni cizgi kalir).
+      - Henuz onaylanmamis "bekleyen aday" (running high/low), gri kesikli cizgi ve
+        "h?" / "l?" etiketiyle -- sadece grafigin SON barina gore (Pine'daki barstate.islast).
+    """
+    if struct is None:
+        struct = detect_valid_high_low(df)
+    n = len(df)
+    if n == 0:
+        return
+
+    last_vh_point = None
+    last_vl_point = None
+    for i in range(n):
+        rec = struct[i]
+        if rec["vh_new"] and rec["vh_point_bar"] is not None:
+            pb, level = rec["vh_point_bar"], rec["vh"]
+            ax.annotate(
+                "H", xy=(pb, level), xytext=(0, 10), textcoords="offset points",
+                ha="center", va="bottom", fontsize=7, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.22", fc="#ef5350", ec="none"), zorder=7,
+            )
+            last_vh_point = (pb, level)
+        if rec["vl_new"] and rec["vl_point_bar"] is not None:
+            pb, level = rec["vl_point_bar"], rec["vl"]
+            ax.annotate(
+                "L", xy=(pb, level), xytext=(0, -10), textcoords="offset points",
+                ha="center", va="top", fontsize=7, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.22", fc="#26a69a", ec="none"), zorder=7,
+            )
+            last_vl_point = (pb, level)
+
+    if last_vh_point is not None:
+        pb, level = last_vh_point
+        ax.plot([pb, n - 1], [level, level], color="#ef5350", linewidth=1.1, alpha=0.85, zorder=4)
+    if last_vl_point is not None:
+        pb, level = last_vl_point
+        ax.plot([pb, n - 1], [level, level], color="#26a69a", linewidth=1.1, alpha=0.85, zorder=4)
+
+    # Bekleyen (henuz onaylanmamis) aday -- sadece grafigin son barina gore
+    last_rec = struct[-1]
+    if last_rec["mode"] == 1 and last_rec["run_high_bar"] is not None:
+        pb, level = last_rec["run_high_bar"], last_rec["run_high"]
+        ax.plot([pb, n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
+        ax.annotate(
+            "h?", xy=(pb, level), xytext=(0, 10), textcoords="offset points",
+            ha="center", va="bottom", fontsize=7, fontweight="bold", color="white",
+            bbox=dict(boxstyle="round,pad=0.22", fc="#9e9e9e", ec="none"), zorder=7,
+        )
+    elif last_rec["mode"] == 2 and last_rec["run_low_bar"] is not None:
+        pb, level = last_rec["run_low_bar"], last_rec["run_low"]
+        ax.plot([pb, n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
+        ax.annotate(
+            "l?", xy=(pb, level), xytext=(0, -10), textcoords="offset points",
+            ha="center", va="top", fontsize=7, fontweight="bold", color="white",
+            bbox=dict(boxstyle="round,pad=0.22", fc="#9e9e9e", ec="none"), zorder=7,
+        )
 
 
 def generate_signals_chart(symbol_dfs, out_path, timeframe_label):
@@ -770,6 +853,132 @@ def _linreg_color_series(df, length=LINREG_LENGTH):
     return colors
 
 
+def _pivot_confirmed_series(values, bars, is_high):
+    """
+    Pine Script'teki ta.pivothigh(values, bars, bars) / ta.pivotlow(values, bars, bars)
+    mantiginin birebir portu: merkezdeki bar (center), kendisinden 'bars' kadar once ve
+    sonraki barlari da iceren pencerede TEK (unique) en yuksek/en dusuk deger ise pivot
+    sayilir. Pine'daki gibi onay, merkez bardan 'bars' bar SONRA gerceklesir (confirmation
+    lag) -- yani pivot degeri, donen dizide (center + bars) pozisyonunda gorunur.
+    is_high=True ise pivot high (ta.pivothigh), False ise pivot low (ta.pivotlow) davranisi.
+    Donus: values ile ayni uzunlukta numpy dizisi; pivot yoksa NaN.
+    """
+    n = len(values)
+    out = np.full(n, np.nan)
+    for center in range(bars, n - bars):
+        window = values[center - bars: center + bars + 1]
+        if is_high:
+            if values[center] == np.max(window) and np.argmax(window) == bars:
+                out[center + bars] = values[center]
+        else:
+            if values[center] == np.min(window) and np.argmin(window) == bars:
+                out[center + bars] = values[center]
+    return out
+
+
+def detect_valid_high_low(df, piv_bars=VALID_HL_PIV_BARS, use_close=VALID_HL_CONFIRM_ON_CLOSE):
+    """
+    Kullanicinin sagladigi "Valid Highs & Lows (Structure Break)" Pine Script v6
+    indikatorunun birebir Python portu.
+
+    Mantik: bir swing yuksek (pivot high), fiyat daha sonra son onaylanmis pivot
+    dusugun ALTINA kirilinca (use_close'a gore kapanisla ya da fitille) "valid"
+    (gecerli) sayilir; o valid noktanin degeri, bir onceki valid noktadan bu yana
+    ulasilan en yuksek high'tir (running extreme). Simetrik olarak bir swing dusuk
+    de, fiyat son onaylanmis pivot yuksegin USTUNE kirilinca valid sayilir.
+
+    mode: 1 = bir YUKSEGIN onaylanmasi bekleniyor, 2 = bir DUSUGUN onaylanmasi bekleniyor.
+    Pine Script'te bu iki kontrol ELIF DEGIL, ardisik iki ayri "if" blogudur ve mode
+    degiskenini paylasirlar; bu yuzden ayni barda ONCE yuksek onaylanip mode 2'ye
+    gectikten hemen sonra (ayni bar icinde, run_low bu barin low'una resetlendigi icin)
+    dusuk de onaylanabilir. Bu "ayni barda cift gecis" davranisi burada da birebir
+    korunuyor (iki if de sirali calisir, elif kullanilmiyor).
+
+    Donus: len(df) uzunlugunda, HER bar icin bir dict iceren liste:
+        {"mode": 1|2, "vh": float|nan, "vl": float|nan,
+         "vh_new": bool, "vl_new": bool,
+         "vh_point_bar": int|None, "vl_point_bar": int|None,
+         "run_high": float, "run_high_bar": int|None,
+         "run_low": float, "run_low_bar": int|None}
+    "vh_new"/"vl_new" True ise, o TAM O BARDA yeni bir Valid High/Low onaylandigi
+    anlamina gelir (Pine'daki label.new/line.new'in tetiklendigi bar).
+    """
+    high = df["high"].values
+    low = df["low"].values
+    close = df["close"].values
+    n = len(df)
+
+    ph = _pivot_confirmed_series(high, piv_bars, is_high=True)
+    pl = _pivot_confirmed_series(low, piv_bars, is_high=False)
+
+    last_ph = np.nan
+    last_pl = np.nan
+
+    run_high = np.nan
+    run_high_bar = None
+    run_low = np.nan
+    run_low_bar = None
+
+    vh = np.nan
+    vl = np.nan
+    mode = 1
+
+    records = []
+
+    for i in range(n):
+        if not np.isnan(ph[i]):
+            last_ph = ph[i]
+        if not np.isnan(pl[i]):
+            last_pl = pl[i]
+
+        if np.isnan(run_high) or high[i] > run_high:
+            run_high = high[i]
+            run_high_bar = i
+        if np.isnan(run_low) or low[i] < run_low:
+            run_low = low[i]
+            run_low_bar = i
+
+        vh_new = False
+        vl_new = False
+        vh_point_bar = None
+        vl_point_bar = None
+
+        # Fiyat son onaylanmis dusugun altina kirdi -> mevcut running high VALID olur.
+        if mode == 1 and not np.isnan(last_pl) and not np.isnan(run_high):
+            broke = (close[i] < last_pl) if use_close else (low[i] < last_pl)
+            if broke:
+                vh = run_high
+                vh_point_bar = run_high_bar
+                mode = 2
+                vh_new = True
+                run_low = low[i]
+                run_low_bar = i
+
+        # Fiyat son onaylanmis yuksegin ustune kirdi -> mevcut running low VALID olur.
+        # (elif DEGIL -- yukaridaki blok mode'u 2 yaptiysa bu blok da AYNI barda calisabilir)
+        if mode == 2 and not np.isnan(last_ph) and not np.isnan(run_low):
+            broke = (close[i] > last_ph) if use_close else (high[i] > last_ph)
+            if broke:
+                vl = run_low
+                vl_point_bar = run_low_bar
+                mode = 1
+                vl_new = True
+                run_high = high[i]
+                run_high_bar = i
+
+        records.append({
+            "mode": mode,
+            "vh": vh, "vl": vl,
+            "vh_new": vh_new, "vl_new": vl_new,
+            "vh_point_bar": vh_point_bar,
+            "vl_point_bar": vl_point_bar,
+            "run_high": run_high, "run_high_bar": run_high_bar,
+            "run_low": run_low, "run_low_bar": run_low_bar,
+        })
+
+    return records
+
+
 # ---------------------------------------------------------------------------
 # Tek sembol degerlendirme
 # ---------------------------------------------------------------------------
@@ -785,9 +994,39 @@ def evaluate_symbol(symbol):
     except Exception as e:
         return {"symbol": symbol, "error": str(e)}
 
+    # Arkaplanda tutulan eski gostergeler: artik sinyal kapisi degil, sadece bilgi amacli.
     signal, trend_entry = ut_bot_signal(df_entry)
     lr_entry = linreg_trend(df_entry)
     lr_confirm = linreg_trend(df_confirm)
+
+    # --- Ana tarama kriteri: Valid Highs & Lows (Structure Break) ---
+    # Sadece SON barda yeni bir Valid High/Low onaylandiysa VE onaylanan ekstrem nokta
+    # o onay barina gore en fazla VALID_HL_FRESHNESS_BARS bar once olustuysa "taze" sayilir.
+    struct_records = detect_valid_high_low(df_entry)
+    last_struct = struct_records[-1]
+    last_bar_idx = len(df_entry) - 1
+
+    struct_signal = None
+    struct_point_bar = None
+    struct_level = None
+    # Sira, Pine Script'teki blok sirasiyla ayni (once H onayi, sonra L onayi) --
+    # ayni barda cift gecis olursa (nadir), en son gerceklesen (L) kazanir.
+    if (
+        last_struct["vh_new"]
+        and last_struct["vh_point_bar"] is not None
+        and (last_bar_idx - last_struct["vh_point_bar"]) <= VALID_HL_FRESHNESS_BARS
+    ):
+        struct_signal = "sell"
+        struct_point_bar = last_struct["vh_point_bar"]
+        struct_level = float(last_struct["vh"])
+    if (
+        last_struct["vl_new"]
+        and last_struct["vl_point_bar"] is not None
+        and (last_bar_idx - last_struct["vl_point_bar"]) <= VALID_HL_FRESHNESS_BARS
+    ):
+        struct_signal = "buy"
+        struct_point_bar = last_struct["vl_point_bar"]
+        struct_level = float(last_struct["vl"])
 
     result = {
         "symbol": symbol,
@@ -795,14 +1034,18 @@ def evaluate_symbol(symbol):
         "ut_trend_entry": trend_entry,
         "linreg_entry": lr_entry,
         "linreg_confirm": lr_confirm,
+        "struct_signal": struct_signal,
+        "struct_level": struct_level,
+        "struct_point_bar": struct_point_bar,
+        "struct_bars_ago": (last_bar_idx - struct_point_bar) if struct_point_bar is not None else None,
         "last_close": float(df_entry["close"].iloc[-1]),
         "bar_time_entry": int(df_entry["open_time"].iloc[-1]),
     }
 
     strong = None
-    if signal == "buy" and lr_entry == "green" and lr_confirm == "green":
+    if struct_signal == "buy":
         strong = "GUCLU_AL"
-    elif signal == "sell" and lr_entry == "red" and lr_confirm == "red":
+    elif struct_signal == "sell":
         strong = "GUCLU_SAT"
     result["strong_signal"] = strong
     return result
@@ -944,7 +1187,7 @@ if __name__ == "__main__":
 
             send_ntfy(
                 "\n\n".join(lines),
-                title=f"{len(signals)} Guclu AL Sinyal (1h UT Bot + LinReg)",
+                title=f"{len(signals)} Guclu AL Sinyal (1h Valid H/L Break)",
                 priority="high",
                 click_url=click_url,
                 attach_url=attach_url,

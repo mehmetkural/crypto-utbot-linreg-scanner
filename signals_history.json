@@ -1,6 +1,17 @@
 [
   {
     "symbol": "AWEUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789837200000,
+    "detected_at_utc": "2026-09-19T17:07:55+00:00",
+    "price_at_signal": 0.06475,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "AWEUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1789833600000,
     "detected_at_utc": "2026-09-19T16:38:00+00:00",
@@ -49,10 +60,10 @@
     "bar_time_entry": 1789819200000,
     "detected_at_utc": "2026-09-19T12:53:01+00:00",
     "price_at_signal": 0.3498,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.3362,
+    "evaluated_at": "2026-09-19T17:07:55+00:00"
   },
   {
     "symbol": "GRAMUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 184.12,
-    "evaluated_at": "2026-09-18T15:52:57+00:00"
-  },
-  {
-    "symbol": "KITEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789729200000,
-    "detected_at_utc": "2026-09-18T11:37:55+00:00",
-    "price_at_signal": 0.1111,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.1111,
     "evaluated_at": "2026-09-18T15:52:57+00:00"
   }
 ]

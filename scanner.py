@@ -317,7 +317,10 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, di
     n_full = len(ha)
     offset = max(n_full - display_bars, 0) if display_bars else 0
 
-    struct = detect_valid_high_low(df)
+    # Valid H/L artik HA mumlari uzerinden hesaplaniyor (bkz. evaluate_symbol) --
+    # overlay'in de ayni HA serisi uzerinden hesaplanmasi gerekiyor, yoksa cizilen
+    # HA mumlariyla H/L kirilim seviyeleri/etiketleri uyusmaz.
+    struct = detect_valid_high_low(ha)
 
     ax.set_facecolor("#0d1117")
 
@@ -982,17 +985,26 @@ def evaluate_symbol(symbol):
     except Exception as e:
         return {"symbol": symbol, "error": str(e)}
 
+    # Kullanici TradingView'da Heikin Ashi kullaniyor -- Pine Script indikatorleri (Valid H/L,
+    # UT Bot, LinReg Candle) TradingView'da HA grafigi uzerinde calistiginda `close`/`high`/`low`
+    # degiskenleri HA degerlerine karsilik gelir. Ayni sonucu burada da elde etmek icin ham
+    # Binance mumlarini once Heikin Ashi'ye ceviriyoruz ve TUM sinyal hesaplamalarini bu HA
+    # seri uzerinden yapiyoruz -- boylece struct_level/H-L kirilimlari ve UT Bot/LinReg trendi
+    # kullanicinin gordugu HA grafigiyle birebir eslesir.
+    ha_entry = heikin_ashi(df_entry)
+    ha_confirm = ha_entry if TIMEFRAME_CONFIRM == TIMEFRAME_ENTRY else heikin_ashi(df_confirm)
+
     # Arkaplanda tutulan eski gostergeler: artik sinyal kapisi degil, sadece bilgi amacli.
-    signal, trend_entry = ut_bot_signal(df_entry)
-    lr_entry = linreg_trend(df_entry)
-    lr_confirm = linreg_trend(df_confirm)
+    signal, trend_entry = ut_bot_signal(ha_entry)
+    lr_entry = linreg_trend(ha_entry)
+    lr_confirm = linreg_trend(ha_confirm)
 
     # --- Ana tarama kriteri: Valid Highs & Lows (Structure Break) ---
     # Sadece SON barda yeni bir Valid High/Low onaylandiysa VE onaylanan ekstrem nokta
     # o onay barina gore en fazla VALID_HL_FRESHNESS_BARS bar once olustuysa "taze" sayilir.
-    struct_records = detect_valid_high_low(df_entry)
+    struct_records = detect_valid_high_low(ha_entry)
     last_struct = struct_records[-1]
-    last_bar_idx = len(df_entry) - 1
+    last_bar_idx = len(ha_entry) - 1
 
     struct_signal = None
     struct_point_bar = None

@@ -55,7 +55,9 @@ TIMEFRAME_ENTRY = "1h"                   # giris (sinyal arama) zaman dilimi
 TIMEFRAME_CONFIRM = "1h"                 # onay zaman dilimi (tum parametreler 1 saatlik)
 MAX_WORKERS = 8                          # es zamanli istek sayisi
 REQUEST_TIMEOUT = 10
-NOTIFY_COOLDOWN_SECONDS = 2 * 60 * 60    # guclu sinyal bildirimleri arasinda en az bu kadar bekle (spam onleme)
+# NOT: Once burada GUCLU AL bildirimleri arasinda 2 saatlik bir bekleme (cooldown) suresi
+# vardi (NOTIFY_COOLDOWN_SECONDS). Kullanici artik HER taramada cikan sinyalin atlanmadan
+# bildirilmesini istedigi icin bu kaldirildi (bkz. __main__ blogundaki bildirim mantigi).
 
 # Bildirime eklenen grafik gorseli icin ayarlar
 CHART_TIMEFRAME = "1h"                   # bildirime eklenen grafigin zaman dilimi
@@ -108,16 +110,6 @@ def tradingview_url(symbol):
 
 def notify_state_path():
     return __file__.rsplit("/", 1)[0] + "/notify_state.json"
-
-
-def load_last_notified_at():
-    """En son GUCLU sinyal bildiriminin ne zaman gonderildigini okur (throttle icin). Yoksa None doner."""
-    try:
-        with open(notify_state_path()) as f:
-            data = json.load(f)
-        return datetime.datetime.fromisoformat(data["last_notified_at"])
-    except Exception:
-        return None
 
 
 def save_last_notified_at(dt):
@@ -1147,48 +1139,50 @@ if __name__ == "__main__":
         # Tarama hem AL hem SAT guclu sinyallerini tespit edip gecmise kaydetmeye
         # devam eder; ancak kullanici sadece AL sinyalleri icin bildirim almak
         # istedigi icin burada SAT sinyalleri bildirimden filtrelenir.
+        # NOT: Eskiden burada bildirimler arasinda NOTIFY_COOLDOWN_SECONDS (2 saat) kadar
+        # bir bekleme suresi vardi (spam onleme). Kullanici artik HER taramada cikan
+        # GUCLU AL sinyalinin atlanmadan bildirilmesini istedigi icin bu bekleme kaldirildi.
+        # Bu guvenli: "vh_new"/"vl_new" (dolayisiyla struct_signal) sadece kirilimin TAM O
+        # ANKI barda onaylandigi taramada True olur (bkz. detect_valid_high_low/evaluate_symbol),
+        # yani ayni kirilim olayi zaten birden fazla ardisik taramada tekrar bildirilmiyor --
+        # cooldown'un kaldirilmasi cift bildirime degil, sadece daha az gecikmeye yol acar.
         signals = [s for s in summary["strong_signals"] if s["strong_signal"] == "GUCLU_AL"]
         now_utc = datetime.datetime.now(datetime.timezone.utc)
-        last_notified = load_last_notified_at()
-        seconds_since_last = (now_utc - last_notified).total_seconds() if last_notified else None
-        if seconds_since_last is not None and seconds_since_last < NOTIFY_COOLDOWN_SECONDS:
-            remaining_min = int((NOTIFY_COOLDOWN_SECONDS - seconds_since_last) / 60)
-            log(f"Guclu sinyal var ama bildirim 2 saatlik bekleme suresinde ({remaining_min} dk kaldi), bildirim atlaniyor.")
-        else:
-            lines = [
-                f"{s['strong_signal'].replace('_', ' ')}: {s['symbol']} @ {s['last_close']}\n{tradingview_url(s['symbol'])}"
+
+        lines = [
+            f"{s['strong_signal'].replace('_', ' ')}: {s['symbol']} @ {s['last_close']}\n{tradingview_url(s['symbol'])}"
+            for s in signals
+        ]
+        # Tek sinyal varsa bildirime tiklaninca dogrudan o coinin TradingView grafigi acilsin
+        click_url = tradingview_url(signals[0]["symbol"]) if len(signals) == 1 else None
+        save_last_notified_at(now_utc)
+
+        # Sinyal sayisi ne olursa olsun, tum sinyal coinlerinin 1 saatlik mum
+        # grafigini tek bir gorselde (izgara halinde) birlestirip bildirime ekle
+        attach_url = None
+        try:
+            symbol_dfs = [
+                (s["symbol"], get_klines(s["symbol"], CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT + CHART_STRUCT_WARMUP_BARS))
                 for s in signals
             ]
-            # Tek sinyal varsa bildirime tiklaninca dogrudan o coinin TradingView grafigi acilsin
-            click_url = tradingview_url(signals[0]["symbol"]) if len(signals) == 1 else None
-            save_last_notified_at(now_utc)
-
-            # Sinyal sayisi ne olursa olsun, tum sinyal coinlerinin 1 saatlik mum
-            # grafigini tek bir gorselde (izgara halinde) birlestirip bildirime ekle
-            attach_url = None
-            try:
-                symbol_dfs = [
-                    (s["symbol"], get_klines(s["symbol"], CHART_TIMEFRAME, limit=CHART_KLINES_LIMIT + CHART_STRUCT_WARMUP_BARS))
-                    for s in signals
-                ]
-                chart_path = __file__.rsplit("/", 1)[0] + "/" + CHART_FILENAME
-                generate_signals_chart(symbol_dfs, chart_path, CHART_TIMEFRAME)
-                pushed = commit_and_push_files(
-                    [CHART_FILENAME, "notify_state.json"],
-                    "Guclu sinyal grafigi ve bildirim durumu guncellendi",
-                )
-                if pushed:
-                    attach_url = f"{GITHUB_REPO_RAW_BASE}/{CHART_FILENAME}"
-                else:
-                    log("Grafik push edilemedi, bildirim gorselsiz gonderilecek.")
-            except Exception as e:
-                log(f"Grafik olusturma hatasi, bildirim gorselsiz gonderilecek: {e}")
-                commit_and_push_files(["notify_state.json"], "Bildirim zaman damgasi guncellendi")
-
-            send_ntfy(
-                "\n\n".join(lines),
-                title=f"{len(signals)} Guclu AL Sinyal (1h Valid H/L Break)",
-                priority="high",
-                click_url=click_url,
-                attach_url=attach_url,
+            chart_path = __file__.rsplit("/", 1)[0] + "/" + CHART_FILENAME
+            generate_signals_chart(symbol_dfs, chart_path, CHART_TIMEFRAME)
+            pushed = commit_and_push_files(
+                [CHART_FILENAME, "notify_state.json"],
+                "Guclu sinyal grafigi ve bildirim durumu guncellendi",
             )
+            if pushed:
+                attach_url = f"{GITHUB_REPO_RAW_BASE}/{CHART_FILENAME}"
+            else:
+                log("Grafik push edilemedi, bildirim gorselsiz gonderilecek.")
+        except Exception as e:
+            log(f"Grafik olusturma hatasi, bildirim gorselsiz gonderilecek: {e}")
+            commit_and_push_files(["notify_state.json"], "Bildirim zaman damgasi guncellendi")
+
+        send_ntfy(
+            "\n\n".join(lines),
+            title=f"{len(signals)} Guclu AL Sinyal (1h Valid H/L Break)",
+            priority="high",
+            click_url=click_url,
+            attach_url=attach_url,
+        )

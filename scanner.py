@@ -8,8 +8,9 @@ indikatorudur: fiyat (Heikin Ashi kapanisi) trailing stop seviyesini SON
 barda yukari keserse "buy", asagi keserse "sell" sinyali uretilir -- bu da
 dogrudan "GUCLU AL/SAT" sinyaline karsilik gelir.
 Valid Highs & Lows (Structure Break) ve LinReg Candle trend yonu artik
-sinyal kapisi degil; arkaplanda hesaplanmaya ve grafikte referans olarak
-gosterilmeye devam eder.
+sinyal kapisi degil; arkaplanda hesaplanmaya devam eder (latest_signals.json/
+panelde bilgi amacli) ama artik bildirime eklenen grafikte gosterilmiyor --
+grafikte tek gorsel sinyal katmani UT Bot.
 
 Kullanim:
     python3 scanner.py                 # taramayi calistir, sonucu yazdir ve JSON'a kaydet
@@ -296,7 +297,7 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, di
     (al/sat ok isaretleriyle) cizer.
     divergence verilirse (bkz. detect_macd_divergence), pozitif/negatif MACD
     uyumsuzlugunu fiyat grafigi uzerinde de kesikli cizgi + etiketle isaretler.
-    display_bars verilirse, hesaplamalar (Valid H/L) df'in TAMAMI uzerinde
+    display_bars verilirse, hesaplamalar (UT Bot trailing stop) df'in TAMAMI uzerinde
     yapilir (gizli "isinma" gecmisi dahil) ama sadece SON display_bars mum cizilir/
     gosterilir -- boylece gorunen pencerenin basinda state sifirdan baslamaz.
     """
@@ -307,11 +308,6 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, di
     closes = ha["close"].values
     n_full = len(ha)
     offset = max(n_full - display_bars, 0) if display_bars else 0
-
-    # Valid H/L artik HA mumlari uzerinden hesaplaniyor (bkz. evaluate_symbol) --
-    # overlay'in de ayni HA serisi uzerinden hesaplanmasi gerekiyor, yoksa cizilen
-    # HA mumlariyla H/L kirilim seviyeleri/etiketleri uyusmaz.
-    struct = detect_valid_high_low(ha)
 
     ax.set_facecolor("#0d1117")
 
@@ -326,11 +322,11 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, di
             body_height = (highs[i] - lows[i]) * 0.01 or 0.0001
         ax.add_patch(Rectangle((i - 0.3, body_bottom), 0.6, body_height, color=color, zorder=2))
 
-    # --- UT Bot Alerts (ATR Trailing Stop) - ana tarama kriteri, grafik uzerinde de gosterilir ---
+    # --- UT Bot Alerts (ATR Trailing Stop) - ana tarama kriteri, TEK gorsel sinyal katmani ---
+    # Kullanici talebiyle Valid H/L overlay'i (H/L etiketleri + kirilim cizgileri) grafikten
+    # kaldirildi -- Valid H/L artik ana kriter olmadigi icin (bkz. evaluate_symbol/UT Bot Alerts),
+    # bildirime eklenen grafikte sadece UT Bot AL/SAT sinyalleri gorunuyor.
     _draw_ut_bot_overlay(ax, ha, offset=offset)
-
-    # --- Valid Highs & Lows (Structure Break) - artik arkaplan/bilgi amacli, grafikte referans olarak kalir ---
-    _draw_valid_hl_overlay(ax, df, struct=struct, offset=offset)
 
     # --- MACD uyumsuzlugu (varsa) fiyat grafiginde de isaretlenir ---
     if divergence:
@@ -520,89 +516,6 @@ def _draw_ut_bot_overlay(ax, ha, offset=0):
                 bbox=dict(boxstyle="round,pad=0.3", fc="#ef5350", ec="none"),
                 arrowprops=dict(arrowstyle="-", color="#ef5350", lw=1.3, shrinkA=0, shrinkB=3),
                 zorder=8,
-            )
-
-
-def _draw_valid_hl_overlay(ax, df, struct=None, offset=0):
-    """
-    "Valid Highs & Lows (Structure Break)" indikatorunu fiyat panelinin uzerine cizer:
-      - Onaylanmis her Valid High/Low noktasina kirmizi "H" / yesil "L" etiketi
-        (Pine'daki label.new ile ayni: noktanin OLUSTUGU barda, yani point_bar'da).
-      - En son onaylanmis VH/VL seviyesinden, o noktadan grafigin sonuna kadar uzanan
-        kalici bir yatay cizgi (Pine'daki "var line" + extend.right'in statik grafikteki
-        karsiligi -- yeni bir onay gelene kadar ayni cizgi kalir).
-      - Henuz onaylanmamis "bekleyen aday" (running high/low), gri kesikli cizgi ve
-        "h?" / "l?" etiketiyle -- sadece grafigin SON barina gore (Pine'daki barstate.islast).
-    struct, df'in TAMAMI (gizli isinma gecmisi dahil) uzerinden hesaplanmis olabilir;
-    offset, gorunen pencerenin df icindeki baslangic indeksidir. offset'ten ONCE
-    olusan noktalar icin etiket cizilmez (ekran disina tasip komsu panellere
-    bulasmasin diye -- ax.annotate cizgiler gibi otomatik kirpilmiyor), ama en son
-    onaylanmis seviye/cizgi state'i yine de dogru sekilde takip edilir ve gorunen
-    pencereye kadar uzatilir.
-    """
-    if struct is None:
-        struct = detect_valid_high_low(df)
-    n = len(df)
-    if n == 0:
-        return
-
-    last_vh_point = None
-    last_vl_point = None
-    for i in range(n):
-        rec = struct[i]
-        if rec["vh_new"] and rec["vh_point_bar"] is not None:
-            pb, level = rec["vh_point_bar"], rec["vh"]
-            if pb >= offset:
-                ax.annotate(
-                    "H", xy=(pb, level), xytext=(0, 16), textcoords="offset points",
-                    ha="center", va="bottom", fontsize=8, fontweight="bold", color="white",
-                    bbox=dict(boxstyle="round,pad=0.32", fc="#ef5350", ec="none"),
-                    arrowprops=dict(arrowstyle="-", color="#ef5350", lw=1.4, shrinkA=0, shrinkB=3),
-                    zorder=7,
-                )
-            last_vh_point = (pb, level)
-        if rec["vl_new"] and rec["vl_point_bar"] is not None:
-            pb, level = rec["vl_point_bar"], rec["vl"]
-            if pb >= offset:
-                ax.annotate(
-                    "L", xy=(pb, level), xytext=(0, -16), textcoords="offset points",
-                    ha="center", va="top", fontsize=8, fontweight="bold", color="white",
-                    bbox=dict(boxstyle="round,pad=0.32", fc="#26a69a", ec="none"),
-                    arrowprops=dict(arrowstyle="-", color="#26a69a", lw=1.4, shrinkA=0, shrinkB=3),
-                    zorder=7,
-                )
-            last_vl_point = (pb, level)
-
-    if last_vh_point is not None:
-        pb, level = last_vh_point
-        ax.plot([max(pb, offset), n - 1], [level, level], color="#ef5350", linewidth=1.1, alpha=0.85, zorder=4)
-    if last_vl_point is not None:
-        pb, level = last_vl_point
-        ax.plot([max(pb, offset), n - 1], [level, level], color="#26a69a", linewidth=1.1, alpha=0.85, zorder=4)
-
-    # Bekleyen (henuz onaylanmamis) aday -- sadece grafigin son barina gore
-    last_rec = struct[-1]
-    if last_rec["mode"] == 1 and last_rec["run_high_bar"] is not None:
-        pb, level = last_rec["run_high_bar"], last_rec["run_high"]
-        ax.plot([max(pb, offset), n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
-        if pb >= offset:
-            ax.annotate(
-                "h?", xy=(pb, level), xytext=(0, 16), textcoords="offset points",
-                ha="center", va="bottom", fontsize=8, fontweight="bold", color="white",
-                bbox=dict(boxstyle="round,pad=0.32", fc="#9e9e9e", ec="none"),
-                arrowprops=dict(arrowstyle="-", color="#9e9e9e", lw=1.2, shrinkA=0, shrinkB=3),
-                zorder=7,
-            )
-    elif last_rec["mode"] == 2 and last_rec["run_low_bar"] is not None:
-        pb, level = last_rec["run_low_bar"], last_rec["run_low"]
-        ax.plot([max(pb, offset), n - 1], [level, level], color="#9e9e9e", linewidth=1.0, linestyle="--", alpha=0.8, zorder=4)
-        if pb >= offset:
-            ax.annotate(
-                "l?", xy=(pb, level), xytext=(0, -16), textcoords="offset points",
-                ha="center", va="top", fontsize=8, fontweight="bold", color="white",
-                bbox=dict(boxstyle="round,pad=0.32", fc="#9e9e9e", ec="none"),
-                arrowprops=dict(arrowstyle="-", color="#9e9e9e", lw=1.2, shrinkA=0, shrinkB=3),
-                zorder=7,
             )
 
 
@@ -1039,8 +952,9 @@ def evaluate_symbol(symbol):
     lr_entry = linreg_trend(ha_entry)
     lr_confirm = linreg_trend(ha_confirm)
 
-    # Arkaplanda tutulan eski ana kriter: artik sinyal kapisi degil, sadece bilgi amacli ve
-    # grafik referansi (bkz. _draw_valid_hl_overlay) olarak hesaplanmaya devam eder.
+    # Arkaplanda tutulan eski ana kriter: artik sinyal kapisi degil, sadece bilgi/gecmis
+    # amacli (latest_signals.json/panel) olarak hesaplanmaya devam eder -- bildirime eklenen
+    # grafikte artik gosterilmiyor (kullanici talebiyle kaldirildi, sadece UT Bot gorunur).
     # Sadece SON barda yeni bir Valid High/Low onaylandiysa VE onaylanan ekstrem nokta
     # o onay barina gore en fazla VALID_HL_FRESHNESS_BARS bar once olustuysa "taze" sayilir.
     struct_records = detect_valid_high_low(ha_entry)

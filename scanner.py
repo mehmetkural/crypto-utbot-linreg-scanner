@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
 """
-Valid Highs & Lows (Structure Break) + UT Bot/LinReg Crypto Scanner
+UT Bot (ATR Trailing Stop) + Valid Highs & Lows/LinReg Crypto Scanner
 ----------------------------------------------------------------------
 Binance USDT spot piyasasini 1 saatlik (1h) zaman diliminde tarar.
-Ana tarama kriteri kullanicinin sagladigi "Valid Highs & Lows (Structure
-Break)" Pine Script v6 indikatorudur: bir swing yuksek/dusuk, fiyat son
-onayli pivot dusugu/yuksegi kirinca (VALID_HL_CONFIRM_ON_CLOSE'a gore kapanis
-ya da fitille) "valid" sayilir. Bu kirilim SON barda gerceklesmisse VE
-kirilan ekstrem nokta son VALID_HL_FRESHNESS_BARS bar icinde olusmussa
-"GUCLU AL/SAT" sinyali uretilir.
-UT Bot (ATR trailing stop), LinReg Candle trend yonu ve MACD/hacim panelleri
-artik sinyal kapisi degil; arkaplanda hesaplanmaya ve grafikte referans
-olarak gosterilmeye devam eder.
+Ana tarama kriteri "UT Bot Alerts" (QuantNomad) ATR trailing-stop
+indikatorudur: fiyat (Heikin Ashi kapanisi) trailing stop seviyesini SON
+barda yukari keserse "buy", asagi keserse "sell" sinyali uretilir -- bu da
+dogrudan "GUCLU AL/SAT" sinyaline karsilik gelir.
+Valid Highs & Lows (Structure Break) ve LinReg Candle trend yonu artik
+sinyal kapisi degil; arkaplanda hesaplanmaya ve grafikte referans olarak
+gosterilmeye devam eder.
 
 Kullanim:
     python3 scanner.py                 # taramayi calistir, sonucu yazdir ve JSON'a kaydet
@@ -977,21 +975,25 @@ def evaluate_symbol(symbol):
     except Exception as e:
         return {"symbol": symbol, "error": str(e)}
 
-    # Kullanici TradingView'da Heikin Ashi kullaniyor -- Pine Script indikatorleri (Valid H/L,
-    # UT Bot, LinReg Candle) TradingView'da HA grafigi uzerinde calistiginda `close`/`high`/`low`
+    # Kullanici TradingView'da Heikin Ashi kullaniyor -- Pine Script indikatorleri (UT Bot,
+    # Valid H/L, LinReg Candle) TradingView'da HA grafigi uzerinde calistiginda `close`/`high`/`low`
     # degiskenleri HA degerlerine karsilik gelir. Ayni sonucu burada da elde etmek icin ham
     # Binance mumlarini once Heikin Ashi'ye ceviriyoruz ve TUM sinyal hesaplamalarini bu HA
-    # seri uzerinden yapiyoruz -- boylece struct_level/H-L kirilimlari ve UT Bot/LinReg trendi
+    # seri uzerinden yapiyoruz -- boylece UT Bot trailing stop'u, H-L kirilimlari ve LinReg trendi
     # kullanicinin gordugu HA grafigiyle birebir eslesir.
     ha_entry = heikin_ashi(df_entry)
     ha_confirm = ha_entry if TIMEFRAME_CONFIRM == TIMEFRAME_ENTRY else heikin_ashi(df_confirm)
 
-    # Arkaplanda tutulan eski gostergeler: artik sinyal kapisi degil, sadece bilgi amacli.
+    # --- Ana tarama kriteri: UT Bot Alerts (ATR Trailing Stop) ---
+    # Fiyat (HA kapanisi) trailing stop seviyesini SON barda kesince (crossover/crossunder)
+    # sinyal uretilir; bu kesisim zaten sadece gerceklestigi TEK barda True olur, yani ayni
+    # sinyal ardisik taramalarda tekrar tekrar uretilmez (bkz. ut_bot_signal).
     signal, trend_entry = ut_bot_signal(ha_entry)
     lr_entry = linreg_trend(ha_entry)
     lr_confirm = linreg_trend(ha_confirm)
 
-    # --- Ana tarama kriteri: Valid Highs & Lows (Structure Break) ---
+    # Arkaplanda tutulan eski ana kriter: artik sinyal kapisi degil, sadece bilgi amacli ve
+    # grafik referansi (bkz. _draw_valid_hl_overlay) olarak hesaplanmaya devam eder.
     # Sadece SON barda yeni bir Valid High/Low onaylandiysa VE onaylanan ekstrem nokta
     # o onay barina gore en fazla VALID_HL_FRESHNESS_BARS bar once olustuysa "taze" sayilir.
     struct_records = detect_valid_high_low(ha_entry)
@@ -1035,9 +1037,9 @@ def evaluate_symbol(symbol):
     }
 
     strong = None
-    if struct_signal == "buy":
+    if signal == "buy":
         strong = "GUCLU_AL"
-    elif struct_signal == "sell":
+    elif signal == "sell":
         strong = "GUCLU_SAT"
     result["strong_signal"] = strong
     return result

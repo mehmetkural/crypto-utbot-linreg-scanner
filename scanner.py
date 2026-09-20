@@ -73,7 +73,8 @@ MACD_DIVERGENCE_ORDER = 3                # swing (tepe/dip) noktasi icin +/- mum
 VOLUME_MA_LENGTH = 20                    # hacim panelindeki hareketli ortalama periyodu
 
 # "Valid Highs & Lows (Structure Break)" indikatoru (Pine Script v6, kullanici tarafindan
-# saglandi) - artik ANA tarama kriteri. UT Bot/LinReg/MACD/Hacim arkaplanda hesaplanmaya devam eder.
+# saglandi) - artik ana tarama kriteri DEGIL (bkz. UT_KEY_VALUE/UT_ATR_PERIOD yukarida ve
+# evaluate_symbol icindeki UT Bot Alerts kriteri); grafikte referans olarak gosterilmeye devam eder.
 VALID_HL_PIV_BARS = 5                    # ta.pivothigh/pivotlow pencere genisligi (her iki yanda)
 VALID_HL_CONFIRM_ON_CLOSE = True         # True: kirilim kapanisla onaylanir, False: fitil (wick) yeterli
 VALID_HL_FRESHNESS_BARS = 5              # onaylanan ekstrem nokta, onay barina gore en fazla bu kadar bar once olustuysa "taze" sayilir
@@ -325,11 +326,10 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, di
             body_height = (highs[i] - lows[i]) * 0.01 or 0.0001
         ax.add_patch(Rectangle((i - 0.3, body_bottom), 0.6, body_height, color=color, zorder=2))
 
-    # Not: UT Bot artik tamamen arkaplan gostergesi -- stop cizgisi (ortadaki beyaz
-    # cizgi) ve Buy/Sell etiketleri kafa karistirmamasi icin grafikten kaldirildi;
-    # tek gorunur etiketler asagidaki Valid High/Low pinleri.
+    # --- UT Bot Alerts (ATR Trailing Stop) - ana tarama kriteri, grafik uzerinde de gosterilir ---
+    _draw_ut_bot_overlay(ax, ha, offset=offset)
 
-    # --- Valid Highs & Lows (Structure Break) - ana tarama kriteri, grafik uzerinde de gosterilir ---
+    # --- Valid Highs & Lows (Structure Break) - artik arkaplan/bilgi amacli, grafikte referans olarak kalir ---
     _draw_valid_hl_overlay(ax, df, struct=struct, offset=offset)
 
     # --- MACD uyumsuzlugu (varsa) fiyat grafiginde de isaretlenir ---
@@ -359,7 +359,7 @@ def _draw_candlestick_panel(ax, symbol, df, timeframe_label, divergence=None, di
     bottom_margin = 0.16
     ax.set_ylim(y_min - y_range * bottom_margin, y_max + y_range * top_margin)
     ax.set_xlim(offset - 1, n_full)
-    ax.set_title(f"{symbol}  ({timeframe_label}) - Valid H/L", color="white", fontsize=11)
+    ax.set_title(f"{symbol}  ({timeframe_label}) - UT Bot", color="white", fontsize=11)
     ax.tick_params(colors="white", labelsize=8)
     for spine in ax.spines.values():
         spine.set_color("#333333")
@@ -474,6 +474,53 @@ def _draw_volume_panel(ax, df, length=VOLUME_MA_LENGTH, display_bars=None):
     ]
     ax.set_xticks(tick_positions)
     ax.set_xticklabels(tick_labels, rotation=30, ha="right", fontsize=7)
+
+
+def _draw_ut_bot_overlay(ax, ha, offset=0):
+    """
+    UT Bot Alerts (ATR Trailing Stop) indikatorunu -- artik ana tarama kriteri --
+    fiyat panelinin uzerine cizer:
+      - Trailing stop cizgisi, o barin trendine gore renklendirilir (fiyat stop'un
+        ustundeyse yesil/AL trendi, altindaysa kirmizi/SAT trendi).
+      - Fiyatin stop'u SON KAPANAN barda kestigi her nokta (ut_bot_signal ile
+        birebir ayni kesisim mantigi, ama sadece son bar yerine gorunen penceredeki
+        TUM barlar icin tekrarlanir) yesil "AL" / kirmizi "SAT" ok-etiketiyle
+        isaretlenir -- GUCLU AL/SAT bildirimini tetikleyen kesisimler boylece
+        gonderilen grafikte de gorunur olur (bkz. evaluate_symbol).
+    ha, Heikin Ashi'ye cevrilmis mum serisidir (sinyal hesaplamasiyla ayni seri).
+    offset, gorunen pencerenin ha icindeki baslangic indeksidir (bkz. _draw_candlestick_panel).
+    """
+    closes = ha["close"].values
+    lows = ha["low"].values
+    highs = ha["high"].values
+    stop = _ut_bot_stop_series(ha)
+    n = len(closes)
+    if n == 0:
+        return
+
+    start = max(offset, 1)
+    for i in range(start, n):
+        if np.isnan(stop[i]) or np.isnan(stop[i - 1]):
+            continue
+        seg_color = "#26a69a" if closes[i] > stop[i] else "#ef5350"
+        ax.plot([i - 1, i], [stop[i - 1], stop[i]], color=seg_color, linewidth=1.0, alpha=0.9, zorder=3)
+
+        if closes[i - 1] <= stop[i - 1] and closes[i] > stop[i]:
+            ax.annotate(
+                "AL", xy=(i, lows[i]), xytext=(0, -18), textcoords="offset points",
+                ha="center", va="top", fontsize=8, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.3", fc="#26a69a", ec="none"),
+                arrowprops=dict(arrowstyle="-", color="#26a69a", lw=1.3, shrinkA=0, shrinkB=3),
+                zorder=8,
+            )
+        elif closes[i - 1] >= stop[i - 1] and closes[i] < stop[i]:
+            ax.annotate(
+                "SAT", xy=(i, highs[i]), xytext=(0, 18), textcoords="offset points",
+                ha="center", va="bottom", fontsize=8, fontweight="bold", color="white",
+                bbox=dict(boxstyle="round,pad=0.3", fc="#ef5350", ec="none"),
+                arrowprops=dict(arrowstyle="-", color="#ef5350", lw=1.3, shrinkA=0, shrinkB=3),
+                zorder=8,
+            )
 
 
 def _draw_valid_hl_overlay(ax, df, struct=None, offset=0):
@@ -1183,7 +1230,7 @@ if __name__ == "__main__":
 
         send_ntfy(
             "\n\n".join(lines),
-            title=f"{len(signals)} Guclu AL Sinyal (1h Valid H/L Break)",
+            title=f"{len(signals)} Guclu AL Sinyal (1h UT Bot)",
             priority="high",
             click_url=click_url,
             attach_url=attach_url,

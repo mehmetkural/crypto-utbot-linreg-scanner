@@ -63,6 +63,27 @@
   #refreshBtn.spinning svg { animation: spin 0.8s linear infinite; }
   @keyframes spin { to { transform: rotate(360deg); } }
 
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  #notifyToggleBtn {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    color: var(--text-dim);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  #notifyToggleBtn.on { border-color: var(--green); color: var(--green); }
+  #notifyToggleBtn.off { border-color: var(--red); color: var(--red); }
+
   .tabbar {
     display: flex;
     gap: 4px;
@@ -214,13 +235,19 @@
       <h1>📈 Crypto UT Bot + LinReg Scanner</h1>
       <div class="sub" id="lastScanLine">Yukleniyor...</div>
     </div>
-    <button id="refreshBtn" onclick="load()">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M23 4v6h-6"/><path d="M1 20v-6h6"/>
-        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-      </svg>
-      Yenile
-    </button>
+    <div class="header-actions">
+      <button id="notifyToggleBtn" onclick="toggleNotify()" title="Tikladiginizda GitHub'da onceden doldurulmus bir issue sayfasi acilir; 'Submit new issue' butonuna basmaniz yeterli, birkac saniye icinde otomatik uygulanir.">
+        <span id="notifyToggleIcon">🔔</span>
+        <span id="notifyToggleText">Yukleniyor...</span>
+      </button>
+      <button id="refreshBtn" onclick="load()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M23 4v6h-6"/><path d="M1 20v-6h6"/>
+          <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
+        </svg>
+        Yenile
+      </button>
+    </div>
   </header>
 
   <div class="tabbar">
@@ -637,11 +664,75 @@ async function loadMemo() {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Bildirim ac/kapa dugmesi -- panelin kendisi statik bir GitHub Pages sayfasi
+// oldugu icin (sunucu tarafi yok, gizli anahtar/token GÖMEMEYIZ), toggle
+// GERCEK zamanli degil: dugmeye basinca GitHub'da onceden doldurulmus bir
+// "yeni issue" sayfasi acilir (kullanici zaten kendi GitHub hesabinda oturum
+// acmis oldugu icin ekstra giris gerekmez); "Submit new issue" butonuna
+// basildiginda .github/workflows/notify_toggle.yml tetiklenir, notify_config.json'i
+// gunceller, issue'ya yorum yazip kapatir. Boylece hicbir sifre/token panelde
+// veya kodda acik sekilde tutulmaz. Tarama/panel verileri bu ayardan etkilenmez --
+// sadece scanner.py/memo_scanner.py'nin OTOMATIK push bildirimleri (send_ntfy)
+// bu ayar KAPALI oldugunda atlanir.
+const REPO_URL = "https://github.com/mehmetkural/crypto-utbot-linreg-scanner";
+let notifyEnabled = true; // dosya henuz yuklenmeden/yoksa varsayilan: ACIK (scanner.py ile ayni varsayilan)
+
+function renderNotifyToggle() {
+  const btn = document.getElementById('notifyToggleBtn');
+  const icon = document.getElementById('notifyToggleIcon');
+  const text = document.getElementById('notifyToggleText');
+  btn.classList.remove('on', 'off');
+  if (notifyEnabled) {
+    btn.classList.add('on');
+    icon.textContent = '🔔';
+    text.textContent = 'Bildirimler: Acik';
+  } else {
+    btn.classList.add('off');
+    icon.textContent = '🔕';
+    text.textContent = 'Bildirimler: Kapali';
+  }
+}
+
+async function loadNotifyConfig() {
+  try {
+    const cfg = await fetchJson('notify_config.json');
+    notifyEnabled = cfg.enabled !== false;
+  } catch (e) {
+    notifyEnabled = true; // dosya henuz olusmadiysa scanner.py/memo_scanner.py ile ayni varsayilan: ACIK
+  }
+  renderNotifyToggle();
+}
+
+function toggleNotify() {
+  const turningOff = notifyEnabled;
+  const newTitle = turningOff ? "notify:off" : "notify:on";
+  const body = turningOff
+    ? "Bu issue, GUCLU AL ve MEMO push bildirimlerini KAPATMAK icin panel uzerinden otomatik acildi.\n\n" +
+      "notify_toggle.yml GitHub Actions is akisi bu issue'yu okuyup notify_config.json dosyasini gunceller, " +
+      "bu issue'ya yorum yazar ve otomatik kapatir -- baska bir sey yapmaniza gerek yok, sadece asagidaki " +
+      "\"Submit new issue\" butonuna basmaniz yeterli."
+    : "Bu issue, GUCLU AL ve MEMO push bildirimlerini TEKRAR ACMAK icin panel uzerinden otomatik acildi.\n\n" +
+      "notify_toggle.yml GitHub Actions is akisi bu issue'yu okuyup notify_config.json dosyasini gunceller, " +
+      "bu issue'ya yorum yazar ve otomatik kapatir -- baska bir sey yapmaniza gerek yok, sadece asagidaki " +
+      "\"Submit new issue\" butonuna basmaniz yeterli.";
+  const url = `${REPO_URL}/issues/new?title=${encodeURIComponent(newTitle)}&body=${encodeURIComponent(body)}`;
+  window.open(url, '_blank');
+  // GitHub Actions'in issue'yu isleyip notify_config.json'i push etmesi birkac saniye surer;
+  // bu sure zarfinda gercek durumu birkac kez tekrar kontrol et.
+  setTimeout(loadNotifyConfig, 8000);
+  setTimeout(loadNotifyConfig, 20000);
+  setTimeout(loadNotifyConfig, 40000);
+}
+
 load();
 setInterval(load, REFRESH_MS);
 
 loadMemo();
 setInterval(loadMemo, REFRESH_MS);
+
+loadNotifyConfig();
+setInterval(loadNotifyConfig, REFRESH_MS);
 </script>
 </body>
 </html>

@@ -119,6 +119,43 @@ def save_last_notified_at(dt):
 
 
 # ---------------------------------------------------------------------------
+# Bildirim ac/kapa (GitHub Pages panelindeki "Bildirimler" dugmesi)
+# ---------------------------------------------------------------------------
+# Kullanici panelden bir issue acarak (bkz. index.html toggleNotify() ve
+# .github/workflows/notify_toggle.yml) push bildirimlerini gecici olarak
+# durdurabilir/tekrar acabilir. Bu, taramanin/panelin kendisini ETKILEMEZ --
+# latest_signals.json, signals_history.json, memo_latest_signals.json,
+# memo_signals_history.json ve grafik her zaman oldugu gibi guncellenmeye
+# devam eder; sadece asagidaki notifications_enabled() False donduginde,
+# scanner.py VE memo_scanner.py'nin __main__ bloklarindaki OTOMATIK
+# send_ntfy(...) cagrilari atlanir. FORCE_TEST_NOTIFY ile tetiklenen manuel
+# test bildirimleri bu ayardan BAGIMSIZDIR (kullanici bilerek tetikledigi icin).
+NOTIFY_CONFIG_FILENAME = "notify_config.json"
+
+
+def notify_config_path():
+    return __file__.rsplit("/", 1)[0] + "/" + NOTIFY_CONFIG_FILENAME
+
+
+def load_notify_config():
+    """notify_config.json'i okur. Dosya yoksa/bozuksa varsayilan olarak {'enabled': True} doner
+    (yani panel hic dokunulmadiysa bildirimler eskisi gibi ACIK kalir)."""
+    try:
+        with open(notify_config_path()) as f:
+            cfg = json.load(f)
+            if isinstance(cfg, dict) and "enabled" in cfg:
+                return cfg
+    except Exception:
+        pass
+    return {"enabled": True}
+
+
+def notifications_enabled():
+    """Panel togglesine gore otomatik push bildirimlerinin acik olup olmadigini doner."""
+    return bool(load_notify_config().get("enabled", True))
+
+
+# ---------------------------------------------------------------------------
 # GitHub Pages paneli icin sinyal gecmisi (signals_history.json)
 # ---------------------------------------------------------------------------
 def history_path():
@@ -1142,10 +1179,14 @@ if __name__ == "__main__":
             log(f"Grafik olusturma hatasi, bildirim gorselsiz gonderilecek: {e}")
             commit_and_push_files(["notify_state.json"], "Bildirim zaman damgasi guncellendi")
 
-        send_ntfy(
-            "\n\n".join(lines),
-            title=f"{len(signals)} Guclu AL Sinyal (4h UT Bot)",
-            priority="high",
-            click_url=click_url,
-            attach_url=attach_url,
-        )
+        if notifications_enabled():
+            send_ntfy(
+                "\n\n".join(lines),
+                title=f"{len(signals)} Guclu AL Sinyal (4h UT Bot)",
+                priority="high",
+                click_url=click_url,
+                attach_url=attach_url,
+            )
+        else:
+            log("Bildirimler panel togglesiyle KAPALI, GUCLU AL bildirimi gonderilmiyor "
+                "(grafik/gecmis/panel verileri yine de guncellendi).")

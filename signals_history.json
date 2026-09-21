@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "CRCLBUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1789970400000,
+    "detected_at_utc": "2026-09-21T06:28:22+00:00",
+    "price_at_signal": 92.59,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "PROVEUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1789970400000,
@@ -709,10 +720,10 @@
     "bar_time_entry": 1789956000000,
     "detected_at_utc": "2026-09-21T02:23:02+00:00",
     "price_at_signal": 0.003434,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00393,
+    "evaluated_at": "2026-09-21T06:28:22+00:00"
   },
   {
     "symbol": "UNIUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.3387,
-    "evaluated_at": "2026-09-18T21:11:12+00:00"
-  },
-  {
-    "symbol": "BCHUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789750800000,
-    "detected_at_utc": "2026-09-18T17:08:05+00:00",
-    "price_at_signal": 248.8,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 256.0,
     "evaluated_at": "2026-09-18T21:11:12+00:00"
   }
 ]

@@ -52,6 +52,15 @@ MEMO_MACD_NEAR_ZERO_PCT = 0.004           # |MACD| <= kapanis fiyatinin bu orani
 
 MEMO_STATE_FILENAME = "memo_notify_state.json"
 
+# GitHub Pages paneli icin memo sinyal gecmisi ayarlari (ana taramanin signals_history.json
+# mekanizmasindan bagimsiz, kendi dosyasina yazar). Ana taramadan farkli olarak burada sabit
+# bir degerlendirme ufku (isabet/kacirma) YOK -- kullanici talebiyle sadece "bildirim geldigi
+# fiyat" ile "son fiyat" surekli karsilastirilir (bkz. update_memo_history_prices): bir sinyal
+# MACD kesisiminden sonra guncel memo_signals listesinden dusse bile (ör. bar artik "yeni
+# kesisim" olmadigi icin), gecmisteki kaydi fiyati izlenmeye devam eder.
+MEMO_HISTORY_FILENAME = "memo_signals_history.json"
+MEMO_HISTORY_MAX_ENTRIES = 200            # gecmiste tutulan en fazla memo sinyali sayisi
+
 
 def log(msg):
     scanner.log(f"[MEMO] {msg}")
@@ -74,6 +83,66 @@ def load_memo_state():
 def save_memo_state(state):
     with open(memo_state_path(), "w") as f:
         json.dump(state, f, indent=2)
+
+
+# ---------------------------------------------------------------------------
+# GitHub Pages paneli icin memo sinyal gecmisi (memo_signals_history.json)
+# ---------------------------------------------------------------------------
+def memo_history_path():
+    return __file__.rsplit("/", 1)[0] + "/" + MEMO_HISTORY_FILENAME
+
+
+def load_memo_history():
+    """memo_signals_history.json'daki gecmis MEMO sinyal kayitlarini okur. Yoksa bos liste doner."""
+    try:
+        with open(memo_history_path()) as f:
+            return json.load(f)
+    except Exception:
+        return []
+
+
+def save_memo_history(history):
+    """Memo sinyal gecmisini memo_signals_history.json'a yazar (repo'ya commitlenip GitHub Pages panelinden okunur)."""
+    with open(memo_history_path(), "w") as f:
+        json.dump(history, f, indent=2)
+
+
+def update_memo_history_with_new_signals(history, memo_signals, now_utc):
+    """Yeni MEMO sinyallerini gecmise ekler (ayni sembol + ayni bar tekrar eklenmez)."""
+    existing_keys = {(h["symbol"], h.get("bar_time")) for h in history}
+    for s in memo_signals:
+        key = (s["symbol"], s["bar_time"])
+        if key in existing_keys:
+            continue
+        history.append({
+            "symbol": s["symbol"],
+            "bar_time": s["bar_time"],
+            "detected_at_utc": now_utc.isoformat(timespec="seconds"),
+            "price_at_signal": s["last_close"],
+            "last_price": s["last_close"],
+            "last_price_updated_at": now_utc.isoformat(timespec="seconds"),
+        })
+        existing_keys.add(key)
+    # En yeni kayit en basta olacak sekilde sirala, listeyi MEMO_HISTORY_MAX_ENTRIES ile sinirla
+    history.sort(key=lambda h: h["detected_at_utc"], reverse=True)
+    return history[:MEMO_HISTORY_MAX_ENTRIES]
+
+
+def update_memo_history_prices(history, price_lookup, now_utc):
+    """
+    Gecmisteki HER kayit icin (MEMO sinyali artik guncel listede olmasa bile -- ör. OPUSDT
+    gibi bir kesisim gecmiste kalmis olsa da), sembol bu taramada tekrar cekildiyse
+    (run_memo_scan'in bu calismadaki sonuclarindan, EKSTRA API cagrisi yapmadan) son fiyatini
+    gunceller. Boylece panelde "bildirim geldigi fiyat" ile "son fiyat" surekli izlenebilir.
+    """
+    now_iso = now_utc.isoformat(timespec="seconds")
+    for h in history:
+        current_price = price_lookup.get(h["symbol"])
+        if current_price is None:
+            continue  # bu sembol bu taramada yok (hacim filtresi disina dustu vb.), sonraki taramada tekrar denenir
+        h["last_price"] = current_price
+        h["last_price_updated_at"] = now_iso
+    return history
 
 
 # ---------------------------------------------------------------------------
@@ -145,6 +214,12 @@ def run_memo_scan(min_volume=scanner.MIN_24H_QUOTE_VOLUME_USDT, verbose=True):
 
     memo_signals = [r for r in results if r["memo_signal"]]
 
+    # Sadece aktif memo sinyalleri degil, bu taramada basariyla degerlendirilen TUM
+    # sembollerin son fiyati -- gecmis kayitlarin (memo_signals_history.json) "son fiyat"
+    # alanini, ekstra API cagrisi yapmadan guncellemek icin kullanilir (bkz. __main__ ve
+    # update_memo_history_prices). Bu, memo_latest_signals.json ciktisina YAZILMAZ.
+    price_lookup = {r["symbol"]: r["last_close"] for r in results}
+
     summary = {
         "scanned_at_utc": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
         "timeframe": MEMO_TIMEFRAME,
@@ -159,12 +234,13 @@ def run_memo_scan(min_volume=scanner.MIN_24H_QUOTE_VOLUME_USDT, verbose=True):
         for s in memo_signals:
             log(f"  MEMO: {s['symbol']} @ {s['last_close']} (MACD={s['macd']:.6f})")
 
-    return summary
+    return summary, price_lookup
 
 
 if __name__ == "__main__":
     json_only = "--json-only" in sys.argv
-    summary = run_memo_scan(verbose=not json_only)
+    summary, price_lookup = run_memo_scan(verbose=not json_only)
+    now_utc = datetime.datetime.now(datetime.timezone.utc)
     out_path = __file__.rsplit("/", 1)[0] + "/memo_latest_signals.json"
     with open(out_path, "w") as f:
         json.dump(summary, f, indent=2)
@@ -173,14 +249,25 @@ if __name__ == "__main__":
     else:
         log(f"Sonuclar kaydedildi: {out_path}")
 
+    # GitHub Pages paneli icin memo sinyal gecmisi (memo_signals_history.json): yeni
+    # sinyalleri gecmise ekler VE gecmisteki TUM kayitlarin (artik aktif sinyal olmasalar
+    # bile) son fiyatini bu taramanin sonuclariyla gunceller -- boylece "bildirim geldigi
+    # fiyat" ile "son fiyat" panelde surekli takip edilebilir (ör. bir sinyal MACD
+    # kesisiminden sonra guncel listeden dusse bile fiyati izlenmeye devam eder).
+    memo_history = load_memo_history()
+    memo_history = update_memo_history_with_new_signals(memo_history, summary["memo_signals"], now_utc)
+    memo_history = update_memo_history_prices(memo_history, price_lookup, now_utc)
+    save_memo_history(memo_history)
+
     # Panelde (index.html "Memo" sekmesi) her zaman guncel veri gorunsun diye, bildirim
-    # gonderilsin ya da gonderilmesin, her calismada memo_latest_signals.json commit'lenir
-    # -- ana taramanin latest_signals.json / signals_history.json dosyalarina dokunmaz.
+    # gonderilsin ya da gonderilmesin, her calismada memo_latest_signals.json VE
+    # memo_signals_history.json commit'lenir -- ana taramanin latest_signals.json /
+    # signals_history.json dosyalarina dokunmaz.
     if not scanner.commit_and_push_files(
-        ["memo_latest_signals.json"],
+        ["memo_latest_signals.json", MEMO_HISTORY_FILENAME],
         "Memo tarama sonuclari guncellendi",
     ):
-        log("memo_latest_signals.json push edilemedi.")
+        log("memo_latest_signals.json / memo_signals_history.json push edilemedi.")
 
     if os.environ.get("FORCE_TEST_NOTIFY"):
         scanner.send_ntfy(
@@ -190,7 +277,6 @@ if __name__ == "__main__":
             title="Memo Taramasi - Test Bildirimi",
         )
     elif summary["memo_signals"]:
-        now_utc = datetime.datetime.now(datetime.timezone.utc)
         state = load_memo_state()
 
         # Ayni bar icin tekrar bildirim gonderilmesini onle (zaman bazli cooldown yerine

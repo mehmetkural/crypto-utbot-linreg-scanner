@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "JSTUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1789948800000,
+    "detected_at_utc": "2026-09-21T00:52:53+00:00",
+    "price_at_signal": 0.11387,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ENSOUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1789948800000,
@@ -346,10 +357,10 @@
     "bar_time_entry": 1789934400000,
     "detected_at_utc": "2026-09-20T20:37:58+00:00",
     "price_at_signal": 0.01304,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.01337,
+    "evaluated_at": "2026-09-21T00:52:53+00:00"
   },
   {
     "symbol": "INJUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 308.31,
-    "evaluated_at": "2026-09-18T18:07:56+00:00"
-  },
-  {
-    "symbol": "TWTUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789736400000,
-    "detected_at_utc": "2026-09-18T13:52:59+00:00",
-    "price_at_signal": 0.5468,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.5411,
     "evaluated_at": "2026-09-18T18:07:56+00:00"
   }
 ]

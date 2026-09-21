@@ -298,6 +298,14 @@
       <div class="label">Aktif Memo Sinyali</div>
       <div class="value yellow" id="memoStatSignal">-</div>
     </div>
+    <div class="card">
+      <div class="label">Toplam Kayit (Gecmis)</div>
+      <div class="value" id="memoStatHistTotal">-</div>
+    </div>
+    <div class="card">
+      <div class="label">Ort. Degisim %</div>
+      <div class="value" id="memoStatAvgPct">-</div>
+    </div>
   </div>
 
   <section>
@@ -312,6 +320,20 @@
       </table>
     </div>
     <div class="empty" id="memoEmpty" style="display:none;">Su an aktif memo sinyali yok.</div>
+  </section>
+
+  <section>
+    <h2>Memo Sinyal Gecmisi <span class="count" id="memoHistoryCount"></span></h2>
+    <div class="sub">Bildirim geldigi andaki fiyat ile son fiyat karsilastirilir -- bir sinyal guncel listeden dusse bile (ör. kesisim gecmiste kalinca) fiyati burada izlenmeye devam eder.</div>
+    <div class="history-scroll">
+      <table>
+        <thead>
+          <tr><th>Tespit</th><th>Sembol</th><th>Bildirim Fiyati</th><th>Son Fiyat</th><th>Degisim %</th></tr>
+        </thead>
+        <tbody id="memoHistoryTbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="memoHistoryEmpty" style="display:none;">Henuz kaydedilmis memo sinyal gecmisi yok.</div>
   </section>
   </div>
 
@@ -546,10 +568,68 @@ function fmtSigned(n) {
   return sign + fmtPrice(Math.abs(n));
 }
 
+// Memo sinyal gecmisinde sabit bir isabet/kacirma ufku yok -- sadece "bildirim geldigi
+// fiyat" ile "son fiyat" karsilastirilir (bkz. memo_scanner.py update_memo_history_prices).
+function memoPctValue(h) {
+  return ((h.last_price - h.price_at_signal) / h.price_at_signal) * 100;
+}
+
+function fmtMemoPct(h) {
+  if (h.last_price === null || h.last_price === undefined || h.price_at_signal === null || h.price_at_signal === undefined) {
+    return { text: "-", cls: "pct-pending" };
+  }
+  const pct = memoPctValue(h);
+  return {
+    text: `${pct >= 0 ? '+' : ''}${pct.toFixed(2)}%`,
+    cls: pct >= 0 ? "pct-pos" : "pct-neg",
+  };
+}
+
+function renderMemoStats(history) {
+  document.getElementById('memoStatHistTotal').textContent = history.length;
+  const avgEl = document.getElementById('memoStatAvgPct');
+  if (!history.length) {
+    avgEl.textContent = "-";
+    avgEl.className = "value";
+  } else {
+    const avg = history.reduce((sum, h) => sum + memoPctValue(h), 0) / history.length;
+    avgEl.textContent = `${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%`;
+    avgEl.className = avg >= 0 ? "value green" : "value red";
+  }
+}
+
+function renderMemoHistory(history) {
+  document.getElementById('memoHistoryCount').textContent = history.length ? `(${history.length})` : "";
+  const tbody = document.getElementById('memoHistoryTbody');
+  tbody.innerHTML = "";
+  if (!history.length) {
+    document.getElementById('memoHistoryEmpty').style.display = 'block';
+    return;
+  }
+  document.getElementById('memoHistoryEmpty').style.display = 'none';
+  for (const h of history) {
+    const pct = fmtMemoPct(h);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${fmtTime(h.detected_at_utc)}</td>
+      <td><a href="${tradingViewUrl(h.symbol)}" target="_blank">${h.symbol}</a></td>
+      <td>${fmtPrice(h.price_at_signal)}</td>
+      <td>${fmtPrice(h.last_price)}</td>
+      <td class="${pct.cls}">${pct.text}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
 async function loadMemo() {
   try {
-    const summary = await fetchJson('memo_latest_signals.json');
+    const [summary, history] = await Promise.all([
+      fetchJson('memo_latest_signals.json'),
+      fetchJson('memo_signals_history.json').catch(() => []),
+    ]);
     renderMemo(summary);
+    renderMemoStats(history || []);
+    renderMemoHistory(history || []);
   } catch (e) {
     document.getElementById('memoLastScanLine').textContent =
       `Memo verisi yuklenemedi (henuz ilk memo taramasi calismamis olabilir): ${e.message}`;

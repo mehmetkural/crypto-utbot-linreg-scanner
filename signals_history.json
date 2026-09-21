@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "PENDLEUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789966800000,
+    "detected_at_utc": "2026-09-21T05:53:34+00:00",
+    "price_at_signal": 2.661,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "SOLVUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1789966800000,
+    "detected_at_utc": "2026-09-21T05:53:34+00:00",
+    "price_at_signal": 0.00396,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SAGAUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1789966800000,
@@ -1391,10 +1413,10 @@
     "bar_time_entry": 1789952400000,
     "detected_at_utc": "2026-09-21T01:52:54+00:00",
     "price_at_signal": 0.08809,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.09162,
+    "evaluated_at": "2026-09-21T05:53:34+00:00"
   },
   {
     "symbol": "HMSTRUSDT",
@@ -1402,10 +1424,10 @@
     "bar_time_entry": 1789952400000,
     "detected_at_utc": "2026-09-21T01:52:54+00:00",
     "price_at_signal": 0.00017,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0001727,
+    "evaluated_at": "2026-09-21T05:53:34+00:00"
   },
   {
     "symbol": "PNUTUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.01823,
-    "evaluated_at": "2026-09-18T20:53:04+00:00"
-  },
-  {
-    "symbol": "KITEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789747200000,
-    "detected_at_utc": "2026-09-18T16:52:58+00:00",
-    "price_at_signal": 0.1097,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.1111,
-    "evaluated_at": "2026-09-18T20:53:04+00:00"
-  },
-  {
-    "symbol": "SIGNUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789747200000,
-    "detected_at_utc": "2026-09-18T16:52:58+00:00",
-    "price_at_signal": 0.01157,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.01175,
     "evaluated_at": "2026-09-18T20:53:04+00:00"
   }
 ]

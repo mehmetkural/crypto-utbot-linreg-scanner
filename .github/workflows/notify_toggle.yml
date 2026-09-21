@@ -1,0 +1,78 @@
+name: Bildirim Ac/Kapa (Panel Toggle)
+
+# GitHub Pages panelindeki "Bildirimler" dugmesi statik bir sayfada calistigi icin
+# (sunucu tarafi/gizli anahtar yok) dogrudan repo'ya yazamaz. Bunun yerine panel
+# GitHub'da onceden doldurulmus, basligi tam olarak "notify:on" veya "notify:off"
+# olan bir issue acar (bkz. index.html toggleNotify()); bu workflow o issue'yu
+# yakalayip notify_config.json'i gunceller, issue'ya yorum yazip kapatir.
+#
+# Guvenlik: sadece repo SAHIBININ actigi, basligi TAM OLARAK bu iki degerden
+# birine esit olan issue'lar isleme alinir -- baskalarinin actigi issue'lar
+# (repo public oldugu icin herkes issue acabilir) sessizce yok sayilir.
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  toggle:
+    if: >
+      github.event.issue.user.login == github.repository_owner &&
+      (github.event.issue.title == 'notify:on' || github.event.issue.title == 'notify:off')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: notify_config.json guncelle
+        env:
+          TITLE: ${{ github.event.issue.title }}
+        run: |
+          python3 - <<'EOF'
+          import json, os, datetime
+
+          enabled = os.environ["TITLE"].strip().lower() == "notify:on"
+          with open("notify_config.json", "w") as f:
+              json.dump(
+                  {
+                      "enabled": enabled,
+                      "updated_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"),
+                  },
+                  f,
+                  indent=2,
+              )
+          print("notify_config.json enabled =", enabled)
+          EOF
+
+      - name: Degisikligi commit'le ve push'la
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add notify_config.json
+          if git diff --cached --quiet; then
+            echo "Degisiklik yok (zaten bu durumdaydi)."
+          else
+            git commit -m "Bildirim durumu panel togglesiyle guncellendi (${{ github.event.issue.title }})"
+            git push
+          fi
+
+      - name: Issue'ya yaz ve kapat
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TITLE: ${{ github.event.issue.title }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+          REPO: ${{ github.repository }}
+        run: |
+          if [ "$TITLE" = "notify:on" ]; then
+            STATE="ACIK"
+          else
+            STATE="KAPALI"
+          fi
+          gh issue comment "$ISSUE_NUMBER" --repo "$REPO" \
+            --body "Bildirimler artik **${STATE}**. Panel (index.html) birkac saniye icinde bu degisikligi yansitacak."
+          gh issue close "$ISSUE_NUMBER" --repo "$REPO"

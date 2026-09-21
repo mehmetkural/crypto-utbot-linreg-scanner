@@ -1,8 +1,37 @@
 {
-  "scanned_at_utc": "2026-09-21T04:45:04+00:00",
+  "scanned_at_utc": "2026-09-21T15:03:53+00:00",
   "timeframe": "4h",
-  "symbols_scanned": 301,
+  "symbols_scanned": 346,
   "symbols_errored": 0,
-  "memo_signal_count": 0,
-  "memo_signals": []
+  "memo_signal_count": 2,
+  "memo_signals": [
+    {
+      "symbol": "GOOGLBUSDT",
+      "memo_signal": true,
+      "macd": 1.3390492873944027,
+      "macd_signal": 1.3146618727716592,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 2362.335,
+      "volume_ma": 1046.3451,
+      "volume_above_ma": true,
+      "last_close": 354.4,
+      "bar_time": 1789992000000
+    },
+    {
+      "symbol": "AAPLBUSDT",
+      "memo_signal": true,
+      "macd": 0.5416707353120955,
+      "macd_signal": 0.45917733640434283,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 1691.132,
+      "volume_ma": 518.436,
+      "volume_above_ma": true,
+      "last_close": 336.97,
+      "bar_time": 1789992000000
+    }
+  ]
 }

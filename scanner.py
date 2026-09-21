@@ -2,7 +2,7 @@
 """
 UT Bot (ATR Trailing Stop) + Valid Highs & Lows/LinReg Crypto Scanner
 ----------------------------------------------------------------------
-Binance USDT spot piyasasini 1 saatlik (1h) zaman diliminde tarar.
+Binance USDT spot piyasasini 4 saatlik (4h) zaman diliminde tarar.
 Ana tarama kriteri "UT Bot Alerts" (QuantNomad) ATR trailing-stop
 indikatorudur: fiyat (Heikin Ashi kapanisi) trailing stop seviyesini SON
 barda yukari keserse "buy", asagi keserse "sell" sinyali uretilir -- bu da
@@ -50,8 +50,8 @@ UT_KEY_VALUE = 1.0                       # UT Bot "Key Value" (sensitivity)
 UT_ATR_PERIOD = 10                       # UT Bot ATR periyodu
 LINREG_LENGTH = 11                       # LinReg Candle uzunlugu (sinyal yumusatma)
 KLINES_LIMIT = 150                       # her sembol/timeframe icin cekilen mum sayisi (warmup icin)
-TIMEFRAME_ENTRY = "1h"                   # giris (sinyal arama) zaman dilimi
-TIMEFRAME_CONFIRM = "1h"                 # onay zaman dilimi (tum parametreler 1 saatlik)
+TIMEFRAME_ENTRY = "4h"                   # giris (sinyal arama) zaman dilimi
+TIMEFRAME_CONFIRM = "4h"                 # onay zaman dilimi (tum parametreler 4 saatlik)
 MAX_WORKERS = 8                          # es zamanli istek sayisi
 REQUEST_TIMEOUT = 10
 # NOT: Once burada GUCLU AL bildirimleri arasinda 2 saatlik bir bekleme (cooldown) suresi
@@ -59,7 +59,7 @@ REQUEST_TIMEOUT = 10
 # bildirilmesini istedigi icin bu kaldirildi (bkz. __main__ blogundaki bildirim mantigi).
 
 # Bildirime eklenen grafik gorseli icin ayarlar
-CHART_TIMEFRAME = "1h"                   # bildirime eklenen grafigin zaman dilimi
+CHART_TIMEFRAME = "4h"                   # bildirime eklenen grafigin zaman dilimi
 CHART_KLINES_LIMIT = 100                 # grafikte GOSTERILEN (ekranda gorunen) mum sayisi
 CHART_STRUCT_WARMUP_BARS = 150           # gosterilen pencereden ONCE, sadece hesaplama (Valid H/L/MACD/hacim)
                                           # icin cekilen gizli "isinma" mumu -- gercek TradingView indikatoru
@@ -926,7 +926,7 @@ def detect_valid_high_low(df, piv_bars=VALID_HL_PIV_BARS, use_close=VALID_HL_CON
 def evaluate_symbol(symbol):
     try:
         df_entry = get_klines(symbol, TIMEFRAME_ENTRY)
-        # Giris ve onay zaman dilimi ayniysa (varsayilan: ikisi de 1h) ayni veriyi
+        # Giris ve onay zaman dilimi ayniysa (varsayilan: ikisi de 4h) ayni veriyi
         # iki kez cekmeye gerek yok -- gereksiz Binance API cagrisini onler.
         if TIMEFRAME_CONFIRM == TIMEFRAME_ENTRY:
             df_confirm = df_entry
@@ -1120,7 +1120,7 @@ if __name__ == "__main__":
         click_url = tradingview_url(signals[0]["symbol"]) if len(signals) == 1 else None
         save_last_notified_at(now_utc)
 
-        # Sinyal sayisi ne olursa olsun, tum sinyal coinlerinin 1 saatlik mum
+        # Sinyal sayisi ne olursa olsun, tum sinyal coinlerinin 4 saatlik mum
         # grafigini tek bir gorselde (izgara halinde) birlestirip bildirime ekle
         attach_url = None
         try:
@@ -1144,7 +1144,7 @@ if __name__ == "__main__":
 
         send_ntfy(
             "\n\n".join(lines),
-            title=f"{len(signals)} Guclu AL Sinyal (1h UT Bot)",
+            title=f"{len(signals)} Guclu AL Sinyal (4h UT Bot)",
             priority="high",
             click_url=click_url,
             attach_url=attach_url,

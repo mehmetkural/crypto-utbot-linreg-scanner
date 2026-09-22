@@ -38,6 +38,14 @@ jobs:
         # (latest_chart.png) scanner.py icinden otomatik commit+push edilir.
         run: python3 scanner.py
 
+      - name: BTC kagit alim-satim (UT Bot Alerts, 100E, ana taramadan bagimsiz)
+        # Ana taramadan tamamen ayri, bildirimsiz bir simulasyon: BTCUSDT'nin ayni
+        # UT Bot Alerts sinyaliyle "buy" dedigi anda 100 EUR'luk hayali butcenin
+        # tamami BTC alinmis, "sell" dedigi anda tamami satilmis gibi defter tutar
+        # (bkz. btc_paper_trader.py). Kendi cikti/durum dosyalarini (btc_paper_trade.json,
+        # btc_paper_trade_state.json) kendi icinden commit+push eder.
+        run: python3 btc_paper_trader.py
+
       - name: Upload latest signals as artifact
         uses: actions/upload-artifact@v4
         with:

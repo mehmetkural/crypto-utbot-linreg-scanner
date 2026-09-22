@@ -188,6 +188,8 @@
   .badge.hit { background: rgba(38,166,154,0.18); color: var(--green); }
   .badge.miss { background: rgba(239,83,80,0.18); color: var(--red); }
   .badge.pending { background: rgba(210,194,90,0.18); color: var(--yellow); }
+  .badge.long { background: rgba(38,166,154,0.18); color: var(--green); }
+  .badge.flat { background: rgba(139,148,158,0.18); color: var(--text-dim); }
 
   .pct-pos { color: var(--green); font-weight: 600; }
   .pct-neg { color: var(--red); font-weight: 600; }
@@ -253,6 +255,7 @@
   <div class="tabbar">
     <button class="tab-btn active" id="tabBtnMain" onclick="switchTab('main')">Ana Tarama (4s UT Bot)</button>
     <button class="tab-btn" id="tabBtnMemo" onclick="switchTab('memo')">Memo (4s MACD+Hacim)</button>
+    <button class="tab-btn" id="tabBtnBtc" onclick="switchTab('btc')">BTC Kagit Al-Sat (100 €)</button>
   </div>
 
   <div id="mainPanel">
@@ -361,6 +364,51 @@
       </table>
     </div>
     <div class="empty" id="memoHistoryEmpty" style="display:none;">Henuz kaydedilmis memo sinyal gecmisi yok.</div>
+  </section>
+  </div>
+
+  <div id="btcPanel" style="display:none;">
+  <div class="sub" id="btcLastScanLine" style="margin-bottom:12px;">Yukleniyor...</div>
+  <div class="cards">
+    <div class="card">
+      <div class="label">Baslangic Butcesi</div>
+      <div class="value blue" id="btcStatBudget">-</div>
+    </div>
+    <div class="card">
+      <div class="label">Guncel Equity</div>
+      <div class="value" id="btcStatEquity">-</div>
+    </div>
+    <div class="card">
+      <div class="label">Toplam Getiri %</div>
+      <div class="value" id="btcStatReturn">-</div>
+    </div>
+    <div class="card">
+      <div class="label">Pozisyon</div>
+      <div class="value" id="btcStatPosition">-</div>
+    </div>
+    <div class="card">
+      <div class="label">Islem Sayisi</div>
+      <div class="value" id="btcStatTradeCount">-</div>
+    </div>
+  </div>
+
+  <section>
+    <h2>Durum</h2>
+    <div class="sub">BTCUSDT (4 saatlik), ana taramada kullanilan ayni UT Bot Alerts sinyaliyle: "buy" gelince butcenin tamami BTC alinmis, "sell" gelince tamami satilip nakde donulmus gibi varsayilir. Gercek para/emir yoktur, sadece takip amaclidir. Ana taramadan ve Memo taramasindan tamamen bagimsizdir. (Basitlestirme: 100 EUR butce, 1 birim = 1 USDT kabul edilerek islenir, gercek EUR/USD kuru uygulanmaz.)</div>
+    <div id="btcStatusText" style="padding:8px 0; font-size:14px;">-</div>
+  </section>
+
+  <section>
+    <h2>Islem Gecmisi <span class="count" id="btcTradeHistCount"></span></h2>
+    <div class="history-scroll">
+      <table>
+        <thead>
+          <tr><th>Zaman</th><th>Islem</th><th>Fiyat</th><th>BTC Miktari</th><th>EUR Tutari</th><th>Kazanc %</th></tr>
+        </thead>
+        <tbody id="btcTradeTbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="btcTradeEmpty" style="display:none;">Henuz hic islem yapilmadi (ilk AL sinyali bekleniyor).</div>
   </section>
   </div>
 
@@ -549,12 +597,15 @@ async function load() {
 // veri dosyasini (memo_latest_signals.json) okur, kendi zamanlayicisiyla
 // yenilenir, ana taramanin state'ine/degiskenlerine hic dokunmaz.
 // ---------------------------------------------------------------------------
+const TAB_IDS = ['main', 'memo', 'btc'];
+
 function switchTab(tab) {
-  const isMain = tab === 'main';
-  document.getElementById('mainPanel').style.display = isMain ? '' : 'none';
-  document.getElementById('memoPanel').style.display = isMain ? 'none' : '';
-  document.getElementById('tabBtnMain').classList.toggle('active', isMain);
-  document.getElementById('tabBtnMemo').classList.toggle('active', !isMain);
+  for (const t of TAB_IDS) {
+    const panelId = t === 'main' ? 'mainPanel' : (t === 'memo' ? 'memoPanel' : 'btcPanel');
+    const btnId = t === 'main' ? 'tabBtnMain' : (t === 'memo' ? 'tabBtnMemo' : 'tabBtnBtc');
+    document.getElementById(panelId).style.display = (t === tab) ? '' : 'none';
+    document.getElementById(btnId).classList.toggle('active', t === tab);
+  }
 }
 
 function renderMemo(summary) {
@@ -665,6 +716,82 @@ async function loadMemo() {
 }
 
 // ---------------------------------------------------------------------------
+// "BTC Kagit Al-Sat" sekmesi -- ana taramadan ve Memo taramasindan TAMAMEN
+// BAGIMSIZ: kendi veri dosyasini (btc_paper_trade.json) okur, kendi
+// zamanlayicisiyla yenilenir. Gercek para/emir yoktur, sadece 100 EUR'luk
+// hayali butceyle UT Bot Alerts sinyaline gore BTCUSDT'de "sanki alip
+// satiyormus gibi" bir takip yapar (bkz. btc_paper_trader.py).
+// ---------------------------------------------------------------------------
+function btcPositionBadge(position) {
+  if (position === "long") return `<span class="badge long">LONG (BTC'de)</span>`;
+  return `<span class="badge flat">FLAT (Nakit)</span>`;
+}
+
+function btcTradeBadge(type) {
+  if (type === "buy") return `<span class="badge al">AL</span>`;
+  if (type === "sell") return `<span class="badge sat">SAT</span>`;
+  return "-";
+}
+
+function renderBtcPaper(data) {
+  document.getElementById('btcLastScanLine').textContent =
+    `Son guncelleme: ${fmtTime(data.updated_at_utc)} UTC  ·  ${data.symbol} (${data.timeframe})  ·  Fiyat: ${fmtPrice(data.current_price)}`;
+
+  document.getElementById('btcStatBudget').textContent = `${data.initial_budget_eur.toFixed(0)} EUR`;
+  document.getElementById('btcStatEquity').textContent = `${data.equity_eur.toFixed(2)} EUR`;
+
+  const returnEl = document.getElementById('btcStatReturn');
+  const ret = data.total_return_pct;
+  returnEl.textContent = `${ret >= 0 ? '+' : ''}${ret.toFixed(2)}%`;
+  returnEl.className = ret >= 0 ? "value green" : "value red";
+
+  document.getElementById('btcStatPosition').innerHTML = btcPositionBadge(data.position);
+  document.getElementById('btcStatTradeCount').textContent = data.trade_count ?? 0;
+
+  const statusText = data.position === "long"
+    ? `Su an BTC'desiniz: ${data.btc_amount.toFixed(8)} BTC, giris fiyati ${fmtPrice(data.entry_price)} (${fmtTime(data.entry_at_utc)}). Guncel fiyat ${fmtPrice(data.current_price)}.`
+    : `Su an nakittesiniz: ${data.cash_eur.toFixed(2)} EUR. Bir sonraki UT Bot AL sinyalini bekliyor.`;
+  document.getElementById('btcStatusText').textContent = statusText;
+
+  const trades = (data.trades || []).slice().reverse();
+  document.getElementById('btcTradeHistCount').textContent = trades.length ? `(${trades.length})` : "";
+  const tbody = document.getElementById('btcTradeTbody');
+  tbody.innerHTML = "";
+  if (!trades.length) {
+    document.getElementById('btcTradeEmpty').style.display = 'block';
+  } else {
+    document.getElementById('btcTradeEmpty').style.display = 'none';
+    for (const t of trades) {
+      const balance = t.type === 'buy' ? t.cash_used_eur : t.cash_after_eur;
+      const pctText = (t.type === 'sell')
+        ? `<span class="${t.pnl_pct >= 0 ? 'pct-pos' : 'pct-neg'}">${t.pnl_pct >= 0 ? '+' : ''}${t.pnl_pct.toFixed(2)}%</span>`
+        : '-';
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${fmtTime(t.time_utc)}</td>
+        <td>${btcTradeBadge(t.type)}</td>
+        <td>${fmtPrice(t.price)}</td>
+        <td>${t.btc_amount.toFixed(8)}</td>
+        <td>${balance.toFixed(2)} EUR</td>
+        <td>${pctText}</td>
+      `;
+      tbody.appendChild(tr);
+    }
+  }
+}
+
+async function loadBtcPaper() {
+  try {
+    const data = await fetchJson('btc_paper_trade.json');
+    renderBtcPaper(data);
+  } catch (e) {
+    document.getElementById('btcLastScanLine').textContent =
+      `BTC kagit alim-satim verisi yuklenemedi (henuz ilk calisma olmamis olabilir): ${e.message}`;
+    console.error(e);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Bildirim ac/kapa dugmesi -- panelin kendisi statik bir GitHub Pages sayfasi
 // oldugu icin (sunucu tarafi yok, gizli anahtar/token GÖMEMEYIZ), toggle
 // GERCEK zamanli degil: dugmeye basinca GitHub'da onceden doldurulmus bir
@@ -730,6 +857,9 @@ setInterval(load, REFRESH_MS);
 
 loadMemo();
 setInterval(loadMemo, REFRESH_MS);
+
+loadBtcPaper();
+setInterval(loadBtcPaper, REFRESH_MS);
 
 loadNotifyConfig();
 setInterval(loadNotifyConfig, REFRESH_MS);

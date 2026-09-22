@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BEAMXUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790078400000,
+    "detected_at_utc": "2026-09-22T14:53:25+00:00",
+    "price_at_signal": 0.001848,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SUNUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790078400000,
@@ -412,10 +423,10 @@
     "bar_time_entry": 1790064000000,
     "detected_at_utc": "2026-09-22T10:38:02+00:00",
     "price_at_signal": 1.0004,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.0002,
+    "evaluated_at": "2026-09-22T14:53:25+00:00"
   },
   {
     "symbol": "XPLUSDT",
@@ -423,10 +434,10 @@
     "bar_time_entry": 1790064000000,
     "detected_at_utc": "2026-09-22T10:38:02+00:00",
     "price_at_signal": 0.094,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.09231,
+    "evaluated_at": "2026-09-22T14:53:25+00:00"
   },
   {
     "symbol": "GRAMUSDT",
@@ -434,10 +445,10 @@
     "bar_time_entry": 1790064000000,
     "detected_at_utc": "2026-09-22T10:38:02+00:00",
     "price_at_signal": 1.421,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.428,
+    "evaluated_at": "2026-09-22T14:53:25+00:00"
   },
   {
     "symbol": "XVGUSDT",
@@ -445,10 +456,10 @@
     "bar_time_entry": 1790064000000,
     "detected_at_utc": "2026-09-22T10:38:02+00:00",
     "price_at_signal": 0.002987,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.003013,
+    "evaluated_at": "2026-09-22T14:53:25+00:00"
   },
   {
     "symbol": "LTCUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.01211,
     "evaluated_at": "2026-09-21T07:07:56+00:00"
-  },
-  {
-    "symbol": "LUNAUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789956000000,
-    "detected_at_utc": "2026-09-21T02:37:54+00:00",
-    "price_at_signal": 0.0533,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0538,
-    "evaluated_at": "2026-09-21T06:38:01+00:00"
   }
 ]

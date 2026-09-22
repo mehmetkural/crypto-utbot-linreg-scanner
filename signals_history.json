@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "ZECUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790035200000,
+    "detected_at_utc": "2026-09-22T02:23:35+00:00",
+    "price_at_signal": 1448.11,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ETHFIUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790035200000,
+    "detected_at_utc": "2026-09-22T02:23:35+00:00",
+    "price_at_signal": 0.7105,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BNCBUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790035200000,
@@ -137,10 +159,10 @@
     "bar_time_entry": 1790020800000,
     "detected_at_utc": "2026-09-21T22:22:59+00:00",
     "price_at_signal": 0.06925,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.07,
+    "evaluated_at": "2026-09-22T02:23:35+00:00"
   },
   {
     "symbol": "HEMIUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.053,
-    "evaluated_at": "2026-09-21T05:23:34+00:00"
-  },
-  {
-    "symbol": "MARSCOINUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789952400000,
-    "detected_at_utc": "2026-09-21T01:11:21+00:00",
-    "price_at_signal": 0.0959,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.1012,
-    "evaluated_at": "2026-09-21T05:23:34+00:00"
-  },
-  {
-    "symbol": "BABABUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789952400000,
-    "detected_at_utc": "2026-09-21T01:11:21+00:00",
-    "price_at_signal": 114.39,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 113.25,
     "evaluated_at": "2026-09-21T05:23:34+00:00"
   }
 ]

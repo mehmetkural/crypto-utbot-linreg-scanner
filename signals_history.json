@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "SPYBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790164800000,
+    "detected_at_utc": "2026-09-23T13:53:15+00:00",
+    "price_at_signal": 771.02,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "PEOPLEUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790164800000,
@@ -434,10 +445,10 @@
     "bar_time_entry": 1790150400000,
     "detected_at_utc": "2026-09-23T09:53:06+00:00",
     "price_at_signal": 0.01705,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.01744,
+    "evaluated_at": "2026-09-23T13:53:15+00:00"
   },
   {
     "symbol": "NOMUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.02943,
-    "evaluated_at": "2026-09-21T13:38:06+00:00"
-  },
-  {
-    "symbol": "PROMUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789981200000,
-    "detected_at_utc": "2026-09-21T09:23:01+00:00",
-    "price_at_signal": 4.963,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 4.977,
     "evaluated_at": "2026-09-21T13:38:06+00:00"
   }
 ]

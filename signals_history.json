@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "SKYUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790121600000,
+    "detected_at_utc": "2026-09-23T03:22:57+00:00",
+    "price_at_signal": 0.07115,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "BEAMXUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790121600000,
+    "detected_at_utc": "2026-09-23T03:22:57+00:00",
+    "price_at_signal": 0.001961,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ETHFIUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790121600000,
@@ -148,10 +170,10 @@
     "bar_time_entry": 1790107200000,
     "detected_at_utc": "2026-09-22T23:22:57+00:00",
     "price_at_signal": 0.4389,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.4388,
+    "evaluated_at": "2026-09-23T03:22:57+00:00"
   },
   {
     "symbol": "GRAMUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.004158,
-    "evaluated_at": "2026-09-21T10:08:01+00:00"
-  },
-  {
-    "symbol": "ICPUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1789970400000,
-    "detected_at_utc": "2026-09-21T06:07:50+00:00",
-    "price_at_signal": 2.942,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 2.946,
-    "evaluated_at": "2026-09-21T10:08:01+00:00"
-  },
-  {
-    "symbol": "CHIPUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1789970400000,
-    "detected_at_utc": "2026-09-21T06:07:50+00:00",
-    "price_at_signal": 0.04365,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.04672,
     "evaluated_at": "2026-09-21T10:08:01+00:00"
   }
 ]

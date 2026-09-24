@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "FLOWUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790272800000,
+    "detected_at_utc": "2026-09-24T19:23:01+00:00",
+    "price_at_signal": 0.03246,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "CRCLBUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790272800000,
@@ -1765,10 +1776,10 @@
     "bar_time_entry": 1790251200000,
     "detected_at_utc": "2026-09-24T15:22:58+00:00",
     "price_at_signal": 0.06789,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.06831,
+    "evaluated_at": "2026-09-24T19:23:01+00:00"
   },
   {
     "symbol": "XAIUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 1070.72,
-    "evaluated_at": "2026-09-23T20:53:08+00:00"
-  },
-  {
-    "symbol": "NBISBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790179200000,
-    "detected_at_utc": "2026-09-23T16:53:00+00:00",
-    "price_at_signal": 229.72,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 226.92,
     "evaluated_at": "2026-09-23T20:53:08+00:00"
   }
 ]

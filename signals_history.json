@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BEAMXUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790236800000,
+    "detected_at_utc": "2026-09-24T10:38:08+00:00",
+    "price_at_signal": 0.002005,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "HUMAUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790236800000,
@@ -456,10 +467,10 @@
     "bar_time_entry": 1790222400000,
     "detected_at_utc": "2026-09-24T06:23:06+00:00",
     "price_at_signal": 607.5,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 601.63,
+    "evaluated_at": "2026-09-24T10:38:08+00:00"
   },
   {
     "symbol": "EDENUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.07313,
-    "evaluated_at": "2026-09-23T18:23:06+00:00"
-  },
-  {
-    "symbol": "ACHUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790164800000,
-    "detected_at_utc": "2026-09-23T14:22:55+00:00",
-    "price_at_signal": 0.00573,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.00563,
     "evaluated_at": "2026-09-23T18:23:06+00:00"
   }
 ]

@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "OPNUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790251200000,
+    "detected_at_utc": "2026-09-24T13:38:09+00:00",
+    "price_at_signal": 0.0517,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "NBISBUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790251200000,
+    "detected_at_utc": "2026-09-24T13:38:09+00:00",
+    "price_at_signal": 238.9,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "WDCBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790251200000,
+    "detected_at_utc": "2026-09-24T13:38:09+00:00",
+    "price_at_signal": 459.06,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "RENDERUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790251200000,
@@ -214,10 +247,10 @@
     "bar_time_entry": 1790236800000,
     "detected_at_utc": "2026-09-24T09:37:55+00:00",
     "price_at_signal": 0.01845,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.02007,
+    "evaluated_at": "2026-09-24T13:38:09+00:00"
   },
   {
     "symbol": "NEARUSDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.00529,
-    "evaluated_at": "2026-09-23T18:23:06+00:00"
-  },
-  {
-    "symbol": "WALUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790164800000,
-    "detected_at_utc": "2026-09-23T14:22:55+00:00",
-    "price_at_signal": 0.03278,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0327,
-    "evaluated_at": "2026-09-23T18:23:06+00:00"
-  },
-  {
-    "symbol": "2ZUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790164800000,
-    "detected_at_utc": "2026-09-23T14:22:55+00:00",
-    "price_at_signal": 0.05152,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.051,
-    "evaluated_at": "2026-09-23T18:23:06+00:00"
-  },
-  {
-    "symbol": "1MBABYDOGEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790164800000,
-    "detected_at_utc": "2026-09-23T14:22:55+00:00",
-    "price_at_signal": 0.000401,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0003979,
     "evaluated_at": "2026-09-23T18:23:06+00:00"
   }
 ]

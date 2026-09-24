@@ -49,7 +49,9 @@ import scanner  # ana tarama scripti -- SADECE ortak yardimci fonksiyonlar/sabit
 # Ayarlar (bu simulasyona ozel, ana taramadan bagimsiz)
 # ---------------------------------------------------------------------------
 BTC_SYMBOL = "BTCUSDT"
-BTC_TIMEFRAME = "4h"                      # ana taramayla ayni zaman dilimi
+BTC_TIMEFRAME = "4h"                      # kendi sabit ayari -- ana taramanin (scanner.py)
+                                           # zaman dilimi degisikliklerinden BAGIMSIZ, kasitli olarak
+                                           # ayri tutuluyor (bkz. modul basi aciklama)
 BTC_KLINES_LIMIT = 150                    # UT Bot ATR'i icin yeterli warmup gecmisi
 BTC_INITIAL_BUDGET_EUR = 100.0            # baslangic butcesi (basitlestirme: 1 birim = 1 USDT)
 BTC_TRADE_MAX_TRADES = 500                # islem gecmisinde tutulan en fazla kayit (guvenlik siniri)

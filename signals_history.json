@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "HUMAUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790236800000,
+    "detected_at_utc": "2026-09-24T10:07:31+00:00",
+    "price_at_signal": 0.02368,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "TSTUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790236800000,
@@ -467,10 +478,10 @@
     "bar_time_entry": 1790222400000,
     "detected_at_utc": "2026-09-24T05:53:06+00:00",
     "price_at_signal": 0.02226,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0213,
+    "evaluated_at": "2026-09-24T10:07:31+00:00"
   },
   {
     "symbol": "BICOUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.00563,
-    "evaluated_at": "2026-09-23T18:23:06+00:00"
-  },
-  {
-    "symbol": "USTCUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790164800000,
-    "detected_at_utc": "2026-09-23T14:22:55+00:00",
-    "price_at_signal": 0.00565,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.00567,
     "evaluated_at": "2026-09-23T18:23:06+00:00"
   }
 ]

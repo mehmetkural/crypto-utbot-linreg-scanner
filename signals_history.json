@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "HOODBUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790330400000,
+    "detected_at_utc": "2026-09-25T10:22:59+00:00",
+    "price_at_signal": 121.99,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ARBUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790330400000,
@@ -214,10 +225,10 @@
     "bar_time_entry": 1790316000000,
     "detected_at_utc": "2026-09-25T06:22:56+00:00",
     "price_at_signal": 1.0005,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.0004,
+    "evaluated_at": "2026-09-25T10:22:59+00:00"
   },
   {
     "symbol": "BMTUSDT",
@@ -225,10 +236,10 @@
     "bar_time_entry": 1790316000000,
     "detected_at_utc": "2026-09-25T06:22:56+00:00",
     "price_at_signal": 0.01996,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.02005,
+    "evaluated_at": "2026-09-25T10:22:59+00:00"
   },
   {
     "symbol": "SNDKBUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.09835,
     "evaluated_at": "2026-09-24T16:23:05+00:00"
-  },
-  {
-    "symbol": "1000CATUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790236800000,
-    "detected_at_utc": "2026-09-24T10:53:00+00:00",
-    "price_at_signal": 0.002271,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.00233,
-    "evaluated_at": "2026-09-24T14:53:05+00:00"
   }
 ]

@@ -256,6 +256,7 @@
     <button class="tab-btn active" id="tabBtnMain" onclick="switchTab('main')">Ana Tarama (2s UT Bot)</button>
     <button class="tab-btn" id="tabBtnMemo" onclick="switchTab('memo')">Memo (4s MACD+Hacim)</button>
     <button class="tab-btn" id="tabBtnBtc" onclick="switchTab('btc')">BTC Kagit Al-Sat (100 €)</button>
+    <button class="tab-btn" id="tabBtnSw" onclick="switchTab('sw')">Yatay Filtreli UT Bot (2s)</button>
   </div>
 
   <div id="mainPanel">
@@ -409,6 +410,46 @@
       </table>
     </div>
     <div class="empty" id="btcTradeEmpty" style="display:none;">Henuz hic islem yapilmadi (ilk AL sinyali bekleniyor).</div>
+  </section>
+  </div>
+
+  <div id="swPanel" style="display:none;">
+  <div class="sub" id="swLastScanLine" style="margin-bottom:12px;">Yukleniyor...</div>
+  <div class="cards">
+    <div class="card"><div class="label">Taranan Parite (2s)</div><div class="value blue" id="swStatScanned">-</div></div>
+    <div class="card"><div class="label">UT Bot AL</div><div class="value" id="swStatBuys">-</div></div>
+    <div class="card"><div class="label">Gecen (Yatay Degil)</div><div class="value green" id="swStatPassed">-</div></div>
+    <div class="card"><div class="label">Elenen (Yatay)</div><div class="value yellow" id="swStatFiltered">-</div></div>
+    <div class="card"><div class="label">Ort. Degisim % Gecen</div><div class="value" id="swStatAvgPassed">-</div></div>
+    <div class="card"><div class="label">Ort. Degisim % Elenen</div><div class="value" id="swStatAvgFiltered">-</div></div>
+  </div>
+
+  <section>
+    <h2>Son Tarama Sinyalleri <span class="count" id="swCurrentCount"></span></h2>
+    <div class="sub">2 saatlik UT Bot AL sinyalleri (Heikin Ashi). Coin yataydaysa elenir, bildirim sadece "Gecti" olanlar icin gelir. Yatay = su 3 olcuden en az 2'si: ADX(14) &lt; 20, Choppiness(14) &gt; 61.8, Bollinger genisligi son 100 barin en dar %20'sinde (sinyal barindan onceki barlarda olculur). Yatayda olup sinyal bari 30 barlik kanalin ustunde kapattiysa "kirilim" sayilir ve gecer. Diger sekmelerden tamamen bagimsiz.</div>
+    <div id="swTableWrap">
+      <table>
+        <thead>
+          <tr><th>Sembol</th><th>Durum</th><th>Fiyat</th><th>ADX</th><th>CHOP</th><th>BB Gen. %lik</th><th>Kanal % (30 bar)</th><th>Bar Zamani</th></tr>
+        </thead>
+        <tbody id="swTbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="swEmpty" style="display:none;">Son taramada UT Bot AL sinyali yok.</div>
+  </section>
+
+  <section>
+    <h2>Sinyal Gecmisi <span class="count" id="swHistoryCount"></span></h2>
+    <div class="sub">Hem gecen hem elenen sinyallerin sinyal anindaki fiyati ile son fiyati karsilastirilir -- filtrenin ise yarayip yaramadigini buradan gorebilirsin.</div>
+    <div class="history-scroll">
+      <table>
+        <thead>
+          <tr><th>Tespit</th><th>Sembol</th><th>Durum</th><th>Sinyal Fiyati</th><th>Son Fiyat</th><th>Degisim %</th></tr>
+        </thead>
+        <tbody id="swHistoryTbody"></tbody>
+      </table>
+    </div>
+    <div class="empty" id="swHistoryEmpty" style="display:none;">Henuz kayit yok.</div>
   </section>
   </div>
 
@@ -597,12 +638,14 @@ async function load() {
 // veri dosyasini (memo_latest_signals.json) okur, kendi zamanlayicisiyla
 // yenilenir, ana taramanin state'ine/degiskenlerine hic dokunmaz.
 // ---------------------------------------------------------------------------
-const TAB_IDS = ['main', 'memo', 'btc'];
+const TAB_IDS = ['main', 'memo', 'btc', 'sw'];
+const TAB_PANELS = { main: 'mainPanel', memo: 'memoPanel', btc: 'btcPanel', sw: 'swPanel' };
+const TAB_BTNS = { main: 'tabBtnMain', memo: 'tabBtnMemo', btc: 'tabBtnBtc', sw: 'tabBtnSw' };
 
 function switchTab(tab) {
   for (const t of TAB_IDS) {
-    const panelId = t === 'main' ? 'mainPanel' : (t === 'memo' ? 'memoPanel' : 'btcPanel');
-    const btnId = t === 'main' ? 'tabBtnMain' : (t === 'memo' ? 'tabBtnMemo' : 'tabBtnBtc');
+    const panelId = TAB_PANELS[t];
+    const btnId = TAB_BTNS[t];
     document.getElementById(panelId).style.display = (t === tab) ? '' : 'none';
     document.getElementById(btnId).classList.toggle('active', t === tab);
   }
@@ -861,8 +904,105 @@ setInterval(loadMemo, REFRESH_MS);
 loadBtcPaper();
 setInterval(loadBtcPaper, REFRESH_MS);
 
+// ---------------------------------------------------------------------------
+// "Yatay Filtreli UT Bot" sekmesi -- diger sekmelerden TAMAMEN BAGIMSIZ: kendi
+// dosyalarini (sideways_latest_signals.json / sideways_signals_history.json)
+// okur, kendi zamanlayicisiyla yenilenir.
+// ---------------------------------------------------------------------------
+function swStatusBadge(status, item) {
+  if (status !== 'passed') return '<span class="badge pending">YATAY - ELENDI</span>';
+  if (item && item.was_sideways && item.breakout) return '<span class="badge al">GECTI - KIRILIM</span>';
+  return '<span class="badge al">GECTI</span>';
+}
+
+function swNum(v, digits = 1) {
+  return (v === null || v === undefined) ? '-' : Number(v).toFixed(digits);
+}
+
+function renderSideways(summary) {
+  document.getElementById('swLastScanLine').textContent =
+    `Son tarama: ${fmtTime(summary.scanned_at_utc)}  ·  ${summary.symbols_scanned} parite tarandi (2s)  ·  ${summary.symbols_errored} hata`;
+  document.getElementById('swStatScanned').textContent = summary.symbols_scanned ?? '-';
+  document.getElementById('swStatBuys').textContent = summary.ut_buy_count ?? '-';
+  document.getElementById('swStatPassed').textContent = summary.passed_count ?? '-';
+  document.getElementById('swStatFiltered').textContent = summary.filtered_count ?? '-';
+
+  const rows = [
+    ...(summary.passed_signals || []).map(s => ({ ...s, status: 'passed' })),
+    ...(summary.filtered_signals || []).map(s => ({ ...s, status: 'filtered' })),
+  ];
+  document.getElementById('swCurrentCount').textContent = rows.length ? `(${rows.length})` : '';
+  const tbody = document.getElementById('swTbody');
+  tbody.innerHTML = '';
+  document.getElementById('swEmpty').style.display = rows.length ? 'none' : 'block';
+  document.getElementById('swTableWrap').style.display = rows.length ? 'block' : 'none';
+  for (const s of rows) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><a href="${tradingViewUrl(s.symbol)}" target="_blank">${s.symbol}</a></td>
+      <td>${swStatusBadge(s.status, s)}</td>
+      <td>${fmtPrice(s.last_close)}</td>
+      <td>${swNum(s.adx)}</td>
+      <td>${swNum(s.chop)}</td>
+      <td>${swNum(s.bb_width_pctl, 0)}</td>
+      <td>${swNum(s.range_pct, 2)}</td>
+      <td>${fmtTime(s.bar_time)}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+function swSetAvg(elId, items) {
+  const el = document.getElementById(elId);
+  const valid = items.filter(h => h.price_at_signal && h.last_price != null);
+  if (!valid.length) { el.textContent = '-'; el.className = 'value'; return; }
+  const avg = valid.reduce((sum, h) => sum + memoPctValue(h), 0) / valid.length;
+  el.textContent = `${avg >= 0 ? '+' : ''}${avg.toFixed(2)}%`;
+  el.className = avg >= 0 ? 'value green' : 'value red';
+}
+
+function renderSidewaysHistory(history) {
+  swSetAvg('swStatAvgPassed', history.filter(h => h.status === 'passed'));
+  swSetAvg('swStatAvgFiltered', history.filter(h => h.status === 'filtered'));
+  document.getElementById('swHistoryCount').textContent = history.length ? `(${history.length})` : '';
+  const tbody = document.getElementById('swHistoryTbody');
+  tbody.innerHTML = '';
+  document.getElementById('swHistoryEmpty').style.display = history.length ? 'none' : 'block';
+  for (const h of history) {
+    const pct = fmtMemoPct(h);
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td>${fmtTime(h.detected_at_utc)}</td>
+      <td><a href="${tradingViewUrl(h.symbol)}" target="_blank">${h.symbol}</a></td>
+      <td>${swStatusBadge(h.status, h)}</td>
+      <td>${fmtPrice(h.price_at_signal)}</td>
+      <td>${fmtPrice(h.last_price)}</td>
+      <td class="${pct.cls}">${pct.text}</td>
+    `;
+    tbody.appendChild(tr);
+  }
+}
+
+async function loadSideways() {
+  try {
+    const [summary, history] = await Promise.all([
+      fetchJson('sideways_latest_signals.json'),
+      fetchJson('sideways_signals_history.json').catch(() => []),
+    ]);
+    renderSideways(summary);
+    renderSidewaysHistory(history || []);
+  } catch (e) {
+    document.getElementById('swLastScanLine').textContent =
+      `Veri yuklenemedi (henuz ilk yatay filtre taramasi calismamis olabilir): ${e.message}`;
+    console.error(e);
+  }
+}
+
 loadNotifyConfig();
 setInterval(loadNotifyConfig, REFRESH_MS);
+
+loadSideways();
+setInterval(loadSideways, REFRESH_MS);
 </script>
 </body>
 </html>

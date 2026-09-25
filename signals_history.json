@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "RSRUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790352000000,
+    "detected_at_utc": "2026-09-25T17:23:01+00:00",
+    "price_at_signal": 0.001764,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "CYPHBUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790352000000,
@@ -709,10 +720,10 @@
     "bar_time_entry": 1790337600000,
     "detected_at_utc": "2026-09-25T13:22:56+00:00",
     "price_at_signal": 138.04,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 138.24,
+    "evaluated_at": "2026-09-25T17:23:01+00:00"
   },
   {
     "symbol": "SUPERUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.2523,
-    "evaluated_at": "2026-09-24T20:08:02+00:00"
-  },
-  {
-    "symbol": "REZUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790265600000,
-    "detected_at_utc": "2026-09-24T16:07:54+00:00",
-    "price_at_signal": 0.003882,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.003907,
     "evaluated_at": "2026-09-24T20:08:02+00:00"
   }
 ]

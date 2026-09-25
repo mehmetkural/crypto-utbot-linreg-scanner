@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ORCLBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790337600000,
+    "detected_at_utc": "2026-09-25T13:22:56+00:00",
+    "price_at_signal": 138.04,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SUPERUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790337600000,
@@ -269,10 +280,10 @@
     "bar_time_entry": 1790323200000,
     "detected_at_utc": "2026-09-25T09:22:48+00:00",
     "price_at_signal": 0.003992,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.004165,
+    "evaluated_at": "2026-09-25T13:22:56+00:00"
   },
   {
     "symbol": "XAUTUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 1.879,
-    "evaluated_at": "2026-09-24T17:38:00+00:00"
-  },
-  {
-    "symbol": "THEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790251200000,
-    "detected_at_utc": "2026-09-24T13:23:06+00:00",
-    "price_at_signal": 0.0823,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0851,
     "evaluated_at": "2026-09-24T17:38:00+00:00"
   }
 ]

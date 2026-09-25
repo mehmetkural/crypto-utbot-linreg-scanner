@@ -1,0 +1,37 @@
+name: Yatay Filtreli UT Bot (2h)
+
+on:
+  schedule:
+    - cron: '6 */2 * * *'  # her 2 saatlik mum kapanisindan 6 dk sonra (diger taramalardan bagimsiz)
+  workflow_dispatch:
+    inputs:
+      test_notify:
+        description: 'Force a generic test notification instead of a real signal scan'
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  sideways-scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install --quiet pandas numpy requests matplotlib
+
+      - name: Run sideways-filtered UT Bot scanner
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+          FORCE_TEST_NOTIFY: ${{ github.event.inputs.test_notify == 'true' && '1' || '' }}
+        run: python3 sideways_scanner.py

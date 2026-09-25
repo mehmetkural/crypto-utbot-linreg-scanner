@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "KAVAUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790308800000,
+    "detected_at_utc": "2026-09-25T04:22:55+00:00",
+    "price_at_signal": 0.07018,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ZROUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790308800000,
@@ -368,10 +379,10 @@
     "bar_time_entry": 1790294400000,
     "detected_at_utc": "2026-09-25T00:07:59+00:00",
     "price_at_signal": 10.252,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 10.256,
+    "evaluated_at": "2026-09-25T04:22:55+00:00"
   },
   {
     "symbol": "LSKUSDT",
@@ -379,10 +390,10 @@
     "bar_time_entry": 1790294400000,
     "detected_at_utc": "2026-09-25T00:07:59+00:00",
     "price_at_signal": 0.3967,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.3436,
+    "evaluated_at": "2026-09-25T04:22:55+00:00"
   },
   {
     "symbol": "MINAUSDT",
@@ -390,10 +401,10 @@
     "bar_time_entry": 1790294400000,
     "detected_at_utc": "2026-09-25T00:07:59+00:00",
     "price_at_signal": 0.1448,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.1444,
+    "evaluated_at": "2026-09-25T04:22:55+00:00"
   },
   {
     "symbol": "NEXOUSDT",
@@ -401,10 +412,10 @@
     "bar_time_entry": 1790294400000,
     "detected_at_utc": "2026-09-25T00:07:59+00:00",
     "price_at_signal": 0.862,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.875,
+    "evaluated_at": "2026-09-25T04:22:55+00:00"
   },
   {
     "symbol": "NEXOUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.001992,
-    "evaluated_at": "2026-09-24T12:08:00+00:00"
-  },
-  {
-    "symbol": "MANTRAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790236800000,
-    "detected_at_utc": "2026-09-24T08:07:57+00:00",
-    "price_at_signal": 0.00444,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.00438,
     "evaluated_at": "2026-09-24T12:08:00+00:00"
   }
 ]

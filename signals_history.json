@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "FTTUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790395200000,
+    "detected_at_utc": "2026-09-26T04:52:58+00:00",
+    "price_at_signal": 0.2534,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "XRPUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790395200000,
@@ -181,10 +192,10 @@
     "bar_time_entry": 1790380800000,
     "detected_at_utc": "2026-09-26T00:37:58+00:00",
     "price_at_signal": 101.0,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 100.83,
+    "evaluated_at": "2026-09-26T04:52:58+00:00"
   },
   {
     "symbol": "ONEUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.2264,
-    "evaluated_at": "2026-09-24T20:37:54+00:00"
-  },
-  {
-    "symbol": "PNUTUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790265600000,
-    "detected_at_utc": "2026-09-24T16:23:05+00:00",
-    "price_at_signal": 0.0556,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0549,
     "evaluated_at": "2026-09-24T20:37:54+00:00"
   }
 ]

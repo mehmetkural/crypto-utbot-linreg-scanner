@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "RAREUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790380800000,
+    "detected_at_utc": "2026-09-26T01:52:58+00:00",
+    "price_at_signal": 0.01488,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "USD1USDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790380800000,
@@ -225,10 +236,10 @@
     "bar_time_entry": 1790366400000,
     "detected_at_utc": "2026-09-25T21:37:57+00:00",
     "price_at_signal": 0.023575,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.023709,
+    "evaluated_at": "2026-09-26T01:52:58+00:00"
   },
   {
     "symbol": "KERNELUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.2485,
-    "evaluated_at": "2026-09-24T20:08:02+00:00"
-  },
-  {
-    "symbol": "LINKUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790265600000,
-    "detected_at_utc": "2026-09-24T16:07:54+00:00",
-    "price_at_signal": 12.729,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 13.215,
     "evaluated_at": "2026-09-24T20:08:02+00:00"
   }
 ]

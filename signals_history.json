@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "AXSUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790467200000,
+    "detected_at_utc": "2026-09-27T00:52:53+00:00",
+    "price_at_signal": 1.155,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BONKUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790467200000,
@@ -918,10 +929,10 @@
     "bar_time_entry": 1790452800000,
     "detected_at_utc": "2026-09-26T20:37:57+00:00",
     "price_at_signal": 0.3453,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.3472,
+    "evaluated_at": "2026-09-27T00:52:53+00:00"
   },
   {
     "symbol": "KAITOUSDT",
@@ -929,10 +940,10 @@
     "bar_time_entry": 1790452800000,
     "detected_at_utc": "2026-09-26T20:37:57+00:00",
     "price_at_signal": 0.3557,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.3538,
+    "evaluated_at": "2026-09-27T00:52:53+00:00"
   },
   {
     "symbol": "C98USDT",
@@ -940,10 +951,10 @@
     "bar_time_entry": 1790452800000,
     "detected_at_utc": "2026-09-26T20:37:57+00:00",
     "price_at_signal": 0.01692,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01693,
+    "evaluated_at": "2026-09-27T00:52:53+00:00"
   },
   {
     "symbol": "ACHUSDT",
@@ -951,10 +962,10 @@
     "bar_time_entry": 1790452800000,
     "detected_at_utc": "2026-09-26T20:37:57+00:00",
     "price_at_signal": 0.00619,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00619,
+    "evaluated_at": "2026-09-27T00:52:53+00:00"
   },
   {
     "symbol": "CELOUSDT",
@@ -962,10 +973,10 @@
     "bar_time_entry": 1790452800000,
     "detected_at_utc": "2026-09-26T20:37:57+00:00",
     "price_at_signal": 0.09663,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.09565,
+    "evaluated_at": "2026-09-27T00:52:53+00:00"
   },
   {
     "symbol": "DOGEUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.006718,
-    "evaluated_at": "2026-09-25T22:22:49+00:00"
-  },
-  {
-    "symbol": "CELRUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790359200000,
-    "detected_at_utc": "2026-09-25T18:07:58+00:00",
-    "price_at_signal": 0.00315,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.003187,
     "evaluated_at": "2026-09-25T22:22:49+00:00"
   }
 ]

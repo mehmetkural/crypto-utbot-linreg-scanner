@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "XUSDUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790496000000,
+    "detected_at_utc": "2026-09-27T08:37:53+00:00",
+    "price_at_signal": 1.0004,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "GRTUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790496000000,
+    "detected_at_utc": "2026-09-27T08:37:53+00:00",
+    "price_at_signal": 0.02793,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "THEUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790496000000,
+    "detected_at_utc": "2026-09-27T08:37:53+00:00",
+    "price_at_signal": 0.0839,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "CFXUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790496000000,
@@ -896,10 +929,10 @@
     "bar_time_entry": 1790481600000,
     "detected_at_utc": "2026-09-27T04:37:53+00:00",
     "price_at_signal": 0.01468,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01489,
+    "evaluated_at": "2026-09-27T08:37:53+00:00"
   },
   {
     "symbol": "SENTUSDT",
@@ -907,10 +940,10 @@
     "bar_time_entry": 1790481600000,
     "detected_at_utc": "2026-09-27T04:37:53+00:00",
     "price_at_signal": 0.02337,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.02355,
+    "evaluated_at": "2026-09-27T08:37:53+00:00"
   },
   {
     "symbol": "\u725b\u6765USDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.02259,
-    "evaluated_at": "2026-09-27T00:22:49+00:00"
-  },
-  {
-    "symbol": "SSVUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790452800000,
-    "detected_at_utc": "2026-09-26T20:07:51+00:00",
-    "price_at_signal": 3.253,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 3.212,
-    "evaluated_at": "2026-09-27T00:22:49+00:00"
-  },
-  {
-    "symbol": "MITOUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790452800000,
-    "detected_at_utc": "2026-09-26T20:07:51+00:00",
-    "price_at_signal": 0.0161,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.01607,
-    "evaluated_at": "2026-09-27T00:22:49+00:00"
-  },
-  {
-    "symbol": "HMSTRUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790452800000,
-    "detected_at_utc": "2026-09-26T20:07:51+00:00",
-    "price_at_signal": 0.0001791,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0001787,
     "evaluated_at": "2026-09-27T00:22:49+00:00"
   }
 ]

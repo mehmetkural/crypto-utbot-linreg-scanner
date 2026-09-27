@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "ORCAUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790539200000,
+    "detected_at_utc": "2026-09-27T21:52:57+00:00",
+    "price_at_signal": 1.78,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "AXLUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790539200000,
+    "detected_at_utc": "2026-09-27T21:52:57+00:00",
+    "price_at_signal": 0.0552,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "AUDIOUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790539200000,
@@ -643,10 +665,10 @@
     "bar_time_entry": 1790524800000,
     "detected_at_utc": "2026-09-27T17:52:57+00:00",
     "price_at_signal": 0.0593,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0584,
+    "evaluated_at": "2026-09-27T21:52:57+00:00"
   },
   {
     "symbol": "MAGICUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.00521,
-    "evaluated_at": "2026-09-27T08:07:59+00:00"
-  },
-  {
-    "symbol": "RLCUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790481600000,
-    "detected_at_utc": "2026-09-27T04:07:55+00:00",
-    "price_at_signal": 0.3608,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.364,
-    "evaluated_at": "2026-09-27T08:07:59+00:00"
-  },
-  {
-    "symbol": "CUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790481600000,
-    "detected_at_utc": "2026-09-27T04:07:55+00:00",
-    "price_at_signal": 0.0883,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0893,
     "evaluated_at": "2026-09-27T08:07:59+00:00"
   }
 ]

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "CVXUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790611200000,
+    "detected_at_utc": "2026-09-28T17:07:56+00:00",
+    "price_at_signal": 2.105,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "CRCLBUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790611200000,
@@ -445,10 +456,10 @@
     "bar_time_entry": 1790596800000,
     "detected_at_utc": "2026-09-28T13:07:52+00:00",
     "price_at_signal": 1597.65,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1519.55,
+    "evaluated_at": "2026-09-28T17:07:56+00:00"
   },
   {
     "symbol": "POLUSDT",
@@ -456,10 +467,10 @@
     "bar_time_entry": 1790596800000,
     "detected_at_utc": "2026-09-28T13:07:52+00:00",
     "price_at_signal": 0.11983,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.11559,
+    "evaluated_at": "2026-09-28T17:07:56+00:00"
   },
   {
     "symbol": "SPCXBUSDT",
@@ -467,10 +478,10 @@
     "bar_time_entry": 1790596800000,
     "detected_at_utc": "2026-09-28T13:07:52+00:00",
     "price_at_signal": 147.27,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 146.9,
+    "evaluated_at": "2026-09-28T17:07:56+00:00"
   },
   {
     "symbol": "PROVEUSDT",
@@ -478,10 +489,10 @@
     "bar_time_entry": 1790596800000,
     "detected_at_utc": "2026-09-28T13:07:52+00:00",
     "price_at_signal": 0.2298,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.2252,
+    "evaluated_at": "2026-09-28T17:07:56+00:00"
   },
   {
     "symbol": "SOXSBUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 145.92,
     "evaluated_at": "2026-09-28T02:22:54+00:00"
-  },
-  {
-    "symbol": "ORCAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790539200000,
-    "detected_at_utc": "2026-09-27T21:52:57+00:00",
-    "price_at_signal": 1.78,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.751,
-    "evaluated_at": "2026-09-28T02:08:01+00:00"
   }
 ]

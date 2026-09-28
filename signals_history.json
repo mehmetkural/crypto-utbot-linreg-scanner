@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ARKUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790596800000,
+    "detected_at_utc": "2026-09-28T13:22:59+00:00",
+    "price_at_signal": 0.2479,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ZECUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790596800000,
@@ -665,10 +676,10 @@
     "bar_time_entry": 1790582400000,
     "detected_at_utc": "2026-09-28T09:08:00+00:00",
     "price_at_signal": 0.04542,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.04474,
+    "evaluated_at": "2026-09-28T13:22:59+00:00"
   },
   {
     "symbol": "SEIUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.3334,
     "evaluated_at": "2026-09-27T23:37:47+00:00"
-  },
-  {
-    "symbol": "RLUSDUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790532000000,
-    "detected_at_utc": "2026-09-27T19:07:41+00:00",
-    "price_at_signal": 1.0004,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.0003,
-    "evaluated_at": "2026-09-27T23:07:56+00:00"
   }
 ]

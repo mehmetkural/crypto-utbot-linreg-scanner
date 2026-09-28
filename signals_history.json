@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "CRCLBUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790611200000,
+    "detected_at_utc": "2026-09-28T16:38:03+00:00",
+    "price_at_signal": 87.71,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "1INCHUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790611200000,
+    "detected_at_utc": "2026-09-28T16:38:03+00:00",
+    "price_at_signal": 0.1006,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "CVCUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790611200000,
+    "detected_at_utc": "2026-09-28T16:38:03+00:00",
+    "price_at_signal": 0.02988,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BTCUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790611200000,
@@ -478,10 +511,10 @@
     "bar_time_entry": 1790596800000,
     "detected_at_utc": "2026-09-28T12:37:59+00:00",
     "price_at_signal": 0.005186,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.005379,
+    "evaluated_at": "2026-09-28T16:38:03+00:00"
   },
   {
     "symbol": "MORPHOUSDT",
@@ -489,10 +522,10 @@
     "bar_time_entry": 1790596800000,
     "detected_at_utc": "2026-09-28T12:37:59+00:00",
     "price_at_signal": 2.616,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 2.582,
+    "evaluated_at": "2026-09-28T16:38:03+00:00"
   },
   {
     "symbol": "AMDBUSDT",
@@ -500,10 +533,10 @@
     "bar_time_entry": 1790596800000,
     "detected_at_utc": "2026-09-28T12:37:59+00:00",
     "price_at_signal": 623.46,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 608.59,
+    "evaluated_at": "2026-09-28T16:38:03+00:00"
   },
   {
     "symbol": "AVNTUSDT",
@@ -511,10 +544,10 @@
     "bar_time_entry": 1790596800000,
     "detected_at_utc": "2026-09-28T12:37:59+00:00",
     "price_at_signal": 0.1273,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.1251,
+    "evaluated_at": "2026-09-28T16:38:03+00:00"
   },
   {
     "symbol": "METABUSDT",
@@ -522,10 +555,10 @@
     "bar_time_entry": 1790596800000,
     "detected_at_utc": "2026-09-28T12:37:59+00:00",
     "price_at_signal": 746.19,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 723.65,
+    "evaluated_at": "2026-09-28T16:38:03+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -3265,38 +3298,5 @@
     "outcome": "miss",
     "price_after": 1.751,
     "evaluated_at": "2026-09-28T02:08:01+00:00"
-  },
-  {
-    "symbol": "AXLUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790539200000,
-    "detected_at_utc": "2026-09-27T21:52:57+00:00",
-    "price_at_signal": 0.0552,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0545,
-    "evaluated_at": "2026-09-28T02:08:01+00:00"
-  },
-  {
-    "symbol": "AUDIOUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790539200000,
-    "detected_at_utc": "2026-09-27T21:37:43+00:00",
-    "price_at_signal": 0.01706,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.01642,
-    "evaluated_at": "2026-09-28T01:37:55+00:00"
-  },
-  {
-    "symbol": "ARUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790539200000,
-    "detected_at_utc": "2026-09-27T21:37:43+00:00",
-    "price_at_signal": 4.758,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 4.507,
-    "evaluated_at": "2026-09-28T01:37:55+00:00"
   }
 ]

@@ -1,55 +1,12 @@
 {
-  "scanned_at_utc": "2026-09-28T20:29:00+00:00",
+  "scanned_at_utc": "2026-09-29T01:43:56+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 347,
+  "symbols_scanned": 337,
   "symbols_errored": 0,
-  "ut_buy_count": 2,
-  "passed_count": 2,
+  "ut_buy_count": 0,
+  "passed_count": 0,
   "filtered_count": 0,
-  "passed_signals": [
-    {
-      "symbol": "CELOUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.0943,
-      "bar_time": 1790625600000,
-      "adx": 17.34,
-      "chop": 52.93,
-      "bb_width_pctl": 76.0,
-      "range_pct": 11.58,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 1,
-      "range_high": 0.10008,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "POLUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.11707,
-      "bar_time": 1790625600000,
-      "adx": 32.71,
-      "chop": 51.56,
-      "bb_width_pctl": 64.0,
-      "range_pct": 11.54,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 0,
-      "range_high": 0.1254,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    }
-  ],
+  "passed_signals": [],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

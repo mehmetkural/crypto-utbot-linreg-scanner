@@ -1,5 +1,49 @@
 [
   {
+    "symbol": "POLUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790697600000,
+    "detected_at_utc": "2026-09-29T17:07:59+00:00",
+    "price_at_signal": 0.11707,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "BBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790697600000,
+    "detected_at_utc": "2026-09-29T17:07:59+00:00",
+    "price_at_signal": 0.00927,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "STOUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790697600000,
+    "detected_at_utc": "2026-09-29T17:07:59+00:00",
+    "price_at_signal": 0.0436,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "MANTRAUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790697600000,
+    "detected_at_utc": "2026-09-29T17:07:59+00:00",
+    "price_at_signal": 0.00443,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "XRPUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790697600000,
@@ -951,10 +995,10 @@
     "bar_time_entry": 1790683200000,
     "detected_at_utc": "2026-09-29T12:53:00+00:00",
     "price_at_signal": 0.5011,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.494,
+    "evaluated_at": "2026-09-29T17:07:59+00:00"
   },
   {
     "symbol": "ZECUSDT",
@@ -1072,10 +1116,10 @@
     "bar_time_entry": 1790683200000,
     "detected_at_utc": "2026-09-29T12:07:53+00:00",
     "price_at_signal": 29.76,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 29.3,
+    "evaluated_at": "2026-09-29T17:07:59+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -3254,49 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.00592,
     "evaluated_at": "2026-09-29T10:22:53+00:00"
-  },
-  {
-    "symbol": "AVAXUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790661600000,
-    "detected_at_utc": "2026-09-29T06:07:54+00:00",
-    "price_at_signal": 10.693,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 11.577,
-    "evaluated_at": "2026-09-29T10:08:00+00:00"
-  },
-  {
-    "symbol": "NMRUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790661600000,
-    "detected_at_utc": "2026-09-29T06:07:54+00:00",
-    "price_at_signal": 12.87,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 13.03,
-    "evaluated_at": "2026-09-29T10:08:00+00:00"
-  },
-  {
-    "symbol": "ASTERUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790661600000,
-    "detected_at_utc": "2026-09-29T06:07:54+00:00",
-    "price_at_signal": 0.7148,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.7227,
-    "evaluated_at": "2026-09-29T10:08:00+00:00"
-  },
-  {
-    "symbol": "PHAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790661600000,
-    "detected_at_utc": "2026-09-29T06:07:54+00:00",
-    "price_at_signal": 0.0659,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0659,
-    "evaluated_at": "2026-09-29T10:08:00+00:00"
   }
 ]

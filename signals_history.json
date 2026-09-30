@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "TWTUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790798400000,
+    "detected_at_utc": "2026-09-30T21:23:00+00:00",
+    "price_at_signal": 0.6158,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "MBLUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790798400000,
+    "detected_at_utc": "2026-09-30T21:23:00+00:00",
+    "price_at_signal": 0.000808,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "XAIUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790798400000,
+    "detected_at_utc": "2026-09-30T21:23:00+00:00",
+    "price_at_signal": 0.00925,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "EPICUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790798400000,
@@ -1116,10 +1149,10 @@
     "bar_time_entry": 1790784000000,
     "detected_at_utc": "2026-09-30T17:08:00+00:00",
     "price_at_signal": 1.763,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.739,
+    "evaluated_at": "2026-09-30T21:23:00+00:00"
   },
   {
     "symbol": "TRXUSDT",
@@ -3265,38 +3298,5 @@
     "outcome": "miss",
     "price_after": 1.415,
     "evaluated_at": "2026-09-30T05:07:54+00:00"
-  },
-  {
-    "symbol": "WLDUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790726400000,
-    "detected_at_utc": "2026-09-30T00:23:06+00:00",
-    "price_at_signal": 0.4806,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.4941,
-    "evaluated_at": "2026-09-30T04:37:54+00:00"
-  },
-  {
-    "symbol": "LSKUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790726400000,
-    "detected_at_utc": "2026-09-30T00:23:06+00:00",
-    "price_at_signal": 0.2957,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.3002,
-    "evaluated_at": "2026-09-30T04:37:54+00:00"
-  },
-  {
-    "symbol": "JTOUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790726400000,
-    "detected_at_utc": "2026-09-30T00:23:06+00:00",
-    "price_at_signal": 0.5457,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.5604,
-    "evaluated_at": "2026-09-30T04:37:54+00:00"
   }
 ]

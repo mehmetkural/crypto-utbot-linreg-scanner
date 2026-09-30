@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "VELODROMEUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790769600000,
+    "detected_at_utc": "2026-09-30T13:22:56+00:00",
+    "price_at_signal": 0.03575,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ZECUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790769600000,
@@ -819,10 +830,10 @@
     "bar_time_entry": 1790755200000,
     "detected_at_utc": "2026-09-30T09:22:56+00:00",
     "price_at_signal": 0.02722,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.02722,
+    "evaluated_at": "2026-09-30T13:22:56+00:00"
   },
   {
     "symbol": "MANAUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.8162,
-    "evaluated_at": "2026-09-29T19:07:53+00:00"
-  },
-  {
-    "symbol": "SPCXBUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790690400000,
-    "detected_at_utc": "2026-09-29T14:53:02+00:00",
-    "price_at_signal": 149.06,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 148.67,
     "evaluated_at": "2026-09-29T19:07:53+00:00"
   }
 ]

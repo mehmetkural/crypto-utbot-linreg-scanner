@@ -1,12 +1,34 @@
 {
-  "scanned_at_utc": "2026-09-30T19:03:15+00:00",
+  "scanned_at_utc": "2026-09-30T23:38:31+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 301,
+  "symbols_scanned": 304,
   "symbols_errored": 2,
-  "ut_buy_count": 0,
-  "passed_count": 0,
+  "ut_buy_count": 1,
+  "passed_count": 1,
   "filtered_count": 0,
-  "passed_signals": [],
+  "passed_signals": [
+    {
+      "symbol": "GLMRUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.009515,
+      "bar_time": 1790805600000,
+      "adx": 34.89,
+      "chop": 45.03,
+      "bb_width_pctl": 79.0,
+      "range_pct": 32.56,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.01033,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

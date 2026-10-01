@@ -1,5 +1,60 @@
 [
   {
+    "symbol": "ENAUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790841600000,
+    "detected_at_utc": "2026-10-01T08:37:54+00:00",
+    "price_at_signal": 0.2602,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "XLMUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790841600000,
+    "detected_at_utc": "2026-10-01T08:37:54+00:00",
+    "price_at_signal": 0.2227,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "QQQBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790841600000,
+    "detected_at_utc": "2026-10-01T08:37:54+00:00",
+    "price_at_signal": 743.52,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "SENTUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790841600000,
+    "detected_at_utc": "2026-10-01T08:37:54+00:00",
+    "price_at_signal": 0.02177,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "MBLUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790841600000,
+    "detected_at_utc": "2026-10-01T08:37:54+00:00",
+    "price_at_signal": 0.00081,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "EIGENUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790841600000,
@@ -775,10 +830,10 @@
     "bar_time_entry": 1790827200000,
     "detected_at_utc": "2026-10-01T04:37:53+00:00",
     "price_at_signal": 0.1817,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.184,
+    "evaluated_at": "2026-10-01T08:37:54+00:00"
   },
   {
     "symbol": "JASMYUSDT",
@@ -786,10 +841,10 @@
     "bar_time_entry": 1790827200000,
     "detected_at_utc": "2026-10-01T04:37:53+00:00",
     "price_at_signal": 0.00519,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.00596,
+    "evaluated_at": "2026-10-01T08:37:54+00:00"
   },
   {
     "symbol": "HYPEUSDT",
@@ -3242,61 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.02893,
-    "evaluated_at": "2026-09-30T20:07:53+00:00"
-  },
-  {
-    "symbol": "FLOWUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790784000000,
-    "detected_at_utc": "2026-09-30T16:07:49+00:00",
-    "price_at_signal": 0.03192,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.03124,
-    "evaluated_at": "2026-09-30T20:07:53+00:00"
-  },
-  {
-    "symbol": "MINAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790784000000,
-    "detected_at_utc": "2026-09-30T16:07:49+00:00",
-    "price_at_signal": 0.1474,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.1426,
-    "evaluated_at": "2026-09-30T20:07:53+00:00"
-  },
-  {
-    "symbol": "IOTAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790784000000,
-    "detected_at_utc": "2026-09-30T16:07:49+00:00",
-    "price_at_signal": 0.0537,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0532,
-    "evaluated_at": "2026-09-30T20:07:53+00:00"
-  },
-  {
-    "symbol": "ORCAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790784000000,
-    "detected_at_utc": "2026-09-30T16:07:49+00:00",
-    "price_at_signal": 1.621,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 1.634,
-    "evaluated_at": "2026-09-30T20:07:53+00:00"
-  },
-  {
-    "symbol": "GPSUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790784000000,
-    "detected_at_utc": "2026-09-30T16:07:49+00:00",
-    "price_at_signal": 0.0108,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.01041,
     "evaluated_at": "2026-09-30T20:07:53+00:00"
   }
 ]

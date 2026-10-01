@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BARDUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790848800000,
+    "detected_at_utc": "2026-10-01T10:37:52+00:00",
+    "price_at_signal": 0.1376,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "HYPERUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790848800000,
@@ -995,10 +1006,10 @@
     "bar_time_entry": 1790834400000,
     "detected_at_utc": "2026-10-01T06:37:52+00:00",
     "price_at_signal": 0.01342,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01335,
+    "evaluated_at": "2026-10-01T10:37:52+00:00"
   },
   {
     "symbol": "COINBUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.7638,
-    "evaluated_at": "2026-09-30T22:53:05+00:00"
-  },
-  {
-    "symbol": "BONKUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790791200000,
-    "detected_at_utc": "2026-09-30T18:38:09+00:00",
-    "price_at_signal": 3.75e-06,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 3.81e-06,
     "evaluated_at": "2026-09-30T22:53:05+00:00"
   }
 ]

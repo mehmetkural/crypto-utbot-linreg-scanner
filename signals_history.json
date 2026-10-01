@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ACHUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790884800000,
+    "detected_at_utc": "2026-10-01T20:53:11+00:00",
+    "price_at_signal": 0.00616,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SYNUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790884800000,
@@ -577,10 +588,10 @@
     "bar_time_entry": 1790870400000,
     "detected_at_utc": "2026-10-01T16:53:02+00:00",
     "price_at_signal": 0.09804,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.09882,
+    "evaluated_at": "2026-10-01T20:53:11+00:00"
   },
   {
     "symbol": "SCRUSDT",
@@ -588,10 +599,10 @@
     "bar_time_entry": 1790870400000,
     "detected_at_utc": "2026-10-01T16:53:02+00:00",
     "price_at_signal": 0.02473,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.02528,
+    "evaluated_at": "2026-10-01T20:53:11+00:00"
   },
   {
     "symbol": "ALLOUSDT",
@@ -599,10 +610,10 @@
     "bar_time_entry": 1790870400000,
     "detected_at_utc": "2026-10-01T16:53:02+00:00",
     "price_at_signal": 0.2771,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.2767,
+    "evaluated_at": "2026-10-01T20:53:11+00:00"
   },
   {
     "symbol": "USD1USDT",
@@ -610,10 +621,10 @@
     "bar_time_entry": 1790870400000,
     "detected_at_utc": "2026-10-01T16:37:50+00:00",
     "price_at_signal": 0.99971,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.99972,
+    "evaluated_at": "2026-10-01T20:53:11+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.00241,
-    "evaluated_at": "2026-10-01T08:07:57+00:00"
-  },
-  {
-    "symbol": "PNUTUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790827200000,
-    "detected_at_utc": "2026-10-01T04:07:51+00:00",
-    "price_at_signal": 0.0549,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0541,
     "evaluated_at": "2026-10-01T08:07:57+00:00"
   }
 ]

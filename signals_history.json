@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "EPICUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790863200000,
+    "detected_at_utc": "2026-10-01T14:38:02+00:00",
+    "price_at_signal": 0.5516,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ADAUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790863200000,
@@ -819,10 +830,10 @@
     "bar_time_entry": 1790848800000,
     "detected_at_utc": "2026-10-01T10:37:52+00:00",
     "price_at_signal": 0.1376,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.1359,
+    "evaluated_at": "2026-10-01T14:38:02+00:00"
   },
   {
     "symbol": "HYPERUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.3235,
-    "evaluated_at": "2026-10-01T02:23:04+00:00"
-  },
-  {
-    "symbol": "CETUSUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790805600000,
-    "detected_at_utc": "2026-09-30T22:07:54+00:00",
-    "price_at_signal": 0.02774,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.02829,
     "evaluated_at": "2026-10-01T02:23:04+00:00"
   }
 ]

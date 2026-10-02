@@ -1,8 +1,37 @@
 {
-  "scanned_at_utc": "2026-10-01T20:59:10+00:00",
+  "scanned_at_utc": "2026-10-02T05:24:56+00:00",
   "timeframe": "4h",
-  "symbols_scanned": 300,
+  "symbols_scanned": 305,
   "symbols_errored": 1,
-  "memo_signal_count": 0,
-  "memo_signals": []
+  "memo_signal_count": 2,
+  "memo_signals": [
+    {
+      "symbol": "USD1USDT",
+      "memo_signal": true,
+      "macd": 2.6972554125759274e-06,
+      "macd_signal": -1.0434551736204734e-08,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 25139164.0,
+      "volume_ma": 21664855.5,
+      "volume_above_ma": true,
+      "last_close": 0.99981,
+      "bar_time": 1790913600000
+    },
+    {
+      "symbol": "NEIROUSDT",
+      "memo_signal": true,
+      "macd": 2.814125109780192e-07,
+      "macd_signal": 1.3263703536484369e-07,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 4863043597.0,
+      "volume_ma": 3734899200.35,
+      "volume_above_ma": true,
+      "last_close": 9.426e-05,
+      "bar_time": 1790913600000
+    }
+  ]
 }

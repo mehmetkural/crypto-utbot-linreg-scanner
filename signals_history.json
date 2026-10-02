@@ -1,5 +1,60 @@
 [
   {
+    "symbol": "PENGUUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790956800000,
+    "detected_at_utc": "2026-10-02T16:53:02+00:00",
+    "price_at_signal": 0.009648,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "APEUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790956800000,
+    "detected_at_utc": "2026-10-02T16:53:02+00:00",
+    "price_at_signal": 0.1659,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "VETUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790956800000,
+    "detected_at_utc": "2026-10-02T16:53:02+00:00",
+    "price_at_signal": 0.008761,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "KSMUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790956800000,
+    "detected_at_utc": "2026-10-02T16:53:02+00:00",
+    "price_at_signal": 5.26,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "BARDUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1790956800000,
+    "detected_at_utc": "2026-10-02T16:53:02+00:00",
+    "price_at_signal": 0.1396,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "RUNEUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1790956800000,
@@ -819,10 +874,10 @@
     "bar_time_entry": 1790942400000,
     "detected_at_utc": "2026-10-02T12:53:01+00:00",
     "price_at_signal": 350.32,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 354.61,
+    "evaluated_at": "2026-10-02T16:53:02+00:00"
   },
   {
     "symbol": "DEXEUSDT",
@@ -2007,10 +2062,10 @@
     "bar_time_entry": 1790920800000,
     "detected_at_utc": "2026-10-02T06:07:52+00:00",
     "price_at_signal": 0.00598,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00589,
+    "evaluated_at": "2026-10-02T16:53:02+00:00"
   },
   {
     "symbol": "THETAUSDT",
@@ -3243,60 +3298,5 @@
     "outcome": "hit",
     "price_after": 5.06,
     "evaluated_at": "2026-10-02T01:23:00+00:00"
-  },
-  {
-    "symbol": "INJUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790884800000,
-    "detected_at_utc": "2026-10-01T21:16:13+00:00",
-    "price_at_signal": 7.362,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 7.397,
-    "evaluated_at": "2026-10-02T01:23:00+00:00"
-  },
-  {
-    "symbol": "AMPUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790884800000,
-    "detected_at_utc": "2026-10-01T21:07:55+00:00",
-    "price_at_signal": 0.000624,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.000622,
-    "evaluated_at": "2026-10-02T01:07:55+00:00"
-  },
-  {
-    "symbol": "ACHUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790884800000,
-    "detected_at_utc": "2026-10-01T20:53:11+00:00",
-    "price_at_signal": 0.00616,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.00621,
-    "evaluated_at": "2026-10-02T01:07:55+00:00"
-  },
-  {
-    "symbol": "SYNUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1790884800000,
-    "detected_at_utc": "2026-10-01T20:37:49+00:00",
-    "price_at_signal": 0.18402,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.18193,
-    "evaluated_at": "2026-10-02T00:37:53+00:00"
-  },
-  {
-    "symbol": "SAHARAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790884800000,
-    "detected_at_utc": "2026-10-01T20:22:51+00:00",
-    "price_at_signal": 0.00928,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.00931,
-    "evaluated_at": "2026-10-02T00:22:56+00:00"
   }
 ]

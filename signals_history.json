@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "1000SATSUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1790899200000,
+    "detected_at_utc": "2026-10-02T00:37:53+00:00",
+    "price_at_signal": 1.267e-05,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SAGAUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1790899200000,
@@ -368,10 +379,10 @@
     "bar_time_entry": 1790884800000,
     "detected_at_utc": "2026-10-01T20:37:49+00:00",
     "price_at_signal": 0.18402,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.18193,
+    "evaluated_at": "2026-10-02T00:37:53+00:00"
   },
   {
     "symbol": "SAHARAUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.5023,
-    "evaluated_at": "2026-10-01T08:53:02+00:00"
-  },
-  {
-    "symbol": "VETUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790827200000,
-    "detected_at_utc": "2026-10-01T04:52:57+00:00",
-    "price_at_signal": 0.009065,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.008883,
     "evaluated_at": "2026-10-01T08:53:02+00:00"
   }
 ]

@@ -1,98 +1,35 @@
 {
-  "scanned_at_utc": "2026-10-02T12:18:36+00:00",
+  "scanned_at_utc": "2026-10-02T19:07:22+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 306,
-  "symbols_errored": 1,
-  "ut_buy_count": 4,
-  "passed_count": 0,
-  "filtered_count": 4,
-  "passed_signals": [],
-  "filtered_signals": [
+  "symbols_scanned": 339,
+  "symbols_errored": 0,
+  "ut_buy_count": 1,
+  "passed_count": 1,
+  "filtered_count": 0,
+  "passed_signals": [
     {
-      "symbol": "AUSDT",
+      "symbol": "JSTUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.0979,
-      "bar_time": 1790942400000,
-      "adx": 12.14,
-      "chop": 55.27,
-      "bb_width_pctl": 11.0,
-      "range_pct": 6.86,
+      "last_close": 0.13077,
+      "bar_time": 1790964000000,
+      "adx": 30.56,
+      "chop": 39.57,
+      "bb_width_pctl": 67.0,
+      "range_pct": 6.54,
       "votes": {
-        "adx_low": true,
+        "adx_low": false,
         "chop_high": false,
-        "bb_squeeze": true
+        "bb_squeeze": false
       },
-      "vote_count": 2,
-      "range_high": 0.1007,
+      "vote_count": 0,
+      "range_high": 0.13471,
       "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    },
-    {
-      "symbol": "MBLUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.00083,
-      "bar_time": 1790942400000,
-      "adx": 9.12,
-      "chop": 63.02,
-      "bb_width_pctl": 19.0,
-      "range_pct": 5.45,
-      "votes": {
-        "adx_low": true,
-        "chop_high": true,
-        "bb_squeeze": true
-      },
-      "vote_count": 3,
-      "range_high": 0.000849,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    },
-    {
-      "symbol": "PHAUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.0758,
-      "bar_time": 1790942400000,
-      "adx": 18.53,
-      "chop": 53.48,
-      "bb_width_pctl": 3.0,
-      "range_pct": 20.27,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.0838,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    },
-    {
-      "symbol": "SNXUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.2566,
-      "bar_time": 1790942400000,
-      "adx": 8.29,
-      "chop": 62.41,
-      "bb_width_pctl": 9.0,
-      "range_pct": 5.92,
-      "votes": {
-        "adx_low": true,
-        "chop_high": true,
-        "bb_squeeze": true
-      },
-      "vote_count": 3,
-      "range_high": 0.2612,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
+      "was_sideways": false,
+      "is_sideways": false
     }
   ],
+  "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

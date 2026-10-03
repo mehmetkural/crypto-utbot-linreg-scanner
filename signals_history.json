@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "SAGAUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791064800000,
+    "detected_at_utc": "2026-10-03T23:07:48+00:00",
+    "price_at_signal": 0.02406,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "KAITOUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791064800000,
+    "detected_at_utc": "2026-10-03T23:07:48+00:00",
+    "price_at_signal": 0.3466,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ONDOUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791064800000,
@@ -335,10 +357,10 @@
     "bar_time_entry": 1791050400000,
     "detected_at_utc": "2026-10-03T18:52:47+00:00",
     "price_at_signal": 0.02456,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.02493,
+    "evaluated_at": "2026-10-03T23:07:48+00:00"
   },
   {
     "symbol": "AVAUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.000722,
-    "evaluated_at": "2026-10-03T04:08:03+00:00"
-  },
-  {
-    "symbol": "GUNUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790985600000,
-    "detected_at_utc": "2026-10-03T00:07:59+00:00",
-    "price_at_signal": 0.00319,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.00321,
-    "evaluated_at": "2026-10-03T04:08:03+00:00"
-  },
-  {
-    "symbol": "BICOUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790985600000,
-    "detected_at_utc": "2026-10-03T00:07:59+00:00",
-    "price_at_signal": 0.02204,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.02216,
     "evaluated_at": "2026-10-03T04:08:03+00:00"
   }
 ]

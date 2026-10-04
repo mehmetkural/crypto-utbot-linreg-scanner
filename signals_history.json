@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "REZUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791115200000,
+    "detected_at_utc": "2026-10-04T13:52:52+00:00",
+    "price_at_signal": 0.004133,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "JASMYUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1791115200000,
@@ -555,10 +566,10 @@
     "bar_time_entry": 1791100800000,
     "detected_at_utc": "2026-10-04T09:52:44+00:00",
     "price_at_signal": 85249.23,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 85273.54,
+    "evaluated_at": "2026-10-04T13:52:52+00:00"
   },
   {
     "symbol": "ONTUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.0055,
     "evaluated_at": "2026-10-03T09:23:02+00:00"
-  },
-  {
-    "symbol": "OPENUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791000000000,
-    "detected_at_utc": "2026-10-03T04:53:03+00:00",
-    "price_at_signal": 0.1289,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.1285,
-    "evaluated_at": "2026-10-03T09:07:55+00:00"
   }
 ]

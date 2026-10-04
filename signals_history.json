@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "CHIPUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791079200000,
+    "detected_at_utc": "2026-10-04T02:52:50+00:00",
+    "price_at_signal": 0.04462,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SOLUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791079200000,
@@ -236,10 +247,10 @@
     "bar_time_entry": 1791064800000,
     "detected_at_utc": "2026-10-03T22:52:45+00:00",
     "price_at_signal": 0.4952,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.4966,
+    "evaluated_at": "2026-10-04T02:52:50+00:00"
   },
   {
     "symbol": "PROMUSDT",
@@ -247,10 +258,10 @@
     "bar_time_entry": 1791064800000,
     "detected_at_utc": "2026-10-03T22:52:45+00:00",
     "price_at_signal": 6.299,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 6.293,
+    "evaluated_at": "2026-10-04T02:52:50+00:00"
   },
   {
     "symbol": "PENGUUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.07782,
-    "evaluated_at": "2026-10-03T04:22:53+00:00"
-  },
-  {
-    "symbol": "VELODROMEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1790985600000,
-    "detected_at_utc": "2026-10-03T00:22:52+00:00",
-    "price_at_signal": 0.03485,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.03479,
     "evaluated_at": "2026-10-03T04:22:53+00:00"
   }
 ]

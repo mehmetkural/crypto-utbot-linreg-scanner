@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ALPINEUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791165600000,
+    "detected_at_utc": "2026-10-05T03:07:53+00:00",
+    "price_at_signal": 0.369,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "UNIUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791165600000,
@@ -599,10 +610,10 @@
     "bar_time_entry": 1791151200000,
     "detected_at_utc": "2026-10-04T23:01:32+00:00",
     "price_at_signal": 1.75,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.745,
+    "evaluated_at": "2026-10-05T03:07:53+00:00"
   },
   {
     "symbol": "NVDABUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.2674,
     "evaluated_at": "2026-10-04T00:22:49+00:00"
-  },
-  {
-    "symbol": "USD1USDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791050400000,
-    "detected_at_utc": "2026-10-03T19:16:29+00:00",
-    "price_at_signal": 0.99971,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.99975,
-    "evaluated_at": "2026-10-03T23:22:51+00:00"
   }
 ]

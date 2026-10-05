@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "PUMPUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791230400000,
+    "detected_at_utc": "2026-10-05T21:13:25+00:00",
+    "price_at_signal": 0.006655,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ACTUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791230400000,
+    "detected_at_utc": "2026-10-05T21:13:25+00:00",
+    "price_at_signal": 0.01115,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "RONINUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791230400000,
+    "detected_at_utc": "2026-10-05T21:13:25+00:00",
+    "price_at_signal": 0.0677,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "FIDAUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791230400000,
@@ -566,10 +599,10 @@
     "bar_time_entry": 1791216000000,
     "detected_at_utc": "2026-10-05T17:07:49+00:00",
     "price_at_signal": 0.00628,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.006655,
+    "evaluated_at": "2026-10-05T21:13:25+00:00"
   },
   {
     "symbol": "ETHFIUSDT",
@@ -577,10 +610,10 @@
     "bar_time_entry": 1791216000000,
     "detected_at_utc": "2026-10-05T17:07:49+00:00",
     "price_at_signal": 0.7425,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.7516,
+    "evaluated_at": "2026-10-05T21:13:25+00:00"
   },
   {
     "symbol": "LINEAUSDT",
@@ -588,10 +621,10 @@
     "bar_time_entry": 1791216000000,
     "detected_at_utc": "2026-10-05T17:07:49+00:00",
     "price_at_signal": 0.00285,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0029,
+    "evaluated_at": "2026-10-05T21:13:25+00:00"
   },
   {
     "symbol": "KORUBUSDT",
@@ -3265,38 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.00758,
     "evaluated_at": "2026-10-05T08:52:56+00:00"
-  },
-  {
-    "symbol": "BTCUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791172800000,
-    "detected_at_utc": "2026-10-05T04:22:53+00:00",
-    "price_at_signal": 85692.03,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 86390.01,
-    "evaluated_at": "2026-10-05T08:22:53+00:00"
-  },
-  {
-    "symbol": "BNBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791172800000,
-    "detected_at_utc": "2026-10-05T04:22:53+00:00",
-    "price_at_signal": 790.59,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 791.89,
-    "evaluated_at": "2026-10-05T08:22:53+00:00"
-  },
-  {
-    "symbol": "RUNEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791172800000,
-    "detected_at_utc": "2026-10-05T04:22:53+00:00",
-    "price_at_signal": 0.784,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.787,
-    "evaluated_at": "2026-10-05T08:22:53+00:00"
   }
 ]

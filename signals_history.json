@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "TSLABUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791180000000,
+    "detected_at_utc": "2026-10-05T07:44:14+00:00",
+    "price_at_signal": 371.66,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "PENDLEUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791180000000,
@@ -753,10 +764,10 @@
     "bar_time_entry": 1791165600000,
     "detected_at_utc": "2026-10-05T03:37:54+00:00",
     "price_at_signal": 0.0583,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0595,
+    "evaluated_at": "2026-10-05T07:44:14+00:00"
   },
   {
     "symbol": "CRCLBUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.08341,
-    "evaluated_at": "2026-10-04T10:07:49+00:00"
-  },
-  {
-    "symbol": "DEXEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791093600000,
-    "detected_at_utc": "2026-10-04T06:07:44+00:00",
-    "price_at_signal": 1.909,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.885,
     "evaluated_at": "2026-10-04T10:07:49+00:00"
   }
 ]

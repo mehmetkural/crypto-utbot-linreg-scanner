@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "MINAUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791172800000,
+    "detected_at_utc": "2026-10-05T05:22:53+00:00",
+    "price_at_signal": 0.1631,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ZECUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1791172800000,
@@ -918,10 +929,10 @@
     "bar_time_entry": 1791158400000,
     "detected_at_utc": "2026-10-05T01:22:51+00:00",
     "price_at_signal": 1.939,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.906,
+    "evaluated_at": "2026-10-05T05:22:53+00:00"
   },
   {
     "symbol": "OPUSDT",
@@ -929,10 +940,10 @@
     "bar_time_entry": 1791158400000,
     "detected_at_utc": "2026-10-05T01:22:51+00:00",
     "price_at_signal": 0.1353,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.132,
+    "evaluated_at": "2026-10-05T05:22:53+00:00"
   },
   {
     "symbol": "RENDERUSDT",
@@ -940,10 +951,10 @@
     "bar_time_entry": 1791158400000,
     "detected_at_utc": "2026-10-05T01:22:51+00:00",
     "price_at_signal": 1.986,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.972,
+    "evaluated_at": "2026-10-05T05:22:53+00:00"
   },
   {
     "symbol": "GMXUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.01818,
-    "evaluated_at": "2026-10-04T08:07:46+00:00"
-  },
-  {
-    "symbol": "MAGICUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791086400000,
-    "detected_at_utc": "2026-10-04T04:07:43+00:00",
-    "price_at_signal": 0.0597,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.06,
     "evaluated_at": "2026-10-04T08:07:46+00:00"
   }
 ]

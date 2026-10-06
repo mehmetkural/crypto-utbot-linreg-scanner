@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "PAXGUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791273600000,
+    "detected_at_utc": "2026-10-06T08:37:54+00:00",
+    "price_at_signal": 4156.3,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "METUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791273600000,
+    "detected_at_utc": "2026-10-06T08:37:54+00:00",
+    "price_at_signal": 0.302,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "MUBARAKUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1791273600000,
@@ -643,10 +665,10 @@
     "bar_time_entry": 1791259200000,
     "detected_at_utc": "2026-10-06T04:37:51+00:00",
     "price_at_signal": 0.0556,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.0565,
+    "evaluated_at": "2026-10-06T08:37:54+00:00"
   },
   {
     "symbol": "RLUSDUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 1.0004,
-    "evaluated_at": "2026-10-05T20:24:11+00:00"
-  },
-  {
-    "symbol": "NEIROUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791216000000,
-    "detected_at_utc": "2026-10-05T16:07:48+00:00",
-    "price_at_signal": 9.184e-05,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 9.416e-05,
-    "evaluated_at": "2026-10-05T20:24:11+00:00"
-  },
-  {
-    "symbol": "MINAUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791216000000,
-    "detected_at_utc": "2026-10-05T16:07:48+00:00",
-    "price_at_signal": 0.1632,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.1609,
     "evaluated_at": "2026-10-05T20:24:11+00:00"
   }
 ]

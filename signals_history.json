@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PEOPLEUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791324000000,
+    "detected_at_utc": "2026-10-06T22:52:53+00:00",
+    "price_at_signal": 0.00877,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SPCXBUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1791324000000,
@@ -588,10 +599,10 @@
     "bar_time_entry": 1791309600000,
     "detected_at_utc": "2026-10-06T18:37:57+00:00",
     "price_at_signal": 163.98,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 164.82,
+    "evaluated_at": "2026-10-06T22:52:53+00:00"
   },
   {
     "symbol": "DOGEUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 1.1903,
-    "evaluated_at": "2026-10-06T06:52:53+00:00"
-  },
-  {
-    "symbol": "PLUMEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791252000000,
-    "detected_at_utc": "2026-10-06T02:37:57+00:00",
-    "price_at_signal": 0.01924,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.01912,
     "evaluated_at": "2026-10-06T06:52:53+00:00"
   }
 ]

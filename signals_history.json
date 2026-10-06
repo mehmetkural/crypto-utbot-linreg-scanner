@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "RSRUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791280800000,
+    "detected_at_utc": "2026-10-06T10:52:58+00:00",
+    "price_at_signal": 0.001765,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "LUNAUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791280800000,
+    "detected_at_utc": "2026-10-06T10:52:58+00:00",
+    "price_at_signal": 0.0514,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "METISUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791280800000,
@@ -885,10 +907,10 @@
     "bar_time_entry": 1791266400000,
     "detected_at_utc": "2026-10-06T06:52:53+00:00",
     "price_at_signal": 135.7,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 136.3,
+    "evaluated_at": "2026-10-06T10:52:58+00:00"
   },
   {
     "symbol": "SUPERUSDT",
@@ -3276,27 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.000658,
     "evaluated_at": "2026-10-05T23:23:19+00:00"
-  },
-  {
-    "symbol": "BOMEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791223200000,
-    "detected_at_utc": "2026-10-05T18:37:49+00:00",
-    "price_at_signal": 0.0010109,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0010291,
-    "evaluated_at": "2026-10-05T22:37:51+00:00"
-  },
-  {
-    "symbol": "AEROUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791223200000,
-    "detected_at_utc": "2026-10-05T18:22:55+00:00",
-    "price_at_signal": 0.8515,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.8479,
-    "evaluated_at": "2026-10-05T22:23:01+00:00"
   }
 ]

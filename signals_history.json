@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "AIUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791288000000,
+    "detected_at_utc": "2026-10-06T13:53:03+00:00",
+    "price_at_signal": 0.0218,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "BABABUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791288000000,
+    "detected_at_utc": "2026-10-06T13:53:03+00:00",
+    "price_at_signal": 108.67,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "METABUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791288000000,
+    "detected_at_utc": "2026-10-06T13:53:03+00:00",
+    "price_at_signal": 740.7,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "GOOGLBUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1791288000000,
@@ -918,10 +951,10 @@
     "bar_time_entry": 1791273600000,
     "detected_at_utc": "2026-10-06T09:53:00+00:00",
     "price_at_signal": 0.1096,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.1108,
+    "evaluated_at": "2026-10-06T13:53:03+00:00"
   },
   {
     "symbol": "DEXEUSDT",
@@ -929,10 +962,10 @@
     "bar_time_entry": 1791273600000,
     "detected_at_utc": "2026-10-06T09:53:00+00:00",
     "price_at_signal": 1.872,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.887,
+    "evaluated_at": "2026-10-06T13:53:03+00:00"
   },
   {
     "symbol": "COTIUSDT",
@@ -940,10 +973,10 @@
     "bar_time_entry": 1791273600000,
     "detected_at_utc": "2026-10-06T09:37:56+00:00",
     "price_at_signal": 0.014,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.01382,
+    "evaluated_at": "2026-10-06T13:53:03+00:00"
   },
   {
     "symbol": "BNSOLUSDT",
@@ -951,10 +984,10 @@
     "bar_time_entry": 1791273600000,
     "detected_at_utc": "2026-10-06T09:37:56+00:00",
     "price_at_signal": 135.2,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 137.2,
+    "evaluated_at": "2026-10-06T13:53:03+00:00"
   },
   {
     "symbol": "1INCHUSDT",
@@ -962,10 +995,10 @@
     "bar_time_entry": 1791273600000,
     "detected_at_utc": "2026-10-06T09:37:56+00:00",
     "price_at_signal": 0.1045,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.1043,
+    "evaluated_at": "2026-10-06T13:53:03+00:00"
   },
   {
     "symbol": "WDCBUSDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 4.04,
-    "evaluated_at": "2026-10-06T02:07:59+00:00"
-  },
-  {
-    "symbol": "GMTUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791237600000,
-    "detected_at_utc": "2026-10-05T22:07:54+00:00",
-    "price_at_signal": 0.00903,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
-  },
-  {
-    "symbol": "SNXUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791237600000,
-    "detected_at_utc": "2026-10-05T22:07:54+00:00",
-    "price_at_signal": 0.2541,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.2486,
-    "evaluated_at": "2026-10-06T02:07:59+00:00"
-  },
-  {
-    "symbol": "WCTUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791237600000,
-    "detected_at_utc": "2026-10-05T22:07:54+00:00",
-    "price_at_signal": 0.04326,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.04257,
     "evaluated_at": "2026-10-06T02:07:59+00:00"
   }
 ]

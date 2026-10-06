@@ -1,8 +1,51 @@
 {
-  "scanned_at_utc": "2026-10-06T01:16:42+00:00",
+  "scanned_at_utc": "2026-10-06T11:12:14+00:00",
   "timeframe": "4h",
-  "symbols_scanned": 308,
+  "symbols_scanned": 300,
   "symbols_errored": 0,
-  "memo_signal_count": 0,
-  "memo_signals": []
+  "memo_signal_count": 3,
+  "memo_signals": [
+    {
+      "symbol": "PYTHUSDT",
+      "memo_signal": true,
+      "macd": 0.00024629470650733287,
+      "macd_signal": 0.0001831912855913639,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 5617327.9,
+      "volume_ma": 3869730.1650000005,
+      "volume_above_ma": true,
+      "last_close": 0.07989,
+      "bar_time": 1791273600000
+    },
+    {
+      "symbol": "TUTUSDT",
+      "memo_signal": true,
+      "macd": 6.373222447025526e-05,
+      "macd_signal": 6.0031355877379e-05,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 27878545.0,
+      "volume_ma": 13903492.35,
+      "volume_above_ma": true,
+      "last_close": 0.02514,
+      "bar_time": 1791273600000
+    },
+    {
+      "symbol": "MIRAUSDT",
+      "memo_signal": true,
+      "macd": 1.362315055132568e-05,
+      "macd_signal": 3.399139488259451e-06,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 1869032.5,
+      "volume_ma": 1421546.545,
+      "volume_above_ma": true,
+      "last_close": 0.05267,
+      "bar_time": 1791273600000
+    }
+  ]
 }

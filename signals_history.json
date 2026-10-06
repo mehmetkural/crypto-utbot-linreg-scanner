@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "SUPERUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791288000000,
+    "detected_at_utc": "2026-10-06T12:52:55+00:00",
+    "price_at_signal": 0.2449,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ROBOUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791288000000,
@@ -929,10 +940,10 @@
     "bar_time_entry": 1791273600000,
     "detected_at_utc": "2026-10-06T08:52:50+00:00",
     "price_at_signal": 0.07955,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.08065,
+    "evaluated_at": "2026-10-06T12:52:55+00:00"
   },
   {
     "symbol": "GRTUSDT",
@@ -940,10 +951,10 @@
     "bar_time_entry": 1791273600000,
     "detected_at_utc": "2026-10-06T08:52:50+00:00",
     "price_at_signal": 0.02967,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.02934,
+    "evaluated_at": "2026-10-06T12:52:55+00:00"
   },
   {
     "symbol": "BMNRBUSDT",
@@ -951,10 +962,10 @@
     "bar_time_entry": 1791273600000,
     "detected_at_utc": "2026-10-06T08:52:50+00:00",
     "price_at_signal": 26.95,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 26.97,
+    "evaluated_at": "2026-10-06T12:52:55+00:00"
   },
   {
     "symbol": "PAXGUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.1812,
     "evaluated_at": "2026-10-06T02:07:59+00:00"
-  },
-  {
-    "symbol": "FLOWUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791230400000,
-    "detected_at_utc": "2026-10-05T21:38:02+00:00",
-    "price_at_signal": 0.0322,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0318,
-    "evaluated_at": "2026-10-06T01:52:52+00:00"
   }
 ]

@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "ETHFIUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791288000000,
+    "detected_at_utc": "2026-10-06T12:22:57+00:00",
+    "price_at_signal": 0.778,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "PROMUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791288000000,
+    "detected_at_utc": "2026-10-06T12:22:57+00:00",
+    "price_at_signal": 6.096,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "XRPUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791288000000,
@@ -1930,10 +1952,10 @@
     "bar_time_entry": 1791252000000,
     "detected_at_utc": "2026-10-06T02:37:57+00:00",
     "price_at_signal": 0.04238,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.04399,
+    "evaluated_at": "2026-10-06T12:22:57+00:00"
   },
   {
     "symbol": "HOMEUSDT",
@@ -3276,27 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.00823,
     "evaluated_at": "2026-10-06T01:52:52+00:00"
-  },
-  {
-    "symbol": "PIXELUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791230400000,
-    "detected_at_utc": "2026-10-05T21:38:02+00:00",
-    "price_at_signal": 0.0063,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.00611,
-    "evaluated_at": "2026-10-06T04:23:35+00:00"
-  },
-  {
-    "symbol": "ORDIUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791230400000,
-    "detected_at_utc": "2026-10-05T21:23:00+00:00",
-    "price_at_signal": 4.614,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 4.552,
-    "evaluated_at": "2026-10-06T01:23:00+00:00"
   }
 ]

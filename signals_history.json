@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "RESOLVUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791352800000,
+    "detected_at_utc": "2026-10-07T07:23:37+00:00",
+    "price_at_signal": 0.02095,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "HEMIUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791352800000,
@@ -324,10 +335,10 @@
     "bar_time_entry": 1791338400000,
     "detected_at_utc": "2026-10-07T03:22:54+00:00",
     "price_at_signal": 0.2177,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.2237,
+    "evaluated_at": "2026-10-07T07:23:37+00:00"
   },
   {
     "symbol": "XUSDUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.9992,
-    "evaluated_at": "2026-10-06T14:07:56+00:00"
-  },
-  {
-    "symbol": "ATOMUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791280800000,
-    "detected_at_utc": "2026-10-06T10:05:24+00:00",
-    "price_at_signal": 1.791,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 1.789,
     "evaluated_at": "2026-10-06T14:07:56+00:00"
   }
 ]

@@ -354,7 +354,7 @@ if __name__ == "__main__":
     if pushed and SW_CHART_FILENAME in files:
         attach_url = f"{scanner.GITHUB_REPO_RAW_BASE}/{SW_CHART_FILENAME}"
 
-    if scanner.notifications_enabled():
+    if scanner.notifications_enabled() and scanner.within_notify_hours(now_utc):
         scanner.send_ntfy(
             "\n\n".join(_fmt_line(s) for s in to_notify)
             + f"\n\n({summary['filtered_count']} AL sinyali yatay oldugu icin elendi)",
@@ -363,5 +363,7 @@ if __name__ == "__main__":
             click_url=scanner.tradingview_url(to_notify[0]["symbol"]) if len(to_notify) == 1 else None,
             attach_url=attach_url,
         )
-    else:
+    elif not scanner.notifications_enabled():
         log("Bildirimler panel togglesiyle KAPALI, bildirim gonderilmiyor.")
+    else:
+        log("Sessiz saatler icinde (01:00-10:00 TR), bildirim gonderilmiyor.")

@@ -1,30 +1,52 @@
 {
-  "scanned_at_utc": "2026-10-06T22:34:34+00:00",
+  "scanned_at_utc": "2026-10-07T05:31:12+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 309,
+  "symbols_scanned": 342,
   "symbols_errored": 0,
-  "ut_buy_count": 1,
-  "passed_count": 0,
+  "ut_buy_count": 2,
+  "passed_count": 1,
   "filtered_count": 1,
-  "passed_signals": [],
-  "filtered_signals": [
+  "passed_signals": [
     {
-      "symbol": "QNTUSDT",
+      "symbol": "BATUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 263.5,
-      "bar_time": 1791324000000,
-      "adx": 14.54,
-      "chop": 64.23,
-      "bb_width_pctl": 1.0,
-      "range_pct": 10.77,
+      "last_close": 0.1061,
+      "bar_time": 1791345600000,
+      "adx": 29.34,
+      "chop": 40.88,
+      "bb_width_pctl": 57.0,
+      "range_pct": 11.38,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.109,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
+  "filtered_signals": [
+    {
+      "symbol": "MOVRUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.955,
+      "bar_time": 1791345600000,
+      "adx": 15.26,
+      "chop": 57.23,
+      "bb_width_pctl": 7.0,
+      "range_pct": 37.16,
       "votes": {
         "adx_low": true,
-        "chop_high": true,
+        "chop_high": false,
         "bb_squeeze": true
       },
-      "vote_count": 3,
-      "range_high": 269.57,
+      "vote_count": 2,
+      "range_high": 2.39,
       "breakout": false,
       "was_sideways": true,
       "is_sideways": true

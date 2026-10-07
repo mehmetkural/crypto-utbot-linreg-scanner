@@ -126,10 +126,11 @@ def save_last_notified_at(dt):
 # durdurabilir/tekrar acabilir. Bu, taramanin/panelin kendisini ETKILEMEZ --
 # latest_signals.json, signals_history.json, memo_latest_signals.json,
 # memo_signals_history.json ve grafik her zaman oldugu gibi guncellenmeye
-# devam eder; sadece asagidaki notifications_enabled() False donduginde,
-# scanner.py VE memo_scanner.py'nin __main__ bloklarindaki OTOMATIK
-# send_ntfy(...) cagrilari atlanir. FORCE_TEST_NOTIFY ile tetiklenen manuel
-# test bildirimleri bu ayardan BAGIMSIZDIR (kullanici bilerek tetikledigi icin).
+# devam eder; sadece asagidaki notifications_enabled() False donduginde (veya
+# asagidaki within_notify_hours() False donduginde, bkz. "Sessiz saatler" bolumu),
+# scanner.py, memo_scanner.py VE sideways_scanner.py'nin __main__ bloklarindaki
+# OTOMATIK send_ntfy(...) cagrilari atlanir. FORCE_TEST_NOTIFY ile tetiklenen
+# manuel test bildirimleri bu ayarlardan BAGIMSIZDIR (kullanici bilerek tetikledigi icin).
 NOTIFY_CONFIG_FILENAME = "notify_config.json"
 
 
@@ -153,6 +154,33 @@ def load_notify_config():
 def notifications_enabled():
     """Panel togglesine gore otomatik push bildirimlerinin acik olup olmadigini doner."""
     return bool(load_notify_config().get("enabled", True))
+
+
+# ---------------------------------------------------------------------------
+# Sessiz saatler (telefona bildirim sadece belirli saatlerde gelsin)
+# ---------------------------------------------------------------------------
+# Kullanici push bildirimlerinin sadece Turkiye saatiyle 10:00-01:00 arasinda
+# (gece yarisindan sonra saat 1'e kadar) gelmesini istiyor -- 01:00-10:00 arasi
+# (gece uykusu) hicbir OTOMATIK bildirim gonderilmez. Turkiye 2016'dan beri
+# sabit UTC+3 kullaniyor (DST yok), bu yuzden basit bir sabit offset yeterli.
+# Bu kontrol SADECE send_ntfy(...) cagrisini atlar -- tarama, latest_signals.json/
+# signals_history.json/memo/sideways dosyalari, grafik uretimi ve panelin kendisi
+# bu ayardan TAMAMEN BAGIMSIZ, her zamanki gibi calismaya devam eder (notifications_enabled()
+# ile ayni tasarim). FORCE_TEST_NOTIFY ile tetiklenen manuel test bildirimleri de bu
+# kontrolden GECMEZ -- notifications_enabled() ile ayni gerekce: kullanici bilerek/elle
+# tetikledigi icin saat kisitlamasina takilmamali.
+TURKEY_UTC_OFFSET_HOURS = 3
+NOTIFY_QUIET_HOURS_START = 1    # bu saatten (dahil) itibaren bildirim YOK (TR saatiyle)
+NOTIFY_QUIET_HOURS_END = 10     # bu saate (haric) kadar bildirim YOK (TR saatiyle)
+
+
+def within_notify_hours(now_utc=None):
+    """Su an Turkiye saatiyle otomatik bildirimlerin acik oldugu saat araliginda mi
+    (10:00-01:00, yani 01:00-10:00 HARIC her saat)?"""
+    if now_utc is None:
+        now_utc = datetime.datetime.now(datetime.timezone.utc)
+    local_hour = (now_utc + datetime.timedelta(hours=TURKEY_UTC_OFFSET_HOURS)).hour
+    return not (NOTIFY_QUIET_HOURS_START <= local_hour < NOTIFY_QUIET_HOURS_END)
 
 
 # ---------------------------------------------------------------------------
@@ -1179,7 +1207,7 @@ if __name__ == "__main__":
             log(f"Grafik olusturma hatasi, bildirim gorselsiz gonderilecek: {e}")
             commit_and_push_files(["notify_state.json"], "Bildirim zaman damgasi guncellendi")
 
-        if notifications_enabled():
+        if notifications_enabled() and within_notify_hours(now_utc):
             send_ntfy(
                 "\n\n".join(lines),
                 title=f"{len(signals)} Guclu AL Sinyal (2h UT Bot)",
@@ -1187,6 +1215,9 @@ if __name__ == "__main__":
                 click_url=click_url,
                 attach_url=attach_url,
             )
-        else:
+        elif not notifications_enabled():
             log("Bildirimler panel togglesiyle KAPALI, GUCLU AL bildirimi gonderilmiyor "
+                "(grafik/gecmis/panel verileri yine de guncellendi).")
+        else:
+            log("Sessiz saatler icinde (01:00-10:00 TR), GUCLU AL bildirimi gonderilmiyor "
                 "(grafik/gecmis/panel verileri yine de guncellendi).")

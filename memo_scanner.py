@@ -306,15 +306,18 @@ if __name__ == "__main__":
             )
 
             click_url = scanner.tradingview_url(signals_to_notify[0]["symbol"]) if len(signals_to_notify) == 1 else None
-            if scanner.notifications_enabled():
+            if scanner.notifications_enabled() and scanner.within_notify_hours(now_utc):
                 scanner.send_ntfy(
                     "\n\n".join(lines),
                     title=f"{len(signals_to_notify)} MEMO Sinyali (4h MACD+Hacim)",
                     priority="high",
                     click_url=click_url,
                 )
-            else:
+            elif not scanner.notifications_enabled():
                 log("Bildirimler panel togglesiyle KAPALI, MEMO bildirimi gonderilmiyor "
+                    "(gecmis/panel verileri yine de guncellendi).")
+            else:
+                log("Sessiz saatler icinde (01:00-10:00 TR), MEMO bildirimi gonderilmiyor "
                     "(gecmis/panel verileri yine de guncellendi).")
         else:
             log("Sinyal var ama hepsi bu bar icin daha once bildirildi, bildirim atlaniyor.")

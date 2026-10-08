@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "ETHUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791489600000,
+    "detected_at_utc": "2026-10-08T21:37:53+00:00",
+    "price_at_signal": 2476.74,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "AEVOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791489600000,
+    "detected_at_utc": "2026-10-08T21:37:53+00:00",
+    "price_at_signal": 0.0267,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "WBETHUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791489600000,
@@ -863,10 +885,10 @@
     "bar_time_entry": 1791475200000,
     "detected_at_utc": "2026-10-08T17:34:25+00:00",
     "price_at_signal": 348.12,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 348.94,
+    "evaluated_at": "2026-10-08T21:37:53+00:00"
   },
   {
     "symbol": "BANDUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 2.225,
-    "evaluated_at": "2026-10-08T12:07:54+00:00"
-  },
-  {
-    "symbol": "ZAMAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791446400000,
-    "detected_at_utc": "2026-10-08T08:07:49+00:00",
-    "price_at_signal": 0.07761,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.07706,
-    "evaluated_at": "2026-10-08T12:07:54+00:00"
-  },
-  {
-    "symbol": "OPNUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791446400000,
-    "detected_at_utc": "2026-10-08T08:07:49+00:00",
-    "price_at_signal": 0.0588,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0588,
     "evaluated_at": "2026-10-08T12:07:54+00:00"
   }
 ]

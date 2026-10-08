@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "NEARUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791453600000,
+    "detected_at_utc": "2026-10-08T10:53:02+00:00",
+    "price_at_signal": 5.148,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "MUBUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1791453600000,
@@ -1721,10 +1732,10 @@
     "bar_time_entry": 1791417600000,
     "detected_at_utc": "2026-10-08T00:22:52+00:00",
     "price_at_signal": 0.003755,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.003822,
+    "evaluated_at": "2026-10-08T10:53:02+00:00"
   },
   {
     "symbol": "SCUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.2608,
     "evaluated_at": "2026-10-07T17:53:05+00:00"
-  },
-  {
-    "symbol": "GLMRUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791374400000,
-    "detected_at_utc": "2026-10-07T13:37:54+00:00",
-    "price_at_signal": 0.011066,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.011838,
-    "evaluated_at": "2026-10-07T17:38:02+00:00"
   }
 ]

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "DODOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791579600000,
+    "detected_at_utc": "2026-10-09T21:37:55+00:00",
+    "price_at_signal": 0.01842,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "CFXUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791579600000,
@@ -995,10 +1006,10 @@
     "bar_time_entry": 1791565200000,
     "detected_at_utc": "2026-10-09T17:37:52+00:00",
     "price_at_signal": 0.02065,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.02063,
+    "evaluated_at": "2026-10-09T21:37:55+00:00"
   },
   {
     "symbol": "MITOUSDT",
@@ -1006,10 +1017,10 @@
     "bar_time_entry": 1791565200000,
     "detected_at_utc": "2026-10-09T17:37:52+00:00",
     "price_at_signal": 0.01477,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01476,
+    "evaluated_at": "2026-10-09T21:37:55+00:00"
   },
   {
     "symbol": "QNTUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 51.38,
-    "evaluated_at": "2026-10-09T12:07:56+00:00"
-  },
-  {
-    "symbol": "COINBUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791532800000,
-    "detected_at_utc": "2026-10-09T08:07:53+00:00",
-    "price_at_signal": 176.34,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 176.06,
     "evaluated_at": "2026-10-09T12:07:56+00:00"
   }
 ]

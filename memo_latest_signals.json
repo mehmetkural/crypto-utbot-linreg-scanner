@@ -1,23 +1,37 @@
 {
-  "scanned_at_utc": "2026-10-09T05:57:39+00:00",
+  "scanned_at_utc": "2026-10-09T15:14:02+00:00",
   "timeframe": "4h",
-  "symbols_scanned": 351,
+  "symbols_scanned": 346,
   "symbols_errored": 1,
-  "memo_signal_count": 1,
+  "memo_signal_count": 2,
   "memo_signals": [
     {
-      "symbol": "EDENUSDT",
+      "symbol": "API3USDT",
       "memo_signal": true,
-      "macd": 0.00018067261211451163,
-      "macd_signal": 0.00010626327426893297,
+      "macd": 0.00030624299916920394,
+      "macd_signal": -0.00011860062394162925,
       "crossed_up": true,
       "above_zero": true,
       "near_zero": true,
-      "volume": 2435382.3,
-      "volume_ma": 2373193.7600000002,
+      "volume": 8902106.61,
+      "volume_ma": 4225542.1945,
       "volume_above_ma": true,
-      "last_close": 0.06243,
-      "bar_time": 1791518400000
+      "last_close": 0.3264,
+      "bar_time": 1791547200000
+    },
+    {
+      "symbol": "LITEBUSDT",
+      "memo_signal": true,
+      "macd": 2.9068276056359537,
+      "macd_signal": 1.7936332374169979,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 448.367,
+      "volume_ma": 159.7064,
+      "volume_above_ma": true,
+      "last_close": 1127.56,
+      "bar_time": 1791547200000
     }
   ]
 }

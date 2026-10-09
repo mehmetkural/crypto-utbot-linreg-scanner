@@ -1,12 +1,139 @@
 {
-  "scanned_at_utc": "2026-10-09T13:00:15+00:00",
+  "scanned_at_utc": "2026-10-09T19:23:58+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 348,
-  "symbols_errored": 2,
-  "ut_buy_count": 0,
-  "passed_count": 0,
+  "symbols_scanned": 284,
+  "symbols_errored": 1,
+  "ut_buy_count": 6,
+  "passed_count": 6,
   "filtered_count": 0,
-  "passed_signals": [],
+  "passed_signals": [
+    {
+      "symbol": "AAPLBUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 338.0,
+      "bar_time": 1791568800000,
+      "adx": 42.88,
+      "chop": 36.24,
+      "bb_width_pctl": 90.0,
+      "range_pct": 3.17,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 341.71,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "CVCUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.02593,
+      "bar_time": 1791568800000,
+      "adx": 57.08,
+      "chop": 45.96,
+      "bb_width_pctl": 80.0,
+      "range_pct": 21.96,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.0292,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "HYPERUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.0709,
+      "bar_time": 1791568800000,
+      "adx": 19.1,
+      "chop": 57.88,
+      "bb_width_pctl": 73.0,
+      "range_pct": 9.34,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 0.0722,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "LPTUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.8,
+      "bar_time": 1791568800000,
+      "adx": 16.05,
+      "chop": 60.08,
+      "bb_width_pctl": 47.0,
+      "range_pct": 12.82,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 1.855,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "WLFIUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.0556,
+      "bar_time": 1791568800000,
+      "adx": 33.77,
+      "chop": 58.47,
+      "bb_width_pctl": 59.0,
+      "range_pct": 5.11,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.0561,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "XUSDUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.0009,
+      "bar_time": 1791568800000,
+      "adx": 21.67,
+      "chop": 34.72,
+      "bb_width_pctl": 18.0,
+      "range_pct": 0.15,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 1,
+      "range_high": 1.0014,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

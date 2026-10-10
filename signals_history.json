@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "QNTUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791644400000,
+    "detected_at_utc": "2026-10-10T15:52:55+00:00",
+    "price_at_signal": 245.95,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "INTCBUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791644400000,
+    "detected_at_utc": "2026-10-10T15:52:55+00:00",
+    "price_at_signal": 105.21,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "C98USDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1791644400000,
@@ -731,10 +753,10 @@
     "bar_time_entry": 1791630000000,
     "detected_at_utc": "2026-10-10T11:52:52+00:00",
     "price_at_signal": 0.5291,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.5614,
+    "evaluated_at": "2026-10-10T15:52:55+00:00"
   },
   {
     "symbol": "BEAMXUSDT",
@@ -742,10 +764,10 @@
     "bar_time_entry": 1791630000000,
     "detected_at_utc": "2026-10-10T11:52:52+00:00",
     "price_at_signal": 0.002631,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.002635,
+    "evaluated_at": "2026-10-10T15:52:55+00:00"
   },
   {
     "symbol": "SPCXBUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.07088,
-    "evaluated_at": "2026-10-10T04:22:50+00:00"
-  },
-  {
-    "symbol": "MARSCOINUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791590400000,
-    "detected_at_utc": "2026-10-10T00:07:52+00:00",
-    "price_at_signal": 0.0936,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0916,
-    "evaluated_at": "2026-10-10T04:22:50+00:00"
-  },
-  {
-    "symbol": "EIGENUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791590400000,
-    "detected_at_utc": "2026-10-10T00:07:52+00:00",
-    "price_at_signal": 0.2223,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.2256,
     "evaluated_at": "2026-10-10T04:22:50+00:00"
   }
 ]

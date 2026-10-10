@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ZKPUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791594000000,
+    "detected_at_utc": "2026-10-10T01:37:57+00:00",
+    "price_at_signal": 0.0481,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ENAUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791594000000,
@@ -808,10 +819,10 @@
     "bar_time_entry": 1791579600000,
     "detected_at_utc": "2026-10-09T21:37:55+00:00",
     "price_at_signal": 0.01842,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0183,
+    "evaluated_at": "2026-10-10T01:37:57+00:00"
   },
   {
     "symbol": "CFXUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 3.045,
-    "evaluated_at": "2026-10-09T17:37:52+00:00"
-  },
-  {
-    "symbol": "SNDKBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791550800000,
-    "detected_at_utc": "2026-10-09T13:37:51+00:00",
-    "price_at_signal": 1617.15,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 1605.32,
     "evaluated_at": "2026-10-09T17:37:52+00:00"
   }
 ]

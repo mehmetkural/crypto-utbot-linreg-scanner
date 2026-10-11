@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "NOMUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791698400000,
+    "detected_at_utc": "2026-10-11T06:22:55+00:00",
+    "price_at_signal": 0.002237,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SKLUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791698400000,
@@ -1611,10 +1622,10 @@
     "bar_time_entry": 1791684000000,
     "detected_at_utc": "2026-10-11T02:22:50+00:00",
     "price_at_signal": 1235.54,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1223.58,
+    "evaluated_at": "2026-10-11T06:22:55+00:00"
   },
   {
     "symbol": "NMRUSDT",
@@ -1622,10 +1633,10 @@
     "bar_time_entry": 1791684000000,
     "detected_at_utc": "2026-10-11T02:22:50+00:00",
     "price_at_signal": 13.64,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 13.81,
+    "evaluated_at": "2026-10-11T06:22:55+00:00"
   },
   {
     "symbol": "IQUSDT",
@@ -1633,10 +1644,10 @@
     "bar_time_entry": 1791684000000,
     "detected_at_utc": "2026-10-11T02:22:50+00:00",
     "price_at_signal": 0.000858,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.00086,
+    "evaluated_at": "2026-10-11T06:22:55+00:00"
   },
   {
     "symbol": "RLCUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": null,
     "price_after": null,
     "evaluated_at": null
-  },
-  {
-    "symbol": "ONTUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791655200000,
-    "detected_at_utc": "2026-10-10T18:52:50+00:00",
-    "price_at_signal": 0.06184,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.06305,
-    "evaluated_at": "2026-10-10T22:52:54+00:00"
   }
 ]

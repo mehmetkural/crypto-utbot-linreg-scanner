@@ -1,35 +1,162 @@
 {
-  "scanned_at_utc": "2026-10-11T05:20:55+00:00",
+  "scanned_at_utc": "2026-10-11T12:32:55+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 263,
+  "symbols_scanned": 242,
   "symbols_errored": 0,
-  "ut_buy_count": 1,
-  "passed_count": 1,
-  "filtered_count": 0,
+  "ut_buy_count": 7,
+  "passed_count": 6,
+  "filtered_count": 1,
   "passed_signals": [
     {
-      "symbol": "LUMIAUSDT",
+      "symbol": "AVAXUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.1532,
-      "bar_time": 1791691200000,
-      "adx": 50.29,
-      "chop": 41.78,
-      "bb_width_pctl": 93.0,
-      "range_pct": 59.05,
+      "last_close": 10.44,
+      "bar_time": 1791720000000,
+      "adx": 22.64,
+      "chop": 43.92,
+      "bb_width_pctl": 22.0,
+      "range_pct": 6.41,
       "votes": {
         "adx_low": false,
         "chop_high": false,
         "bb_squeeze": false
       },
       "vote_count": 0,
-      "range_high": 0.1394,
-      "breakout": true,
+      "range_high": 10.677,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "QNTUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 243.15,
+      "bar_time": 1791720000000,
+      "adx": 10.92,
+      "chop": 47.4,
+      "bb_width_pctl": 34.0,
+      "range_pct": 9.18,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 256.5,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "SNDKBUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1605.92,
+      "bar_time": 1791720000000,
+      "adx": 28.78,
+      "chop": 50.29,
+      "bb_width_pctl": 12.0,
+      "range_pct": 4.48,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 1,
+      "range_high": 1648.7,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "SNXXBUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 14.1,
+      "bar_time": 1791720000000,
+      "adx": 28.79,
+      "chop": 48.76,
+      "bb_width_pctl": 11.0,
+      "range_pct": 8.88,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 1,
+      "range_high": 14.88,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "VANAUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.07,
+      "bar_time": 1791720000000,
+      "adx": 23.19,
+      "chop": 51.46,
+      "bb_width_pctl": 37.0,
+      "range_pct": 8.84,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 1.094,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "VTHOUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.000711,
+      "bar_time": 1791720000000,
+      "adx": 38.77,
+      "chop": 49.88,
+      "bb_width_pctl": 73.0,
+      "range_pct": 11.32,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.000731,
+      "breakout": false,
       "was_sideways": false,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [],
+  "filtered_signals": [
+    {
+      "symbol": "FETUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.229,
+      "bar_time": 1791720000000,
+      "adx": 19.13,
+      "chop": 56.54,
+      "bb_width_pctl": 4.0,
+      "range_pct": 9.4,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 2,
+      "range_high": 0.2318,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

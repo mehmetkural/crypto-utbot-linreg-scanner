@@ -1,77 +1,57 @@
 {
-  "scanned_at_utc": "2026-10-11T18:45:09+00:00",
+  "scanned_at_utc": "2026-10-11T23:33:29+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 253,
+  "symbols_scanned": 258,
   "symbols_errored": 0,
-  "ut_buy_count": 3,
-  "passed_count": 3,
-  "filtered_count": 0,
+  "ut_buy_count": 2,
+  "passed_count": 1,
+  "filtered_count": 1,
   "passed_signals": [
     {
-      "symbol": "ACEUSDT",
+      "symbol": "JSTUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.1922,
-      "bar_time": 1791741600000,
-      "adx": 23.18,
-      "chop": 56.32,
-      "bb_width_pctl": 12.0,
-      "range_pct": 7.0,
+      "last_close": 0.13786,
+      "bar_time": 1791756000000,
+      "adx": 28.72,
+      "chop": 59.56,
+      "bb_width_pctl": 13.0,
+      "range_pct": 6.32,
       "votes": {
         "adx_low": false,
         "chop_high": false,
         "bb_squeeze": true
       },
       "vote_count": 1,
-      "range_high": 0.1959,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "BMTUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.01963,
-      "bar_time": 1791741600000,
-      "adx": 27.9,
-      "chop": 38.02,
-      "bb_width_pctl": 67.0,
-      "range_pct": 10.9,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 0,
-      "range_high": 0.02068,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "STXUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.3992,
-      "bar_time": 1791741600000,
-      "adx": 27.95,
-      "chop": 57.05,
-      "bb_width_pctl": 10.0,
-      "range_pct": 10.5,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 1,
-      "range_high": 0.4144,
+      "range_high": 0.1433,
       "breakout": false,
       "was_sideways": false,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [],
+  "filtered_signals": [
+    {
+      "symbol": "PHAUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.0602,
+      "bar_time": 1791756000000,
+      "adx": 12.75,
+      "chop": 53.6,
+      "bb_width_pctl": 1.0,
+      "range_pct": 13.09,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 2,
+      "range_high": 0.0632,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

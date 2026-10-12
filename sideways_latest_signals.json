@@ -1,97 +1,12 @@
 {
-  "scanned_at_utc": "2026-10-12T05:33:02+00:00",
+  "scanned_at_utc": "2026-10-12T15:06:06+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 272,
+  "symbols_scanned": 306,
   "symbols_errored": 0,
-  "ut_buy_count": 4,
-  "passed_count": 4,
+  "ut_buy_count": 0,
+  "passed_count": 0,
   "filtered_count": 0,
-  "passed_signals": [
-    {
-      "symbol": "EPICUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.4687,
-      "bar_time": 1791777600000,
-      "adx": 17.05,
-      "chop": 50.6,
-      "bb_width_pctl": 35.0,
-      "range_pct": 7.47,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 1,
-      "range_high": 0.4772,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "KAVAUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.06806,
-      "bar_time": 1791777600000,
-      "adx": 12.71,
-      "chop": 57.73,
-      "bb_width_pctl": 42.0,
-      "range_pct": 2.95,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 1,
-      "range_high": 0.06841,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "PUMPUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.005905,
-      "bar_time": 1791777600000,
-      "adx": 14.32,
-      "chop": 51.64,
-      "bb_width_pctl": 53.0,
-      "range_pct": 11.34,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 1,
-      "range_high": 0.00589,
-      "breakout": true,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "SOLUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 112.53,
-      "bar_time": 1791777600000,
-      "adx": 21.38,
-      "chop": 50.48,
-      "bb_width_pctl": 63.0,
-      "range_pct": 3.85,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 0,
-      "range_high": 112.75,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    }
-  ],
+  "passed_signals": [],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

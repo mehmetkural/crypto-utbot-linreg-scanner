@@ -1,8 +1,8 @@
 {
-  "scanned_at_utc": "2026-10-13T22:37:46+00:00",
+  "scanned_at_utc": "2026-10-13T22:39:04+00:00",
   "symbols_scanned": 328,
   "symbols_errored": 0,
-  "strong_signal_count": 7,
+  "strong_signal_count": 8,
   "strong_signals": [
     {
       "symbol": "USD1USDT",
@@ -14,7 +14,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1.00024,
+      "last_close": 1.00025,
       "bar_time_entry": 1791928800000,
       "strong_signal": "GUCLU_SAT"
     },
@@ -28,7 +28,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.3277,
+      "last_close": 0.3276,
       "bar_time_entry": 1791928800000,
       "strong_signal": "GUCLU_SAT"
     },
@@ -42,7 +42,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.01245,
+      "last_close": 0.01237,
       "bar_time_entry": 1791928800000,
       "strong_signal": "GUCLU_AL"
     },
@@ -56,7 +56,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1035,
+      "last_close": 0.1037,
       "bar_time_entry": 1791928800000,
       "strong_signal": "GUCLU_AL"
     },
@@ -98,14 +98,28 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2122,
+      "last_close": 0.2118,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": "GUCLU_AL"
+    },
+    {
+      "symbol": "GRTUSDT",
+      "signal": "buy",
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.02621,
       "bar_time_entry": 1791928800000,
       "strong_signal": "GUCLU_AL"
     }
   ],
   "all_results": [
     {
-      "symbol": "ZECUSDT",
+      "symbol": "ETHUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
@@ -114,23 +128,9 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1227.53,
+      "last_close": 2514.42,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
-    },
-    {
-      "symbol": "USD1USDT",
-      "signal": "sell",
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 1.00024,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": "GUCLU_SAT"
     },
     {
       "symbol": "SOLUSDT",
@@ -142,63 +142,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 106.98,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BNBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 743.34,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "XRPUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 1.3723,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "NEARUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 5.083,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ETHUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 2514.99,
+      "last_close": 106.99,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -212,7 +156,77 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 83514.99,
+      "last_close": 83502.0,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "XRPUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 1.3722,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BNBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 743.25,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "USD1USDT",
+      "signal": "sell",
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 1.00025,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": "GUCLU_SAT"
+    },
+    {
+      "symbol": "NEARUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 5.089,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ZECUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 1227.2,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -226,7 +240,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1.0518,
+      "last_close": 1.0515,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -240,21 +254,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1.0011,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.0847,
+      "last_close": 1.001,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -268,7 +268,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2111,
+      "last_close": 0.211,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.08468,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -296,7 +310,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.5177,
+      "last_close": 0.5178,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -310,7 +324,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 4.21e-06,
+      "last_close": 4.22e-06,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -324,7 +338,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.08444,
+      "last_close": 0.08453,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -338,7 +352,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 10.3,
+      "last_close": 10.304,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -352,7 +366,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.05767,
+      "last_close": 0.05762,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -366,7 +380,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 214.08,
+      "last_close": 214.25,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -380,21 +394,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2371,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "LINKUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 12.944,
+      "last_close": 0.2372,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -413,20 +413,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "HYPEUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 81.95,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "TRXUSDT",
       "signal": "sell",
       "ut_trend_entry": "down",
@@ -436,9 +422,37 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.3277,
+      "last_close": 0.3276,
       "bar_time_entry": 1791928800000,
       "strong_signal": "GUCLU_SAT"
+    },
+    {
+      "symbol": "HYPEUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 81.93,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "LINKUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 12.941,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
     },
     {
       "symbol": "SNDKBUSDT",
@@ -450,7 +464,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1487.07,
+      "last_close": 1487.19,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -464,7 +478,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 279.1,
+      "last_close": 279.2,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -506,21 +520,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.005032,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BATUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.1975,
+      "last_close": 0.00503,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -534,7 +534,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 8.182,
+      "last_close": 8.17,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BATUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.1963,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -548,7 +562,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.5702,
+      "last_close": 0.57,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -562,7 +576,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 129.06,
+      "last_close": 129.11,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -576,7 +590,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1.1521,
+      "last_close": 1.1516,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -590,7 +604,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1575,
+      "last_close": 0.1579,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -604,7 +618,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 160.69,
+      "last_close": 160.7,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "DOTUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 1.163,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -623,20 +651,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "DOTUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 1.164,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "ZROUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -646,7 +660,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 2.018,
+      "last_close": 2.024,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -688,21 +702,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.03494,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "RENDERUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 2.042,
+      "last_close": 0.03492,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -716,7 +716,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.08777,
+      "last_close": 0.08778,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "RENDERUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 2.043,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -730,7 +744,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.01743,
+      "last_close": 0.01742,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -744,7 +758,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.01633,
+      "last_close": 0.01629,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -758,7 +772,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 958.26,
+      "last_close": 958.84,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -772,7 +786,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 152.86,
+      "last_close": 152.9,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -786,7 +800,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 103.79,
+      "last_close": 103.84,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -800,21 +814,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1906,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "TRUMPUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 1.91,
+      "last_close": 0.1905,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -842,7 +842,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1253,
+      "last_close": 0.1251,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "TRUMPUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 1.91,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -856,7 +870,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 84.56,
+      "last_close": 84.58,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -870,35 +884,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.007843,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "POLUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.10207,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "GTCUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.22424,
+      "last_close": 0.007844,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -912,12 +898,12 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 3.119,
+      "last_close": 3.12,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
     {
-      "symbol": "PYTHUSDT",
+      "symbol": "GTCUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "red",
@@ -926,21 +912,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0783,
+      "last_close": 0.22488,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
     {
-      "symbol": "STXUSDT",
+      "symbol": "POLUSDT",
       "signal": null,
-      "ut_trend_entry": "up",
+      "ut_trend_entry": "down",
       "linreg_entry": "green",
       "linreg_confirm": "green",
       "struct_signal": null,
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.4311,
+      "last_close": 0.10208,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -959,6 +945,34 @@
       "strong_signal": null
     },
     {
+      "symbol": "STXUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.4311,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "PYTHUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.0784,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "SKHYBUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -968,7 +982,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 158.1,
+      "last_close": 158.25,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -982,7 +996,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 275.1,
+      "last_close": 274.9,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -996,7 +1010,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.01245,
+      "last_close": 0.01237,
       "bar_time_entry": 1791928800000,
       "strong_signal": "GUCLU_AL"
     },
@@ -1010,21 +1024,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.7079,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "XPLUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.0831,
+      "last_close": 0.7082,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1038,12 +1038,12 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 229.49,
+      "last_close": 229.48,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
     {
-      "symbol": "AMPUSDT",
+      "symbol": "XPLUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
@@ -1052,21 +1052,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.00076,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "XAUTUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 4162.02,
+      "last_close": 0.08307,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1085,6 +1071,34 @@
       "strong_signal": null
     },
     {
+      "symbol": "XAUTUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 4162.02,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "AMPUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.00076,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "GNSUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -1094,7 +1108,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.739,
+      "last_close": 0.74,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1108,7 +1122,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.06415,
+      "last_close": 0.06417,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1122,7 +1136,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0801,
+      "last_close": 0.0802,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1136,7 +1150,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.07735,
+      "last_close": 0.07737,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1164,21 +1178,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1.859,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "RSRUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.00216,
+      "last_close": 1.86,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1192,21 +1192,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1248,
+      "last_close": 0.1249,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
     {
-      "symbol": "GRAMUSDT",
+      "symbol": "RSRUSDT",
       "signal": null,
       "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
       "struct_signal": null,
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1.378,
+      "last_close": 0.002161,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1220,9 +1220,23 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1035,
+      "last_close": 0.1037,
       "bar_time_entry": 1791928800000,
       "strong_signal": "GUCLU_AL"
+    },
+    {
+      "symbol": "GRAMUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 1.379,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
     },
     {
       "symbol": "DASHUSDT",
@@ -1234,7 +1248,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 50.14,
+      "last_close": 50.16,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "SKLUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.00526,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1262,21 +1290,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.07514,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "SKLUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.00526,
+      "last_close": 0.07525,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1290,21 +1304,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.4331,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "SNXXBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 12.04,
+      "last_close": 0.4334,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1318,7 +1318,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.05797,
+      "last_close": 0.05796,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "SNXXBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 12.05,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1332,7 +1346,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.3393,
+      "last_close": 0.3394,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1346,7 +1360,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.8982,
+      "last_close": 0.897,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1360,21 +1374,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.68,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "AEROUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.9026,
+      "last_close": 0.6802,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1393,21 +1393,7 @@
       "strong_signal": null
     },
     {
-      "symbol": "RWUSDUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 1.0,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "WBTCUSDT",
+      "symbol": "AEROUSDT",
       "signal": null,
       "ut_trend_entry": "up",
       "linreg_entry": "green",
@@ -1416,7 +1402,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 83385.84,
+      "last_close": 0.9025,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1430,7 +1416,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 2.0519,
+      "last_close": 2.0505,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "RWUSDUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 1.0,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1449,6 +1449,20 @@
       "strong_signal": "GUCLU_SAT"
     },
     {
+      "symbol": "WBTCUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 83378.04,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "ONEUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -1458,7 +1472,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.001708,
+      "last_close": 0.001707,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1472,7 +1486,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0965,
+      "last_close": 0.0967,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1486,7 +1500,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 37.08,
+      "last_close": 37.06,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1500,7 +1514,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.02087,
+      "last_close": 0.02089,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1514,7 +1528,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0007947,
+      "last_close": 0.0007952,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1542,7 +1556,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 2.124,
+      "last_close": 2.13,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1556,7 +1570,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0417,
+      "last_close": 0.0416,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1570,7 +1584,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.7077,
+      "last_close": 0.7071,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1589,20 +1603,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "MUBARAKUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.06608,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "AVAUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -1612,7 +1612,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2358,
+      "last_close": 0.2364,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "MUBARAKUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.06602,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1626,7 +1640,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 609.63,
+      "last_close": 609.75,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "DODOUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.02054,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1645,20 +1673,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "DODOUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.02055,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "ACEUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -1668,7 +1682,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1955,
+      "last_close": 0.1957,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "GPSUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.00783,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1687,20 +1715,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "GPSUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.00781,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "JTOUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -1710,7 +1724,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.5404,
+      "last_close": 0.5401,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1724,7 +1738,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2447,
+      "last_close": 0.2446,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1738,7 +1752,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 3.945,
+      "last_close": 3.949,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1766,7 +1780,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.07899,
+      "last_close": 0.0794,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1780,7 +1794,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.002988,
+      "last_close": 0.002985,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1794,7 +1808,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.001557,
+      "last_close": 0.001555,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1808,7 +1822,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.05986,
+      "last_close": 0.05991,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1827,20 +1841,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "NMRUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 12.53,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "TQQQBUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -1855,6 +1855,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "NMRUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 12.53,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "CHIPUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -1864,7 +1878,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.05744,
+      "last_close": 0.05749,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "MINAUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.0754,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1883,20 +1911,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "MINAUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.0753,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "NIGHTUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -1906,7 +1920,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.04467,
+      "last_close": 0.0447,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1920,7 +1934,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 6.236,
+      "last_close": 6.242,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1948,7 +1962,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0165,
+      "last_close": 0.01649,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -1962,7 +1976,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.00828,
+      "last_close": 0.0083,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2004,7 +2018,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 2.053,
+      "last_close": 2.048,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2032,7 +2046,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.003001,
+      "last_close": 0.003002,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2046,7 +2060,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.007314,
+      "last_close": 0.007313,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2060,21 +2074,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.351,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "TSLABUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 375.19,
+      "last_close": 0.352,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2089,6 +2089,20 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 53.21,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "TSLABUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 375.19,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2116,21 +2130,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1636,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "MEGAUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.04443,
+      "last_close": 0.1639,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2149,6 +2149,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "MEGAUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.04443,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "MORPHOUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -2158,21 +2172,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 2.375,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "WALUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.03848,
+      "last_close": 2.374,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2186,7 +2186,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.663,
+      "last_close": 0.661,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "WALUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.03846,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2214,7 +2228,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1.471,
+      "last_close": 1.474,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2270,7 +2284,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.3867,
+      "last_close": 0.387,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2284,7 +2298,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 99.11,
+      "last_close": 99.19,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2312,7 +2326,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0769,
+      "last_close": 0.07693,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2354,7 +2368,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.02078,
+      "last_close": 0.02081,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2382,7 +2396,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 22.99,
+      "last_close": 23.08,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2396,7 +2410,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.03225,
+      "last_close": 0.03228,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "WIFUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.2085,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2429,20 +2457,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "WIFUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.2085,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "XAIUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -2452,7 +2466,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.00931,
+      "last_close": 0.00932,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2466,7 +2480,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.12363,
+      "last_close": 0.12385,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2508,7 +2522,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.002166,
+      "last_close": 0.002167,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2522,7 +2536,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0718,
+      "last_close": 0.07186,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2536,7 +2550,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.002622,
+      "last_close": 0.002624,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2564,7 +2578,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1331,
+      "last_close": 0.1333,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2578,7 +2592,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.01245,
+      "last_close": 0.01246,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2592,7 +2606,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 2.574e-05,
+      "last_close": 2.578e-05,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2606,7 +2620,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.04841,
+      "last_close": 0.04842,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2620,7 +2634,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 4.959e-05,
+      "last_close": 4.96e-05,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2634,7 +2648,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.03963,
+      "last_close": 0.03965,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2676,21 +2690,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 35.58,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ONGUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.08623,
+      "last_close": 35.64,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2704,7 +2704,35 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0553,
+      "last_close": 0.0552,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ONGUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.08632,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "APEUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.1523,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2719,20 +2747,6 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 0.0343,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "APEUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.1522,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2765,20 +2779,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "SFPUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.2692,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "LSKUSDT",
       "signal": "buy",
       "ut_trend_entry": "up",
@@ -2788,7 +2788,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2122,
+      "last_close": 0.2118,
       "bar_time_entry": 1791928800000,
       "strong_signal": "GUCLU_AL"
     },
@@ -2802,7 +2802,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2551,
+      "last_close": 0.2553,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2835,6 +2835,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "RADUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.29,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "API3USDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -2845,20 +2859,6 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 0.3063,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "RADUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.291,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2886,7 +2886,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.01468,
+      "last_close": 0.01467,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2905,6 +2905,34 @@
       "strong_signal": null
     },
     {
+      "symbol": "SFPUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.2692,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ROBOUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.00744,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "DEXEUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -2919,20 +2947,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "ROBOUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.00743,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "SOMIUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -2942,7 +2956,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2064,
+      "last_close": 0.2065,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2970,7 +2984,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.001952,
+      "last_close": 0.001955,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2984,7 +2998,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.02068,
+      "last_close": 0.02071,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -2998,7 +3012,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0695,
+      "last_close": 0.0694,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3012,21 +3026,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.03473,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "GRTUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.02616,
+      "last_close": 0.03474,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3043,6 +3043,20 @@
       "last_close": 0.03495,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
+    },
+    {
+      "symbol": "GRTUSDT",
+      "signal": "buy",
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.02621,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": "GUCLU_AL"
     },
     {
       "symbol": "HYPERUSDT",
@@ -3068,49 +3082,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2575,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BIOUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.02775,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "GLMRUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.009488,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "CGPTUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.02368,
+      "last_close": 0.2566,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3124,12 +3096,12 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 989.45,
+      "last_close": 989.87,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
     {
-      "symbol": "BANKUSDT",
+      "symbol": "BIOUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "green",
@@ -3138,7 +3110,35 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0277,
+      "last_close": 0.02777,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "GLMRUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.009466,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "CGPTUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.02371,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3157,6 +3157,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "BANKUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.0277,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "LPTUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -3166,7 +3180,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1.725,
+      "last_close": 1.726,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "IRENBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 35.15,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3185,20 +3213,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "IRENBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 35.16,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "RONINUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -3208,7 +3222,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0655,
+      "last_close": 0.0656,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3236,7 +3250,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.11256,
+      "last_close": 0.1126,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3311,20 +3325,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "BTTCUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 3.6e-07,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "SPKUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -3335,6 +3335,20 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 0.020838,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BTTCUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 3.6e-07,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3353,20 +3367,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "EWYBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 167.18,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "KAITOUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -3377,6 +3377,20 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 0.3103,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "EWYBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 167.24,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3409,6 +3423,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "ZBTUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.0773,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "IDUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -3423,7 +3451,7 @@
       "strong_signal": null
     },
     {
-      "symbol": "ZBTUSDT",
+      "symbol": "NEIROUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "green",
@@ -3432,7 +3460,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0773,
+      "last_close": 8.216e-05,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3451,7 +3479,7 @@
       "strong_signal": null
     },
     {
-      "symbol": "NEIROUSDT",
+      "symbol": "SSVUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "green",
@@ -3460,7 +3488,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 8.22e-05,
+      "last_close": 2.728,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3479,20 +3507,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "SSVUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 2.728,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "BARUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -3502,7 +3516,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.278,
+      "last_close": 0.277,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3549,20 +3563,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "AAPLBUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 341.24,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "HEMIUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -3573,6 +3573,20 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 0.00562,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "AAPLBUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 341.24,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3614,7 +3628,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.136,
+      "last_close": 0.1361,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3628,21 +3642,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.00793,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "IOTAUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.0494,
+      "last_close": 0.00794,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3661,6 +3661,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "IOTAUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.0494,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "ARKMUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -3670,7 +3684,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1315,
+      "last_close": 0.1316,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3740,21 +3754,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.000748,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "BROCCOLI714USDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.02149,
+      "last_close": 0.000747,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3768,7 +3768,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.00911,
+      "last_close": 0.00912,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "BROCCOLI714USDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.02153,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3782,7 +3796,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.06177,
+      "last_close": 0.06182,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3796,21 +3810,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.01199,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "FIDAUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.02037,
+      "last_close": 0.012,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3824,7 +3824,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0939,
+      "last_close": 0.0941,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "FIDAUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.02044,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3857,20 +3871,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "COINBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 181.93,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "GMXUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -3880,7 +3880,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 8.68,
+      "last_close": 8.69,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3894,7 +3894,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 2785.42,
+      "last_close": 2785.15,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "COINBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 181.93,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3950,7 +3964,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.2345,
+      "last_close": 0.2346,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -3965,20 +3979,6 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 357.83,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ENSOUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.908,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4025,7 +4025,7 @@
       "strong_signal": null
     },
     {
-      "symbol": "ESPUSDT",
+      "symbol": "ENSOUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "green",
@@ -4034,7 +4034,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.10305,
+      "last_close": 0.908,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4067,7 +4067,7 @@
       "strong_signal": null
     },
     {
-      "symbol": "PROVEUSDT",
+      "symbol": "ESPUSDT",
       "signal": null,
       "ut_trend_entry": "down",
       "linreg_entry": "green",
@@ -4076,7 +4076,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1902,
+      "last_close": 0.10301,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4095,6 +4095,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "PROVEUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.1903,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "SCRUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -4105,20 +4119,6 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 0.02399,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "1000CHEEMSUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.000486,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4137,6 +4137,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "1000CHEEMSUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.000486,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "MAVUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -4147,20 +4161,6 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 0.01062,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "EULUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 1.315,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4179,6 +4179,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "EULUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 1.315,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "CRWVBUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -4188,35 +4202,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 78.0,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "ACHUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.00592,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "LUNAUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.045,
+      "last_close": 77.99,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4230,7 +4216,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0539,
+      "last_close": 0.0538,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4249,16 +4235,30 @@
       "strong_signal": null
     },
     {
-      "symbol": "IMXUSDT",
+      "symbol": "LUNAUSDT",
       "signal": null,
       "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
       "struct_signal": null,
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.1754,
+      "last_close": 0.045,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "ACHUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.00592,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4277,6 +4277,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "IMXUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.1753,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "ATMUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -4286,7 +4300,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 1.026,
+      "last_close": 1.027,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4314,7 +4328,35 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0685,
+      "last_close": 0.0687,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "AVNTUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "red",
+      "linreg_confirm": "red",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.1275,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "MITOUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.01411,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4329,34 +4371,6 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 0.004,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "AVNTUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "red",
-      "linreg_confirm": "red",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.1274,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "MITOUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.01409,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4403,6 +4417,20 @@
       "strong_signal": null
     },
     {
+      "symbol": "COHRBUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 291.59,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
       "symbol": "ARKUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -4417,20 +4445,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "COHRBUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 291.47,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "BMNRBUSDT",
       "signal": null,
       "ut_trend_entry": "down",
@@ -4441,20 +4455,6 @@
       "struct_point_bar": null,
       "struct_bars_ago": null,
       "last_close": 23.66,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
-      "symbol": "NEOUSDT",
-      "signal": null,
-      "ut_trend_entry": "down",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 2.399,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4482,7 +4482,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.0912,
+      "last_close": 0.09113,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "NEOUSDT",
+      "signal": null,
+      "ut_trend_entry": "down",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 2.399,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4510,7 +4524,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.000528,
+      "last_close": 0.000529,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4524,7 +4538,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.4323,
+      "last_close": 0.4325,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4557,20 +4571,6 @@
       "strong_signal": null
     },
     {
-      "symbol": "CUSDT",
-      "signal": null,
-      "ut_trend_entry": "up",
-      "linreg_entry": "green",
-      "linreg_confirm": "green",
-      "struct_signal": null,
-      "struct_level": null,
-      "struct_point_bar": null,
-      "struct_bars_ago": null,
-      "last_close": 0.0947,
-      "bar_time_entry": 1791928800000,
-      "strong_signal": null
-    },
-    {
       "symbol": "SIGNUSDT",
       "signal": null,
       "ut_trend_entry": "up",
@@ -4580,7 +4580,21 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.01288,
+      "last_close": 0.01287,
+      "bar_time_entry": 1791928800000,
+      "strong_signal": null
+    },
+    {
+      "symbol": "CUSDT",
+      "signal": null,
+      "ut_trend_entry": "up",
+      "linreg_entry": "green",
+      "linreg_confirm": "green",
+      "struct_signal": null,
+      "struct_level": null,
+      "struct_point_bar": null,
+      "struct_bars_ago": null,
+      "last_close": 0.0948,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4650,7 +4664,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.003785,
+      "last_close": 0.003786,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },
@@ -4664,7 +4678,7 @@
       "struct_level": null,
       "struct_point_bar": null,
       "struct_bars_ago": null,
-      "last_close": 0.00425,
+      "last_close": 0.00424,
       "bar_time_entry": 1791928800000,
       "strong_signal": null
     },

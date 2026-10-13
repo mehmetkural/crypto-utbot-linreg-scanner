@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "SKLUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791867600000,
+    "detected_at_utc": "2026-10-13T05:52:57+00:00",
+    "price_at_signal": 0.00541,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "METISUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791867600000,
+    "detected_at_utc": "2026-10-13T05:52:57+00:00",
+    "price_at_signal": 3.75,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "CTSIUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791867600000,
+    "detected_at_utc": "2026-10-13T05:52:57+00:00",
+    "price_at_signal": 0.03466,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "REDUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791867600000,
@@ -2799,10 +2832,10 @@
     "bar_time_entry": 1791853200000,
     "detected_at_utc": "2026-10-13T01:37:55+00:00",
     "price_at_signal": 0.0661,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.06676,
+    "evaluated_at": "2026-10-13T05:52:57+00:00"
   },
   {
     "symbol": "UUSDT",
@@ -3265,38 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.009652,
     "evaluated_at": "2026-10-13T02:07:51+00:00"
-  },
-  {
-    "symbol": "LAZIOUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791838800000,
-    "detected_at_utc": "2026-10-12T21:52:57+00:00",
-    "price_at_signal": 0.406,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.414,
-    "evaluated_at": "2026-10-13T02:07:51+00:00"
-  },
-  {
-    "symbol": "AVAUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791838800000,
-    "detected_at_utc": "2026-10-12T21:52:57+00:00",
-    "price_at_signal": 0.2342,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.2309,
-    "evaluated_at": "2026-10-13T02:07:51+00:00"
-  },
-  {
-    "symbol": "RSRUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791838800000,
-    "detected_at_utc": "2026-10-12T21:37:55+00:00",
-    "price_at_signal": 0.002231,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.002008,
-    "evaluated_at": "2026-10-13T01:37:55+00:00"
   }
 ]

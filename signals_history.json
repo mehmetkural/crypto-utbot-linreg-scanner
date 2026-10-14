@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PORTOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1791990000000,
+    "detected_at_utc": "2026-10-14T15:38:01+00:00",
+    "price_at_signal": 0.464,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "RLUSDUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1791990000000,
@@ -709,10 +720,10 @@
     "bar_time_entry": 1791975600000,
     "detected_at_utc": "2026-10-14T11:37:50+00:00",
     "price_at_signal": 0.08469,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.08245,
+    "evaluated_at": "2026-10-14T15:38:01+00:00"
   },
   {
     "symbol": "KITEUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 356.75,
-    "evaluated_at": "2026-10-14T07:22:59+00:00"
-  },
-  {
-    "symbol": "SUPERUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1791946800000,
-    "detected_at_utc": "2026-10-14T03:22:47+00:00",
-    "price_at_signal": 0.2129,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.2124,
     "evaluated_at": "2026-10-14T07:22:59+00:00"
   }
 ]

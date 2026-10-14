@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "INITUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792000800000,
+    "detected_at_utc": "2026-10-14T18:53:12+00:00",
+    "price_at_signal": 0.1257,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BEAMXUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1792000800000,
@@ -720,10 +731,10 @@
     "bar_time_entry": 1791986400000,
     "detected_at_utc": "2026-10-14T14:52:56+00:00",
     "price_at_signal": 0.00501,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00475,
+    "evaluated_at": "2026-10-14T18:53:12+00:00"
   },
   {
     "symbol": "FTTUSDT",
@@ -731,10 +742,10 @@
     "bar_time_entry": 1791986400000,
     "detected_at_utc": "2026-10-14T14:37:56+00:00",
     "price_at_signal": 0.2557,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.2554,
+    "evaluated_at": "2026-10-14T18:53:12+00:00"
   },
   {
     "symbol": "GLMRUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 287.23,
     "evaluated_at": "2026-10-14T09:52:57+00:00"
-  },
-  {
-    "symbol": "WDCBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791954000000,
-    "detected_at_utc": "2026-10-14T05:52:49+00:00",
-    "price_at_signal": 374.35,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
   }
 ]

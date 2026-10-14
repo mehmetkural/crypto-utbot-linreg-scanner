@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ONGUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1791975600000,
+    "detected_at_utc": "2026-10-14T11:37:50+00:00",
+    "price_at_signal": 0.08469,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "KITEUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1791975600000,
@@ -1215,10 +1226,10 @@
     "bar_time_entry": 1791961200000,
     "detected_at_utc": "2026-10-14T07:37:47+00:00",
     "price_at_signal": 0.02368,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.02306,
+    "evaluated_at": "2026-10-14T11:37:50+00:00"
   },
   {
     "symbol": "MUBARAKUSDT",
@@ -1226,10 +1237,10 @@
     "bar_time_entry": 1791961200000,
     "detected_at_utc": "2026-10-14T07:22:59+00:00",
     "price_at_signal": 0.06593,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.06446,
+    "evaluated_at": "2026-10-14T11:37:50+00:00"
   },
   {
     "symbol": "RLCUSDT",
@@ -1237,10 +1248,10 @@
     "bar_time_entry": 1791961200000,
     "detected_at_utc": "2026-10-14T07:22:59+00:00",
     "price_at_signal": 0.9338,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.8644,
+    "evaluated_at": "2026-10-14T11:37:50+00:00"
   },
   {
     "symbol": "LUNCUSDT",
@@ -1248,10 +1259,10 @@
     "bar_time_entry": 1791961200000,
     "detected_at_utc": "2026-10-14T07:22:59+00:00",
     "price_at_signal": 4.943e-05,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 4.894e-05,
+    "evaluated_at": "2026-10-14T11:37:50+00:00"
   },
   {
     "symbol": "PLUMEUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.0115,
     "evaluated_at": "2026-10-14T04:08:01+00:00"
-  },
-  {
-    "symbol": "EWYBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791936000000,
-    "detected_at_utc": "2026-10-14T00:07:54+00:00",
-    "price_at_signal": 166.09,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 163.4,
-    "evaluated_at": "2026-10-14T06:07:47+00:00"
   }
 ]

@@ -1,8 +1,37 @@
 {
-  "scanned_at_utc": "2026-10-15T19:50:21+00:00",
+  "scanned_at_utc": "2026-10-15T23:00:25+00:00",
   "timeframe": "4h",
-  "symbols_scanned": 335,
+  "symbols_scanned": 333,
   "symbols_errored": 1,
-  "memo_signal_count": 0,
-  "memo_signals": []
+  "memo_signal_count": 2,
+  "memo_signals": [
+    {
+      "symbol": "VELODROMEUSDT",
+      "memo_signal": true,
+      "macd": 6.915405861799423e-05,
+      "macd_signal": -2.959906715309805e-06,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 7563223.3,
+      "volume_ma": 4628395.235,
+      "volume_above_ma": true,
+      "last_close": 0.04069,
+      "bar_time": 1792094400000
+    },
+    {
+      "symbol": "CGPTUSDT",
+      "memo_signal": true,
+      "macd": 4.5083741978535485e-06,
+      "macd_signal": -1.4451656925634981e-05,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 7724244.7,
+      "volume_ma": 5350238.89,
+      "volume_above_ma": true,
+      "last_close": 0.02431,
+      "bar_time": 1792094400000
+    }
+  ]
 }

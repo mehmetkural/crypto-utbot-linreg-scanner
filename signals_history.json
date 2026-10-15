@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BFUSDUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792036800000,
+    "detected_at_utc": "2026-10-15T04:52:59+00:00",
+    "price_at_signal": 0.9991,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "UUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792036800000,
@@ -852,10 +863,10 @@
     "bar_time_entry": 1792022400000,
     "detected_at_utc": "2026-10-15T00:52:52+00:00",
     "price_at_signal": 1.86,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.812,
+    "evaluated_at": "2026-10-15T04:52:59+00:00"
   },
   {
     "symbol": "ARKUSDT",
@@ -863,10 +874,10 @@
     "bar_time_entry": 1792022400000,
     "detected_at_utc": "2026-10-15T00:37:55+00:00",
     "price_at_signal": 0.1795,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.1734,
+    "evaluated_at": "2026-10-15T04:52:59+00:00"
   },
   {
     "symbol": "AXLUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.02074,
-    "evaluated_at": "2026-10-14T14:22:57+00:00"
-  },
-  {
-    "symbol": "BTCUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1791972000000,
-    "detected_at_utc": "2026-10-14T10:07:54+00:00",
-    "price_at_signal": 83079.98,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 82000.01,
     "evaluated_at": "2026-10-14T14:22:57+00:00"
   }
 ]

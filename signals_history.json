@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BFUSDUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792080000000,
+    "detected_at_utc": "2026-10-15T16:22:57+00:00",
+    "price_at_signal": 0.9996,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "USD1USDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792080000000,
@@ -2843,10 +2854,10 @@
     "bar_time_entry": 1792065600000,
     "detected_at_utc": "2026-10-15T12:22:57+00:00",
     "price_at_signal": 79.04,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 81.28,
+    "evaluated_at": "2026-10-15T16:22:57+00:00"
   },
   {
     "symbol": "ADXUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 4.654e-05,
-    "evaluated_at": "2026-10-15T13:38:04+00:00"
-  },
-  {
-    "symbol": "TUTUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1792054800000,
-    "detected_at_utc": "2026-10-15T09:23:05+00:00",
-    "price_at_signal": 0.01969,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.01961,
     "evaluated_at": "2026-10-15T13:38:04+00:00"
   }
 ]

@@ -1,13 +1,78 @@
 {
-  "scanned_at_utc": "2026-10-16T17:55:32+00:00",
+  "scanned_at_utc": "2026-10-16T20:51:05+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 272,
-  "symbols_errored": 1,
-  "ut_buy_count": 0,
-  "passed_count": 0,
-  "filtered_count": 0,
-  "passed_signals": [],
-  "filtered_signals": [],
+  "symbols_scanned": 270,
+  "symbols_errored": 2,
+  "ut_buy_count": 3,
+  "passed_count": 2,
+  "filtered_count": 1,
+  "passed_signals": [
+    {
+      "symbol": "LUMIAUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.0978,
+      "bar_time": 1792180800000,
+      "adx": 8.96,
+      "chop": 41.0,
+      "bb_width_pctl": 29.0,
+      "range_pct": 14.81,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 0.1058,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "PROMUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 5.03,
+      "bar_time": 1792180800000,
+      "adx": 30.42,
+      "chop": 41.33,
+      "bb_width_pctl": 100.0,
+      "range_pct": 27.62,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 5.77,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
+  "filtered_signals": [
+    {
+      "symbol": "MOVRUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.428,
+      "bar_time": 1792180800000,
+      "adx": 15.61,
+      "chop": 63.17,
+      "bb_width_pctl": 8.0,
+      "range_pct": 17.89,
+      "votes": {
+        "adx_low": true,
+        "chop_high": true,
+        "bb_squeeze": true
+      },
+      "vote_count": 3,
+      "range_high": 1.557,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

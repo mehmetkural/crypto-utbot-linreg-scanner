@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "SOLUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792206000000,
+    "detected_at_utc": "2026-10-17T03:22:58+00:00",
+    "price_at_signal": 104.65,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ERAUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792206000000,
+    "detected_at_utc": "2026-10-17T03:22:58+00:00",
+    "price_at_signal": 0.0585,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "NMRUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792206000000,
+    "detected_at_utc": "2026-10-17T03:22:58+00:00",
+    "price_at_signal": 11.82,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "USD1USDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792206000000,
@@ -687,10 +720,10 @@
     "bar_time_entry": 1792191600000,
     "detected_at_utc": "2026-10-16T23:22:55+00:00",
     "price_at_signal": 2.184,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 2.186,
+    "evaluated_at": "2026-10-17T03:22:58+00:00"
   },
   {
     "symbol": "DOGEUSDT",
@@ -3265,38 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.072,
     "evaluated_at": "2026-10-16T18:22:50+00:00"
-  },
-  {
-    "symbol": "SPYBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792159200000,
-    "detected_at_utc": "2026-10-16T14:07:50+00:00",
-    "price_at_signal": 772.08,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 763.14,
-    "evaluated_at": "2026-10-16T18:22:50+00:00"
-  },
-  {
-    "symbol": "FORMUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792159200000,
-    "detected_at_utc": "2026-10-16T14:07:50+00:00",
-    "price_at_signal": 0.2564,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
-  },
-  {
-    "symbol": "AAVEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792155600000,
-    "detected_at_utc": "2026-10-16T13:52:55+00:00",
-    "price_at_signal": 160.33,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 155.0,
-    "evaluated_at": "2026-10-16T18:07:46+00:00"
   }
 ]

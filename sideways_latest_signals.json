@@ -1,78 +1,13 @@
 {
-  "scanned_at_utc": "2026-10-17T18:21:10+00:00",
+  "scanned_at_utc": "2026-10-17T22:08:50+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 242,
+  "symbols_scanned": 240,
   "symbols_errored": 0,
-  "ut_buy_count": 3,
-  "passed_count": 2,
-  "filtered_count": 1,
-  "passed_signals": [
-    {
-      "symbol": "GRAMUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 1.366,
-      "bar_time": 1792260000000,
-      "adx": 21.8,
-      "chop": 50.14,
-      "bb_width_pctl": 51.0,
-      "range_pct": 4.85,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 0,
-      "range_high": 1.396,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "ZKCUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.0352,
-      "bar_time": 1792260000000,
-      "adx": 32.51,
-      "chop": 54.38,
-      "bb_width_pctl": 36.0,
-      "range_pct": 8.65,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 0,
-      "range_high": 0.0368,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    }
-  ],
-  "filtered_signals": [
-    {
-      "symbol": "OGNUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.03106,
-      "bar_time": 1792260000000,
-      "adx": 9.86,
-      "chop": 58.22,
-      "bb_width_pctl": 12.0,
-      "range_pct": 11.38,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.03247,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    }
-  ],
+  "ut_buy_count": 0,
+  "passed_count": 0,
+  "filtered_count": 0,
+  "passed_signals": [],
+  "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

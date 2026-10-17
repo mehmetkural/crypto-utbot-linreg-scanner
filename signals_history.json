@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "KMNOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792195200000,
+    "detected_at_utc": "2026-10-17T00:37:48+00:00",
+    "price_at_signal": 0.03975,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "TIAUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1792195200000,
@@ -951,10 +962,10 @@
     "bar_time_entry": 1792180800000,
     "detected_at_utc": "2026-10-16T20:37:48+00:00",
     "price_at_signal": 0.0338,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.0348,
+    "evaluated_at": "2026-10-17T00:37:48+00:00"
   },
   {
     "symbol": "CHZUSDT",
@@ -962,10 +973,10 @@
     "bar_time_entry": 1792180800000,
     "detected_at_utc": "2026-10-16T20:37:48+00:00",
     "price_at_signal": 0.01427,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.01459,
+    "evaluated_at": "2026-10-17T00:37:48+00:00"
   },
   {
     "symbol": "PROMUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 710.33,
-    "evaluated_at": "2026-10-16T17:22:58+00:00"
-  },
-  {
-    "symbol": "WBTCUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792155600000,
-    "detected_at_utc": "2026-10-16T13:07:58+00:00",
-    "price_at_signal": 81838.05,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 80711.43,
     "evaluated_at": "2026-10-16T17:22:58+00:00"
   }
 ]

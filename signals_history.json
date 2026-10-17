@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "HBARUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792274400000,
+    "detected_at_utc": "2026-10-17T22:37:48+00:00",
+    "price_at_signal": 0.08402,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "PYTHUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792274400000,
@@ -2623,10 +2634,10 @@
     "bar_time_entry": 1792260000000,
     "detected_at_utc": "2026-10-17T18:22:50+00:00",
     "price_at_signal": 1.391,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.374,
+    "evaluated_at": "2026-10-17T22:37:48+00:00"
   },
   {
     "symbol": "MORPHOUSDT",
@@ -2634,10 +2645,10 @@
     "bar_time_entry": 1792260000000,
     "detected_at_utc": "2026-10-17T18:22:50+00:00",
     "price_at_signal": 2.377,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 2.374,
+    "evaluated_at": "2026-10-17T22:37:48+00:00"
   },
   {
     "symbol": "SKYUSDT",
@@ -2645,10 +2656,10 @@
     "bar_time_entry": 1792260000000,
     "detected_at_utc": "2026-10-17T18:22:50+00:00",
     "price_at_signal": 0.07164,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.07026,
+    "evaluated_at": "2026-10-17T22:37:48+00:00"
   },
   {
     "symbol": "MEGAUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.06998,
     "evaluated_at": "2026-10-17T17:22:53+00:00"
-  },
-  {
-    "symbol": "DOGEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792238400000,
-    "detected_at_utc": "2026-10-17T12:52:48+00:00",
-    "price_at_signal": 0.07955,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.07927,
-    "evaluated_at": "2026-10-17T16:52:51+00:00"
   }
 ]

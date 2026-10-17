@@ -1,35 +1,78 @@
 {
-  "scanned_at_utc": "2026-10-17T12:05:17+00:00",
+  "scanned_at_utc": "2026-10-17T15:27:13+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 256,
+  "symbols_scanned": 246,
   "symbols_errored": 2,
-  "ut_buy_count": 1,
+  "ut_buy_count": 3,
   "passed_count": 1,
-  "filtered_count": 0,
+  "filtered_count": 2,
   "passed_signals": [
     {
-      "symbol": "PROMUSDT",
+      "symbol": "MANAUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 4.907,
-      "bar_time": 1792238400000,
-      "adx": 24.93,
-      "chop": 43.38,
-      "bb_width_pctl": 99.0,
-      "range_pct": 27.78,
+      "last_close": 0.0921,
+      "bar_time": 1792245600000,
+      "adx": 15.19,
+      "chop": 59.8,
+      "bb_width_pctl": 13.0,
+      "range_pct": 9.63,
       "votes": {
-        "adx_low": false,
+        "adx_low": true,
         "chop_high": false,
-        "bb_squeeze": false
+        "bb_squeeze": true
       },
-      "vote_count": 0,
-      "range_high": 5.77,
-      "breakout": false,
-      "was_sideways": false,
+      "vote_count": 2,
+      "range_high": 0.0917,
+      "breakout": true,
+      "was_sideways": true,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [],
+  "filtered_signals": [
+    {
+      "symbol": "CAKEUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 2.23,
+      "bar_time": 1792245600000,
+      "adx": 9.11,
+      "chop": 49.74,
+      "bb_width_pctl": 4.0,
+      "range_pct": 5.92,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 2,
+      "range_high": 2.264,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    },
+    {
+      "symbol": "KAIAUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.0444,
+      "bar_time": 1792245600000,
+      "adx": 11.68,
+      "chop": 62.83,
+      "bb_width_pctl": 3.0,
+      "range_pct": 8.22,
+      "votes": {
+        "adx_low": true,
+        "chop_high": true,
+        "bb_squeeze": true
+      },
+      "vote_count": 3,
+      "range_high": 0.045,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

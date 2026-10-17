@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "KATUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792202400000,
+    "detected_at_utc": "2026-10-17T02:37:58+00:00",
+    "price_at_signal": 0.00411,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ETHFIUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1792202400000,
@@ -841,10 +852,10 @@
     "bar_time_entry": 1792188000000,
     "detected_at_utc": "2026-10-16T22:37:53+00:00",
     "price_at_signal": 8.1,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 7.97,
+    "evaluated_at": "2026-10-17T02:37:58+00:00"
   },
   {
     "symbol": "IOTXUSDT",
@@ -852,10 +863,10 @@
     "bar_time_entry": 1792188000000,
     "detected_at_utc": "2026-10-16T22:37:53+00:00",
     "price_at_signal": 0.003897,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.003821,
+    "evaluated_at": "2026-10-17T02:37:58+00:00"
   },
   {
     "symbol": "BEAMXUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 7.618e-05,
-    "evaluated_at": "2026-10-16T17:37:58+00:00"
-  },
-  {
-    "symbol": "BIOUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792155600000,
-    "detected_at_utc": "2026-10-16T13:37:45+00:00",
-    "price_at_signal": 0.02564,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.02509,
     "evaluated_at": "2026-10-16T17:37:58+00:00"
   }
 ]

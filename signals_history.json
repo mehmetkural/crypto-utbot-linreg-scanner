@@ -1,5 +1,60 @@
 [
   {
+    "symbol": "RSRUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792299600000,
+    "detected_at_utc": "2026-10-18T05:07:46+00:00",
+    "price_at_signal": 0.002026,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "CRVUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792299600000,
+    "detected_at_utc": "2026-10-18T05:07:46+00:00",
+    "price_at_signal": 0.3421,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "DODOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792299600000,
+    "detected_at_utc": "2026-10-18T05:07:46+00:00",
+    "price_at_signal": 0.02108,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "RAREUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792299600000,
+    "detected_at_utc": "2026-10-18T05:07:46+00:00",
+    "price_at_signal": 0.01368,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "CYBERUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792299600000,
+    "detected_at_utc": "2026-10-18T05:07:46+00:00",
+    "price_at_signal": 0.318,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "PROMUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792296000000,
@@ -863,10 +918,10 @@
     "bar_time_entry": 1792281600000,
     "detected_at_utc": "2026-10-18T00:52:58+00:00",
     "price_at_signal": 816.36,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 817.51,
+    "evaluated_at": "2026-10-18T05:07:46+00:00"
   },
   {
     "symbol": "INTWBUSDT",
@@ -874,10 +929,10 @@
     "bar_time_entry": 1792281600000,
     "detected_at_utc": "2026-10-18T00:52:58+00:00",
     "price_at_signal": 16.63,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 16.8,
+    "evaluated_at": "2026-10-18T05:07:46+00:00"
   },
   {
     "symbol": "COTIUSDT",
@@ -3242,61 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.07914,
-    "evaluated_at": "2026-10-17T23:22:53+00:00"
-  },
-  {
-    "symbol": "LINKUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1792263600000,
-    "detected_at_utc": "2026-10-17T19:07:51+00:00",
-    "price_at_signal": 12.036,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 11.963,
-    "evaluated_at": "2026-10-17T23:22:53+00:00"
-  },
-  {
-    "symbol": "ENAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1792263600000,
-    "detected_at_utc": "2026-10-17T19:07:51+00:00",
-    "price_at_signal": 0.1916,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.1887,
-    "evaluated_at": "2026-10-17T23:22:53+00:00"
-  },
-  {
-    "symbol": "INJUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1792263600000,
-    "detected_at_utc": "2026-10-17T19:07:51+00:00",
-    "price_at_signal": 8.615,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 8.577,
-    "evaluated_at": "2026-10-17T23:22:53+00:00"
-  },
-  {
-    "symbol": "FETUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1792263600000,
-    "detected_at_utc": "2026-10-17T19:07:51+00:00",
-    "price_at_signal": 0.1917,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.1901,
-    "evaluated_at": "2026-10-17T23:22:53+00:00"
-  },
-  {
-    "symbol": "APTUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1792263600000,
-    "detected_at_utc": "2026-10-17T19:07:51+00:00",
-    "price_at_signal": 0.81,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.7955,
     "evaluated_at": "2026-10-17T23:22:53+00:00"
   }
 ]

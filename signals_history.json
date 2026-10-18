@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PSGUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792306800000,
+    "detected_at_utc": "2026-10-18T07:37:51+00:00",
+    "price_at_signal": 0.434,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "XUSDUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1792306800000,
@@ -544,10 +555,10 @@
     "bar_time_entry": 1792292400000,
     "detected_at_utc": "2026-10-18T03:37:48+00:00",
     "price_at_signal": 9.848,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 9.77,
+    "evaluated_at": "2026-10-18T07:37:51+00:00"
   },
   {
     "symbol": "ZECUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.0445,
-    "evaluated_at": "2026-10-18T00:07:48+00:00"
-  },
-  {
-    "symbol": "IOTAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1792263600000,
-    "detected_at_utc": "2026-10-17T19:52:51+00:00",
-    "price_at_signal": 0.0468,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0463,
     "evaluated_at": "2026-10-18T00:07:48+00:00"
   }
 ]

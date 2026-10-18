@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "SUPERUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792321200000,
+    "detected_at_utc": "2026-10-18T11:52:51+00:00",
+    "price_at_signal": 0.1897,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "MUBARAKUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792321200000,
@@ -698,10 +709,10 @@
     "bar_time_entry": 1792306800000,
     "detected_at_utc": "2026-10-18T07:37:51+00:00",
     "price_at_signal": 0.434,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.431,
+    "evaluated_at": "2026-10-18T11:52:51+00:00"
   },
   {
     "symbol": "XUSDUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.2835,
-    "evaluated_at": "2026-10-18T01:52:53+00:00"
-  },
-  {
-    "symbol": "AXTIBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792270800000,
-    "detected_at_utc": "2026-10-17T21:37:50+00:00",
-    "price_at_signal": 47.35,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 49.75,
     "evaluated_at": "2026-10-18T01:52:53+00:00"
   }
 ]

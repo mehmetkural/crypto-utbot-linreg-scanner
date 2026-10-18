@@ -1,55 +1,12 @@
 {
-  "scanned_at_utc": "2026-10-18T13:53:14+00:00",
+  "scanned_at_utc": "2026-10-18T17:12:53+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 235,
+  "symbols_scanned": 239,
   "symbols_errored": 0,
-  "ut_buy_count": 2,
-  "passed_count": 2,
+  "ut_buy_count": 0,
+  "passed_count": 0,
   "filtered_count": 0,
-  "passed_signals": [
-    {
-      "symbol": "ORCLBUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 128.51,
-      "bar_time": 1792324800000,
-      "adx": 40.14,
-      "chop": 42.71,
-      "bb_width_pctl": 17.0,
-      "range_pct": 7.34,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 1,
-      "range_high": 135.26,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "PROMUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 4.825,
-      "bar_time": 1792324800000,
-      "adx": 14.2,
-      "chop": 52.86,
-      "bb_width_pctl": 66.0,
-      "range_pct": 26.52,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 1,
-      "range_high": 5.695,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    }
-  ],
+  "passed_signals": [],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

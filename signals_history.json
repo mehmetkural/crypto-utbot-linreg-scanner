@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BFUSDUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792393200000,
+    "detected_at_utc": "2026-10-19T07:22:57+00:00",
+    "price_at_signal": 0.9997,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "STRKUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792393200000,
@@ -269,10 +280,10 @@
     "bar_time_entry": 1792378800000,
     "detected_at_utc": "2026-10-19T03:07:55+00:00",
     "price_at_signal": 0.3558,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.3606,
+    "evaluated_at": "2026-10-19T07:22:57+00:00"
   },
   {
     "symbol": "BEAMXUSDT",
@@ -280,10 +291,10 @@
     "bar_time_entry": 1792378800000,
     "detected_at_utc": "2026-10-19T03:07:55+00:00",
     "price_at_signal": 0.002804,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.002743,
+    "evaluated_at": "2026-10-19T07:22:57+00:00"
   },
   {
     "symbol": "AUDIOUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.0294,
     "evaluated_at": "2026-10-18T18:52:52+00:00"
-  },
-  {
-    "symbol": "USD1USDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792332000000,
-    "detected_at_utc": "2026-10-18T14:37:46+00:00",
-    "price_at_signal": 1.0001,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.00021,
-    "evaluated_at": "2026-10-18T18:37:46+00:00"
   }
 ]

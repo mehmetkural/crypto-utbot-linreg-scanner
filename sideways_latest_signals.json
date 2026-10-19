@@ -1,13 +1,78 @@
 {
-  "scanned_at_utc": "2026-10-19T12:48:58+00:00",
+  "scanned_at_utc": "2026-10-19T19:46:04+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 272,
+  "symbols_scanned": 261,
   "symbols_errored": 0,
-  "ut_buy_count": 0,
-  "passed_count": 0,
-  "filtered_count": 0,
-  "passed_signals": [],
-  "filtered_signals": [],
+  "ut_buy_count": 3,
+  "passed_count": 2,
+  "filtered_count": 1,
+  "passed_signals": [
+    {
+      "symbol": "GNSUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.418,
+      "bar_time": 1792432800000,
+      "adx": 20.92,
+      "chop": 55.27,
+      "bb_width_pctl": 32.0,
+      "range_pct": 33.83,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.52,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "MOVRUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.365,
+      "bar_time": 1792432800000,
+      "adx": 18.46,
+      "chop": 50.67,
+      "bb_width_pctl": 24.0,
+      "range_pct": 14.36,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 1.463,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
+  "filtered_signals": [
+    {
+      "symbol": "METISUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 3.88,
+      "bar_time": 1792432800000,
+      "adx": 14.45,
+      "chop": 55.27,
+      "bb_width_pctl": 14.0,
+      "range_pct": 17.2,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 2,
+      "range_high": 4.23,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

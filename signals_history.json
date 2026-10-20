@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "OGNUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792472400000,
+    "detected_at_utc": "2026-10-20T05:37:50+00:00",
+    "price_at_signal": 0.02979,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "NILUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792472400000,
@@ -852,10 +863,10 @@
     "bar_time_entry": 1792458000000,
     "detected_at_utc": "2026-10-20T01:37:47+00:00",
     "price_at_signal": 0.3998,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.3824,
+    "evaluated_at": "2026-10-20T05:37:50+00:00"
   },
   {
     "symbol": "MUBARAKUSDT",
@@ -863,10 +874,10 @@
     "bar_time_entry": 1792458000000,
     "detected_at_utc": "2026-10-20T01:37:47+00:00",
     "price_at_signal": 0.054,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.05475,
+    "evaluated_at": "2026-10-20T05:37:50+00:00"
   },
   {
     "symbol": "DUSKUSDT",
@@ -874,10 +885,10 @@
     "bar_time_entry": 1792458000000,
     "detected_at_utc": "2026-10-20T01:37:47+00:00",
     "price_at_signal": 0.1184,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.1179,
+    "evaluated_at": "2026-10-20T05:37:50+00:00"
   },
   {
     "symbol": "MANTRAUSDT",
@@ -885,10 +896,10 @@
     "bar_time_entry": 1792458000000,
     "detected_at_utc": "2026-10-20T01:37:47+00:00",
     "price_at_signal": 0.00394,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00387,
+    "evaluated_at": "2026-10-20T05:37:50+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.3614,
     "evaluated_at": "2026-10-19T18:07:55+00:00"
-  },
-  {
-    "symbol": "QUICKUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792418400000,
-    "detected_at_utc": "2026-10-19T14:07:51+00:00",
-    "price_at_signal": 0.00685,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
   }
 ]

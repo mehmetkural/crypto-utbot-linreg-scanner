@@ -1,141 +1,35 @@
 {
-  "scanned_at_utc": "2026-10-21T18:31:50+00:00",
+  "scanned_at_utc": "2026-10-21T23:09:23+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 265,
+  "symbols_scanned": 268,
   "symbols_errored": 0,
-  "ut_buy_count": 6,
+  "ut_buy_count": 1,
   "passed_count": 1,
-  "filtered_count": 5,
+  "filtered_count": 0,
   "passed_signals": [
     {
-      "symbol": "AMZNBUSDT",
+      "symbol": "SOXSBUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 264.19,
-      "bar_time": 1792605600000,
-      "adx": 39.82,
-      "chop": 50.29,
-      "bb_width_pctl": 16.0,
-      "range_pct": 5.25,
+      "last_close": 46.12,
+      "bar_time": 1792620000000,
+      "adx": 14.4,
+      "chop": 61.32,
+      "bb_width_pctl": 50.0,
+      "range_pct": 16.48,
       "votes": {
-        "adx_low": false,
+        "adx_low": true,
         "chop_high": false,
-        "bb_squeeze": true
+        "bb_squeeze": false
       },
       "vote_count": 1,
-      "range_high": 266.16,
+      "range_high": 50.17,
       "breakout": false,
       "was_sideways": false,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [
-    {
-      "symbol": "AXLUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.0549,
-      "bar_time": 1792605600000,
-      "adx": 10.68,
-      "chop": 60.24,
-      "bb_width_pctl": 2.0,
-      "range_pct": 11.95,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.059,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    },
-    {
-      "symbol": "BLURUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.00945,
-      "bar_time": 1792605600000,
-      "adx": 23.67,
-      "chop": 63.31,
-      "bb_width_pctl": 7.0,
-      "range_pct": 9.63,
-      "votes": {
-        "adx_low": false,
-        "chop_high": true,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.01002,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    },
-    {
-      "symbol": "DUSKUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.1122,
-      "bar_time": 1792605600000,
-      "adx": 12.07,
-      "chop": 45.62,
-      "bb_width_pctl": 16.0,
-      "range_pct": 15.99,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.125,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    },
-    {
-      "symbol": "IRENBUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 28.1,
-      "bar_time": 1792605600000,
-      "adx": 17.41,
-      "chop": 62.48,
-      "bb_width_pctl": 26.0,
-      "range_pct": 11.37,
-      "votes": {
-        "adx_low": true,
-        "chop_high": true,
-        "bb_squeeze": false
-      },
-      "vote_count": 2,
-      "range_high": 28.8,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    },
-    {
-      "symbol": "SUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.05773,
-      "bar_time": 1792605600000,
-      "adx": 22.2,
-      "chop": 70.77,
-      "bb_width_pctl": 1.0,
-      "range_pct": 12.39,
-      "votes": {
-        "adx_low": false,
-        "chop_high": true,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.05967,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    }
-  ],
+  "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

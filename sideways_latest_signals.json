@@ -1,76 +1,12 @@
 {
-  "scanned_at_utc": "2026-10-21T00:29:48+00:00",
+  "scanned_at_utc": "2026-10-21T07:24:24+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 252,
+  "symbols_scanned": 260,
   "symbols_errored": 0,
-  "ut_buy_count": 3,
-  "passed_count": 3,
+  "ut_buy_count": 0,
+  "passed_count": 0,
   "filtered_count": 0,
-  "passed_signals": [
-    {
-      "symbol": "JSTUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.14071,
-      "bar_time": 1792540800000,
-      "adx": 21.87,
-      "chop": 53.07,
-      "bb_width_pctl": 36.0,
-      "range_pct": 5.1,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 0,
-      "range_high": 0.14157,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "ORCAUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 1.78,
-      "bar_time": 1792540800000,
-      "adx": 20.4,
-      "chop": 56.53,
-      "bb_width_pctl": 1.0,
-      "range_pct": 7.58,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 1,
-      "range_high": 1.844,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "USDSUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 1.0023,
-      "bar_time": 1792540800000,
-      "adx": 47.88,
-      "chop": 41.12,
-      "bb_width_pctl": 94.0,
-      "range_pct": 0.5,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 0,
-      "range_high": 1.0025,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    }
-  ],
+  "passed_signals": [],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

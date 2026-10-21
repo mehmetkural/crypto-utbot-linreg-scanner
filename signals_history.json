@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "RWUSDUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792548000000,
+    "detected_at_utc": "2026-10-21T02:37:49+00:00",
+    "price_at_signal": 1.0001,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "VELODROMEUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792548000000,
@@ -555,10 +566,10 @@
     "bar_time_entry": 1792533600000,
     "detected_at_utc": "2026-10-20T22:22:58+00:00",
     "price_at_signal": 0.009749,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.009914,
+    "evaluated_at": "2026-10-21T02:37:49+00:00"
   },
   {
     "symbol": "ENAUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 340.18,
     "evaluated_at": "2026-10-20T17:52:57+00:00"
-  },
-  {
-    "symbol": "MUBUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1792501200000,
-    "detected_at_utc": "2026-10-20T13:22:59+00:00",
-    "price_at_signal": 890.32,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 910.86,
-    "evaluated_at": "2026-10-20T17:37:53+00:00"
   }
 ]

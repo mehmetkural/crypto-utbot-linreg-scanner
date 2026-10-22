@@ -1,57 +1,56 @@
 {
-  "scanned_at_utc": "2026-10-22T17:00:20+00:00",
+  "scanned_at_utc": "2026-10-22T21:25:39+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 270,
+  "symbols_scanned": 269,
   "symbols_errored": 0,
   "ut_buy_count": 2,
-  "passed_count": 1,
-  "filtered_count": 1,
+  "passed_count": 2,
+  "filtered_count": 0,
   "passed_signals": [
     {
-      "symbol": "DODOUSDT",
+      "symbol": "DASHUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.02179,
-      "bar_time": 1792684800000,
-      "adx": 29.01,
-      "chop": 32.52,
-      "bb_width_pctl": 14.0,
-      "range_pct": 10.68,
+      "last_close": 51.84,
+      "bar_time": 1792699200000,
+      "adx": 17.62,
+      "chop": 47.92,
+      "bb_width_pctl": 59.0,
+      "range_pct": 9.99,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 53.96,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "WLDUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.5482,
+      "bar_time": 1792699200000,
+      "adx": 28.61,
+      "chop": 44.81,
+      "bb_width_pctl": 69.0,
+      "range_pct": 14.45,
       "votes": {
         "adx_low": false,
         "chop_high": false,
-        "bb_squeeze": true
+        "bb_squeeze": false
       },
-      "vote_count": 1,
-      "range_high": 0.02311,
+      "vote_count": 0,
+      "range_high": 0.5983,
       "breakout": false,
       "was_sideways": false,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [
-    {
-      "symbol": "OSMOUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.0542,
-      "bar_time": 1792684800000,
-      "adx": 16.04,
-      "chop": 54.47,
-      "bb_width_pctl": 12.0,
-      "range_pct": 17.66,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.055,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    }
-  ],
+  "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

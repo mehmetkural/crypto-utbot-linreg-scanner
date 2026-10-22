@@ -1,35 +1,57 @@
 {
-  "scanned_at_utc": "2026-10-22T11:34:32+00:00",
+  "scanned_at_utc": "2026-10-22T17:00:20+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 276,
-  "symbols_errored": 1,
-  "ut_buy_count": 1,
+  "symbols_scanned": 270,
+  "symbols_errored": 0,
+  "ut_buy_count": 2,
   "passed_count": 1,
-  "filtered_count": 0,
+  "filtered_count": 1,
   "passed_signals": [
     {
-      "symbol": "AIUSDT",
+      "symbol": "DODOUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.0202,
-      "bar_time": 1792663200000,
-      "adx": 19.18,
-      "chop": 60.99,
-      "bb_width_pctl": 22.0,
-      "range_pct": 5.7,
+      "last_close": 0.02179,
+      "bar_time": 1792684800000,
+      "adx": 29.01,
+      "chop": 32.52,
+      "bb_width_pctl": 14.0,
+      "range_pct": 10.68,
       "votes": {
-        "adx_low": true,
+        "adx_low": false,
         "chop_high": false,
-        "bb_squeeze": false
+        "bb_squeeze": true
       },
       "vote_count": 1,
-      "range_high": 0.0198,
-      "breakout": true,
+      "range_high": 0.02311,
+      "breakout": false,
       "was_sideways": false,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [],
+  "filtered_signals": [
+    {
+      "symbol": "OSMOUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.0542,
+      "bar_time": 1792684800000,
+      "adx": 16.04,
+      "chop": 54.47,
+      "bb_width_pctl": 12.0,
+      "range_pct": 17.66,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 2,
+      "range_high": 0.055,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

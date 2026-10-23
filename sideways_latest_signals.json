@@ -1,76 +1,12 @@
 {
-  "scanned_at_utc": "2026-10-23T18:13:32+00:00",
+  "scanned_at_utc": "2026-10-23T23:00:19+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 233,
-  "symbols_errored": 1,
-  "ut_buy_count": 3,
-  "passed_count": 3,
+  "symbols_scanned": 262,
+  "symbols_errored": 0,
+  "ut_buy_count": 0,
+  "passed_count": 0,
   "filtered_count": 0,
-  "passed_signals": [
-    {
-      "symbol": "AEROUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.7723,
-      "bar_time": 1792778400000,
-      "adx": 20.39,
-      "chop": 35.65,
-      "bb_width_pctl": 19.0,
-      "range_pct": 19.56,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 1,
-      "range_high": 0.8719,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "MITOUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.00952,
-      "bar_time": 1792778400000,
-      "adx": 33.08,
-      "chop": 60.43,
-      "bb_width_pctl": 74.0,
-      "range_pct": 48.58,
-      "votes": {
-        "adx_low": false,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 0,
-      "range_high": 0.01323,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "RWUSDUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 1.0001,
-      "bar_time": 1792778400000,
-      "adx": 81.55,
-      "chop": 76.85,
-      "bb_width_pctl": 72.0,
-      "range_pct": 0.1,
-      "votes": {
-        "adx_low": false,
-        "chop_high": true,
-        "bb_squeeze": false
-      },
-      "vote_count": 1,
-      "range_high": 1.0001,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    }
-  ],
+  "passed_signals": [],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

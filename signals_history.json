@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "SANDUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792742400000,
+    "detected_at_utc": "2026-10-23T08:37:47+00:00",
+    "price_at_signal": 0.05406,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "QQQBUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1792742400000,
@@ -522,10 +533,10 @@
     "bar_time_entry": 1792728000000,
     "detected_at_utc": "2026-10-23T04:37:46+00:00",
     "price_at_signal": 0.03895,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.0392,
+    "evaluated_at": "2026-10-23T08:37:47+00:00"
   },
   {
     "symbol": "HYPEUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.02216,
-    "evaluated_at": "2026-10-22T20:22:54+00:00"
-  },
-  {
-    "symbol": "OSMOUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1792684800000,
-    "detected_at_utc": "2026-10-22T16:07:51+00:00",
-    "price_at_signal": 0.0499,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0518,
     "evaluated_at": "2026-10-22T20:22:54+00:00"
   }
 ]

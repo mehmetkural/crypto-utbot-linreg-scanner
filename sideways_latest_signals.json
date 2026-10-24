@@ -1,12 +1,55 @@
 {
-  "scanned_at_utc": "2026-10-23T23:00:19+00:00",
+  "scanned_at_utc": "2026-10-24T04:13:08+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 262,
+  "symbols_scanned": 267,
   "symbols_errored": 0,
-  "ut_buy_count": 0,
-  "passed_count": 0,
+  "ut_buy_count": 2,
+  "passed_count": 2,
   "filtered_count": 0,
-  "passed_signals": [],
+  "passed_signals": [
+    {
+      "symbol": "ARKMUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.1382,
+      "bar_time": 1792814400000,
+      "adx": 24.87,
+      "chop": 52.83,
+      "bb_width_pctl": 44.0,
+      "range_pct": 15.39,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.1442,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "EDENUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.05705,
+      "bar_time": 1792814400000,
+      "adx": 23.11,
+      "chop": 45.22,
+      "bb_width_pctl": 23.0,
+      "range_pct": 13.24,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.06146,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

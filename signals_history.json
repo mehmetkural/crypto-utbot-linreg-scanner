@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ENSOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1792832400000,
+    "detected_at_utc": "2026-10-24T09:49:55+00:00",
+    "price_at_signal": 0.651,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "GMXUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1792832400000,
@@ -654,10 +665,10 @@
     "bar_time_entry": 1792818000000,
     "detected_at_utc": "2026-10-24T05:40:07+00:00",
     "price_at_signal": 0.1865,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.1856,
+    "evaluated_at": "2026-10-24T09:49:55+00:00"
   },
   {
     "symbol": "CFGUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 77.71,
-    "evaluated_at": "2026-10-23T21:22:50+00:00"
-  },
-  {
-    "symbol": "SNXXBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792774800000,
-    "detected_at_utc": "2026-10-23T17:07:49+00:00",
-    "price_at_signal": 8.61,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 8.19,
     "evaluated_at": "2026-10-23T21:22:50+00:00"
   }
 ]

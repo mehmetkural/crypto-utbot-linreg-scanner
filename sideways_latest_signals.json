@@ -1,13 +1,99 @@
 {
-  "scanned_at_utc": "2026-10-24T15:45:21+00:00",
+  "scanned_at_utc": "2026-10-24T18:42:40+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 292,
+  "symbols_scanned": 288,
   "symbols_errored": 0,
-  "ut_buy_count": 0,
-  "passed_count": 0,
-  "filtered_count": 0,
-  "passed_signals": [],
-  "filtered_signals": [],
+  "ut_buy_count": 4,
+  "passed_count": 2,
+  "filtered_count": 2,
+  "passed_signals": [
+    {
+      "symbol": "ORCAUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.711,
+      "bar_time": 1792864800000,
+      "adx": 32.79,
+      "chop": 36.66,
+      "bb_width_pctl": 99.0,
+      "range_pct": 14.87,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 1.889,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "ZROUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.75,
+      "bar_time": 1792864800000,
+      "adx": 24.85,
+      "chop": 40.44,
+      "bb_width_pctl": 43.0,
+      "range_pct": 15.38,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 1.905,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
+  "filtered_signals": [
+    {
+      "symbol": "RLUSDUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.0014,
+      "bar_time": 1792864800000,
+      "adx": 14.83,
+      "chop": 62.47,
+      "bb_width_pctl": 35.0,
+      "range_pct": 0.06,
+      "votes": {
+        "adx_low": true,
+        "chop_high": true,
+        "bb_squeeze": false
+      },
+      "vote_count": 2,
+      "range_high": 1.0015,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    },
+    {
+      "symbol": "USD1USDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.99997,
+      "bar_time": 1792864800000,
+      "adx": 14.41,
+      "chop": 60.68,
+      "bb_width_pctl": 11.0,
+      "range_pct": 0.05,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 2,
+      "range_high": 1.00009,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "CFGUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1792954800000,
+    "detected_at_utc": "2026-10-25T19:37:49+00:00",
+    "price_at_signal": 0.1017,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "WLFIUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1792954800000,
@@ -874,10 +885,10 @@
     "bar_time_entry": 1792940400000,
     "detected_at_utc": "2026-10-25T15:22:51+00:00",
     "price_at_signal": 1.037,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.039,
+    "evaluated_at": "2026-10-25T19:37:49+00:00"
   },
   {
     "symbol": "SAHARAUSDT",
@@ -885,10 +896,10 @@
     "bar_time_entry": 1792940400000,
     "detected_at_utc": "2026-10-25T15:22:51+00:00",
     "price_at_signal": 0.00789,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00786,
+    "evaluated_at": "2026-10-25T19:37:49+00:00"
   },
   {
     "symbol": "QIUSDT",
@@ -896,10 +907,10 @@
     "bar_time_entry": 1792940400000,
     "detected_at_utc": "2026-10-25T15:22:51+00:00",
     "price_at_signal": 0.002276,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.001991,
+    "evaluated_at": "2026-10-25T19:37:49+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.1903,
-    "evaluated_at": "2026-10-25T10:52:56+00:00"
-  },
-  {
-    "symbol": "HYPEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1792908000000,
-    "detected_at_utc": "2026-10-25T06:52:56+00:00",
-    "price_at_signal": 75.82,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 75.65,
     "evaluated_at": "2026-10-25T10:52:56+00:00"
   }
 ]

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BATUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793041200000,
+    "detected_at_utc": "2026-10-26T19:22:53+00:00",
+    "price_at_signal": 0.1457,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ZECUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793041200000,
@@ -1325,10 +1336,10 @@
     "bar_time_entry": 1793026800000,
     "detected_at_utc": "2026-10-26T15:22:50+00:00",
     "price_at_signal": 2337.56,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 2320.2,
+    "evaluated_at": "2026-10-26T19:22:53+00:00"
   },
   {
     "symbol": "WBETHUSDT",
@@ -1336,10 +1347,10 @@
     "bar_time_entry": 1793026800000,
     "detected_at_utc": "2026-10-26T15:22:50+00:00",
     "price_at_signal": 2594.12,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 2575.1,
+    "evaluated_at": "2026-10-26T19:22:53+00:00"
   },
   {
     "symbol": "BMNRBUSDT",
@@ -1347,10 +1358,10 @@
     "bar_time_entry": 1793026800000,
     "detected_at_utc": "2026-10-26T15:22:50+00:00",
     "price_at_signal": 22.01,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 21.26,
+    "evaluated_at": "2026-10-26T19:22:53+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -1864,10 +1875,10 @@
     "bar_time_entry": 1793026800000,
     "detected_at_utc": "2026-10-26T15:07:55+00:00",
     "price_at_signal": 0.0485,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0479,
+    "evaluated_at": "2026-10-26T19:22:53+00:00"
   },
   {
     "symbol": "AVNTUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 67.55,
-    "evaluated_at": "2026-10-26T13:37:45+00:00"
-  },
-  {
-    "symbol": "CFXUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793005200000,
-    "detected_at_utc": "2026-10-26T09:22:47+00:00",
-    "price_at_signal": 0.04728,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.04762,
     "evaluated_at": "2026-10-26T13:37:45+00:00"
   }
 ]

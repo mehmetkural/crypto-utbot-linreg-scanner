@@ -1,78 +1,77 @@
 {
-  "scanned_at_utc": "2026-10-26T23:42:11+00:00",
+  "scanned_at_utc": "2026-10-27T04:38:22+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 263,
+  "symbols_scanned": 239,
   "symbols_errored": 0,
   "ut_buy_count": 3,
-  "passed_count": 1,
-  "filtered_count": 2,
+  "passed_count": 3,
+  "filtered_count": 0,
   "passed_signals": [
     {
-      "symbol": "BATUSDT",
+      "symbol": "AVAUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.1504,
-      "bar_time": 1793052000000,
-      "adx": 46.65,
-      "chop": 43.42,
-      "bb_width_pctl": 58.0,
-      "range_pct": 16.35,
+      "last_close": 0.3518,
+      "bar_time": 1793073600000,
+      "adx": 26.62,
+      "chop": 40.09,
+      "bb_width_pctl": 73.0,
+      "range_pct": 38.8,
       "votes": {
         "adx_low": false,
         "chop_high": false,
         "bb_squeeze": false
       },
       "vote_count": 0,
-      "range_high": 0.1623,
+      "range_high": 0.4603,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "OSMOUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.0536,
+      "bar_time": 1793073600000,
+      "adx": 27.7,
+      "chop": 58.6,
+      "bb_width_pctl": 29.0,
+      "range_pct": 24.08,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.056,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "USUALUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.01083,
+      "bar_time": 1793073600000,
+      "adx": 34.46,
+      "chop": 62.42,
+      "bb_width_pctl": 48.0,
+      "range_pct": 11.98,
+      "votes": {
+        "adx_low": false,
+        "chop_high": true,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 0.01113,
       "breakout": false,
       "was_sideways": false,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [
-    {
-      "symbol": "SUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.04763,
-      "bar_time": 1793052000000,
-      "adx": 32.21,
-      "chop": 67.89,
-      "bb_width_pctl": 6.0,
-      "range_pct": 9.47,
-      "votes": {
-        "adx_low": false,
-        "chop_high": true,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.05023,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    },
-    {
-      "symbol": "TUTUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.01732,
-      "bar_time": 1793052000000,
-      "adx": 36.91,
-      "chop": 70.93,
-      "bb_width_pctl": 6.0,
-      "range_pct": 6.92,
-      "votes": {
-        "adx_low": false,
-        "chop_high": true,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.01789,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    }
-  ],
+  "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

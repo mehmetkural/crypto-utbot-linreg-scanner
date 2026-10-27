@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "PROMUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793059200000,
+    "detected_at_utc": "2026-10-27T00:44:52+00:00",
+    "price_at_signal": 5.537,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "NEWTUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793059200000,
+    "detected_at_utc": "2026-10-27T00:44:52+00:00",
+    "price_at_signal": 0.04463,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ALTUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793059200000,
@@ -753,10 +775,10 @@
     "bar_time_entry": 1793044800000,
     "detected_at_utc": "2026-10-26T20:37:55+00:00",
     "price_at_signal": 77.79,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 78.73,
+    "evaluated_at": "2026-10-27T00:44:52+00:00"
   },
   {
     "symbol": "ZKUSDT",
@@ -764,10 +786,10 @@
     "bar_time_entry": 1793044800000,
     "detected_at_utc": "2026-10-26T20:37:55+00:00",
     "price_at_signal": 0.01231,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.01221,
+    "evaluated_at": "2026-10-27T00:44:52+00:00"
   },
   {
     "symbol": "KAIAUSDT",
@@ -775,10 +797,10 @@
     "bar_time_entry": 1793044800000,
     "detected_at_utc": "2026-10-26T20:37:55+00:00",
     "price_at_signal": 0.0344,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0346,
+    "evaluated_at": "2026-10-27T00:44:52+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -3276,27 +3298,5 @@
     "outcome": "hit",
     "price_after": 318.95,
     "evaluated_at": "2026-10-26T17:37:53+00:00"
-  },
-  {
-    "symbol": "WBTCUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793019600000,
-    "detected_at_utc": "2026-10-26T13:37:45+00:00",
-    "price_at_signal": 79591.57,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 80233.9,
-    "evaluated_at": "2026-10-26T17:37:53+00:00"
-  },
-  {
-    "symbol": "SPCXBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793019600000,
-    "detected_at_utc": "2026-10-26T13:22:45+00:00",
-    "price_at_signal": 147.94,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 148.88,
-    "evaluated_at": "2026-10-26T17:23:00+00:00"
   }
 ]

@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "LITEBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793217600000,
+    "detected_at_utc": "2026-10-28T20:52:50+00:00",
+    "price_at_signal": 881.75,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "MUUBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793217600000,
+    "detected_at_utc": "2026-10-28T20:52:50+00:00",
+    "price_at_signal": 28.49,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "TSMBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793217600000,
+    "detected_at_utc": "2026-10-28T20:52:50+00:00",
+    "price_at_signal": 432.17,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BLURUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793217600000,
@@ -1743,10 +1776,10 @@
     "bar_time_entry": 1793203200000,
     "detected_at_utc": "2026-10-28T16:37:52+00:00",
     "price_at_signal": 0.05478,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.05538,
+    "evaluated_at": "2026-10-28T20:52:50+00:00"
   },
   {
     "symbol": "PROMUSDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 21.27,
-    "evaluated_at": "2026-10-28T16:37:52+00:00"
-  },
-  {
-    "symbol": "NEIROUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793188800000,
-    "detected_at_utc": "2026-10-28T12:22:55+00:00",
-    "price_at_signal": 6.779e-05,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 6.75e-05,
-    "evaluated_at": "2026-10-28T16:37:52+00:00"
-  },
-  {
-    "symbol": "SMCIBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793188800000,
-    "detected_at_utc": "2026-10-28T12:22:55+00:00",
-    "price_at_signal": 35.46,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 34.82,
-    "evaluated_at": "2026-10-28T16:37:52+00:00"
-  },
-  {
-    "symbol": "ZKPUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793188800000,
-    "detected_at_utc": "2026-10-28T12:22:55+00:00",
-    "price_at_signal": 0.043,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0425,
     "evaluated_at": "2026-10-28T16:37:52+00:00"
   }
 ]

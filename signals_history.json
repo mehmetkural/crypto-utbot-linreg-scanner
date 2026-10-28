@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "BMTUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793206800000,
+    "detected_at_utc": "2026-10-28T17:37:48+00:00",
+    "price_at_signal": 0.02904,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "PAXGUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793206800000,
+    "detected_at_utc": "2026-10-28T17:37:48+00:00",
+    "price_at_signal": 4044.05,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ADXUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793206800000,
+    "detected_at_utc": "2026-10-28T17:37:48+00:00",
+    "price_at_signal": 0.0584,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "AEROUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793206800000,
@@ -632,10 +665,10 @@
     "bar_time_entry": 1793192400000,
     "detected_at_utc": "2026-10-28T13:37:44+00:00",
     "price_at_signal": 94.06,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 93.72,
+    "evaluated_at": "2026-10-28T17:37:48+00:00"
   },
   {
     "symbol": "TSLABUSDT",
@@ -643,10 +676,10 @@
     "bar_time_entry": 1793192400000,
     "detected_at_utc": "2026-10-28T13:37:44+00:00",
     "price_at_signal": 406.66,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 402.02,
+    "evaluated_at": "2026-10-28T17:37:48+00:00"
   },
   {
     "symbol": "NBISBUSDT",
@@ -654,10 +687,10 @@
     "bar_time_entry": 1793192400000,
     "detected_at_utc": "2026-10-28T13:37:44+00:00",
     "price_at_signal": 171.87,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 170.96,
+    "evaluated_at": "2026-10-28T17:37:48+00:00"
   },
   {
     "symbol": "MSFTBUSDT",
@@ -665,10 +698,10 @@
     "bar_time_entry": 1793192400000,
     "detected_at_utc": "2026-10-28T13:37:44+00:00",
     "price_at_signal": 533.87,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 527.69,
+    "evaluated_at": "2026-10-28T17:37:48+00:00"
   },
   {
     "symbol": "TSTUSDT",
@@ -676,10 +709,10 @@
     "bar_time_entry": 1793192400000,
     "detected_at_utc": "2026-10-28T13:37:44+00:00",
     "price_at_signal": 0.01485,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.01471,
+    "evaluated_at": "2026-10-28T17:37:48+00:00"
   },
   {
     "symbol": "ZBTUSDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.07259,
-    "evaluated_at": "2026-10-28T10:22:46+00:00"
-  },
-  {
-    "symbol": "RENDERUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793167200000,
-    "detected_at_utc": "2026-10-28T06:07:55+00:00",
-    "price_at_signal": 1.687,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.698,
-    "evaluated_at": "2026-10-28T10:22:46+00:00"
-  },
-  {
-    "symbol": "EIGENUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793167200000,
-    "detected_at_utc": "2026-10-28T06:07:55+00:00",
-    "price_at_signal": 0.1977,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.2008,
-    "evaluated_at": "2026-10-28T10:22:46+00:00"
-  },
-  {
-    "symbol": "VELODROMEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793167200000,
-    "detected_at_utc": "2026-10-28T06:07:55+00:00",
-    "price_at_signal": 0.03037,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.03071,
     "evaluated_at": "2026-10-28T10:22:46+00:00"
   }
 ]

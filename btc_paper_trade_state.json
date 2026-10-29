@@ -1,10 +1,10 @@
 {
   "initial_budget_eur": 100.0,
-  "position": "flat",
-  "cash_eur": 88.00161750914697,
-  "btc_amount": 0.0,
-  "entry_price": null,
-  "entry_at_utc": null,
+  "position": "long",
+  "cash_eur": 0.0,
+  "btc_amount": 0.0010766538691065841,
+  "entry_price": 81736.22,
+  "entry_at_utc": "2026-10-29T15:53:27+00:00",
   "trades": [
     {
       "type": "buy",
@@ -167,6 +167,14 @@
       "cash_after_eur": 88.00161750914697,
       "pnl_eur": -0.1219588672674945,
       "pnl_pct": -0.13839527659040024
+    },
+    {
+      "type": "buy",
+      "time_utc": "2026-10-29T15:53:27+00:00",
+      "bar_time": 1793275200000,
+      "price": 81736.22,
+      "btc_amount": 0.0010766538691065841,
+      "cash_used_eur": 88.00161750914697
     }
   ]
 }

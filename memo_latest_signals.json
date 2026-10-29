@@ -1,8 +1,65 @@
 {
-  "scanned_at_utc": "2026-10-29T05:35:20+00:00",
+  "scanned_at_utc": "2026-10-29T15:10:50+00:00",
   "timeframe": "4h",
-  "symbols_scanned": 264,
+  "symbols_scanned": 262,
   "symbols_errored": 0,
-  "memo_signal_count": 0,
-  "memo_signals": []
+  "memo_signal_count": 4,
+  "memo_signals": [
+    {
+      "symbol": "DOGEUSDT",
+      "memo_signal": true,
+      "macd": 0.0002796581800752068,
+      "macd_signal": 0.00019611974051077856,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 58275902.0,
+      "volume_ma": 57625150.95,
+      "volume_above_ma": true,
+      "last_close": 0.08029,
+      "bar_time": 1793275200000
+    },
+    {
+      "symbol": "CELOUSDT",
+      "memo_signal": true,
+      "macd": 0.0002724899524067931,
+      "macd_signal": 0.00013064480022154259,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 36585841.4,
+      "volume_ma": 21378212.195,
+      "volume_above_ma": true,
+      "last_close": 0.08225,
+      "bar_time": 1793275200000
+    },
+    {
+      "symbol": "POLUSDT",
+      "memo_signal": true,
+      "macd": 0.0003164757272620944,
+      "macd_signal": 0.0002356837510998616,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 6109085.8,
+      "volume_ma": 4877459.4399999995,
+      "volume_above_ma": true,
+      "last_close": 0.09297,
+      "bar_time": 1793275200000
+    },
+    {
+      "symbol": "CETUSUSDT",
+      "memo_signal": true,
+      "macd": 1.6692177369104222e-05,
+      "macd_signal": -0.0001093126618708635,
+      "crossed_up": true,
+      "above_zero": true,
+      "near_zero": true,
+      "volume": 73596064.0,
+      "volume_ma": 5479190.755,
+      "volume_above_ma": true,
+      "last_close": 0.02351,
+      "bar_time": 1793275200000
+    }
+  ]
 }

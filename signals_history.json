@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "OSMOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793329200000,
+    "detected_at_utc": "2026-10-30T03:23:07+00:00",
+    "price_at_signal": 0.0478,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BNBUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793329200000,
@@ -313,10 +324,10 @@
     "bar_time_entry": 1793314800000,
     "detected_at_utc": "2026-10-29T23:22:51+00:00",
     "price_at_signal": 0.0731,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.07579,
+    "evaluated_at": "2026-10-30T03:23:07+00:00"
   },
   {
     "symbol": "USD1USDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.00629,
     "evaluated_at": "2026-10-29T20:08:00+00:00"
-  },
-  {
-    "symbol": "INTCBUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793286000000,
-    "detected_at_utc": "2026-10-29T15:37:18+00:00",
-    "price_at_signal": 93.23,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 91.86,
-    "evaluated_at": "2026-10-29T19:37:52+00:00"
   }
 ]

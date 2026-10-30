@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "EURIUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793397600000,
+    "detected_at_utc": "2026-10-30T22:27:04+00:00",
+    "price_at_signal": 1.1392,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "TIAUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793397600000,
@@ -1270,10 +1281,10 @@
     "bar_time_entry": 1793383200000,
     "detected_at_utc": "2026-10-30T18:23:05+00:00",
     "price_at_signal": 0.5892,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.605,
+    "evaluated_at": "2026-10-30T22:27:04+00:00"
   },
   {
     "symbol": "ALICEUSDT",
@@ -1281,10 +1292,10 @@
     "bar_time_entry": 1793383200000,
     "detected_at_utc": "2026-10-30T18:23:05+00:00",
     "price_at_signal": 0.1355,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.1398,
+    "evaluated_at": "2026-10-30T22:27:04+00:00"
   },
   {
     "symbol": "SHELLUSDT",
@@ -1292,10 +1303,10 @@
     "bar_time_entry": 1793383200000,
     "detected_at_utc": "2026-10-30T18:23:05+00:00",
     "price_at_signal": 0.02443,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.02462,
+    "evaluated_at": "2026-10-30T22:27:04+00:00"
   },
   {
     "symbol": "STOUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": null,
     "price_after": null,
     "evaluated_at": null
-  },
-  {
-    "symbol": "BABABUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793350800000,
-    "detected_at_utc": "2026-10-30T09:07:57+00:00",
-    "price_at_signal": 98.92,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 98.77,
-    "evaluated_at": "2026-10-30T13:08:05+00:00"
   }
 ]

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "RWUSDUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793440800000,
+    "detected_at_utc": "2026-10-31T10:52:46+00:00",
+    "price_at_signal": 0.9994,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "VETUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793440800000,
@@ -621,10 +632,10 @@
     "bar_time_entry": 1793426400000,
     "detected_at_utc": "2026-10-31T06:52:45+00:00",
     "price_at_signal": 1.0004,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.0005,
+    "evaluated_at": "2026-10-31T10:52:46+00:00"
   },
   {
     "symbol": "RSRUSDT",
@@ -632,10 +643,10 @@
     "bar_time_entry": 1793426400000,
     "detected_at_utc": "2026-10-31T06:52:45+00:00",
     "price_at_signal": 0.00151,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.001476,
+    "evaluated_at": "2026-10-31T10:52:46+00:00"
   },
   {
     "symbol": "METUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 207.14,
     "evaluated_at": "2026-10-31T00:08:02+00:00"
-  },
-  {
-    "symbol": "VANAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793390400000,
-    "detected_at_utc": "2026-10-30T20:07:55+00:00",
-    "price_at_signal": 0.823,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
   }
 ]

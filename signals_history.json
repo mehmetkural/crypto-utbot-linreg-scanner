@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ZECUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793484000000,
+    "detected_at_utc": "2026-10-31T22:52:50+00:00",
+    "price_at_signal": 1249.39,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "RLCUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793484000000,
@@ -610,10 +621,10 @@
     "bar_time_entry": 1793469600000,
     "detected_at_utc": "2026-10-31T18:37:45+00:00",
     "price_at_signal": 137.48,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 137.28,
+    "evaluated_at": "2026-10-31T22:52:50+00:00"
   },
   {
     "symbol": "EDENUSDT",
@@ -3283,17 +3294,6 @@
     "bar_time_entry": 1793422800000,
     "detected_at_utc": "2026-10-31T05:08:03+00:00",
     "price_at_signal": 0.864,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
-  },
-  {
-    "symbol": "AIGENSYNUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793422800000,
-    "detected_at_utc": "2026-10-31T05:08:03+00:00",
-    "price_at_signal": 0.0172,
     "evaluated": false,
     "outcome": null,
     "price_after": null,

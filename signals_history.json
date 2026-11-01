@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "BATUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793527200000,
+    "detected_at_utc": "2026-11-01T10:52:46+00:00",
+    "price_at_signal": 0.1384,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "\u5e01\u5b89\u4eba\u751fUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793527200000,
+    "detected_at_utc": "2026-11-01T10:52:46+00:00",
+    "price_at_signal": 0.5315,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "RENDERUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793527200000,
@@ -665,10 +687,10 @@
     "bar_time_entry": 1793512800000,
     "detected_at_utc": "2026-11-01T06:52:43+00:00",
     "price_at_signal": 11.77,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 11.743,
+    "evaluated_at": "2026-11-01T10:52:46+00:00"
   },
   {
     "symbol": "ADXUSDT",
@@ -3276,27 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.1133,
     "evaluated_at": "2026-10-31T19:22:48+00:00"
-  },
-  {
-    "symbol": "BROCCOLI714USDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793458800000,
-    "detected_at_utc": "2026-10-31T15:22:45+00:00",
-    "price_at_signal": 0.01751,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.01819,
-    "evaluated_at": "2026-11-01T07:52:48+00:00"
-  },
-  {
-    "symbol": "DEXEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793458800000,
-    "detected_at_utc": "2026-10-31T15:22:45+00:00",
-    "price_at_signal": 1.5,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
   }
 ]

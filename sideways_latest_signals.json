@@ -1,13 +1,78 @@
 {
-  "scanned_at_utc": "2026-10-31T21:19:07+00:00",
+  "scanned_at_utc": "2026-11-01T00:53:42+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 205,
+  "symbols_scanned": 191,
   "symbols_errored": 0,
-  "ut_buy_count": 0,
-  "passed_count": 0,
-  "filtered_count": 0,
-  "passed_signals": [],
-  "filtered_signals": [],
+  "ut_buy_count": 3,
+  "passed_count": 2,
+  "filtered_count": 1,
+  "passed_signals": [
+    {
+      "symbol": "INITUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.18342,
+      "bar_time": 1793491200000,
+      "adx": 29.84,
+      "chop": 52.44,
+      "bb_width_pctl": 75.0,
+      "range_pct": 36.76,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.23426,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "POWRUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.0648,
+      "bar_time": 1793491200000,
+      "adx": 40.25,
+      "chop": 45.52,
+      "bb_width_pctl": 83.0,
+      "range_pct": 21.81,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.0613,
+      "breakout": true,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
+  "filtered_signals": [
+    {
+      "symbol": "BMTUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.02409,
+      "bar_time": 1793491200000,
+      "adx": 18.12,
+      "chop": 58.25,
+      "bb_width_pctl": 4.0,
+      "range_pct": 20.73,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 2,
+      "range_high": 0.02696,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

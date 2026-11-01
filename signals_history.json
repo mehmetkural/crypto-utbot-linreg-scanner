@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "LINKUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793512800000,
+    "detected_at_utc": "2026-11-01T06:52:43+00:00",
+    "price_at_signal": 11.77,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ADXUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793512800000,
@@ -2480,10 +2491,10 @@
     "bar_time_entry": 1793462400000,
     "detected_at_utc": "2026-10-31T16:07:51+00:00",
     "price_at_signal": 0.00981,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.01038,
+    "evaluated_at": "2026-11-01T06:52:43+00:00"
   },
   {
     "symbol": "AVAXUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.07655,
-    "evaluated_at": "2026-10-31T15:37:48+00:00"
-  },
-  {
-    "symbol": "USDEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793444400000,
-    "detected_at_utc": "2026-10-31T11:37:46+00:00",
-    "price_at_signal": 0.9993,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.9994,
     "evaluated_at": "2026-10-31T15:37:48+00:00"
   }
 ]

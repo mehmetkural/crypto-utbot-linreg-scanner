@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "CVCUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793548800000,
+    "detected_at_utc": "2026-11-01T16:52:45+00:00",
+    "price_at_signal": 0.02404,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "TIAUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793548800000,
@@ -610,10 +621,10 @@
     "bar_time_entry": 1793534400000,
     "detected_at_utc": "2026-11-01T12:37:51+00:00",
     "price_at_signal": 0.0471,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.046,
+    "evaluated_at": "2026-11-01T16:52:45+00:00"
   },
   {
     "symbol": "ETHUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.02427,
-    "evaluated_at": "2026-11-01T00:22:46+00:00"
-  },
-  {
-    "symbol": "RAYUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793476800000,
-    "detected_at_utc": "2026-10-31T20:07:47+00:00",
-    "price_at_signal": 1.6384,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.6431,
     "evaluated_at": "2026-11-01T00:22:46+00:00"
   }
 ]

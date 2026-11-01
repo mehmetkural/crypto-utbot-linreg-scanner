@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ONDOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793516400000,
+    "detected_at_utc": "2026-11-01T07:37:47+00:00",
+    "price_at_signal": 0.4156,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "PEPEUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793516400000,
@@ -764,10 +775,10 @@
     "bar_time_entry": 1793502000000,
     "detected_at_utc": "2026-11-01T03:37:39+00:00",
     "price_at_signal": 0.04837,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.04791,
+    "evaluated_at": "2026-11-01T07:37:47+00:00"
   },
   {
     "symbol": "CAKEUSDT",
@@ -775,10 +786,10 @@
     "bar_time_entry": 1793502000000,
     "detected_at_utc": "2026-11-01T03:22:58+00:00",
     "price_at_signal": 1.956,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.96,
+    "evaluated_at": "2026-11-01T07:37:47+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 1.219,
-    "evaluated_at": "2026-10-31T16:07:51+00:00"
-  },
-  {
-    "symbol": "STRKUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793448000000,
-    "detected_at_utc": "2026-10-31T12:07:46+00:00",
-    "price_at_signal": 0.04396,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0457,
     "evaluated_at": "2026-10-31T16:07:51+00:00"
   }
 ]

@@ -1,35 +1,120 @@
 {
-  "scanned_at_utc": "2026-11-01T21:55:29+00:00",
+  "scanned_at_utc": "2026-11-02T01:25:07+00:00",
   "timeframe": "2h",
   "symbols_scanned": 182,
   "symbols_errored": 0,
-  "ut_buy_count": 1,
-  "passed_count": 1,
-  "filtered_count": 0,
+  "ut_buy_count": 5,
+  "passed_count": 4,
+  "filtered_count": 1,
   "passed_signals": [
     {
-      "symbol": "BEAMXUSDT",
+      "symbol": "CRCLBUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.005622,
-      "bar_time": 1793563200000,
-      "adx": 53.46,
-      "chop": 47.65,
-      "bb_width_pctl": 66.0,
-      "range_pct": 41.68,
+      "last_close": 74.34,
+      "bar_time": 1793577600000,
+      "adx": 46.06,
+      "chop": 58.9,
+      "bb_width_pctl": 6.0,
+      "range_pct": 5.28,
       "votes": {
         "adx_low": false,
         "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 1,
+      "range_high": 75.04,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "DRAMBUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 49.73,
+      "bar_time": 1793577600000,
+      "adx": 19.74,
+      "chop": 39.58,
+      "bb_width_pctl": 29.0,
+      "range_pct": 4.88,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
         "bb_squeeze": false
       },
-      "vote_count": 0,
-      "range_high": 0.006377,
+      "vote_count": 1,
+      "range_high": 49.44,
+      "breakout": true,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "SKHYBUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 155.91,
+      "bar_time": 1793577600000,
+      "adx": 14.76,
+      "chop": 36.86,
+      "bb_width_pctl": 23.0,
+      "range_pct": 5.31,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 153.6,
+      "breakout": true,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "SOXLBUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 81.83,
+      "bar_time": 1793577600000,
+      "adx": 38.38,
+      "chop": 50.69,
+      "bb_width_pctl": 15.0,
+      "range_pct": 17.36,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": true
+      },
+      "vote_count": 1,
+      "range_high": 84.18,
       "breakout": false,
       "was_sideways": false,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [],
+  "filtered_signals": [
+    {
+      "symbol": "SEIUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.04881,
+      "bar_time": 1793577600000,
+      "adx": 21.01,
+      "chop": 66.38,
+      "bb_width_pctl": 1.0,
+      "range_pct": 5.69,
+      "votes": {
+        "adx_low": false,
+        "chop_high": true,
+        "bb_squeeze": true
+      },
+      "vote_count": 2,
+      "range_high": 0.04982,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

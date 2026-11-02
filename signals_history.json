@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "RLUSDUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793646000000,
+    "detected_at_utc": "2026-11-02T19:22:57+00:00",
+    "price_at_signal": 1.0013,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "TRXUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793646000000,
@@ -456,10 +467,10 @@
     "bar_time_entry": 1793631600000,
     "detected_at_utc": "2026-11-02T15:22:49+00:00",
     "price_at_signal": 1.785,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.726,
+    "evaluated_at": "2026-11-02T19:22:57+00:00"
   },
   {
     "symbol": "SOLVUSDT",
@@ -467,10 +478,10 @@
     "bar_time_entry": 1793631600000,
     "detected_at_utc": "2026-11-02T15:22:49+00:00",
     "price_at_signal": 0.005339,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.004886,
+    "evaluated_at": "2026-11-02T19:22:57+00:00"
   },
   {
     "symbol": "OPUSDT",
@@ -478,10 +489,10 @@
     "bar_time_entry": 1793631600000,
     "detected_at_utc": "2026-11-02T15:22:49+00:00",
     "price_at_signal": 0.113,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.11,
+    "evaluated_at": "2026-11-02T19:22:57+00:00"
   },
   {
     "symbol": "MSTRBUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 55.94,
-    "evaluated_at": "2026-11-02T04:07:50+00:00"
-  },
-  {
-    "symbol": "XLMUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793577600000,
-    "detected_at_utc": "2026-11-02T00:07:43+00:00",
-    "price_at_signal": 0.1681,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.1692,
     "evaluated_at": "2026-11-02T04:07:50+00:00"
   }
 ]

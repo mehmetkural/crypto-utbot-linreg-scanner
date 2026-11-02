@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "USDEUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793660400000,
+    "detected_at_utc": "2026-11-02T23:23:03+00:00",
+    "price_at_signal": 0.9999,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "PARTIUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793660400000,
@@ -412,10 +423,10 @@
     "bar_time_entry": 1793646000000,
     "detected_at_utc": "2026-11-02T19:22:57+00:00",
     "price_at_signal": 1.0013,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.0016,
+    "evaluated_at": "2026-11-02T23:23:03+00:00"
   },
   {
     "symbol": "TRXUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.3278,
-    "evaluated_at": "2026-11-02T06:22:47+00:00"
-  },
-  {
-    "symbol": "PENGUUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793584800000,
-    "detected_at_utc": "2026-11-02T02:07:46+00:00",
-    "price_at_signal": 0.007278,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.007173,
     "evaluated_at": "2026-11-02T06:22:47+00:00"
   }
 ]

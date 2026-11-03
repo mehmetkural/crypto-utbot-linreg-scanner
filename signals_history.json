@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "XAUTUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793674800000,
+    "detected_at_utc": "2026-11-03T03:22:59+00:00",
+    "price_at_signal": 3928.69,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "PAXGUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793674800000,
+    "detected_at_utc": "2026-11-03T03:22:59+00:00",
+    "price_at_signal": 3943.56,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BCHUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793674800000,
@@ -412,10 +434,10 @@
     "bar_time_entry": 1793660400000,
     "detected_at_utc": "2026-11-02T23:07:47+00:00",
     "price_at_signal": 0.0452,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0447,
+    "evaluated_at": "2026-11-03T03:22:59+00:00"
   },
   {
     "symbol": "\u5e01\u5b89\u4eba\u751fUSDT",
@@ -3276,27 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.00453,
     "evaluated_at": "2026-11-02T08:22:40+00:00"
-  },
-  {
-    "symbol": "MARSCOINUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793592000000,
-    "detected_at_utc": "2026-11-02T04:07:50+00:00",
-    "price_at_signal": 0.056,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0539,
-    "evaluated_at": "2026-11-02T08:07:57+00:00"
-  },
-  {
-    "symbol": "CELOUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793592000000,
-    "detected_at_utc": "2026-11-02T04:07:50+00:00",
-    "price_at_signal": 0.07484,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.07338,
-    "evaluated_at": "2026-11-02T08:07:57+00:00"
   }
 ]

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "FLOKIUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793671200000,
+    "detected_at_utc": "2026-11-03T02:52:49+00:00",
+    "price_at_signal": 2.221e-05,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "XRPUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793671200000,
@@ -357,10 +368,10 @@
     "bar_time_entry": 1793656800000,
     "detected_at_utc": "2026-11-02T22:52:47+00:00",
     "price_at_signal": 0.5342,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.5356,
+    "evaluated_at": "2026-11-03T02:52:49+00:00"
   },
   {
     "symbol": "HOTUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.02753,
-    "evaluated_at": "2026-11-02T08:07:57+00:00"
-  },
-  {
-    "symbol": "PENDLEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793592000000,
-    "detected_at_utc": "2026-11-02T04:07:50+00:00",
-    "price_at_signal": 1.848,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.811,
     "evaluated_at": "2026-11-02T08:07:57+00:00"
   }
 ]

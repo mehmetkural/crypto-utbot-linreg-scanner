@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "PEPEUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793674800000,
+    "detected_at_utc": "2026-11-03T03:37:46+00:00",
+    "price_at_signal": 4.69e-06,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ASTERUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793674800000,
+    "detected_at_utc": "2026-11-03T03:37:46+00:00",
+    "price_at_signal": 0.6907,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "XAUTUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793674800000,
@@ -412,10 +434,10 @@
     "bar_time_entry": 1793660400000,
     "detected_at_utc": "2026-11-02T23:37:43+00:00",
     "price_at_signal": 0.000436,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.000461,
+    "evaluated_at": "2026-11-03T03:37:46+00:00"
   },
   {
     "symbol": "USDEUSDT",
@@ -423,10 +445,10 @@
     "bar_time_entry": 1793660400000,
     "detected_at_utc": "2026-11-02T23:23:03+00:00",
     "price_at_signal": 0.9999,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.9998,
+    "evaluated_at": "2026-11-03T03:37:46+00:00"
   },
   {
     "symbol": "PARTIUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 1.0005,
-    "evaluated_at": "2026-11-02T08:22:40+00:00"
-  },
-  {
-    "symbol": "AWEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793592000000,
-    "detected_at_utc": "2026-11-02T04:22:38+00:00",
-    "price_at_signal": 0.0641,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.06448,
-    "evaluated_at": "2026-11-02T08:22:40+00:00"
-  },
-  {
-    "symbol": "TUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793592000000,
-    "detected_at_utc": "2026-11-02T04:22:38+00:00",
-    "price_at_signal": 0.00457,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.00453,
     "evaluated_at": "2026-11-02T08:22:40+00:00"
   }
 ]

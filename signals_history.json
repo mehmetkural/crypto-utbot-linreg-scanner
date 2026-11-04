@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "KITEUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793822400000,
+    "detected_at_utc": "2026-11-04T20:52:45+00:00",
+    "price_at_signal": 0.1179,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "USD1USDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793822400000,
@@ -1248,10 +1259,10 @@
     "bar_time_entry": 1793808000000,
     "detected_at_utc": "2026-11-04T16:38:00+00:00",
     "price_at_signal": 0.004262,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.004369,
+    "evaluated_at": "2026-11-04T20:52:45+00:00"
   },
   {
     "symbol": "STXUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 6.58,
-    "evaluated_at": "2026-11-04T09:52:51+00:00"
-  },
-  {
-    "symbol": "MARSCOINUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793768400000,
-    "detected_at_utc": "2026-11-04T05:52:51+00:00",
-    "price_at_signal": 0.0508,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0524,
     "evaluated_at": "2026-11-04T09:52:51+00:00"
   }
 ]

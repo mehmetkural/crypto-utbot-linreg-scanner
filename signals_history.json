@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "KAVAUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793779200000,
+    "detected_at_utc": "2026-11-04T08:06:25+00:00",
+    "price_at_signal": 0.06803,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SAGAUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793775600000,
@@ -2502,10 +2513,10 @@
     "bar_time_entry": 1793754000000,
     "detected_at_utc": "2026-11-04T01:07:55+00:00",
     "price_at_signal": 0.06805,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.06803,
+    "evaluated_at": "2026-11-04T08:06:25+00:00"
   },
   {
     "symbol": "TUTUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.06439,
-    "evaluated_at": "2026-11-04T04:22:44+00:00"
-  },
-  {
-    "symbol": "WBTCUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793750400000,
-    "detected_at_utc": "2026-11-04T00:07:48+00:00",
-    "price_at_signal": 77348.84,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 76591.19,
     "evaluated_at": "2026-11-04T04:22:44+00:00"
   }
 ]

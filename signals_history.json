@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "SPCXBUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793779200000,
+    "detected_at_utc": "2026-11-04T08:22:55+00:00",
+    "price_at_signal": 136.72,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "KMNOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793779200000,
+    "detected_at_utc": "2026-11-04T08:22:55+00:00",
+    "price_at_signal": 0.03368,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "KAVAUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793779200000,
@@ -3129,10 +3151,10 @@
     "bar_time_entry": 1793750400000,
     "detected_at_utc": "2026-11-04T00:23:00+00:00",
     "price_at_signal": 0.01174,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01188,
+    "evaluated_at": "2026-11-04T08:22:55+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 29.02,
-    "evaluated_at": "2026-11-04T04:22:44+00:00"
-  },
-  {
-    "symbol": "ALGOUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793750400000,
-    "detected_at_utc": "2026-11-04T00:07:48+00:00",
-    "price_at_signal": 0.0932,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0916,
-    "evaluated_at": "2026-11-04T04:22:44+00:00"
-  },
-  {
-    "symbol": "SKYUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793750400000,
-    "detected_at_utc": "2026-11-04T00:07:48+00:00",
-    "price_at_signal": 0.06545,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.06439,
     "evaluated_at": "2026-11-04T04:22:44+00:00"
   }
 ]

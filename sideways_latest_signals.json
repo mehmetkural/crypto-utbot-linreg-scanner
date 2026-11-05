@@ -1,12 +1,55 @@
 {
-  "scanned_at_utc": "2026-11-05T06:12:38+00:00",
+  "scanned_at_utc": "2026-11-05T16:21:51+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 240,
+  "symbols_scanned": 258,
   "symbols_errored": 0,
-  "ut_buy_count": 0,
-  "passed_count": 0,
+  "ut_buy_count": 2,
+  "passed_count": 2,
   "filtered_count": 0,
-  "passed_signals": [],
+  "passed_signals": [
+    {
+      "symbol": "PARTIUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.0473,
+      "bar_time": 1793894400000,
+      "adx": 11.08,
+      "chop": 32.04,
+      "bb_width_pctl": 60.0,
+      "range_pct": 18.68,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 0.0501,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "RLUSDUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.0011,
+      "bar_time": 1793894400000,
+      "adx": 20.25,
+      "chop": 68.79,
+      "bb_width_pctl": 86.0,
+      "range_pct": 0.11,
+      "votes": {
+        "adx_low": false,
+        "chop_high": true,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 1.0017,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

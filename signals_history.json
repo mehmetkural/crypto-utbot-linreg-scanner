@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "AVAXUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793908800000,
+    "detected_at_utc": "2026-11-05T20:37:51+00:00",
+    "price_at_signal": 8.426,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "KAITOUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793908800000,
@@ -2062,10 +2073,10 @@
     "bar_time_entry": 1793880000000,
     "detected_at_utc": "2026-11-05T12:07:43+00:00",
     "price_at_signal": 0.24,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.224,
+    "evaluated_at": "2026-11-05T20:37:51+00:00"
   },
   {
     "symbol": "APEUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": null,
     "price_after": null,
     "evaluated_at": null
-  },
-  {
-    "symbol": "RUNEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793851200000,
-    "detected_at_utc": "2026-11-05T04:37:47+00:00",
-    "price_at_signal": 0.649,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.638,
-    "evaluated_at": "2026-11-05T08:52:45+00:00"
   }
 ]

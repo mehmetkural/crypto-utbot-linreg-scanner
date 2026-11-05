@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "KAITOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793908800000,
+    "detected_at_utc": "2026-11-05T20:22:57+00:00",
+    "price_at_signal": 0.2141,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "USD1USDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793908800000,
@@ -676,10 +687,10 @@
     "bar_time_entry": 1793894400000,
     "detected_at_utc": "2026-11-05T16:07:53+00:00",
     "price_at_signal": 0.99888,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.99978,
+    "evaluated_at": "2026-11-05T20:22:57+00:00"
   },
   {
     "symbol": "PARTIUSDT",
@@ -687,10 +698,10 @@
     "bar_time_entry": 1793894400000,
     "detected_at_utc": "2026-11-05T16:07:53+00:00",
     "price_at_signal": 0.0452,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.0474,
+    "evaluated_at": "2026-11-05T20:22:57+00:00"
   },
   {
     "symbol": "FOGOUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.638,
-    "evaluated_at": "2026-11-05T08:52:45+00:00"
-  },
-  {
-    "symbol": "AEROUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793851200000,
-    "detected_at_utc": "2026-11-05T04:37:47+00:00",
-    "price_at_signal": 0.6466,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.6675,
     "evaluated_at": "2026-11-05T08:52:45+00:00"
   }
 ]

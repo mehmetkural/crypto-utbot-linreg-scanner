@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "RADUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793955600000,
+    "detected_at_utc": "2026-11-06T09:22:53+00:00",
+    "price_at_signal": 0.229,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "OPGUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793955600000,
+    "detected_at_utc": "2026-11-06T09:22:53+00:00",
+    "price_at_signal": 0.1172,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "USD1USDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793955600000,
@@ -555,10 +577,10 @@
     "bar_time_entry": 1793941200000,
     "detected_at_utc": "2026-11-06T05:22:46+00:00",
     "price_at_signal": 0.74,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.726,
+    "evaluated_at": "2026-11-06T09:22:53+00:00"
   },
   {
     "symbol": "ZECUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 344.06,
-    "evaluated_at": "2026-11-05T19:22:47+00:00"
-  },
-  {
-    "symbol": "ERAUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793890800000,
-    "detected_at_utc": "2026-11-05T15:07:52+00:00",
-    "price_at_signal": 0.0665,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0722,
-    "evaluated_at": "2026-11-05T19:22:47+00:00"
-  },
-  {
-    "symbol": "SUPERUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793890800000,
-    "detected_at_utc": "2026-11-05T15:07:52+00:00",
-    "price_at_signal": 0.1849,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.18,
     "evaluated_at": "2026-11-05T19:22:47+00:00"
   }
 ]

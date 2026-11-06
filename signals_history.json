@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "BEAMXUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793955600000,
+    "detected_at_utc": "2026-11-06T09:37:54+00:00",
+    "price_at_signal": 0.004178,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ZAMAUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793955600000,
+    "detected_at_utc": "2026-11-06T09:37:54+00:00",
+    "price_at_signal": 0.07095,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "HAEDALUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793955600000,
+    "detected_at_utc": "2026-11-06T09:37:54+00:00",
+    "price_at_signal": 0.02659,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "RADUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793955600000,
@@ -566,10 +599,10 @@
     "bar_time_entry": 1793941200000,
     "detected_at_utc": "2026-11-06T05:37:46+00:00",
     "price_at_signal": 0.0627,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.06317,
+    "evaluated_at": "2026-11-06T09:37:54+00:00"
   },
   {
     "symbol": "NEXOUSDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 4098.47,
-    "evaluated_at": "2026-11-05T19:22:47+00:00"
-  },
-  {
-    "symbol": "BCHUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793890800000,
-    "detected_at_utc": "2026-11-05T15:07:52+00:00",
-    "price_at_signal": 281.4,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 274.7,
-    "evaluated_at": "2026-11-05T19:22:47+00:00"
-  },
-  {
-    "symbol": "MRNABUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793890800000,
-    "detected_at_utc": "2026-11-05T15:07:52+00:00",
-    "price_at_signal": 249.53,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 242.28,
-    "evaluated_at": "2026-11-05T19:22:47+00:00"
-  },
-  {
-    "symbol": "AAPLBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793890800000,
-    "detected_at_utc": "2026-11-05T15:07:52+00:00",
-    "price_at_signal": 349.31,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 344.06,
     "evaluated_at": "2026-11-05T19:22:47+00:00"
   }
 ]

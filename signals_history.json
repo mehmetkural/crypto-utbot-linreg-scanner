@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "NILUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793941200000,
+    "detected_at_utc": "2026-11-06T05:37:46+00:00",
+    "price_at_signal": 0.0627,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "NEXOUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1793941200000,
@@ -1237,10 +1248,10 @@
     "bar_time_entry": 1793926800000,
     "detected_at_utc": "2026-11-06T01:23:00+00:00",
     "price_at_signal": 0.2932,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.2976,
+    "evaluated_at": "2026-11-06T05:37:46+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 90.04,
-    "evaluated_at": "2026-11-05T17:07:55+00:00"
-  },
-  {
-    "symbol": "ZECUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793883600000,
-    "detected_at_utc": "2026-11-05T13:07:45+00:00",
-    "price_at_signal": 1299.28,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 1241.7,
     "evaluated_at": "2026-11-05T17:07:55+00:00"
   }
 ]

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ATUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1793923200000,
+    "detected_at_utc": "2026-11-06T00:22:58+00:00",
+    "price_at_signal": 0.1005,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ZECUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793923200000,
@@ -280,10 +291,10 @@
     "bar_time_entry": 1793908800000,
     "detected_at_utc": "2026-11-05T20:22:57+00:00",
     "price_at_signal": 0.2141,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.2103,
+    "evaluated_at": "2026-11-06T00:22:58+00:00"
   },
   {
     "symbol": "USD1USDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.6027,
-    "evaluated_at": "2026-11-05T10:07:56+00:00"
-  },
-  {
-    "symbol": "SHIBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793858400000,
-    "detected_at_utc": "2026-11-05T06:07:48+00:00",
-    "price_at_signal": 4.7e-06,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 4.75e-06,
     "evaluated_at": "2026-11-05T10:07:56+00:00"
   }
 ]

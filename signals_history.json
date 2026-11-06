@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ASTERUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1793944800000,
+    "detected_at_utc": "2026-11-06T06:52:57+00:00",
+    "price_at_signal": 0.6828,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BERAUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1793944800000,
@@ -555,10 +566,10 @@
     "bar_time_entry": 1793930400000,
     "detected_at_utc": "2026-11-06T02:52:16+00:00",
     "price_at_signal": 52.61,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 52.16,
+    "evaluated_at": "2026-11-06T06:52:57+00:00"
   },
   {
     "symbol": "POLUSDT",
@@ -566,10 +577,10 @@
     "bar_time_entry": 1793930400000,
     "detected_at_utc": "2026-11-06T02:52:16+00:00",
     "price_at_signal": 0.09505,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.09342,
+    "evaluated_at": "2026-11-06T06:52:57+00:00"
   },
   {
     "symbol": "CAKEUSDT",
@@ -577,10 +588,10 @@
     "bar_time_entry": 1793930400000,
     "detected_at_utc": "2026-11-06T02:52:16+00:00",
     "price_at_signal": 1.93,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.919,
+    "evaluated_at": "2026-11-06T06:52:57+00:00"
   },
   {
     "symbol": "ZKUSDT",
@@ -588,10 +599,10 @@
     "bar_time_entry": 1793930400000,
     "detected_at_utc": "2026-11-06T02:52:16+00:00",
     "price_at_signal": 0.00956,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00941,
+    "evaluated_at": "2026-11-06T06:52:57+00:00"
   },
   {
     "symbol": "EIGENUSDT",
@@ -599,10 +610,10 @@
     "bar_time_entry": 1793930400000,
     "detected_at_utc": "2026-11-06T02:52:16+00:00",
     "price_at_signal": 0.1724,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.1729,
+    "evaluated_at": "2026-11-06T06:52:57+00:00"
   },
   {
     "symbol": "SAGAUSDT",
@@ -610,10 +621,10 @@
     "bar_time_entry": 1793930400000,
     "detected_at_utc": "2026-11-06T02:52:16+00:00",
     "price_at_signal": 0.01619,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.0162,
+    "evaluated_at": "2026-11-06T06:52:57+00:00"
   },
   {
     "symbol": "ACEUSDT",
@@ -621,10 +632,10 @@
     "bar_time_entry": 1793930400000,
     "detected_at_utc": "2026-11-06T02:52:16+00:00",
     "price_at_signal": 0.1238,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.1234,
+    "evaluated_at": "2026-11-06T06:52:57+00:00"
   },
   {
     "symbol": "COTIUSDT",
@@ -632,10 +643,10 @@
     "bar_time_entry": 1793930400000,
     "detected_at_utc": "2026-11-06T02:52:16+00:00",
     "price_at_signal": 0.00975,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00969,
+    "evaluated_at": "2026-11-06T06:52:57+00:00"
   },
   {
     "symbol": "KORUBUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.2521,
-    "evaluated_at": "2026-11-05T18:07:46+00:00"
-  },
-  {
-    "symbol": "THEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793887200000,
-    "detected_at_utc": "2026-11-05T14:07:44+00:00",
-    "price_at_signal": 0.0396,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0358,
     "evaluated_at": "2026-11-05T18:07:46+00:00"
   }
 ]

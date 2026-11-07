@@ -1,35 +1,35 @@
 {
-  "scanned_at_utc": "2026-11-06T21:25:19+00:00",
+  "scanned_at_utc": "2026-11-07T01:45:04+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 215,
+  "symbols_scanned": 205,
   "symbols_errored": 0,
   "ut_buy_count": 1,
-  "passed_count": 1,
-  "filtered_count": 0,
-  "passed_signals": [
+  "passed_count": 0,
+  "filtered_count": 1,
+  "passed_signals": [],
+  "filtered_signals": [
     {
-      "symbol": "STXUSDT",
+      "symbol": "LSKUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.3442,
-      "bar_time": 1793995200000,
-      "adx": 18.95,
-      "chop": 61.13,
-      "bb_width_pctl": 35.0,
-      "range_pct": 11.49,
+      "last_close": 0.1962,
+      "bar_time": 1794009600000,
+      "adx": 14.8,
+      "chop": 55.4,
+      "bb_width_pctl": 8.0,
+      "range_pct": 25.98,
       "votes": {
         "adx_low": true,
         "chop_high": false,
-        "bb_squeeze": false
+        "bb_squeeze": true
       },
-      "vote_count": 1,
-      "range_high": 0.3667,
+      "vote_count": 2,
+      "range_high": 0.2287,
       "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
+      "was_sideways": true,
+      "is_sideways": true
     }
   ],
-  "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

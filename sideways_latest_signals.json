@@ -1,35 +1,13 @@
 {
-  "scanned_at_utc": "2026-11-07T08:37:08+00:00",
+  "scanned_at_utc": "2026-11-07T16:15:16+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 198,
+  "symbols_scanned": 175,
   "symbols_errored": 0,
-  "ut_buy_count": 1,
+  "ut_buy_count": 0,
   "passed_count": 0,
-  "filtered_count": 1,
+  "filtered_count": 0,
   "passed_signals": [],
-  "filtered_signals": [
-    {
-      "symbol": "NIGHTUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.04034,
-      "bar_time": 1794038400000,
-      "adx": 22.95,
-      "chop": 63.29,
-      "bb_width_pctl": 2.0,
-      "range_pct": 13.76,
-      "votes": {
-        "adx_low": false,
-        "chop_high": true,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.04384,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    }
-  ],
+  "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

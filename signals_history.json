@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PENDLEUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794013200000,
+    "detected_at_utc": "2026-11-07T01:37:45+00:00",
+    "price_at_signal": 1.664,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "LTCUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794013200000,
@@ -1501,10 +1512,10 @@
     "bar_time_entry": 1793980800000,
     "detected_at_utc": "2026-11-06T16:37:49+00:00",
     "price_at_signal": 1.1152,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.1148,
+    "evaluated_at": "2026-11-07T01:37:45+00:00"
   },
   {
     "symbol": "RLCUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.374,
     "evaluated_at": "2026-11-06T08:37:47+00:00"
-  },
-  {
-    "symbol": "LTCUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793937600000,
-    "detected_at_utc": "2026-11-06T04:07:56+00:00",
-    "price_at_signal": 52.5,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 52.52,
-    "evaluated_at": "2026-11-06T08:22:49+00:00"
   }
 ]

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "QQQBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794085200000,
+    "detected_at_utc": "2026-11-07T21:52:46+00:00",
+    "price_at_signal": 656.12,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "MAVUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794085200000,
@@ -588,10 +599,10 @@
     "bar_time_entry": 1794070800000,
     "detected_at_utc": "2026-11-07T17:52:44+00:00",
     "price_at_signal": 0.06453,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.06408,
+    "evaluated_at": "2026-11-07T21:52:46+00:00"
   },
   {
     "symbol": "LTCUSDT",
@@ -599,10 +610,10 @@
     "bar_time_entry": 1794070800000,
     "detected_at_utc": "2026-11-07T17:37:45+00:00",
     "price_at_signal": 52.28,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 51.84,
+    "evaluated_at": "2026-11-07T21:52:46+00:00"
   },
   {
     "symbol": "ACTUSDT",
@@ -610,10 +621,10 @@
     "bar_time_entry": 1794070800000,
     "detected_at_utc": "2026-11-07T17:37:45+00:00",
     "price_at_signal": 0.01116,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.01152,
+    "evaluated_at": "2026-11-07T21:52:46+00:00"
   },
   {
     "symbol": "XUSDUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.00551,
     "evaluated_at": "2026-11-07T00:52:47+00:00"
-  },
-  {
-    "symbol": "ARBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793995200000,
-    "detected_at_utc": "2026-11-06T20:22:47+00:00",
-    "price_at_signal": 0.1653,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.1651,
-    "evaluated_at": "2026-11-07T00:22:47+00:00"
   }
 ]

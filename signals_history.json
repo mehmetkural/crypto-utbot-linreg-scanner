@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "WBTCUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794016800000,
+    "detected_at_utc": "2026-11-07T02:22:46+00:00",
+    "price_at_signal": 76249.67,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "WBETHUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1794016800000,
@@ -632,10 +643,10 @@
     "bar_time_entry": 1794002400000,
     "detected_at_utc": "2026-11-06T22:07:53+00:00",
     "price_at_signal": 4.98e-06,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 5e-06,
+    "evaluated_at": "2026-11-07T02:22:46+00:00"
   },
   {
     "symbol": "RVNUSDT",
@@ -643,10 +654,10 @@
     "bar_time_entry": 1794002400000,
     "detected_at_utc": "2026-11-06T22:07:53+00:00",
     "price_at_signal": 0.001349,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.001344,
+    "evaluated_at": "2026-11-07T02:22:46+00:00"
   },
   {
     "symbol": "HAEDALUSDT",
@@ -654,10 +665,10 @@
     "bar_time_entry": 1794002400000,
     "detected_at_utc": "2026-11-06T22:07:53+00:00",
     "price_at_signal": 0.02688,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.02629,
+    "evaluated_at": "2026-11-07T02:22:46+00:00"
   },
   {
     "symbol": "NEXOUSDT",
@@ -665,10 +676,10 @@
     "bar_time_entry": 1794002400000,
     "detected_at_utc": "2026-11-06T22:07:53+00:00",
     "price_at_signal": 0.745,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.738,
+    "evaluated_at": "2026-11-07T02:22:46+00:00"
   },
   {
     "symbol": "ACEUSDT",
@@ -676,10 +687,10 @@
     "bar_time_entry": 1794002400000,
     "detected_at_utc": "2026-11-06T22:07:53+00:00",
     "price_at_signal": 0.1298,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.1301,
+    "evaluated_at": "2026-11-07T02:22:46+00:00"
   },
   {
     "symbol": "ENAUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.02406,
-    "evaluated_at": "2026-11-06T09:07:57+00:00"
-  },
-  {
-    "symbol": "BLURUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793941200000,
-    "detected_at_utc": "2026-11-06T05:07:57+00:00",
-    "price_at_signal": 0.00746,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.00759,
     "evaluated_at": "2026-11-06T09:07:57+00:00"
   }
 ]

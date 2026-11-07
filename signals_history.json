@@ -1,5 +1,60 @@
 [
   {
+    "symbol": "STRKUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794049200000,
+    "detected_at_utc": "2026-11-07T11:07:52+00:00",
+    "price_at_signal": 0.04132,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "\u725b\u6765USDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794049200000,
+    "detected_at_utc": "2026-11-07T11:07:52+00:00",
+    "price_at_signal": 0.05546,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "MITOUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794049200000,
+    "detected_at_utc": "2026-11-07T11:07:52+00:00",
+    "price_at_signal": 0.00735,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "AMPUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794049200000,
+    "detected_at_utc": "2026-11-07T11:07:52+00:00",
+    "price_at_signal": 0.000644,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "PARTIUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794049200000,
+    "detected_at_utc": "2026-11-07T11:07:52+00:00",
+    "price_at_signal": 0.0475,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "CELOUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794045600000,
@@ -467,10 +522,10 @@
     "bar_time_entry": 1794034800000,
     "detected_at_utc": "2026-11-07T07:07:44+00:00",
     "price_at_signal": 0.06805,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.06776,
+    "evaluated_at": "2026-11-07T11:07:52+00:00"
   },
   {
     "symbol": "NIGHTUSDT",
@@ -478,10 +533,10 @@
     "bar_time_entry": 1794034800000,
     "detected_at_utc": "2026-11-07T07:07:44+00:00",
     "price_at_signal": 0.03925,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.04002,
+    "evaluated_at": "2026-11-07T11:07:52+00:00"
   },
   {
     "symbol": "TRXUSDT",
@@ -3243,60 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.004024,
     "evaluated_at": "2026-11-06T16:07:49+00:00"
-  },
-  {
-    "symbol": "DASHUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793966400000,
-    "detected_at_utc": "2026-11-06T12:07:45+00:00",
-    "price_at_signal": 45.74,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 48.15,
-    "evaluated_at": "2026-11-06T16:07:49+00:00"
-  },
-  {
-    "symbol": "XTZUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793966400000,
-    "detected_at_utc": "2026-11-06T12:07:45+00:00",
-    "price_at_signal": 0.2602,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.2693,
-    "evaluated_at": "2026-11-06T16:07:49+00:00"
-  },
-  {
-    "symbol": "ALGOUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793966400000,
-    "detected_at_utc": "2026-11-06T12:07:45+00:00",
-    "price_at_signal": 0.0948,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0962,
-    "evaluated_at": "2026-11-06T16:07:49+00:00"
-  },
-  {
-    "symbol": "AMZNBUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793962800000,
-    "detected_at_utc": "2026-11-06T11:52:51+00:00",
-    "price_at_signal": 262.68,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 264.13,
-    "evaluated_at": "2026-11-06T15:52:55+00:00"
-  },
-  {
-    "symbol": "HYPEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1793962800000,
-    "detected_at_utc": "2026-11-06T11:37:43+00:00",
-    "price_at_signal": 78.46,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 77.66,
-    "evaluated_at": "2026-11-06T15:37:46+00:00"
   }
 ]

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BEAMXUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794081600000,
+    "detected_at_utc": "2026-11-07T20:07:40+00:00",
+    "price_at_signal": 0.003988,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "KAVAUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794078000000,
@@ -522,10 +533,10 @@
     "bar_time_entry": 1794067200000,
     "detected_at_utc": "2026-11-07T16:07:38+00:00",
     "price_at_signal": 1.18,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.185,
+    "evaluated_at": "2026-11-07T20:07:40+00:00"
   },
   {
     "symbol": "HBARUSDT",
@@ -533,10 +544,10 @@
     "bar_time_entry": 1794067200000,
     "detected_at_utc": "2026-11-07T16:07:38+00:00",
     "price_at_signal": 0.06735,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.06717,
+    "evaluated_at": "2026-11-07T20:07:40+00:00"
   },
   {
     "symbol": "WBETHUSDT",
@@ -544,10 +555,10 @@
     "bar_time_entry": 1794067200000,
     "detected_at_utc": "2026-11-07T16:07:38+00:00",
     "price_at_signal": 2482.24,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 2477.69,
+    "evaluated_at": "2026-11-07T20:07:40+00:00"
   },
   {
     "symbol": "MORPHOUSDT",
@@ -555,10 +566,10 @@
     "bar_time_entry": 1794067200000,
     "detected_at_utc": "2026-11-07T16:07:38+00:00",
     "price_at_signal": 2.1,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 2.118,
+    "evaluated_at": "2026-11-07T20:07:40+00:00"
   },
   {
     "symbol": "DGBUSDT",
@@ -566,10 +577,10 @@
     "bar_time_entry": 1794067200000,
     "detected_at_utc": "2026-11-07T16:07:38+00:00",
     "price_at_signal": 0.00311,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00314,
+    "evaluated_at": "2026-11-07T20:07:40+00:00"
   },
   {
     "symbol": "1000CATUSDT",
@@ -577,10 +588,10 @@
     "bar_time_entry": 1794067200000,
     "detected_at_utc": "2026-11-07T16:07:38+00:00",
     "price_at_signal": 0.001735,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.001675,
+    "evaluated_at": "2026-11-07T20:07:40+00:00"
   },
   {
     "symbol": "GOOGLBUSDT",
@@ -588,10 +599,10 @@
     "bar_time_entry": 1794063600000,
     "detected_at_utc": "2026-11-07T15:52:49+00:00",
     "price_at_signal": 284.2,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 284.8,
+    "evaluated_at": "2026-11-07T20:07:40+00:00"
   },
   {
     "symbol": "1000CATUSDT",
@@ -599,10 +610,10 @@
     "bar_time_entry": 1794063600000,
     "detected_at_utc": "2026-11-07T15:52:49+00:00",
     "price_at_signal": 0.001741,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.001675,
+    "evaluated_at": "2026-11-07T20:07:40+00:00"
   },
   {
     "symbol": "SOLUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.00657,
     "evaluated_at": "2026-11-06T22:52:49+00:00"
-  },
-  {
-    "symbol": "HOMEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793988000000,
-    "detected_at_utc": "2026-11-06T18:37:43+00:00",
-    "price_at_signal": 0.00541,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
   }
 ]

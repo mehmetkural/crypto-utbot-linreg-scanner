@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "FOGOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794060000000,
+    "detected_at_utc": "2026-11-07T14:22:49+00:00",
+    "price_at_signal": 0.00229,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "RWUSDUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794060000000,
@@ -368,10 +379,10 @@
     "bar_time_entry": 1794045600000,
     "detected_at_utc": "2026-11-07T10:22:49+00:00",
     "price_at_signal": 3.698,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 3.712,
+    "evaluated_at": "2026-11-07T14:22:49+00:00"
   },
   {
     "symbol": "SUIUSDT",
@@ -379,10 +390,10 @@
     "bar_time_entry": 1794045600000,
     "detected_at_utc": "2026-11-07T10:22:49+00:00",
     "price_at_signal": 0.8623,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.8623,
+    "evaluated_at": "2026-11-07T14:22:49+00:00"
   },
   {
     "symbol": "DODOUSDT",
@@ -390,10 +401,10 @@
     "bar_time_entry": 1794045600000,
     "detected_at_utc": "2026-11-07T10:22:49+00:00",
     "price_at_signal": 0.0222,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.02224,
+    "evaluated_at": "2026-11-07T14:22:49+00:00"
   },
   {
     "symbol": "RUNEUSDT",
@@ -401,10 +412,10 @@
     "bar_time_entry": 1794045600000,
     "detected_at_utc": "2026-11-07T10:22:49+00:00",
     "price_at_signal": 0.591,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.599,
+    "evaluated_at": "2026-11-07T14:22:49+00:00"
   },
   {
     "symbol": "REZUSDT",
@@ -412,10 +423,10 @@
     "bar_time_entry": 1794045600000,
     "detected_at_utc": "2026-11-07T10:22:49+00:00",
     "price_at_signal": 0.003896,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.003979,
+    "evaluated_at": "2026-11-07T14:22:49+00:00"
   },
   {
     "symbol": "RWUSDUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.00675,
-    "evaluated_at": "2026-11-06T19:22:53+00:00"
-  },
-  {
-    "symbol": "ARMBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1793977200000,
-    "detected_at_utc": "2026-11-06T15:07:51+00:00",
-    "price_at_signal": 172.32,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 173.85,
     "evaluated_at": "2026-11-06T19:22:53+00:00"
   }
 ]

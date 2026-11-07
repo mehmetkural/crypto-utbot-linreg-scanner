@@ -1,12 +1,34 @@
 {
-  "scanned_at_utc": "2026-11-07T16:15:16+00:00",
+  "scanned_at_utc": "2026-11-07T21:40:48+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 175,
+  "symbols_scanned": 166,
   "symbols_errored": 0,
-  "ut_buy_count": 0,
-  "passed_count": 0,
+  "ut_buy_count": 1,
+  "passed_count": 1,
   "filtered_count": 0,
-  "passed_signals": [],
+  "passed_signals": [
+    {
+      "symbol": "DGBUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.00331,
+      "bar_time": 1794081600000,
+      "adx": 42.29,
+      "chop": 36.65,
+      "bb_width_pctl": 72.0,
+      "range_pct": 30.25,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.00382,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

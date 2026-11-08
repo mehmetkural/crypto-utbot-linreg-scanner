@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "DASHUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794150000000,
+    "detected_at_utc": "2026-11-08T15:52:46+00:00",
+    "price_at_signal": 47.66,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "NVDABUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794150000000,
@@ -665,10 +676,10 @@
     "bar_time_entry": 1794135600000,
     "detected_at_utc": "2026-11-08T11:52:44+00:00",
     "price_at_signal": 0.3638,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.3623,
+    "evaluated_at": "2026-11-08T15:52:46+00:00"
   },
   {
     "symbol": "ETHFIUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.00395,
-    "evaluated_at": "2026-11-07T21:07:48+00:00"
-  },
-  {
-    "symbol": "AMPUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1794070800000,
-    "detected_at_utc": "2026-11-07T17:07:47+00:00",
-    "price_at_signal": 0.000642,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.000647,
     "evaluated_at": "2026-11-07T21:07:48+00:00"
   }
 ]

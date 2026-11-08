@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "INITUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794121200000,
+    "detected_at_utc": "2026-11-08T07:22:39+00:00",
+    "price_at_signal": 0.12098,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "CYBERUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794121200000,
@@ -566,10 +577,10 @@
     "bar_time_entry": 1794106800000,
     "detected_at_utc": "2026-11-08T03:07:51+00:00",
     "price_at_signal": 0.05767,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.05728,
+    "evaluated_at": "2026-11-08T07:22:39+00:00"
   },
   {
     "symbol": "POLUSDT",
@@ -577,10 +588,10 @@
     "bar_time_entry": 1794106800000,
     "detected_at_utc": "2026-11-08T03:07:51+00:00",
     "price_at_signal": 0.09093,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.09065,
+    "evaluated_at": "2026-11-08T07:22:39+00:00"
   },
   {
     "symbol": "HOTUSDT",
@@ -588,10 +599,10 @@
     "bar_time_entry": 1794106800000,
     "detected_at_utc": "2026-11-08T03:07:51+00:00",
     "price_at_signal": 0.000357,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.000347,
+    "evaluated_at": "2026-11-08T07:22:39+00:00"
   },
   {
     "symbol": "AEROUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 2493.22,
-    "evaluated_at": "2026-11-07T09:22:43+00:00"
-  },
-  {
-    "symbol": "ZECUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1794027600000,
-    "detected_at_utc": "2026-11-07T05:07:49+00:00",
-    "price_at_signal": 1314.38,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1324.51,
     "evaluated_at": "2026-11-07T09:22:43+00:00"
   }
 ]

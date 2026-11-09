@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "GUNUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794254400000,
+    "detected_at_utc": "2026-11-09T20:52:57+00:00",
+    "price_at_signal": 0.001697,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "HOTUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1794254400000,
@@ -852,10 +863,10 @@
     "bar_time_entry": 1794240000000,
     "detected_at_utc": "2026-11-09T16:52:47+00:00",
     "price_at_signal": 195.69,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 196.61,
+    "evaluated_at": "2026-11-09T20:52:57+00:00"
   },
   {
     "symbol": "BFUSDUSDT",
@@ -863,10 +874,10 @@
     "bar_time_entry": 1794240000000,
     "detected_at_utc": "2026-11-09T16:52:47+00:00",
     "price_at_signal": 1.0,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.0,
+    "evaluated_at": "2026-11-09T20:52:57+00:00"
   },
   {
     "symbol": "CHIPUSDT",
@@ -874,10 +885,10 @@
     "bar_time_entry": 1794240000000,
     "detected_at_utc": "2026-11-09T16:52:47+00:00",
     "price_at_signal": 0.03375,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.03382,
+    "evaluated_at": "2026-11-09T20:52:57+00:00"
   },
   {
     "symbol": "SENTUSDT",
@@ -885,10 +896,10 @@
     "bar_time_entry": 1794240000000,
     "detected_at_utc": "2026-11-09T16:52:47+00:00",
     "price_at_signal": 0.01644,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01653,
+    "evaluated_at": "2026-11-09T20:52:57+00:00"
   },
   {
     "symbol": "ZROUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.00542,
-    "evaluated_at": "2026-11-09T13:22:49+00:00"
-  },
-  {
-    "symbol": "ORDIUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1794214800000,
-    "detected_at_utc": "2026-11-09T09:07:47+00:00",
-    "price_at_signal": 3.11,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 3.197,
     "evaluated_at": "2026-11-09T13:22:49+00:00"
   }
 ]

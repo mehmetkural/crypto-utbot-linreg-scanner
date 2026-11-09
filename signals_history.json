@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PARTIUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794186000000,
+    "detected_at_utc": "2026-11-09T01:22:45+00:00",
+    "price_at_signal": 0.0469,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SOLUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1794186000000,
@@ -2018,10 +2029,10 @@
     "bar_time_entry": 1794171600000,
     "detected_at_utc": "2026-11-08T21:22:43+00:00",
     "price_at_signal": 1.172,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.148,
+    "evaluated_at": "2026-11-09T01:22:45+00:00"
   },
   {
     "symbol": "XAUTUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.05057,
-    "evaluated_at": "2026-11-08T18:07:47+00:00"
-  },
-  {
-    "symbol": "DOTUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1794146400000,
-    "detected_at_utc": "2026-11-08T14:07:40+00:00",
-    "price_at_signal": 0.893,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.887,
     "evaluated_at": "2026-11-08T18:07:47+00:00"
   }
 ]

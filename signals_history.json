@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BEBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794308400000,
+    "detected_at_utc": "2026-11-10T11:52:45+00:00",
+    "price_at_signal": 191.48,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "COTIUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794308400000,
@@ -819,10 +830,10 @@
     "bar_time_entry": 1794294000000,
     "detected_at_utc": "2026-11-10T07:37:51+00:00",
     "price_at_signal": 0.1795,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.1782,
+    "evaluated_at": "2026-11-10T11:52:45+00:00"
   },
   {
     "symbol": "STRKUSDT",
@@ -830,10 +841,10 @@
     "bar_time_entry": 1794294000000,
     "detected_at_utc": "2026-11-10T07:37:51+00:00",
     "price_at_signal": 0.03866,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.03847,
+    "evaluated_at": "2026-11-10T11:52:45+00:00"
   },
   {
     "symbol": "ARUSDT",
@@ -841,10 +852,10 @@
     "bar_time_entry": 1794294000000,
     "detected_at_utc": "2026-11-10T07:37:51+00:00",
     "price_at_signal": 3.326,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 3.261,
+    "evaluated_at": "2026-11-10T11:52:45+00:00"
   },
   {
     "symbol": "BONKUSDT",
@@ -852,10 +863,10 @@
     "bar_time_entry": 1794294000000,
     "detected_at_utc": "2026-11-10T07:37:51+00:00",
     "price_at_signal": 2.84e-06,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 2.8e-06,
+    "evaluated_at": "2026-11-10T11:52:45+00:00"
   },
   {
     "symbol": "MVLLBUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": null,
     "price_after": null,
     "evaluated_at": null
-  },
-  {
-    "symbol": "BROCCOLI714USDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1794254400000,
-    "detected_at_utc": "2026-11-09T20:07:47+00:00",
-    "price_at_signal": 0.01694,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.01688,
-    "evaluated_at": "2026-11-10T04:52:49+00:00"
   }
 ]

@@ -1,12 +1,55 @@
 {
-  "scanned_at_utc": "2026-11-09T20:36:39+00:00",
+  "scanned_at_utc": "2026-11-10T04:01:56+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 257,
+  "symbols_scanned": 227,
   "symbols_errored": 0,
-  "ut_buy_count": 0,
-  "passed_count": 0,
+  "ut_buy_count": 2,
+  "passed_count": 2,
   "filtered_count": 0,
-  "passed_signals": [],
+  "passed_signals": [
+    {
+      "symbol": "RLUSDUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.0012,
+      "bar_time": 1794283200000,
+      "adx": 30.56,
+      "chop": 57.59,
+      "bb_width_pctl": 34.0,
+      "range_pct": 0.07,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 1.0015,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "TRXUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.318,
+      "bar_time": 1794283200000,
+      "adx": 35.97,
+      "chop": 47.79,
+      "bb_width_pctl": 46.0,
+      "range_pct": 1.54,
+      "votes": {
+        "adx_low": false,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 0,
+      "range_high": 0.321,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

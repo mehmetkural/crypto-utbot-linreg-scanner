@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PORTALUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794315600000,
+    "detected_at_utc": "2026-11-10T13:52:47+00:00",
+    "price_at_signal": 0.01213,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ADAUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794315600000,
@@ -995,10 +1006,10 @@
     "bar_time_entry": 1794301200000,
     "detected_at_utc": "2026-11-10T09:37:48+00:00",
     "price_at_signal": 1.0012,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.001,
+    "evaluated_at": "2026-11-10T13:52:47+00:00"
   },
   {
     "symbol": "HOMEUSDT",
@@ -1006,10 +1017,10 @@
     "bar_time_entry": 1794301200000,
     "detected_at_utc": "2026-11-10T09:37:48+00:00",
     "price_at_signal": 0.00529,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00529,
+    "evaluated_at": "2026-11-10T13:52:47+00:00"
   },
   {
     "symbol": "SYNUSDT",
@@ -1017,10 +1028,10 @@
     "bar_time_entry": 1794301200000,
     "detected_at_utc": "2026-11-10T09:37:48+00:00",
     "price_at_signal": 0.1374,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.13528,
+    "evaluated_at": "2026-11-10T13:52:47+00:00"
   },
   {
     "symbol": "BATUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 1.766,
     "evaluated_at": "2026-11-10T02:37:48+00:00"
-  },
-  {
-    "symbol": "ARKMUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1794258000000,
-    "detected_at_utc": "2026-11-09T21:52:57+00:00",
-    "price_at_signal": 0.0982,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
   }
 ]

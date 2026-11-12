@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "NILUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794488400000,
+    "detected_at_utc": "2026-11-12T13:37:45+00:00",
+    "price_at_signal": 0.05608,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SOXLBUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794488400000,
@@ -852,10 +863,10 @@
     "bar_time_entry": 1794474000000,
     "detected_at_utc": "2026-11-12T09:22:54+00:00",
     "price_at_signal": 0.01949,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01935,
+    "evaluated_at": "2026-11-12T13:37:45+00:00"
   },
   {
     "symbol": "RLUSDUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.1378,
-    "evaluated_at": "2026-11-11T21:22:44+00:00"
-  },
-  {
-    "symbol": "METUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1794416400000,
-    "detected_at_utc": "2026-11-11T17:07:51+00:00",
-    "price_at_signal": 0.3028,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.2965,
     "evaluated_at": "2026-11-11T21:22:44+00:00"
   }
 ]

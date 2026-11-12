@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ASTERUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794470400000,
+    "detected_at_utc": "2026-11-12T08:52:50+00:00",
+    "price_at_signal": 0.6617,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "GRAMUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1794470400000,
@@ -247,10 +258,10 @@
     "bar_time_entry": 1794456000000,
     "detected_at_utc": "2026-11-12T04:37:48+00:00",
     "price_at_signal": 561.63,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 570.38,
+    "evaluated_at": "2026-11-12T08:52:50+00:00"
   },
   {
     "symbol": "AVAXUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.0866,
-    "evaluated_at": "2026-11-11T16:37:47+00:00"
-  },
-  {
-    "symbol": "MBLUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1794398400000,
-    "detected_at_utc": "2026-11-11T12:22:46+00:00",
-    "price_at_signal": 0.000575,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.000567,
     "evaluated_at": "2026-11-11T16:37:47+00:00"
   }
 ]

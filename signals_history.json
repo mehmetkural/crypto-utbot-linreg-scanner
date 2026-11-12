@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BATUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794466800000,
+    "detected_at_utc": "2026-11-12T07:37:52+00:00",
+    "price_at_signal": 0.1207,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "AVAXUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1794466800000,
@@ -225,10 +236,10 @@
     "bar_time_entry": 1794452400000,
     "detected_at_utc": "2026-11-12T03:37:45+00:00",
     "price_at_signal": 0.004371,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.004365,
+    "evaluated_at": "2026-11-12T07:37:52+00:00"
   },
   {
     "symbol": "METABUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": null,
     "price_after": null,
     "evaluated_at": null
-  },
-  {
-    "symbol": "REZUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1794398400000,
-    "detected_at_utc": "2026-11-11T12:07:55+00:00",
-    "price_at_signal": 0.003777,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.003728,
-    "evaluated_at": "2026-11-11T16:16:46+00:00"
   }
 ]

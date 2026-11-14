@@ -1,12 +1,34 @@
 {
-  "scanned_at_utc": "2026-11-14T02:10:42+00:00",
+  "scanned_at_utc": "2026-11-14T11:19:56+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 238,
+  "symbols_scanned": 224,
   "symbols_errored": 0,
-  "ut_buy_count": 0,
-  "passed_count": 0,
+  "ut_buy_count": 1,
+  "passed_count": 1,
   "filtered_count": 0,
-  "passed_signals": [],
+  "passed_signals": [
+    {
+      "symbol": "USUALUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.01131,
+      "bar_time": 1794650400000,
+      "adx": 16.56,
+      "chop": 50.29,
+      "bb_width_pctl": 65.0,
+      "range_pct": 10.31,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 0.0114,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    }
+  ],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

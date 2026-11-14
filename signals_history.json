@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "DRAMBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1794664800000,
+    "detected_at_utc": "2026-11-14T14:52:44+00:00",
+    "price_at_signal": 41.47,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ASTERUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794664800000,
@@ -357,10 +368,10 @@
     "bar_time_entry": 1794650400000,
     "detected_at_utc": "2026-11-14T10:37:51+00:00",
     "price_at_signal": 0.236,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.227,
+    "evaluated_at": "2026-11-14T14:52:44+00:00"
   },
   {
     "symbol": "ATOMUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 69050.04,
-    "evaluated_at": "2026-11-13T20:22:59+00:00"
-  },
-  {
-    "symbol": "XRPUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1794585600000,
-    "detected_at_utc": "2026-11-13T16:22:58+00:00",
-    "price_at_signal": 1.0107,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.027,
     "evaluated_at": "2026-11-13T20:22:59+00:00"
   }
 ]

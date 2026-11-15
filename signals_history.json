@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "XPLUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794772800000,
+    "detected_at_utc": "2026-11-15T20:37:47+00:00",
+    "price_at_signal": 0.04469,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "BLURUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794772800000,
+    "detected_at_utc": "2026-11-15T20:37:47+00:00",
+    "price_at_signal": 0.00691,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "MOVRUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794772800000,
+    "detected_at_utc": "2026-11-15T20:37:47+00:00",
+    "price_at_signal": 0.886,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "RLUSDUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1794772800000,
@@ -995,10 +1028,10 @@
     "bar_time_entry": 1794758400000,
     "detected_at_utc": "2026-11-15T16:37:45+00:00",
     "price_at_signal": 0.9996,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.9995,
+    "evaluated_at": "2026-11-15T20:37:47+00:00"
   },
   {
     "symbol": "SOXLBUSDT",
@@ -1006,10 +1039,10 @@
     "bar_time_entry": 1794758400000,
     "detected_at_utc": "2026-11-15T16:37:45+00:00",
     "price_at_signal": 55.89,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 56.58,
+    "evaluated_at": "2026-11-15T20:37:47+00:00"
   },
   {
     "symbol": "SOXSBUSDT",
@@ -1017,10 +1050,10 @@
     "bar_time_entry": 1794758400000,
     "detected_at_utc": "2026-11-15T16:37:45+00:00",
     "price_at_signal": 52.95,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 52.26,
+    "evaluated_at": "2026-11-15T20:37:47+00:00"
   },
   {
     "symbol": "PARTIUSDT",
@@ -1028,10 +1061,10 @@
     "bar_time_entry": 1794758400000,
     "detected_at_utc": "2026-11-15T16:37:45+00:00",
     "price_at_signal": 0.0355,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.035,
+    "evaluated_at": "2026-11-15T20:37:47+00:00"
   },
   {
     "symbol": "AMDBUSDT",
@@ -1039,10 +1072,10 @@
     "bar_time_entry": 1794758400000,
     "detected_at_utc": "2026-11-15T16:37:45+00:00",
     "price_at_signal": 523.93,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 520.63,
+    "evaluated_at": "2026-11-15T20:37:47+00:00"
   },
   {
     "symbol": "WBTCUSDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 105.32,
-    "evaluated_at": "2026-11-15T07:22:49+00:00"
-  },
-  {
-    "symbol": "PUMPUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1794711600000,
-    "detected_at_utc": "2026-11-15T03:08:01+00:00",
-    "price_at_signal": 0.002971,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.002908,
-    "evaluated_at": "2026-11-15T07:22:49+00:00"
-  },
-  {
-    "symbol": "ONDOUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1794711600000,
-    "detected_at_utc": "2026-11-15T03:08:01+00:00",
-    "price_at_signal": 0.3035,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.3025,
-    "evaluated_at": "2026-11-15T07:22:49+00:00"
-  },
-  {
-    "symbol": "ZROUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1794711600000,
-    "detected_at_utc": "2026-11-15T03:08:01+00:00",
-    "price_at_signal": 1.477,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.463,
     "evaluated_at": "2026-11-15T07:22:49+00:00"
   }
 ]

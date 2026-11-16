@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "MARSCOINUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794844800000,
+    "detected_at_utc": "2026-11-16T16:52:52+00:00",
+    "price_at_signal": 0.0332,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "MEGAUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794844800000,
@@ -1589,10 +1600,10 @@
     "bar_time_entry": 1794830400000,
     "detected_at_utc": "2026-11-16T12:37:51+00:00",
     "price_at_signal": 0.03876,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.03909,
+    "evaluated_at": "2026-11-16T16:52:52+00:00"
   },
   {
     "symbol": "UNIUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.004862,
-    "evaluated_at": "2026-11-16T05:37:52+00:00"
-  },
-  {
-    "symbol": "AVGOBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1794790800000,
-    "detected_at_utc": "2026-11-16T01:37:48+00:00",
-    "price_at_signal": 338.37,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 336.84,
     "evaluated_at": "2026-11-16T05:37:52+00:00"
   }
 ]

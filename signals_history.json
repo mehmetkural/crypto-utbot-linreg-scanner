@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "NIGHTUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794841200000,
+    "detected_at_utc": "2026-11-16T15:22:51+00:00",
+    "price_at_signal": 0.04541,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BTCUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1794841200000,
@@ -1490,10 +1501,10 @@
     "bar_time_entry": 1794826800000,
     "detected_at_utc": "2026-11-16T11:22:51+00:00",
     "price_at_signal": 0.3045,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.305,
+    "evaluated_at": "2026-11-16T15:22:51+00:00"
   },
   {
     "symbol": "CRVUSDT",
@@ -1501,10 +1512,10 @@
     "bar_time_entry": 1794826800000,
     "detected_at_utc": "2026-11-16T11:22:51+00:00",
     "price_at_signal": 0.2042,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.2016,
+    "evaluated_at": "2026-11-16T15:22:51+00:00"
   },
   {
     "symbol": "HYPEUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 139.64,
-    "evaluated_at": "2026-11-16T05:22:53+00:00"
-  },
-  {
-    "symbol": "METUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1794790800000,
-    "detected_at_utc": "2026-11-16T01:22:46+00:00",
-    "price_at_signal": 0.2666,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.2698,
     "evaluated_at": "2026-11-16T05:22:53+00:00"
   }
 ]

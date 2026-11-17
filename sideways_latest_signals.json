@@ -1,35 +1,57 @@
 {
-  "scanned_at_utc": "2026-11-17T10:28:36+00:00",
+  "scanned_at_utc": "2026-11-17T20:43:19+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 211,
+  "symbols_scanned": 230,
   "symbols_errored": 0,
-  "ut_buy_count": 1,
+  "ut_buy_count": 2,
   "passed_count": 1,
-  "filtered_count": 0,
+  "filtered_count": 1,
   "passed_signals": [
     {
-      "symbol": "SOXSBUSDT",
+      "symbol": "APEUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 60.51,
-      "bar_time": 1794909600000,
-      "adx": 28.53,
-      "chop": 60.45,
-      "bb_width_pctl": 41.0,
-      "range_pct": 19.48,
+      "last_close": 0.0803,
+      "bar_time": 1794945600000,
+      "adx": 25.38,
+      "chop": 60.99,
+      "bb_width_pctl": 2.0,
+      "range_pct": 6.97,
       "votes": {
         "adx_low": false,
         "chop_high": false,
-        "bb_squeeze": false
+        "bb_squeeze": true
       },
-      "vote_count": 0,
-      "range_high": 61.74,
+      "vote_count": 1,
+      "range_high": 0.0816,
       "breakout": false,
       "was_sideways": false,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [],
+  "filtered_signals": [
+    {
+      "symbol": "CYBERUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 0.216,
+      "bar_time": 1794945600000,
+      "adx": 32.92,
+      "chop": 64.91,
+      "bb_width_pctl": 1.0,
+      "range_pct": 12.21,
+      "votes": {
+        "adx_low": false,
+        "chop_high": true,
+        "bb_squeeze": true
+      },
+      "vote_count": 2,
+      "range_high": 0.231,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

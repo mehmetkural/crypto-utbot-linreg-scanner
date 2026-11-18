@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "HMSTRUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1794978000000,
+    "detected_at_utc": "2026-11-18T05:37:45+00:00",
+    "price_at_signal": 0.000145,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "HYPEUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1794978000000,
@@ -1226,10 +1237,10 @@
     "bar_time_entry": 1794963600000,
     "detected_at_utc": "2026-11-18T01:37:45+00:00",
     "price_at_signal": 0.4442,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.4422,
+    "evaluated_at": "2026-11-18T05:37:45+00:00"
   },
   {
     "symbol": "BREVUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.712,
-    "evaluated_at": "2026-11-18T00:07:52+00:00"
-  },
-  {
-    "symbol": "JTOUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1794945600000,
-    "detected_at_utc": "2026-11-17T20:07:48+00:00",
-    "price_at_signal": 0.2577,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.2643,
     "evaluated_at": "2026-11-18T00:07:52+00:00"
   }
 ]

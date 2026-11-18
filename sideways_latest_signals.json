@@ -1,56 +1,35 @@
 {
-  "scanned_at_utc": "2026-11-18T03:33:09+00:00",
+  "scanned_at_utc": "2026-11-18T12:53:39+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 231,
+  "symbols_scanned": 235,
   "symbols_errored": 0,
-  "ut_buy_count": 2,
-  "passed_count": 0,
-  "filtered_count": 2,
-  "passed_signals": [],
-  "filtered_signals": [
+  "ut_buy_count": 1,
+  "passed_count": 1,
+  "filtered_count": 0,
+  "passed_signals": [
     {
-      "symbol": "BMTUSDT",
+      "symbol": "UUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.01991,
-      "bar_time": 1794967200000,
-      "adx": 16.33,
-      "chop": 55.31,
-      "bb_width_pctl": 5.0,
-      "range_pct": 12.7,
+      "last_close": 1.0001,
+      "bar_time": 1795003200000,
+      "adx": 26.9,
+      "chop": 48.54,
+      "bb_width_pctl": 100.0,
+      "range_pct": 0.1,
       "votes": {
-        "adx_low": true,
+        "adx_low": false,
         "chop_high": false,
-        "bb_squeeze": true
+        "bb_squeeze": false
       },
-      "vote_count": 2,
-      "range_high": 0.02147,
+      "vote_count": 0,
+      "range_high": 1.0007,
       "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
-    },
-    {
-      "symbol": "ERAUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.0751,
-      "bar_time": 1794967200000,
-      "adx": 18.8,
-      "chop": 57.92,
-      "bb_width_pctl": 15.0,
-      "range_pct": 16.03,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": true
-      },
-      "vote_count": 2,
-      "range_high": 0.0783,
-      "breakout": false,
-      "was_sideways": true,
-      "is_sideways": true
+      "was_sideways": false,
+      "is_sideways": false
     }
   ],
+  "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

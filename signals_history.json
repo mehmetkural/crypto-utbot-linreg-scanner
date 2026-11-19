@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "CRVUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795093200000,
+    "detected_at_utc": "2026-11-19T13:37:41+00:00",
+    "price_at_signal": 0.1989,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "HUMAUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795093200000,
@@ -467,10 +478,10 @@
     "bar_time_entry": 1795078800000,
     "detected_at_utc": "2026-11-19T09:22:53+00:00",
     "price_at_signal": 5.547,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 5.558,
+    "evaluated_at": "2026-11-19T13:37:41+00:00"
   },
   {
     "symbol": "NVDABUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.05015,
-    "evaluated_at": "2026-11-18T22:07:53+00:00"
-  },
-  {
-    "symbol": "AVAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795024800000,
-    "detected_at_utc": "2026-11-18T18:07:49+00:00",
-    "price_at_signal": 0.2075,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.2057,
     "evaluated_at": "2026-11-18T22:07:53+00:00"
   }
 ]

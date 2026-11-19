@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "DODOUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1795057200000,
+    "detected_at_utc": "2026-11-19T03:38:01+00:00",
+    "price_at_signal": 0.03362,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "NEIROUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795057200000,
+    "detected_at_utc": "2026-11-19T03:38:01+00:00",
+    "price_at_signal": 5.11e-05,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ORDIUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795057200000,
+    "detected_at_utc": "2026-11-19T03:38:01+00:00",
+    "price_at_signal": 2.764,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "TRUMPUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795057200000,
@@ -2150,10 +2183,10 @@
     "bar_time_entry": 1795017600000,
     "detected_at_utc": "2026-11-18T16:22:46+00:00",
     "price_at_signal": 0.0303,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0315,
+    "evaluated_at": "2026-11-19T03:38:01+00:00"
   },
   {
     "symbol": "ZILUSDT",
@@ -3264,39 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.0778,
-    "evaluated_at": "2026-11-18T17:22:44+00:00"
-  },
-  {
-    "symbol": "GRTUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795006800000,
-    "detected_at_utc": "2026-11-18T13:07:46+00:00",
-    "price_at_signal": 0.01726,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.01707,
-    "evaluated_at": "2026-11-18T17:22:44+00:00"
-  },
-  {
-    "symbol": "COHRBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795006800000,
-    "detected_at_utc": "2026-11-18T13:07:46+00:00",
-    "price_at_signal": 217.51,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 213.6,
-    "evaluated_at": "2026-11-18T17:22:44+00:00"
-  },
-  {
-    "symbol": "KAIAUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795006800000,
-    "detected_at_utc": "2026-11-18T13:07:46+00:00",
-    "price_at_signal": 0.0303,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0298,
     "evaluated_at": "2026-11-18T17:22:44+00:00"
   }
 ]

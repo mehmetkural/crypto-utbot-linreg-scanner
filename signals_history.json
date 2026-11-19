@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PROMUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1795078800000,
+    "detected_at_utc": "2026-11-19T09:22:53+00:00",
+    "price_at_signal": 5.547,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "NVDABUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795078800000,
@@ -500,10 +511,10 @@
     "bar_time_entry": 1795064400000,
     "detected_at_utc": "2026-11-19T05:22:51+00:00",
     "price_at_signal": 0.00843,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00852,
+    "evaluated_at": "2026-11-19T09:22:53+00:00"
   },
   {
     "symbol": "XRPUSDT",
@@ -511,10 +522,10 @@
     "bar_time_entry": 1795064400000,
     "detected_at_utc": "2026-11-19T05:07:57+00:00",
     "price_at_signal": 0.9749,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.9855,
+    "evaluated_at": "2026-11-19T09:22:53+00:00"
   },
   {
     "symbol": "RAREUSDT",
@@ -522,10 +533,10 @@
     "bar_time_entry": 1795064400000,
     "detected_at_utc": "2026-11-19T05:07:57+00:00",
     "price_at_signal": 0.01152,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01122,
+    "evaluated_at": "2026-11-19T09:22:53+00:00"
   },
   {
     "symbol": "KATUSDT",
@@ -533,10 +544,10 @@
     "bar_time_entry": 1795064400000,
     "detected_at_utc": "2026-11-19T05:07:57+00:00",
     "price_at_signal": 0.0031,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00313,
+    "evaluated_at": "2026-11-19T09:22:53+00:00"
   },
   {
     "symbol": "GTCUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.13511,
-    "evaluated_at": "2026-11-18T19:52:54+00:00"
-  },
-  {
-    "symbol": "DOGEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795014000000,
-    "detected_at_utc": "2026-11-18T15:38:00+00:00",
-    "price_at_signal": 0.05889,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.05879,
     "evaluated_at": "2026-11-18T19:52:54+00:00"
   }
 ]

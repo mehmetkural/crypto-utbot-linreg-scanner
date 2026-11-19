@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "INITUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795071600000,
+    "detected_at_utc": "2026-11-19T07:22:49+00:00",
+    "price_at_signal": 0.10175,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "NVDABUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795071600000,
@@ -698,10 +709,10 @@
     "bar_time_entry": 1795057200000,
     "detected_at_utc": "2026-11-19T03:22:44+00:00",
     "price_at_signal": 0.954,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.968,
+    "evaluated_at": "2026-11-19T07:22:49+00:00"
   },
   {
     "symbol": "USUALUSDT",
@@ -709,10 +720,10 @@
     "bar_time_entry": 1795057200000,
     "detected_at_utc": "2026-11-19T03:22:44+00:00",
     "price_at_signal": 0.0108,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01062,
+    "evaluated_at": "2026-11-19T07:22:49+00:00"
   },
   {
     "symbol": "BEAMXUSDT",
@@ -720,10 +731,10 @@
     "bar_time_entry": 1795057200000,
     "detected_at_utc": "2026-11-19T03:22:44+00:00",
     "price_at_signal": 0.003638,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.003569,
+    "evaluated_at": "2026-11-19T07:22:49+00:00"
   },
   {
     "symbol": "PARTIUSDT",
@@ -731,10 +742,10 @@
     "bar_time_entry": 1795057200000,
     "detected_at_utc": "2026-11-19T03:22:44+00:00",
     "price_at_signal": 0.0344,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0351,
+    "evaluated_at": "2026-11-19T07:22:49+00:00"
   },
   {
     "symbol": "GRAMUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.03873,
     "evaluated_at": "2026-11-18T19:07:49+00:00"
-  },
-  {
-    "symbol": "SAPIENUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795010400000,
-    "detected_at_utc": "2026-11-18T14:52:46+00:00",
-    "price_at_signal": 0.03787,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
   }
 ]

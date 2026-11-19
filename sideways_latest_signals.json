@@ -1,76 +1,12 @@
 {
-  "scanned_at_utc": "2026-11-19T12:45:04+00:00",
+  "scanned_at_utc": "2026-11-19T22:03:50+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 211,
-  "symbols_errored": 0,
-  "ut_buy_count": 3,
-  "passed_count": 3,
+  "symbols_scanned": 223,
+  "symbols_errored": 1,
+  "ut_buy_count": 0,
+  "passed_count": 0,
   "filtered_count": 0,
-  "passed_signals": [
-    {
-      "symbol": "FFUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.10034,
-      "bar_time": 1795089600000,
-      "adx": 17.22,
-      "chop": 52.84,
-      "bb_width_pctl": 45.0,
-      "range_pct": 9.17,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 1,
-      "range_high": 0.10654,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "JSTUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 0.14488,
-      "bar_time": 1795089600000,
-      "adx": 18.88,
-      "chop": 61.57,
-      "bb_width_pctl": 21.0,
-      "range_pct": 3.88,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 1,
-      "range_high": 0.14583,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    },
-    {
-      "symbol": "QNTUSDT",
-      "ut_signal": "buy",
-      "ut_trend": "up",
-      "last_close": 154.63,
-      "bar_time": 1795089600000,
-      "adx": 14.08,
-      "chop": 54.91,
-      "bb_width_pctl": 31.0,
-      "range_pct": 7.14,
-      "votes": {
-        "adx_low": true,
-        "chop_high": false,
-        "bb_squeeze": false
-      },
-      "vote_count": 1,
-      "range_high": 158.75,
-      "breakout": false,
-      "was_sideways": false,
-      "is_sideways": false
-    }
-  ],
+  "passed_signals": [],
   "filtered_signals": [],
   "criteria": {
     "adx_below": 20.0,

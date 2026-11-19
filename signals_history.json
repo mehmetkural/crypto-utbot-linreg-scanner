@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "NVDABUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795075200000,
+    "detected_at_utc": "2026-11-19T08:37:46+00:00",
+    "price_at_signal": 153.61,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "LUNAUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1795075200000,
@@ -434,10 +445,10 @@
     "bar_time_entry": 1795060800000,
     "detected_at_utc": "2026-11-19T04:22:50+00:00",
     "price_at_signal": 0.14781,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.14796,
+    "evaluated_at": "2026-11-19T08:37:46+00:00"
   },
   {
     "symbol": "JSTUSDT",
@@ -445,10 +456,10 @@
     "bar_time_entry": 1795060800000,
     "detected_at_utc": "2026-11-19T04:22:50+00:00",
     "price_at_signal": 0.14453,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.14379,
+    "evaluated_at": "2026-11-19T08:37:46+00:00"
   },
   {
     "symbol": "BEAMXUSDT",
@@ -456,10 +467,10 @@
     "bar_time_entry": 1795060800000,
     "detected_at_utc": "2026-11-19T04:22:50+00:00",
     "price_at_signal": 0.003634,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.003588,
+    "evaluated_at": "2026-11-19T08:37:46+00:00"
   },
   {
     "symbol": "ZECUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "hit",
     "price_after": 0.00848,
     "evaluated_at": "2026-11-18T19:37:56+00:00"
-  },
-  {
-    "symbol": "SOLUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795014000000,
-    "detected_at_utc": "2026-11-18T15:07:56+00:00",
-    "price_at_signal": 73.99,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 73.48,
-    "evaluated_at": "2026-11-18T19:22:42+00:00"
   }
 ]

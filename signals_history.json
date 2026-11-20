@@ -1,5 +1,27 @@
 [
   {
+    "symbol": "TRUMPUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795215600000,
+    "detected_at_utc": "2026-11-20T23:37:46+00:00",
+    "price_at_signal": 0.868,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "FILUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795215600000,
+    "detected_at_utc": "2026-11-20T23:37:46+00:00",
+    "price_at_signal": 0.5381,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SQQQBUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1795215600000,
@@ -1512,10 +1534,10 @@
     "bar_time_entry": 1795201200000,
     "detected_at_utc": "2026-11-20T19:22:51+00:00",
     "price_at_signal": 0.01216,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01222,
+    "evaluated_at": "2026-11-20T23:37:46+00:00"
   },
   {
     "symbol": "BFUSDUSDT",
@@ -3275,28 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.02191,
-    "evaluated_at": "2026-11-20T14:07:58+00:00"
-  },
-  {
-    "symbol": "MARSCOINUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795168800000,
-    "detected_at_utc": "2026-11-20T10:07:44+00:00",
-    "price_at_signal": 0.0315,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.0305,
-    "evaluated_at": "2026-11-20T14:07:58+00:00"
-  },
-  {
-    "symbol": "BABABUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795168800000,
-    "detected_at_utc": "2026-11-20T10:07:44+00:00",
-    "price_at_signal": 83.91,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 83.72,
     "evaluated_at": "2026-11-20T14:07:58+00:00"
   }
 ]

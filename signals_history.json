@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ORCAUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795208400000,
+    "detected_at_utc": "2026-11-20T21:52:53+00:00",
+    "price_at_signal": 1.088,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "HOTUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795208400000,
@@ -302,10 +313,10 @@
     "bar_time_entry": 1795194000000,
     "detected_at_utc": "2026-11-20T17:37:52+00:00",
     "price_at_signal": 570.28,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 568.84,
+    "evaluated_at": "2026-11-20T21:52:53+00:00"
   },
   {
     "symbol": "WBTCUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.10093,
     "evaluated_at": "2026-11-20T03:23:01+00:00"
-  },
-  {
-    "symbol": "USDEUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795125600000,
-    "detected_at_utc": "2026-11-19T22:37:51+00:00",
-    "price_at_signal": 1.0007,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 1.0008,
-    "evaluated_at": "2026-11-20T02:52:42+00:00"
   }
 ]

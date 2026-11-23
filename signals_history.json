@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "ENSOUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795392000000,
+    "detected_at_utc": "2026-11-23T00:22:52+00:00",
+    "price_at_signal": 0.504,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ACEUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795392000000,
@@ -434,10 +445,10 @@
     "bar_time_entry": 1795377600000,
     "detected_at_utc": "2026-11-22T20:22:45+00:00",
     "price_at_signal": 0.2355,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.2379,
+    "evaluated_at": "2026-11-23T00:22:52+00:00"
   },
   {
     "symbol": "CVXUSDT",
@@ -445,10 +456,10 @@
     "bar_time_entry": 1795377600000,
     "detected_at_utc": "2026-11-22T20:07:46+00:00",
     "price_at_signal": 1.161,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.172,
+    "evaluated_at": "2026-11-23T00:22:52+00:00"
   },
   {
     "symbol": "AUDIOUSDT",
@@ -456,10 +467,10 @@
     "bar_time_entry": 1795377600000,
     "detected_at_utc": "2026-11-22T20:07:46+00:00",
     "price_at_signal": 0.01048,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01058,
+    "evaluated_at": "2026-11-23T00:22:52+00:00"
   },
   {
     "symbol": "KATUSDT",
@@ -467,10 +478,10 @@
     "bar_time_entry": 1795377600000,
     "detected_at_utc": "2026-11-22T20:07:46+00:00",
     "price_at_signal": 0.00305,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00303,
+    "evaluated_at": "2026-11-23T00:22:52+00:00"
   },
   {
     "symbol": "SPKUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 79.33,
-    "evaluated_at": "2026-11-22T08:07:46+00:00"
-  },
-  {
-    "symbol": "CRCLBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795316400000,
-    "detected_at_utc": "2026-11-22T03:52:49+00:00",
-    "price_at_signal": 48.59,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 48.51,
     "evaluated_at": "2026-11-22T08:07:46+00:00"
   }
 ]

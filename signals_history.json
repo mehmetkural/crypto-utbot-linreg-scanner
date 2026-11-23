@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "CYBERUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795406400000,
+    "detected_at_utc": "2026-11-23T04:37:44+00:00",
+    "price_at_signal": 0.204,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BTCUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795406400000,
@@ -2018,10 +2029,10 @@
     "bar_time_entry": 1795392000000,
     "detected_at_utc": "2026-11-23T00:37:37+00:00",
     "price_at_signal": 0.2554,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.2558,
+    "evaluated_at": "2026-11-23T04:37:44+00:00"
   },
   {
     "symbol": "ENSOUSDT",
@@ -2029,10 +2040,10 @@
     "bar_time_entry": 1795392000000,
     "detected_at_utc": "2026-11-23T00:22:52+00:00",
     "price_at_signal": 0.504,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.49,
+    "evaluated_at": "2026-11-23T04:37:44+00:00"
   },
   {
     "symbol": "ACEUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 98.89,
-    "evaluated_at": "2026-11-22T14:07:46+00:00"
-  },
-  {
-    "symbol": "RAREUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795341600000,
-    "detected_at_utc": "2026-11-22T10:07:45+00:00",
-    "price_at_signal": 0.01455,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.0147,
     "evaluated_at": "2026-11-22T14:07:46+00:00"
   }
 ]

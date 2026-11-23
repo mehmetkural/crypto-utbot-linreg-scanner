@@ -1,5 +1,49 @@
 [
   {
+    "symbol": "SNDKBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1795435200000,
+    "detected_at_utc": "2026-11-23T12:22:50+00:00",
+    "price_at_signal": 83.4,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "ANTBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1795435200000,
+    "detected_at_utc": "2026-11-23T12:22:50+00:00",
+    "price_at_signal": 89.68,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "SNXXBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1795435200000,
+    "detected_at_utc": "2026-11-23T12:22:50+00:00",
+    "price_at_signal": 1.93,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "AMZNBUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1795435200000,
+    "detected_at_utc": "2026-11-23T12:22:50+00:00",
+    "price_at_signal": 254.91,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "RWUSDUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1795435200000,
@@ -456,10 +500,10 @@
     "bar_time_entry": 1795420800000,
     "detected_at_utc": "2026-11-23T08:22:50+00:00",
     "price_at_signal": 17.11,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 17.3,
+    "evaluated_at": "2026-11-23T12:22:50+00:00"
   },
   {
     "symbol": "SNDKBUSDT",
@@ -3253,50 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 3587.39,
-    "evaluated_at": "2026-11-23T03:07:41+00:00"
-  },
-  {
-    "symbol": "BFUSDUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795388400000,
-    "detected_at_utc": "2026-11-22T23:07:40+00:00",
-    "price_at_signal": 0.9995,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.9994,
-    "evaluated_at": "2026-11-23T03:07:41+00:00"
-  },
-  {
-    "symbol": "KAVAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795388400000,
-    "detected_at_utc": "2026-11-22T23:07:40+00:00",
-    "price_at_signal": 0.02512,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.02522,
-    "evaluated_at": "2026-11-23T03:07:41+00:00"
-  },
-  {
-    "symbol": "QQQBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795388400000,
-    "detected_at_utc": "2026-11-22T23:07:40+00:00",
-    "price_at_signal": 623.71,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 626.24,
-    "evaluated_at": "2026-11-23T03:07:41+00:00"
-  },
-  {
-    "symbol": "GOOGLBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795388400000,
-    "detected_at_utc": "2026-11-22T23:07:40+00:00",
-    "price_at_signal": 273.89,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 273.78,
     "evaluated_at": "2026-11-23T03:07:41+00:00"
   }
 ]

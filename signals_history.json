@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PYTHUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795420800000,
+    "detected_at_utc": "2026-11-23T08:52:51+00:00",
+    "price_at_signal": 0.05163,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "CYBERUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1795420800000,
@@ -698,10 +709,10 @@
     "bar_time_entry": 1795406400000,
     "detected_at_utc": "2026-11-23T04:37:44+00:00",
     "price_at_signal": 0.204,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.203,
+    "evaluated_at": "2026-11-23T08:52:51+00:00"
   },
   {
     "symbol": "BTCUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.4365,
-    "evaluated_at": "2026-11-22T23:22:51+00:00"
-  },
-  {
-    "symbol": "SHELLUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795374000000,
-    "detected_at_utc": "2026-11-22T19:07:41+00:00",
-    "price_at_signal": 0.02458,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.02449,
     "evaluated_at": "2026-11-22T23:22:51+00:00"
   }
 ]

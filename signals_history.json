@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "BERAUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795543200000,
+    "detected_at_utc": "2026-11-24T18:37:52+00:00",
+    "price_at_signal": 0.0807,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "WLDUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795543200000,
@@ -610,10 +621,10 @@
     "bar_time_entry": 1795528800000,
     "detected_at_utc": "2026-11-24T14:37:48+00:00",
     "price_at_signal": 388.43,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 383.77,
+    "evaluated_at": "2026-11-24T18:37:52+00:00"
   },
   {
     "symbol": "MRNABUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.000617,
-    "evaluated_at": "2026-11-24T09:22:57+00:00"
-  },
-  {
-    "symbol": "STXUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795496400000,
-    "detected_at_utc": "2026-11-24T05:07:51+00:00",
-    "price_at_signal": 0.2626,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.2595,
     "evaluated_at": "2026-11-24T09:22:57+00:00"
   }
 ]

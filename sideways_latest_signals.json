@@ -1,35 +1,78 @@
 {
-  "scanned_at_utc": "2026-11-24T04:41:38+00:00",
+  "scanned_at_utc": "2026-11-24T17:24:49+00:00",
   "timeframe": "2h",
-  "symbols_scanned": 251,
+  "symbols_scanned": 248,
   "symbols_errored": 0,
-  "ut_buy_count": 1,
-  "passed_count": 1,
-  "filtered_count": 0,
+  "ut_buy_count": 3,
+  "passed_count": 2,
+  "filtered_count": 1,
   "passed_signals": [
     {
-      "symbol": "USUALUSDT",
+      "symbol": "AAPLBUSDT",
       "ut_signal": "buy",
       "ut_trend": "up",
-      "last_close": 0.01138,
-      "bar_time": 1795492800000,
-      "adx": 24.86,
-      "chop": 56.92,
-      "bb_width_pctl": 51.0,
-      "range_pct": 10.89,
+      "last_close": 352.97,
+      "bar_time": 1795536000000,
+      "adx": 19.18,
+      "chop": 55.95,
+      "bb_width_pctl": 38.0,
+      "range_pct": 2.71,
       "votes": {
-        "adx_low": false,
+        "adx_low": true,
         "chop_high": false,
         "bb_squeeze": false
       },
-      "vote_count": 0,
-      "range_high": 0.01197,
+      "vote_count": 1,
+      "range_high": 354.12,
+      "breakout": false,
+      "was_sideways": false,
+      "is_sideways": false
+    },
+    {
+      "symbol": "MSFTBUSDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 501.72,
+      "bar_time": 1795536000000,
+      "adx": 11.57,
+      "chop": 44.37,
+      "bb_width_pctl": 41.0,
+      "range_pct": 4.41,
+      "votes": {
+        "adx_low": true,
+        "chop_high": false,
+        "bb_squeeze": false
+      },
+      "vote_count": 1,
+      "range_high": 509.23,
       "breakout": false,
       "was_sideways": false,
       "is_sideways": false
     }
   ],
-  "filtered_signals": [],
+  "filtered_signals": [
+    {
+      "symbol": "USD1USDT",
+      "ut_signal": "buy",
+      "ut_trend": "up",
+      "last_close": 1.00094,
+      "bar_time": 1795536000000,
+      "adx": 12.15,
+      "chop": 75.0,
+      "bb_width_pctl": 17.0,
+      "range_pct": 0.07,
+      "votes": {
+        "adx_low": true,
+        "chop_high": true,
+        "bb_squeeze": true
+      },
+      "vote_count": 3,
+      "range_high": 1.00119,
+      "breakout": false,
+      "was_sideways": true,
+      "is_sideways": true
+    }
+  ],
   "criteria": {
     "adx_below": 20.0,
     "chop_above": 61.8,

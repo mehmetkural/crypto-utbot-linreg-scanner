@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "TSLABUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795528800000,
+    "detected_at_utc": "2026-11-24T14:37:48+00:00",
+    "price_at_signal": 388.43,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "MRNABUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795528800000,
@@ -621,10 +632,10 @@
     "bar_time_entry": 1795514400000,
     "detected_at_utc": "2026-11-24T10:28:00+00:00",
     "price_at_signal": 0.000875,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.000861,
+    "evaluated_at": "2026-11-24T14:37:48+00:00"
   },
   {
     "symbol": "NEARUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "miss",
     "price_after": 0.00857,
-    "evaluated_at": "2026-11-24T04:22:55+00:00"
-  },
-  {
-    "symbol": "SCUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795478400000,
-    "detected_at_utc": "2026-11-24T00:07:53+00:00",
-    "price_at_signal": 0.000611,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.000593,
     "evaluated_at": "2026-11-24T04:22:55+00:00"
   }
 ]

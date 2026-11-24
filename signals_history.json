@@ -1,5 +1,38 @@
 [
   {
+    "symbol": "ZECUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795557600000,
+    "detected_at_utc": "2026-11-24T22:37:55+00:00",
+    "price_at_signal": 744.5,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "AMDBUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795557600000,
+    "detected_at_utc": "2026-11-24T22:37:55+00:00",
+    "price_at_signal": 419.1,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
+    "symbol": "DELLBUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795557600000,
+    "detected_at_utc": "2026-11-24T22:37:55+00:00",
+    "price_at_signal": 311.08,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "TSMBUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795557600000,
@@ -258,10 +291,10 @@
     "bar_time_entry": 1795543200000,
     "detected_at_utc": "2026-11-24T18:37:52+00:00",
     "price_at_signal": 0.0807,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0804,
+    "evaluated_at": "2026-11-24T22:37:55+00:00"
   },
   {
     "symbol": "WLDUSDT",
@@ -3265,38 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.1619,
     "evaluated_at": "2026-11-24T09:37:56+00:00"
-  },
-  {
-    "symbol": "LINEAUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795496400000,
-    "detected_at_utc": "2026-11-24T05:37:51+00:00",
-    "price_at_signal": 0.001678,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.001666,
-    "evaluated_at": "2026-11-24T09:37:56+00:00"
-  },
-  {
-    "symbol": "FILUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795496400000,
-    "detected_at_utc": "2026-11-24T05:22:51+00:00",
-    "price_at_signal": 0.5663,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.5535,
-    "evaluated_at": "2026-11-24T09:22:57+00:00"
-  },
-  {
-    "symbol": "DASHUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795496400000,
-    "detected_at_utc": "2026-11-24T05:22:51+00:00",
-    "price_at_signal": 36.2,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 35.22,
-    "evaluated_at": "2026-11-24T09:22:57+00:00"
   }
 ]

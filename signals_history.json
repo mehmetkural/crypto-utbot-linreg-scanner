@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "HMSTRUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795629600000,
+    "detected_at_utc": "2026-11-25T18:52:44+00:00",
+    "price_at_signal": 0.0001392,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "BFUSDUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1795629600000,
@@ -2348,10 +2359,10 @@
     "bar_time_entry": 1795615200000,
     "detected_at_utc": "2026-11-25T14:37:52+00:00",
     "price_at_signal": 1.0001,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.0003,
+    "evaluated_at": "2026-11-25T18:52:44+00:00"
   },
   {
     "symbol": "SUNUSDT",
@@ -2370,10 +2381,10 @@
     "bar_time_entry": 1795615200000,
     "detected_at_utc": "2026-11-25T14:37:52+00:00",
     "price_at_signal": 0.00995,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.01033,
+    "evaluated_at": "2026-11-25T18:52:44+00:00"
   },
   {
     "symbol": "QCOMBUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 0.0001355,
-    "evaluated_at": "2026-11-25T13:22:48+00:00"
-  },
-  {
-    "symbol": "TSMBUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795597200000,
-    "detected_at_utc": "2026-11-25T09:07:49+00:00",
-    "price_at_signal": 340.66,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 332.07,
     "evaluated_at": "2026-11-25T13:22:48+00:00"
   }
 ]

@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PORTALUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795636800000,
+    "detected_at_utc": "2026-11-25T20:22:51+00:00",
+    "price_at_signal": 0.0124,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "OPGUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1795636800000,
@@ -2238,10 +2249,10 @@
     "bar_time_entry": 1795622400000,
     "detected_at_utc": "2026-11-25T16:22:50+00:00",
     "price_at_signal": 68.18,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 70.61,
+    "evaluated_at": "2026-11-25T20:22:51+00:00"
   },
   {
     "symbol": "BNBUSDT",
@@ -2249,10 +2260,10 @@
     "bar_time_entry": 1795622400000,
     "detected_at_utc": "2026-11-25T16:22:50+00:00",
     "price_at_signal": 540.51,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 552.96,
+    "evaluated_at": "2026-11-25T20:22:51+00:00"
   },
   {
     "symbol": "XUSDUSDT",
@@ -2260,10 +2271,10 @@
     "bar_time_entry": 1795622400000,
     "detected_at_utc": "2026-11-25T16:22:50+00:00",
     "price_at_signal": 1.0011,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 1.0011,
+    "evaluated_at": "2026-11-25T20:22:51+00:00"
   },
   {
     "symbol": "ICPUSDT",
@@ -2271,10 +2282,10 @@
     "bar_time_entry": 1795622400000,
     "detected_at_utc": "2026-11-25T16:22:50+00:00",
     "price_at_signal": 1.967,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 2.04,
+    "evaluated_at": "2026-11-25T20:22:51+00:00"
   },
   {
     "symbol": "ANTBUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 0.0133,
     "evaluated_at": "2026-11-25T17:07:54+00:00"
-  },
-  {
-    "symbol": "GTCUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795600800000,
-    "detected_at_utc": "2026-11-25T10:07:48+00:00",
-    "price_at_signal": 0.12227,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 0.11797,
-    "evaluated_at": "2026-11-25T14:07:53+00:00"
   }
 ]

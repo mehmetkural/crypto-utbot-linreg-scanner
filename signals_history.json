@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "SKHYBUSDT",
+    "direction": "GUCLU_AL",
+    "bar_time_entry": 1795730400000,
+    "detected_at_utc": "2026-11-26T22:07:39+00:00",
+    "price_at_signal": 112.3,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "ETHUSDT",
     "direction": "GUCLU_AL",
     "bar_time_entry": 1795726800000,
@@ -610,10 +621,10 @@
     "bar_time_entry": 1795712400000,
     "detected_at_utc": "2026-11-26T17:52:43+00:00",
     "price_at_signal": 0.01749,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.0177,
+    "evaluated_at": "2026-11-26T22:07:39+00:00"
   },
   {
     "symbol": "AMDBUSDT",
@@ -3286,17 +3297,6 @@
     "evaluated": true,
     "outcome": "hit",
     "price_after": 600.62,
-    "evaluated_at": "2026-11-25T22:22:58+00:00"
-  },
-  {
-    "symbol": "SNDKBUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795629600000,
-    "detected_at_utc": "2026-11-25T18:22:52+00:00",
-    "price_at_signal": 71.27,
-    "evaluated": true,
-    "outcome": "hit",
-    "price_after": 73.61,
     "evaluated_at": "2026-11-25T22:22:58+00:00"
   }
 ]

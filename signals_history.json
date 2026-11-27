@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "HYPERUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1795766400000,
+    "detected_at_utc": "2026-11-27T08:22:50+00:00",
+    "price_at_signal": 0.0409,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "SPKUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1795766400000,
@@ -324,10 +335,10 @@
     "bar_time_entry": 1795752000000,
     "detected_at_utc": "2026-11-27T04:22:48+00:00",
     "price_at_signal": 0.00935,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.00971,
+    "evaluated_at": "2026-11-27T08:22:50+00:00"
   },
   {
     "symbol": "USD1USDT",
@@ -335,10 +346,10 @@
     "bar_time_entry": 1795752000000,
     "detected_at_utc": "2026-11-27T04:07:51+00:00",
     "price_at_signal": 1.00086,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.00087,
+    "evaluated_at": "2026-11-27T08:22:50+00:00"
   },
   {
     "symbol": "ZAMAUSDT",
@@ -346,10 +357,10 @@
     "bar_time_entry": 1795752000000,
     "detected_at_utc": "2026-11-27T04:07:51+00:00",
     "price_at_signal": 0.05498,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.057,
+    "evaluated_at": "2026-11-27T08:22:50+00:00"
   },
   {
     "symbol": "VANAUSDT",
@@ -357,10 +368,10 @@
     "bar_time_entry": 1795752000000,
     "detected_at_utc": "2026-11-27T04:07:51+00:00",
     "price_at_signal": 0.584,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.586,
+    "evaluated_at": "2026-11-27T08:22:50+00:00"
   },
   {
     "symbol": "MEGAUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": null,
     "price_after": null,
     "evaluated_at": null
-  },
-  {
-    "symbol": "NIGHTUSDT",
-    "direction": "GUCLU_SAT",
-    "bar_time_entry": 1795694400000,
-    "detected_at_utc": "2026-11-26T12:22:50+00:00",
-    "price_at_signal": 0.04714,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.04746,
-    "evaluated_at": "2026-11-26T16:22:53+00:00"
   }
 ]

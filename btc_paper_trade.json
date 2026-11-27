@@ -1,19 +1,19 @@
 {
-  "updated_at_utc": "2026-11-27T14:38:04+00:00",
+  "updated_at_utc": "2026-11-27T14:53:07+00:00",
   "symbol": "BTCUSDT",
   "timeframe": "4h",
   "initial_budget_eur": 100.0,
-  "position": "long",
-  "cash_eur": 0.0,
-  "btc_amount": 0.001087850267857804,
-  "entry_price": 59887.31,
-  "entry_at_utc": "2026-11-25T20:08:04+00:00",
-  "current_price": 60582.64,
-  "trend": "up",
-  "equity_eur": 65.90484115153292,
-  "total_return_pct": -34.09515884846708,
-  "last_action": null,
-  "trade_count": 27,
+  "position": "flat",
+  "cash_eur": 64.56637193896603,
+  "btc_amount": 0.0,
+  "entry_price": null,
+  "entry_at_utc": null,
+  "current_price": 59352.26,
+  "trend": "down",
+  "equity_eur": 64.56637193896603,
+  "total_return_pct": -35.43362806103397,
+  "last_action": "sell",
+  "trade_count": 28,
   "trades": [
     {
       "type": "buy",
@@ -256,6 +256,16 @@
       "price": 59887.31,
       "btc_amount": 0.001087850267857804,
       "cash_used_eur": 65.14842622478335
+    },
+    {
+      "type": "sell",
+      "time_utc": "2026-11-27T14:53:07+00:00",
+      "bar_time": 1795780800000,
+      "price": 59352.26,
+      "btc_amount": 0.001087850267857804,
+      "cash_after_eur": 64.56637193896603,
+      "pnl_eur": -0.5820542858173212,
+      "pnl_pct": -0.8934280067012456
     }
   ]
 }

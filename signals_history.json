@@ -1,5 +1,16 @@
 [
   {
+    "symbol": "PUMPUSDT",
+    "direction": "GUCLU_SAT",
+    "bar_time_entry": 1795856400000,
+    "detected_at_utc": "2026-11-28T09:52:48+00:00",
+    "price_at_signal": 0.002562,
+    "evaluated": false,
+    "outcome": null,
+    "price_after": null,
+    "evaluated_at": null
+  },
+  {
     "symbol": "XUSDUSDT",
     "direction": "GUCLU_SAT",
     "bar_time_entry": 1795856400000,
@@ -544,10 +555,10 @@
     "bar_time_entry": 1795842000000,
     "detected_at_utc": "2026-11-28T05:37:55+00:00",
     "price_at_signal": 1.983,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 1.926,
+    "evaluated_at": "2026-11-28T09:52:48+00:00"
   },
   {
     "symbol": "ATUSDT",
@@ -555,10 +566,10 @@
     "bar_time_entry": 1795842000000,
     "detected_at_utc": "2026-11-28T05:37:55+00:00",
     "price_at_signal": 0.0542,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.0535,
+    "evaluated_at": "2026-11-28T09:52:48+00:00"
   },
   {
     "symbol": "GUNUSDT",
@@ -566,10 +577,10 @@
     "bar_time_entry": 1795842000000,
     "detected_at_utc": "2026-11-28T05:37:55+00:00",
     "price_at_signal": 0.001406,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "miss",
+    "price_after": 0.001464,
+    "evaluated_at": "2026-11-28T09:52:48+00:00"
   },
   {
     "symbol": "STOUSDT",
@@ -577,10 +588,10 @@
     "bar_time_entry": 1795842000000,
     "detected_at_utc": "2026-11-28T05:37:55+00:00",
     "price_at_signal": 0.0215,
-    "evaluated": false,
-    "outcome": null,
-    "price_after": null,
-    "evaluated_at": null
+    "evaluated": true,
+    "outcome": "hit",
+    "price_after": 0.0213,
+    "evaluated_at": "2026-11-28T09:52:48+00:00"
   },
   {
     "symbol": "SKYUSDT",
@@ -3287,16 +3298,5 @@
     "outcome": "miss",
     "price_after": 93.85,
     "evaluated_at": "2026-11-27T20:37:49+00:00"
-  },
-  {
-    "symbol": "KITEUSDT",
-    "direction": "GUCLU_AL",
-    "bar_time_entry": 1795795200000,
-    "detected_at_utc": "2026-11-27T16:22:50+00:00",
-    "price_at_signal": 0.1405,
-    "evaluated": true,
-    "outcome": "miss",
-    "price_after": 0.1371,
-    "evaluated_at": "2026-11-27T20:23:00+00:00"
   }
 ]
